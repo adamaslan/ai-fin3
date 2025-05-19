@@ -1,9 +1,5 @@
 import requests
 import json
-from dotenv import load_dotenv
-import os
-load_dotenv()
-ALPHA_VANTAGE_API_KEY = os.getenv('ALPHA_VANTAGE_API_KEY')
 
 # Replace 'YOUR_API_KEY' with your actual Alpha Vantage API key
 API_KEY = ALPHA_VANTAGE_API_KEY
@@ -37,52 +33,40 @@ try:
     data = response.json()
 
     # Print the raw JSON data (or process it further)
-    # print(json.dumps(data, indent=4)) # Optionally keep this for debugging
+    print(json.dumps(data, indent=4))
 
     # --- Optional: Further processing and visualization ---
     # You can add more code here to process the data, for example, using pandas
     # and matplotlib for plotting if the data is successfully retrieved.
 
     # Example (if 'Technical Analysis: BBANDS' is in the response):
-    if "Technical Analysis: BBANDS" in data:
-        bbands_data = data["Technical Analysis: BBANDS"]
-        # Convert to pandas DataFrame for easier manipulation and plotting
-        import pandas as pd
-        df = pd.DataFrame.from_dict(bbands_data, orient='index')
-        df = df.astype(float) # Convert columns to numeric
-        df.index = pd.to_datetime(df.index) # Convert index to datetime
-        df = df.sort_index() # Sort by date
-
-        print("\nFull Processed DataFrame (first 5 rows):")
-        print(df.head())
-
-        # Filter for the date range 2023-2025
-        start_date = '2023-01-01'
-        end_date = '2025-12-31'
-        df_filtered = df[(df.index >= start_date) & (df.index <= end_date)]
-
-        if not df_filtered.empty:
-            print(f"\nFiltered DataFrame for {start_date} to {end_date} (first 5 rows):")
-            print(df_filtered.head())
-
-            # Example plotting (requires matplotlib)
-            import matplotlib.pyplot as plt
-            plt.figure(figsize=(12,6))
-            plt.plot(df_filtered.index, df_filtered['Real Middle Band'], label='Middle Band')
-            plt.plot(df_filtered.index, df_filtered['Real Upper Band'], label='Upper Band', color='red')
-            plt.plot(df_filtered.index, df_filtered['Real Lower Band'], label='Lower Band', color='green')
-            plt.fill_between(df_filtered.index, df_filtered['Real Lower Band'], df_filtered['Real Upper Band'], color='gray', alpha=0.3)
-            plt.title(f'Bollinger Bands for {SYMBOL} ({start_date} to {end_date})')
-            plt.xlabel('Date')
-            plt.ylabel('Price')
-            plt.legend()
-            plt.grid(True)
-            plt.show()
-        else:
-            print(f"\nNo data found for the period {start_date} to {end_date}.")
-
-    else:
-        print("\nCould not find 'Technical Analysis: BBANDS' in the API response.")
+    # if "Technical Analysis: BBANDS" in data:
+    #     bbands_data = data["Technical Analysis: BBANDS"]
+    #     # Convert to pandas DataFrame for easier manipulation and plotting
+    #     import pandas as pd
+    #     df = pd.DataFrame.from_dict(bbands_data, orient='index')
+    #     df = df.astype(float) # Convert columns to numeric
+    #     df.index = pd.to_datetime(df.index) # Convert index to datetime
+    #     df = df.sort_index() # Sort by date
+    #
+    #     print("\nProcessed DataFrame:")
+    #     print(df.head())
+    #
+    #     # Example plotting (requires matplotlib)
+    #     # import matplotlib.pyplot as plt
+    #     # plt.figure(figsize=(12,6))
+    #     # plt.plot(df.index, df['Real Middle Band'], label='Middle Band')
+    #     # plt.plot(df.index, df['Real Upper Band'], label='Upper Band', color='red')
+    #     # plt.plot(df.index, df['Real Lower Band'], label='Lower Band', color='green')
+    #     # plt.fill_between(df.index, df['Real Lower Band'], df['Real Upper Band'], color='gray', alpha=0.3)
+    #     # plt.title(f'Bollinger Bands for {SYMBOL}')
+    #     # plt.xlabel('Date')
+    #     # plt.ylabel('Price')
+    #     # plt.legend()
+    #     # plt.grid(True)
+    #     # plt.show()
+    # else:
+    #     print("\nCould not find 'Technical Analysis: BBANDS' in the API response.")
     #     if "Error Message" in data:
     #         print(f"API Error: {data['Error Message']}")
     #     elif "Information" in data:
