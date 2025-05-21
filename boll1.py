@@ -18,16 +18,21 @@ API_KEY = ALPHA_VANTAGE_API_KEY
 SYMBOL = 'AAPL' # Apple Inc.
 
 # API Parameters
+# Modified to target a specific month for historical intraday data
+# For May 19th/20th, let's target May 2024.
+# Note: May 19, 2024 was a Sunday, May 20, 2024 was a Monday.
+# Adjust "month" if you need a different year/month.
 params = {
     "function": "BBANDS",
     "symbol": SYMBOL,
     "interval": "60min",       # Changed to 60min
+    "month": "2024-05",        # Added: Specify YYYY-MM for historical intraday data
     "time_period": "20",       # BBands calculation period (e.g., 20 hours for 60min interval)
     "series_type": "close",    # open, high, low, close
     "apikey": API_KEY,
-    "datatype": "json"         # json or csv
+    "datatype": "json",        # json or csv
+    "outputsize": "full"       # Request full data for the month
     # Optional parameters (can be added if needed):
-    # "month": "2009-01",      # For intraday intervals, YYYY-MM format
     # "nbdevup": "2",          # Standard deviation multiplier for upper band
     # "nbdevdn": "2",          # Standard deviation multiplier for lower band
     # "matype": "0"            # Moving average type (0 for SMA, 1 for EMA, etc.)
@@ -106,26 +111,36 @@ try:
         df.index = pd.to_datetime(df.index) # Convert index to datetime
         df = df.sort_index() # Sort by date
 
-        print("\nFull Processed DataFrame (first 5 rows):")
+        print("\nFull Processed DataFrame (first 5 rows from fetched month):")
         print(df.head())
 
-        # Filter for the date range - adjust for intraday data
-        # start_date = '2023-01-01' # Original daily filter
-        # end_date = date.today().strftime('%Y-%m-%d') # Original daily filter
-        # df_filtered = df[(df.index >= start_date) & (df.index <= end_date)] # Original daily filter
-        
-        # For intraday, filter for a more recent period, e.g., last 30 days
+        # Filter for the specific dates: May 19, 2024 and May 20, 2024
+        # Note: May 19, 2024 was a Sunday. May 20, 2024 was a Monday.
+        # You might only get data for May 20th.
+        target_start_date = datetime(2024, 5, 19)
+        target_end_date = datetime(2024, 5, 20, 23, 59, 59) # Include whole of May 20th
+
         if not df.empty:
-            df_filtered = df.last('30D') # Example: last 30 days of 60min data
-            if df_filtered.empty: # Fallback if 'last 30D' results in empty
-                df_filtered = df 
+            df_filtered = df[(df.index >= target_start_date) & (df.index <= target_end_date)]
         else:
             df_filtered = pd.DataFrame()
 
+        print(f"\nData for {target_start_date.strftime('%Y-%m-%d')} and {target_end_date.strftime('%Y-%m-%d')}:")
+        if not df_filtered.empty:
+            print(df_filtered)
+        else:
+            print("No data found for the specified dates in the fetched data.")
+            print("This could be due to non-trading days or API data limitations for the specified month/year.")
+
 
         if not df_filtered.empty:
-            print(f"\nFiltered DataFrame for analysis (first 5 rows):")
+            print(f"\nFiltered DataFrame for Autoencoder analysis (first 5 rows):")
             print(df_filtered.head())
+            print(f"Number of data points for autoencoders: {len(df_filtered)}")
+            if len(df_filtered) < 10: # Arbitrary small number
+                print("WARNING: Very few data points for autoencoder training and testing.")
+                print("Results will likely not be meaningful. Autoencoders need more data to learn patterns.")
+
 
             # --- Start Autoencoder Logic ---
             features = ['Real Lower Band', 'Real Middle Band', 'Real Upper Band']
@@ -143,7 +158,7 @@ try:
             train_data_1hr = data_scaled[:train_size_1hr]
             test_data_1hr = data_scaled[train_size_1hr:]
             
-            if len(train_data_1hr) > 5 and len(test_data_1hr) > 0:
+            if len(train_data_1hr) > 2 and len(test_data_1hr) > 0: # Reduced minimum for very small datasets
                 autoencoder_1hr = define_autoencoder(input_shape_1hr)
                 print("Training 1-Hour Autoencoder (conceptual)...")
                 autoencoder_1hr.fit(train_data_1hr, train_data_1hr,
@@ -162,7 +177,8 @@ try:
                     for ts in original_indices_1hr:
                         print(ts)
             else:
-                print("Not enough data for 1-Hour Autoencoder training/testing example.")
+                print("Not enough data for 1-Hour Autoencoder training/testing example after splitting.")
+                print(f"  Available data points: {len(data_scaled)}, Train size: {len(train_data_1hr)}, Test size: {len(test_data_1hr)}")
 
             # --- 4-Hour Period Autoencoder ---
             print("\n--- 4-Hour Period Autoencoder Analysis ---")
@@ -181,7 +197,7 @@ try:
                 train_data_4hr = sequences_4hr_flattened[:train_size_4hr]
                 test_data_4hr = sequences_4hr_flattened[train_size_4hr:]
 
-                if len(train_data_4hr) > 5 and len(test_data_4hr) > 0:
+                if len(train_data_4hr) > 2 and len(test_data_4hr) > 0: # Reduced minimum
                     autoencoder_4hr = define_autoencoder(input_shape_4hr)
                     print("Training 4-Hour Autoencoder (conceptual)...")
                     autoencoder_4hr.fit(train_data_4hr, train_data_4hr,
@@ -201,9 +217,10 @@ try:
                             if original_df_idx < len(df_filtered) - sequence_length_4hr + 1:
                                 print(df_filtered.index[original_df_idx])
                 else:
-                    print("Not enough data for 4-Hour Autoencoder training/testing example.")
+                    print("Not enough data for 4-Hour Autoencoder training/testing example after splitting.")
+                    print(f"  Available sequences: {len(sequences_4hr_flattened)}, Train sequences: {len(train_data_4hr)}, Test sequences: {len(test_data_4hr)}")
             else:
-                print("Not enough data to create 4-hour sequences.")
+                print("Not enough data to create 4-hour sequences from the filtered data.")
             # --- End Autoencoder Logic ---
 
             # Example plotting (requires matplotlib)
@@ -231,9 +248,14 @@ try:
                     plt.scatter(anom_starts_4hr_plot,
                                 df_filtered.loc[anom_starts_4hr_plot]['Real Middle Band'], # Plot on middle band
                                 color='orange', marker='X', s=150, label='4-Hr Anomaly Start')
+            
+            if 'original_indices_5min' in locals() and not original_indices_5min.empty:
+                 plt.scatter(original_indices_5min, 
+                            df_filtered.loc[original_indices_5min]['Real Middle Band'], # Plot on middle band
+                            color='cyan', marker='P', s=120, label='5-Min Anomaly (Sensitive)')
             # --- End Plotting Anomalies ---
 
-            plt.title(f'Bollinger Bands for {SYMBOL} (60min interval)') # Updated title
+            plt.title(f'Bollinger Bands for {SYMBOL} (5min interval)') # Updated title
             plt.xlabel('Date')
             plt.ylabel('Price')
             plt.legend()
