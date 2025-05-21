@@ -25,17 +25,13 @@ SYMBOL = 'AAPL' # Apple Inc.
 params = {
     "function": "BBANDS",
     "symbol": SYMBOL,
-    "interval": "60min",       # Changed to 60min
-    "month": "2024-05",        # Added: Specify YYYY-MM for historical intraday data
-    "time_period": "20",       # BBands calculation period (e.g., 20 hours for 60min interval)
-    "series_type": "close",    # open, high, low, close
+    "interval": "5min",        # Set to "5min" for 5-min details, or "60min" for 1-hr details
+    "month": "2024-05",
+    "time_period": "20",
+    "series_type": "close",
     "apikey": API_KEY,
-    "datatype": "json",        # json or csv
-    "outputsize": "full"       # Request full data for the month
-    # Optional parameters (can be added if needed):
-    # "nbdevup": "2",          # Standard deviation multiplier for upper band
-    # "nbdevdn": "2",          # Standard deviation multiplier for lower band
-    # "matype": "0"            # Moving average type (0 for SMA, 1 for EMA, etc.)
+    "datatype": "json",
+    "outputsize": "full"
 }
 
 # Alpha Vantage API endpoint
@@ -168,14 +164,25 @@ try:
 
                 reconstruction_error_1hr = get_reconstruction_error(test_data_1hr, autoencoder_1hr)
                 threshold_1hr = np.mean(reconstruction_error_1hr) + 2 * np.std(reconstruction_error_1hr)
-                anomalies_1hr_indices = np.where(reconstruction_error_1hr > threshold_1hr)[0]
+                anomalies_1hr_indices_in_test = np.where(reconstruction_error_1hr > threshold_1hr)[0] # Renamed for clarity
                 
-                print(f"1-Hour AE: Found {len(anomalies_1hr_indices)} anomalies (threshold: {threshold_1hr:.4f})")
-                original_indices_1hr = df_filtered.index[train_size_1hr:][anomalies_1hr_indices]
-                if not original_indices_1hr.empty:
-                    print("Anomaly timestamps (1-hour):")
-                    for ts in original_indices_1hr:
-                        print(ts)
+                print(f"1-Hour AE: Found {len(anomalies_1hr_indices_in_test)} anomalies (threshold: {threshold_1hr:.4f})")
+                
+                if len(anomalies_1hr_indices_in_test) > 0:
+                    print("--- Detailed 1-Hour Anomalies ---")
+                    # original_indices_1hr = df_filtered.index[train_size_1hr:][anomalies_1hr_indices_in_test] # Original way to get timestamps
+                    for i, anom_idx_in_test in enumerate(anomalies_1hr_indices_in_test):
+                        # Get the actual index in the original df_filtered
+                        original_df_idx = train_size_1hr + anom_idx_in_test
+                        timestamp = df_filtered.index[original_df_idx]
+                        anomaly_error = reconstruction_error_1hr[anom_idx_in_test]
+                        feature_values = df_filtered.iloc[original_df_idx][features]
+                        
+                        print(f"  Anomaly {i+1}:")
+                        print(f"    Timestamp: {timestamp}")
+                        print(f"    Reconstruction Error: {anomaly_error:.4f}")
+                        print(f"    Feature Values:\n{feature_values.to_string()}")
+                        print("-" * 20)
             else:
                 print("Not enough data for 1-Hour Autoencoder training/testing example after splitting.")
                 print(f"  Available data points: {len(data_scaled)}, Train size: {len(train_data_1hr)}, Test size: {len(test_data_1hr)}")
