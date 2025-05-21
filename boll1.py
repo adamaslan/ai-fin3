@@ -139,6 +139,149 @@ try:
             print("\nWARNING: Very few data points available. Results may not be meaningful.")
             print("This could be due to non-trading days, market hours, or API limitations.")
         
+        # Calculate band width as percentage
+        df_filtered['Band Width'] = ((df_filtered['Real Upper Band'] - df_filtered['Real Lower Band']) / df_filtered['Real Middle Band']) * 100
+        
+        # Calculate the lowest bandwidth in a rolling window of 16 periods
+        if len(df_filtered) >= 16:
+            # Calculate rolling minimum of bandwidth over 16 periods
+            df_filtered['Min Band Width 16'] = df_filtered['Band Width'].rolling(window=16).min()
+            
+            # Identify points where the current bandwidth equals the 16-period minimum
+            df_filtered['Is Min Band Width'] = df_filtered['Band Width'] == df_filtered['Min Band Width 16']
+            
+            # Find periods with bandwidth under 6%
+            narrow_bands = df_filtered[df_filtered['Band Width'] < 6]
+            
+            # Find consecutive periods of minimum bandwidth
+            min_bandwidth_periods = df_filtered[df_filtered['Is Min Band Width'] == True]
+            
+            print("\n=== Bollinger Band Width Analysis ===")
+            print(f"Average Band Width: {df_filtered['Band Width'].mean():.2f}%")
+            print(f"Number of periods with Band Width < 6%: {len(narrow_bands)}")
+            print(f"Number of minimum bandwidth points detected: {len(min_bandwidth_periods)}")
+            
+            if not narrow_bands.empty:
+                print("\nTop 5 Narrowest Band Width Periods:")
+                lowest_bw = narrow_bands.sort_values('Band Width').head(5)
+                for idx, row in lowest_bw.iterrows():
+                    print(f"  {idx.strftime('%Y-%m-%d %H:%M')} - Band Width: {row['Band Width']:.2f}%")
+            
+            # Visualize the Bollinger Bands with narrow bandwidth points highlighted
+            if not df_filtered.empty:
+                # Create a figure with two subplots
+                fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
+                
+                # Plot Bollinger Bands on the first subplot
+                ax1.plot(df_filtered.index, df_filtered['Real Middle Band'], 'b-', label='Middle Band (SMA)')
+                ax1.plot(df_filtered.index, df_filtered['Real Upper Band'], 'g-', label='Upper Band')
+                ax1.plot(df_filtered.index, df_filtered['Real Lower Band'], 'r-', label='Lower Band')
+                ax1.fill_between(df_filtered.index, 
+                                df_filtered['Real Upper Band'], 
+                                df_filtered['Real Lower Band'], 
+                                alpha=0.2, color='gray')
+                
+                # Highlight the narrow bandwidth points (< 6%)
+                if not narrow_bands.empty:
+                    ax1.scatter(narrow_bands.index, 
+                               narrow_bands['Real Middle Band'], 
+                               color='purple', s=50, zorder=5,
+                               label='Band Width < 6%')
+                
+                # Highlight the minimum bandwidth points in the 16-period window
+                if not min_bandwidth_periods.empty:
+                    ax1.scatter(min_bandwidth_periods.index, 
+                               min_bandwidth_periods['Real Middle Band'], 
+                               color='orange', s=70, marker='*', zorder=6,
+                               label='16-Period Min Band Width')
+                
+                ax1.set_title(f'Bollinger Bands for {SYMBOL} - 48 Hour Period (5-min intervals)')
+                ax1.set_ylabel('Price')
+                ax1.grid(True, alpha=0.3)
+                ax1.legend()
+                
+                # Plot Band Width on the second subplot
+                ax2.plot(df_filtered.index, df_filtered['Band Width'], 'b-', label='Band Width (%)')
+                
+                # Add a horizontal line at 6% threshold
+                ax2.axhline(y=6, color='r', linestyle='--', label='6% Threshold')
+                
+                # Plot the 16-period minimum band width
+                ax2.plot(df_filtered.index, df_filtered['Min Band Width 16'], 'g--', label='16-Period Min Band Width')
+                
+                # Highlight the narrow bandwidth points (< 6%)
+                if not narrow_bands.empty:
+                    ax2.scatter(narrow_bands.index, 
+                               narrow_bands['Band Width'], 
+                               color='purple', s=50, zorder=5,
+                               label='Band Width < 6%')
+                
+                # Highlight the minimum bandwidth points in the 16-period window
+                if not min_bandwidth_periods.empty:
+                    ax2.scatter(min_bandwidth_periods.index, 
+                               min_bandwidth_periods['Band Width'], 
+                               color='orange', s=70, marker='*', zorder=6,
+                               label='16-Period Min Band Width')
+                
+                ax2.set_title('Bollinger Band Width (%)')
+                ax2.set_xlabel('Time')
+                ax2.set_ylabel('Band Width (%)')
+                ax2.grid(True, alpha=0.3)
+                ax2.legend()
+                
+                plt.xticks(rotation=45)
+                plt.tight_layout()
+                
+                # Save the figure
+                plt.savefig(f'{SYMBOL}_bollinger_bands_width_analysis.png')
+                print(f"\nBollinger Bands width analysis chart saved as {SYMBOL}_bollinger_bands_width_analysis.png")
+                
+                # Show the figure
+                plt.show()
+                
+                # If there are narrow bandwidth points, create a zoomed-in view of the narrowest one
+                if len(narrow_bands) > 0:
+                    # Get the narrowest bandwidth point
+                    narrowest_point = narrow_bands.sort_values('Band Width').iloc[0]
+                    narrowest_time = narrowest_point.name
+                    
+                    # Create a window around this point (8 periods before and after)
+                    window_start = max(0, df_filtered.index.get_loc(narrowest_time) - 8)
+                    window_end = min(len(df_filtered), df_filtered.index.get_loc(narrowest_time) + 9)
+                    window_df = df_filtered.iloc[window_start:window_end]
+                    
+                    # Plot the zoomed view
+                    plt.figure(figsize=(10, 6))
+                    plt.plot(window_df.index, window_df['Real Middle Band'], 'b-', label='Middle Band (SMA)')
+                    plt.plot(window_df.index, window_df['Real Upper Band'], 'g-', label='Upper Band')
+                    plt.plot(window_df.index, window_df['Real Lower Band'], 'r-', label='Lower Band')
+                    plt.fill_between(window_df.index, 
+                                    window_df['Real Upper Band'], 
+                                    window_df['Real Lower Band'], 
+                                    alpha=0.2, color='gray')
+                    
+                    # Highlight the narrowest bandwidth point
+                    plt.scatter([narrowest_time], 
+                               [narrowest_point['Real Middle Band']], 
+                               color='purple', s=100, zorder=5,
+                               label=f'Narrowest Band Width: {narrowest_point["Band Width"]:.2f}%')
+                    
+                    plt.title(f'Zoomed View of Narrowest Band Width Point - {narrowest_time.strftime("%Y-%m-%d %H:%M")}')
+                    plt.xlabel('Time')
+                    plt.ylabel('Price')
+                    plt.grid(True, alpha=0.3)
+                    plt.legend()
+                    plt.xticks(rotation=45)
+                    plt.tight_layout()
+                    
+                    # Save the zoomed figure
+                    plt.savefig(f'{SYMBOL}_narrowest_bandwidth_zoomed.png')
+                    print(f"\nZoomed view of narrowest bandwidth point saved as {SYMBOL}_narrowest_bandwidth_zoomed.png")
+                    plt.show()
+        else:
+            print("\nInsufficient data for 16-period rolling window analysis. Need at least 16 data points.")
+            
+        # Continue with the rest of your analysis...
         # Visualize the Bollinger Bands
         if not df_filtered.empty:
             plt.figure(figsize=(12, 6))
