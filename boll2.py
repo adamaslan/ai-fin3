@@ -2,7 +2,7 @@ import requests
 import json
 
 # Replace 'YOUR_API_KEY' with your actual Alpha Vantage API key
-API_KEY = 'YOUR_API_KEY'
+API_KEY = ALPHA_VANTAGE_API_KEY
 SYMBOL = 'AAPL' # Apple Inc.
 
 # API Parameters
