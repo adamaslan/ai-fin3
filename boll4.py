@@ -31,7 +31,7 @@ from datetime import datetime
 import time
 
 # Your Alpha Vantage API Key
-ALPHA_VANTAGE_API_KEY = "YOUR_API_KEY_HERE"  # Replace with your actual API key
+# ALPHA_VANTAGE_API_KEY = "ALPHA_VANTAGE_API_KEY"  # Replace with your actual API key
 
 def fetch_indicator_data(params, indicator_name):
     """Fetch technical indicator data from Alpha Vantage API"""
@@ -327,7 +327,12 @@ def get_current_technical_indicators(symbol):
 
 # Main execution
 if __name__ == "__main__":
-    SYMBOL = 'QUBT'
+    # Allow symbol to be configurable instead of hardcoded
+    SYMBOL = 'NVDA'  # Default symbol
+    
+    # You can change this to accept command line arguments if needed
+    # import sys
+    # SYMBOL = sys.argv[1] if len(sys.argv) > 1 else 'NVDA'
     
     # Fetch all current technical indicators
     current_data = get_current_technical_indicators(SYMBOL)
@@ -336,7 +341,24 @@ if __name__ == "__main__":
     print("Raw data structure:")
     print(json.dumps(current_data, indent=2, default=str))
 
-    # 8 QUBT Vertical Spread Suggestions Based on Technical Indicators
+    # Execute the spread analysis
+    try:
+        # Try to use the variable from your main execution
+        spread_analysis = suggest_vertical_spreads(current_data)
+    except NameError:
+        print(f"🚀 Please run the technical indicators fetcher for {SYMBOL} first!")
+        print("Then this cell will automatically use the 'current_data' variable.")
+        print("")
+        print("Or manually run:")
+        print("spread_analysis = suggest_vertical_spreads(current_data)")
+
+# Update the server section to use the dynamic SYMBOL
+print(f"🔥 Starting {SYMBOL} Trading API Server")
+print("📡 API will be available at: http://localhost:8000")
+print("📖 API docs available at: http://localhost:8000/docs")
+print(f"🔄 WebSocket endpoint: ws://localhost:8000/ws/{SYMBOL}")
+# print(f"✅ Updated trading data for {SYMBOL}")
+# print(f"🎯 VERTICAL SPREAD SUGGESTIONS FOR {current_data['symbol']}")
 import pandas as pd
 from datetime import datetime, timedelta
 import numpy as np

@@ -1,0 +1,37 @@
+,esgScores
+maxAge,86400
+totalEsg,18.88
+environmentScore,2.33
+socialScore,7.98
+governanceScore,8.58
+ratingYear,2025
+ratingMonth,8
+highestControversy,3.0
+peerCount,240
+esgPerformance,LAG_PERF
+peerGroup,Technology Hardware
+relatedControversy,['Customer Incidents;Business Ethics Incidents']
+peerEsgScorePerformance,"{'min': 4.51, 'avg': 17.055041666666668, 'max': 34.19}"
+peerGovernancePerformance,"{'min': 0.76, 'avg': 4.765543478260867, 'max': 10.16}"
+peerSocialPerformance,"{'min': 1.4, 'avg': 5.3193478260869576, 'max': 12.45}"
+peerEnvironmentPerformance,"{'min': 0.17, 'avg': 4.501956521739129, 'max': 11.6}"
+peerHighestControversyPerformance,"{'min': 0.0, 'avg': 0.55, 'max': 3.0}"
+percentile,
+environmentPercentile,
+socialPercentile,
+governancePercentile,
+adult,False
+alcoholic,False
+animalTesting,False
+catholic,
+controversialWeapons,False
+smallArms,False
+furLeather,False
+gambling,False
+gmo,False
+militaryContract,False
+nuclear,False
+pesticides,False
+palmOil,False
+coal,False
+tobacco,False
