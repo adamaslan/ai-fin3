@@ -1,5 +1,8 @@
 # AI-Powered Trading Analyzer Documentation
 
+## link
+
+[link](https://github.com/adamaslan/ai-fin3/blob/main/42_Ways_to_Add_Predictions.md)
 ## Overview
 An intelligent trading analysis system that combines traditional Bollinger Bands with machine learning anomaly detection to identify unusual market patterns that may indicate significant price movements.
 
