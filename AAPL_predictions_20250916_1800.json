@@ -1,0 +1,42 @@
+{
+  "direction": {
+    "model_type": "direction_classifier",
+    "accuracy": 0.5360824742268041,
+    "prediction": 0.28,
+    "signal": "SELL"
+  },
+  "volatility": {
+    "model_type": "volatility_lstm",
+    "prediction": 0.04327317699790001,
+    "signal": "NORMAL_VOL"
+  },
+  "mean_reversion": {
+    "model_type": "mean_reversion_gb",
+    "prediction": 0.15970629892465152,
+    "current_distance_from_sma": 0.025068199252650008,
+    "signal": "NO_REVERSION"
+  },
+  "momentum": {
+    "model_type": "momentum_rf",
+    "prediction": 0.175,
+    "current_trend": "UP",
+    "signal": "MOMENTUM_REVERSAL"
+  },
+  "implied_move": {
+    "model_type": "implied_move_logistic",
+    "prediction": 0.0690317520380219,
+    "vol_percentile": 0.7341269841269841,
+    "signal": "NORMAL_MOVE"
+  },
+  "ensemble": {
+    "ensemble_prediction": 0.14731725429303988,
+    "confidence": 0.08421399816775416,
+    "signal": "STRONG_SELL"
+  },
+  "summary": {
+    "symbol": "AAPL",
+    "current_price": 238.14999389648438,
+    "analysis_date": "2025-09-16T18:00:00.435380",
+    "total_predictions": 5
+  }
+}
