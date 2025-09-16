@@ -5,6 +5,7 @@ GCP FREE TIER OPTIMIZED STOCK PREDICTION PIPELINE
 - 5GB Cloud Storage (free tier)
 - Minimal data transfer usage
 - Runs Mon-Fri at 10 AM via cron
+- Updated for ttb1-machine-sept VM and ttb-bucket1 storage
 """
 
 import yfinance as yf
@@ -28,13 +29,13 @@ warnings.filterwarnings('ignore')
 
 class FreeTierStockPredictor:
     def __init__(self):
-        # Free tier constraints
-        self.bucket_name = os.environ.get('GCS_BUCKET', 'stock-predictions-free')
+        # Free tier constraints - configured for your specific setup
+        self.bucket_name = 'ttb-bucket1'  # Your specific bucket name
         self.max_symbols = 5  # Limit to stay under data transfer limits
         self.cache_days = 7   # Cache data to reduce API calls
         
-        # Local storage for caching (uses persistent disk)
-        self.cache_dir = '/opt/stock_cache'
+        # Local storage for caching (uses home directory instead of /opt)
+        self.cache_dir = os.path.expanduser('~/stock_cache')
         os.makedirs(self.cache_dir, exist_ok=True)
         
         # Initialize GCS client (only when needed)
@@ -50,7 +51,11 @@ class FreeTierStockPredictor:
     def storage_client(self):
         """Lazy initialization of storage client"""
         if self._storage_client is None:
-            self._storage_client = storage.Client()
+            try:
+                self._storage_client = storage.Client()
+            except Exception as e:
+                self.logger.error(f"Failed to initialize GCS client: {e}")
+                self._storage_client = None
         return self._storage_client
     
     def get_cached_data(self, symbol, days=7):
@@ -137,7 +142,8 @@ class FreeTierStockPredictor:
         df['Volume_SMA'] = df['Volume'].rolling(10).mean()
         df['Volume_Ratio'] = df['Volume'] / df['Volume_SMA']
         
-        return df.fillna(method='ffill').fillna(0)
+        # Fixed deprecated fillna usage
+        return df.ffill().fillna(0)
     
     def create_lightweight_prediction(self, df):
         """Create fast, lightweight prediction using minimal features"""
@@ -173,34 +179,39 @@ class FreeTierStockPredictor:
         X_train, X_test = X[:split_idx], X[split_idx:]
         y_train, y_test = y[:split_idx], y[split_idx:]
         
-        # Use lightweight Random Forest (fewer estimators)
-        model = RandomForestClassifier(n_estimators=10, max_depth=5, random_state=42)
-        model.fit(X_train, y_train)
-        
-        # Calculate accuracy if we have test data
-        accuracy = 0.5
-        if len(X_test) > 0:
-            y_pred = model.predict(X_test)
-            accuracy = accuracy_score(y_test, y_pred)
-        
-        # Make prediction on latest data
-        latest_features = X[-1:].reshape(1, -1)
-        prediction_proba = model.predict_proba(latest_features)[0][1]
-        
-        # Generate signal
-        if prediction_proba > 0.65:
-            signal = 'BUY'
-        elif prediction_proba < 0.35:
-            signal = 'SELL'
-        else:
-            signal = 'HOLD'
-        
-        return {
-            'prediction': prediction_proba,
-            'signal': signal,
-            'accuracy': accuracy,
-            'model': 'lightweight_rf'
-        }
+        try:
+            # Use lightweight Random Forest (fewer estimators)
+            model = RandomForestClassifier(n_estimators=10, max_depth=5, random_state=42)
+            model.fit(X_train, y_train)
+            
+            # Calculate accuracy if we have test data
+            accuracy = 0.5
+            if len(X_test) > 0:
+                y_pred = model.predict(X_test)
+                accuracy = accuracy_score(y_test, y_pred)
+            
+            # Make prediction on latest data
+            latest_features = X[-1:].reshape(1, -1)
+            prediction_proba = model.predict_proba(latest_features)[0][1]
+            
+            # Generate signal
+            if prediction_proba > 0.65:
+                signal = 'BUY'
+            elif prediction_proba < 0.35:
+                signal = 'SELL'
+            else:
+                signal = 'HOLD'
+            
+            return {
+                'prediction': prediction_proba,
+                'signal': signal,
+                'accuracy': accuracy,
+                'model': 'lightweight_rf'
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Prediction model error: {e}")
+            return {'prediction': 0.5, 'signal': 'MODEL_ERROR'}
     
     def run_predictions(self):
         """Run predictions for all symbols"""
@@ -252,6 +263,10 @@ class FreeTierStockPredictor:
     def save_to_gcs_compressed(self, data, blob_name):
         """Save compressed data to GCS to minimize storage usage"""
         try:
+            if self.storage_client is None:
+                self.logger.error("GCS client not available")
+                return False
+                
             # Compress data before upload
             json_str = json.dumps(data, default=str)
             compressed_data = gzip.compress(json_str.encode('utf-8'))
@@ -270,7 +285,7 @@ class FreeTierStockPredictor:
     def save_local_backup(self, data, filename):
         """Save backup locally using persistent disk"""
         try:
-            backup_dir = '/opt/stock_predictions'
+            backup_dir = os.path.expanduser('~/stock_predictions')
             os.makedirs(backup_dir, exist_ok=True)
             
             filepath = f"{backup_dir}/{filename}"
@@ -302,7 +317,7 @@ class FreeTierStockPredictor:
     
     def run_daily_predictions(self):
         """Main function to run daily predictions"""
-        self.logger.info("Starting daily stock predictions")
+        self.logger.info("Starting daily stock predictions on ttb1-machine-sept")
         
         # Run predictions
         results = self.run_predictions()
@@ -330,6 +345,7 @@ class FreeTierStockPredictor:
         """Display formatted results"""
         print(f"\n{'='*60}")
         print(f"STOCK PREDICTIONS - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+        print(f"VM: ttb1-machine-sept | Bucket: ttb-bucket1")
         print(f"{'='*60}")
         
         for symbol, data in results['predictions'].items():
@@ -346,80 +362,16 @@ class FreeTierStockPredictor:
         
         summary = results['summary']
         print(f"\nSummary: {summary['successful_predictions']}/{summary['total_symbols']} predictions completed")
-
-
-# Setup script for GCP VM
-def setup_gcp_environment():
-    """Setup script to run on GCP VM"""
-    setup_commands = '''
-# GCP VM Setup Script
-sudo apt-get update
-sudo apt-get install -y python3-pip python3-venv
-
-# Create project directory
-mkdir -p /opt/stock-predictor
-cd /opt/stock-predictor
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install requirements
-pip install yfinance pandas numpy torch scikit-learn google-cloud-storage
-
-# Setup service account (download key from GCP Console)
-export GOOGLE_APPLICATION_CREDENTIALS="/opt/stock-predictor/service-account-key.json"
-
-# Create cron job for weekdays at 10 AM EST
-# Add to crontab: crontab -e
-# 0 15 * * 1-5 /opt/stock-predictor/venv/bin/python /opt/stock-predictor/main.py >> /var/log/stock-predictions.log 2>&1
-'''
-    return setup_commands
-
-
-# Deployment and configuration
-class GCPDeployment:
-    def __init__(self):
-        self.project_id = os.environ.get('GOOGLE_CLOUD_PROJECT')
-        self.bucket_name = 'stock-predictions-free'
-        self.vm_zone = 'us-central1-a'  # Free tier region
-    
-    def create_storage_bucket(self):
-        """Create GCS bucket in free tier region"""
-        create_bucket_command = f'''
-gcloud storage buckets create gs://{self.bucket_name} \
-    --location=us-central1 \
-    --uniform-bucket-level-access
-'''
-        return create_bucket_command
-    
-    def create_vm_instance(self):
-        """Create e2-micro VM instance"""
-        create_vm_command = f'''
-gcloud compute instances create stock-predictor-vm \
-    --zone={self.vm_zone} \
-    --machine-type=e2-micro \
-    --boot-disk-size=30GB \
-    --boot-disk-type=pd-standard \
-    --image-family=ubuntu-2204-lts \
-    --image-project=ubuntu-os-cloud \
-    --scopes=storage-rw \
-    --tags=stock-predictor
-'''
-        return create_vm_command
-    
-    def get_startup_script(self):
-        """Get startup script for VM"""
-        return '''#!/bin/bash
-# Startup script for stock predictor VM
-cd /opt/stock-predictor
-source venv/bin/activate
-export GOOGLE_APPLICATION_CREDENTIALS="/opt/stock-predictor/service-account-key.json"
-python main.py
-'''
+        
+        if summary['successful_predictions'] == 0:
+            print("WARNING: No successful predictions. Check internet connection and API access.")
 
 
 if __name__ == "__main__":
+    print("Stock Predictor starting on ttb1-machine-sept VM...")
+    print("Using bucket: ttb-bucket1")
+    print("="*60)
+    
     # Initialize and run predictor
     predictor = FreeTierStockPredictor()
     results = predictor.run_daily_predictions()
@@ -429,3 +381,12 @@ if __name__ == "__main__":
     print("- Storage: ~1MB compressed per day (~30MB/month, under 5GB)")
     print("- Compute: e2-micro instance (1 free per month)")
     print("- Cost: $0 if staying within free tier limits")
+    
+    # Exit with appropriate code
+    import sys
+    if results['summary']['successful_predictions'] > 0:
+        print("SUCCESS: Predictions completed successfully")
+        sys.exit(0)
+    else:
+        print("ERROR: No successful predictions completed")
+        sys.exit(1)
