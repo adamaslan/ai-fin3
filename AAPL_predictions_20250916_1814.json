@@ -1,0 +1,188 @@
+{
+  "direction": {
+    "model_type": "direction_classifier",
+    "accuracy": 0.5104166666666666,
+    "prediction": 0.36,
+    "signal": "SELL"
+  },
+  "volatility": {
+    "model_type": "volatility_lstm",
+    "prediction": 0.045682042837142944,
+    "signal": "NORMAL_VOL"
+  },
+  "mean_reversion": {
+    "model_type": "mean_reversion_gb",
+    "prediction": 0.1016354325767534,
+    "current_distance_from_sma": 0.026351546789129526,
+    "signal": "NO_REVERSION"
+  },
+  "momentum": {
+    "model_type": "momentum_rf",
+    "prediction": 0.1,
+    "current_trend": "UP",
+    "signal": "MOMENTUM_REVERSAL"
+  },
+  "implied_move": {
+    "model_type": "implied_move_logistic",
+    "prediction": 0.20296423148196427,
+    "vol_percentile": 0.7738095238095238,
+    "signal": "NORMAL_MOVE"
+  },
+  "price_targets": {
+    "2_weeks": {
+      "target_date": "2025-09-26",
+      "trading_days": 10,
+      "predictions": {
+        "-5": {
+          "probability": 54.65505602422844,
+          "target_price": 226.24249420166015,
+          "historical_success_rate": 88.21052631578948,
+          "confidence": 0.7049101599401602
+        },
+        "-4": {
+          "probability": 52.41648716191412,
+          "target_price": 228.623994140625,
+          "historical_success_rate": 90.94736842105263,
+          "confidence": 0.7050708697534802
+        },
+        "-3": {
+          "probability": 44.08740279599623,
+          "target_price": 231.00549407958982,
+          "historical_success_rate": 93.26315789473684,
+          "confidence": 0.6764081466441889
+        },
+        "-2": {
+          "probability": 44.87685298985437,
+          "target_price": 233.38699401855467,
+          "historical_success_rate": 94.10526315789474,
+          "confidence": 0.6857868410047958
+        },
+        "-1": {
+          "probability": 45.7490191020227,
+          "target_price": 235.76849395751952,
+          "historical_success_rate": 94.3157894736842,
+          "confidence": 0.6678081290503162
+        },
+        "0": {
+          "probability": 0.16420667902921293,
+          "target_price": 238.14999389648438,
+          "historical_success_rate": 1.8947368421052633,
+          "confidence": 0.9986842561035048
+        },
+        "1": {
+          "probability": 2.971507971510234,
+          "target_price": 240.53149383544923,
+          "historical_success_rate": 15.789473684210526,
+          "confidence": 0.9758785907714905
+        },
+        "2": {
+          "probability": 2.621664666589665,
+          "target_price": 242.91299377441408,
+          "historical_success_rate": 13.052631578947368,
+          "confidence": 0.978563390147326
+        },
+        "3": {
+          "probability": 0.9020772356757363,
+          "target_price": 245.29449371337893,
+          "historical_success_rate": 10.947368421052632,
+          "confidence": 0.9935979040823492
+        },
+        "4": {
+          "probability": 0.400202332456884,
+          "target_price": 247.67599365234375,
+          "historical_success_rate": 7.578947368421053,
+          "confidence": 0.9968891419500607
+        },
+        "5": {
+          "probability": 0.8780317732664062,
+          "target_price": 250.0574935913086,
+          "historical_success_rate": 4.2105263157894735,
+          "confidence": 0.9910297161825198
+        }
+      }
+    },
+    "4_weeks": {
+      "target_date": "2025-10-10",
+      "trading_days": 20,
+      "predictions": {
+        "-5": {
+          "probability": 40.76720614083104,
+          "target_price": 226.24249420166015,
+          "historical_success_rate": 91.18279569892474,
+          "confidence": 0.6957897398663142
+        },
+        "-4": {
+          "probability": 45.506733965516766,
+          "target_price": 228.623994140625,
+          "historical_success_rate": 92.47311827956989,
+          "confidence": 0.6347811707673823
+        },
+        "-3": {
+          "probability": 43.48540536631016,
+          "target_price": 231.00549407958982,
+          "historical_success_rate": 93.33333333333333,
+          "confidence": 0.6587006805047657
+        },
+        "-2": {
+          "probability": 43.466515169088126,
+          "target_price": 233.38699401855467,
+          "historical_success_rate": 94.19354838709677,
+          "confidence": 0.6434076935548552
+        },
+        "-1": {
+          "probability": 43.466515169088126,
+          "target_price": 235.76849395751952,
+          "historical_success_rate": 94.19354838709677,
+          "confidence": 0.6434076935548552
+        },
+        "0": {
+          "probability": 5.412067303074692,
+          "target_price": 238.14999389648438,
+          "historical_success_rate": 1.935483870967742,
+          "confidence": 0.9261994185266209
+        },
+        "1": {
+          "probability": 9.33933645204626,
+          "target_price": 240.53149383544923,
+          "historical_success_rate": 19.35483870967742,
+          "confidence": 0.9477275309720399
+        },
+        "2": {
+          "probability": 7.790234721916002,
+          "target_price": 242.91299377441408,
+          "historical_success_rate": 16.7741935483871,
+          "confidence": 0.9765972470096381
+        },
+        "3": {
+          "probability": 8.173324737507102,
+          "target_price": 245.29449371337893,
+          "historical_success_rate": 15.268817204301074,
+          "confidence": 0.9889863971921236
+        },
+        "4": {
+          "probability": 7.977873135825337,
+          "target_price": 247.67599365234375,
+          "historical_success_rate": 12.043010752688172,
+          "confidence": 0.9578613982294581
+        },
+        "5": {
+          "probability": 2.4338778827091847,
+          "target_price": 250.0574935913086,
+          "historical_success_rate": 6.451612903225806,
+          "confidence": 0.9873024479998811
+        }
+      }
+    }
+  },
+  "ensemble": {
+    "ensemble_prediction": 0.1628776843610013,
+    "confidence": 0.1112652691075601,
+    "signal": "STRONG_SELL"
+  },
+  "summary": {
+    "symbol": "AAPL",
+    "current_price": 238.14999389648438,
+    "analysis_date": "2025-09-16T18:14:44.778869",
+    "total_predictions": 5
+  }
+}
