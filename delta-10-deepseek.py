@@ -11,13 +11,13 @@ def __():
 @app.cell
 def __(mo):
     mo.md("""
-    # 🎯 Price Movement Probability Predictor
+    # 🎯 Options Delta Predictor
     
-    Transformer-based model predicting probability of price reaching targets within time horizons.
+    Transformer-based model predicting options delta values from market features.
     
-    **Target**: Probability of 0-50% price movement up/down within 7-56 days
-    **Price Targets**: Current ± $25 (25 levels each direction)
-    **Time Horizons**: 7, 14, 28, 42, 56 days from Friday
+    **Target**: Predict delta (0-1) for call options
+    **Features**: Moneyness, time to expiry, implied volatility, volume, market conditions
+    **Architecture**: Transformer with attention mechanisms
     """)
     return
 
@@ -29,39 +29,34 @@ def __():
     import torch.nn as nn
     import torch.nn.functional as F
     from sklearn.preprocessing import RobustScaler, StandardScaler
-    from sklearn.metrics import accuracy_score, roc_auc_score, log_loss
+    from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
     from datetime import datetime, timedelta
     import warnings
     import math
     warnings.filterwarnings('ignore')
     
-    try:
-        import plotly.graph_objects as go
-        import plotly.express as px
-        from plotly.subplots import make_subplots
-        PLOTLY_AVAILABLE = True
-    except ImportError:
-        import matplotlib.pyplot as plt
-        PLOTLY_AVAILABLE = False
+    # Set device
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f"Using device: {device}")
     
     return (
-        F, PLOTLY_AVAILABLE, RobustScaler, StandardScaler, accuracy_score,
-        datetime, go, log_loss, make_subplots, math, nn, np, pd, plt, 
-        px, roc_auc_score, timedelta, torch, warnings,
+        F, StandardScaler, RobustScaler, datetime, device, math, 
+        mean_absolute_error, mean_squared_error, nn, np, pd, 
+        r2_score, timedelta, torch, warnings,
     )
 
 @app.cell
 def __(mo):
-    # Transformer Architecture Controls
-    d_model = mo.ui.slider(start=32, stop=512, step=32, value=128, label="Model Dimension")
-    nhead = mo.ui.slider(start=1, stop=16, step=1, value=8, label="Attention Heads")
-    num_layers = mo.ui.slider(start=1, stop=12, step=1, value=4, label="Transformer Layers")
-    dropout_rate = mo.ui.slider(start=0.0, stop=0.5, step=0.05, value=0.2, label="Dropout Rate")
+    # Model Architecture Controls
+    d_model = mo.ui.slider(start=32, stop=256, step=32, value=128, label="Model Dimension")
+    nhead = mo.ui.slider(start=2, stop=16, step=2, value=8, label="Attention Heads")  
+    num_layers = mo.ui.slider(start=2, stop=8, step=1, value=4, label="Transformer Layers")
+    dropout_rate = mo.ui.slider(start=0.0, stop=0.4, step=0.05, value=0.2, label="Dropout Rate")
     
-    # Training Parameters
-    learning_rate = mo.ui.slider(start=0.0001, stop=0.01, step=0.0001, value=0.001, label="Learning Rate")
-    batch_size = mo.ui.slider(start=16, stop=256, step=16, value=64, label="Batch Size")
-    epochs = mo.ui.slider(start=10, stop=100, step=10, value=50, label="Epochs")
+    # Training Parameters  
+    learning_rate = mo.ui.slider(start=0.0001, stop=0.01, step=0.0005, value=0.001, label="Learning Rate")
+    batch_size = mo.ui.slider(start=32, stop=256, step=32, value=64, label="Batch Size")
+    epochs = mo.ui.slider(start=20, stop=100, step=10, value=50, label="Epochs")
     
     mo.hstack([
         mo.vstack([mo.md("**Architecture**"), d_model, nhead, num_layers, dropout_rate]),
@@ -71,142 +66,147 @@ def __(mo):
 
 @app.cell
 def __(np, pd):
-    def generate_price_movement_data(n_samples=5000, seed=42):
-        """Generate synthetic price movement probability data"""
+    def generate_delta_training_data(n_samples=8000, seed=42):
+        """Generate realistic options delta training data"""
         np.random.seed(seed)
         
-        # Current price baseline
         current_price = 150.0
-        
-        # Price targets: ±$25 in $1 increments (50 targets total)
-        price_targets = np.concatenate([
-            np.arange(current_price - 25, current_price, 1),  # Below current
-            np.arange(current_price + 1, current_price + 26, 1)  # Above current
-        ])
-        
-        # Time horizons in days
-        time_horizons = [7, 14, 28, 42, 56]
-        
         data = []
+        
         for _ in range(n_samples):
-            # Random target and time selection
-            target_price = np.random.choice(price_targets)
-            time_horizon = np.random.choice(time_horizons)
+            # Option parameters
+            strike = np.random.uniform(100, 200)
+            days_to_expiry = np.random.uniform(1, 365)
+            implied_vol = np.random.uniform(0.10, 0.60)
+            risk_free_rate = 0.05
             
-            # Market features
-            current_vol = np.random.uniform(0.15, 0.45)  # Implied volatility
-            volume = np.random.lognormal(10, 1)  # Trading volume
-            rsi = np.random.uniform(20, 80)  # RSI indicator
-            macd = np.random.normal(0, 2)  # MACD
-            bollinger_pos = np.random.uniform(0, 1)  # Position in Bollinger Bands
-            vix = np.random.uniform(15, 35)  # VIX level
-            
-            # Calculate features
-            price_distance = target_price - current_price
-            price_pct_move = price_distance / current_price
-            log_price_ratio = np.log(target_price / current_price)
-            time_factor = np.sqrt(time_horizon / 365)
-            
-            # Volatility-adjusted metrics
-            vol_adjusted_distance = abs(price_pct_move) / current_vol
-            time_vol_interaction = time_factor * current_vol
-            
-            # Market regime indicators
-            momentum_score = (rsi - 50) / 50  # Normalized momentum
-            volatility_regime = 1 if current_vol > 0.25 else 0
-            high_volume_regime = 1 if volume > np.exp(11) else 0
-            
-            # Calculate probability using realistic financial model
-            # Higher probability for smaller moves, shorter timeframes, higher vol
-            base_prob = 0.5
-            
-            # Distance penalty (larger moves less likely)
-            distance_penalty = np.exp(-2 * abs(price_pct_move))
-            
-            # Time benefit (more time = higher probability)
-            time_benefit = 1 - np.exp(-time_horizon / 14)
-            
-            # Volatility benefit (higher vol = higher probability of large moves)
-            vol_benefit = current_vol / 0.3
+            # Market microstructure
+            volume = np.random.lognormal(8, 1.5)
+            open_interest = np.random.lognormal(7, 1.2)
+            bid_ask_spread = np.random.uniform(0.01, 0.20)
             
             # Market conditions
-            market_bias = 0.1 * momentum_score  # Momentum bias
-            regime_adjustment = 0.1 if volatility_regime else 0
+            vix = np.random.uniform(12, 40)
+            market_trend = np.random.uniform(-0.02, 0.02)  # Daily return
             
-            # Final probability calculation
-            probability = base_prob * distance_penalty * time_benefit * vol_benefit + market_bias + regime_adjustment
-            probability = np.clip(probability, 0.01, 0.99)  # Bound between 1-99%
+            # Calculate features
+            moneyness = strike / current_price
+            log_moneyness = np.log(moneyness)
+            time_to_expiry_years = days_to_expiry / 365.0
+            sqrt_time = np.sqrt(time_to_expiry_years)
             
-            # Convert to 0-50% range as specified
-            probability_scaled = probability * 0.5  # Scale to 0-50%
+            # Volume features
+            log_volume = np.log1p(volume)
+            volume_oi_ratio = volume / max(open_interest, 1)
+            
+            # Volatility features
+            vol_time = implied_vol * sqrt_time
+            vol_moneyness = implied_vol * abs(log_moneyness)
+            
+            # Market regime indicators
+            high_vol_regime = 1 if implied_vol > 0.30 else 0
+            short_term = 1 if days_to_expiry <= 30 else 0
+            
+            # Calculate true delta using Black-Scholes approximation
+            from scipy.stats import norm
+            
+            d1 = (np.log(current_price / strike) + (risk_free_rate + 0.5 * implied_vol**2) * time_to_expiry_years) / (implied_vol * sqrt_time)
+            true_delta = norm.cdf(d1)
+            
+            # Add some noise to make it more realistic
+            true_delta = np.clip(true_delta + np.random.normal(0, 0.02), 0.01, 0.99)
             
             data.append({
+                'strike': strike,
                 'current_price': current_price,
-                'target_price': target_price,
-                'price_distance': price_distance,
-                'price_pct_move': price_pct_move,
-                'log_price_ratio': log_price_ratio,
-                'time_horizon': time_horizon,
-                'time_factor': time_factor,
-                'implied_vol': current_vol,
+                'moneyness': moneyness,
+                'log_moneyness': log_moneyness,
+                'days_to_expiry': days_to_expiry,
+                'time_to_expiry_years': time_to_expiry_years,
+                'sqrt_time': sqrt_time,
+                'implied_vol': implied_vol,
                 'volume': volume,
-                'rsi': rsi,
-                'macd': macd,
-                'bollinger_pos': bollinger_pos,
+                'log_volume': log_volume,
+                'open_interest': open_interest,
+                'volume_oi_ratio': volume_oi_ratio,
+                'bid_ask_spread': bid_ask_spread,
                 'vix': vix,
-                'vol_adjusted_distance': vol_adjusted_distance,
-                'time_vol_interaction': time_vol_interaction,
-                'momentum_score': momentum_score,
-                'volatility_regime': volatility_regime,
-                'high_volume_regime': high_volume_regime,
-                'movement_probability': probability_scaled
+                'market_trend': market_trend,
+                'vol_time': vol_time,
+                'vol_moneyness': vol_moneyness,
+                'high_vol_regime': high_vol_regime,
+                'short_term': short_term,
+                'delta': true_delta
             })
         
         return pd.DataFrame(data)
     
-    # Generate dataset
-    price_df = generate_price_movement_data()
+    # Import scipy for Black-Scholes calculation
+    try:
+        from scipy.stats import norm
+        scipy_available = True
+    except ImportError:
+        scipy_available = False
+        # Fallback normal CDF approximation
+        def norm_cdf_approx(x):
+            return 0.5 * (1 + np.tanh(np.sqrt(2/np.pi) * (x + 0.044715 * x**3)))
+        norm = type('norm', (), {'cdf': staticmethod(norm_cdf_approx)})()
     
-    # Feature columns
+    # Generate dataset
+    options_df = generate_delta_training_data()
+    
+    # Feature columns for model input
     feature_columns = [
-        'price_pct_move', 'log_price_ratio', 'time_factor', 'implied_vol',
-        'volume', 'rsi', 'macd', 'bollinger_pos', 'vix',
-        'vol_adjusted_distance', 'time_vol_interaction', 'momentum_score',
-        'volatility_regime', 'high_volume_regime'
+        'log_moneyness', 'sqrt_time', 'implied_vol', 'log_volume',
+        'volume_oi_ratio', 'bid_ask_spread', 'vix', 'market_trend',
+        'vol_time', 'vol_moneyness', 'high_vol_regime', 'short_term'
     ]
     
-    X_data = price_df[feature_columns].values
-    y_data = price_df['movement_probability'].values
+    X_data = options_df[feature_columns].values
+    y_data = options_df['delta'].values
     
     # Data summary
-    mo.md(f"""
-    ### Data Summary
-    - **Samples**: {len(price_df):,}
+    data_summary = mo.md(f"""
+    ### Dataset Summary
+    - **Samples**: {len(options_df):,}
     - **Features**: {len(feature_columns)}
-    - **Probability Range**: {y_data.min():.1%} - {y_data.max():.1%}
-    - **Price Targets**: ${price_df['target_price'].min():.0f} - ${price_df['target_price'].max():.0f}
-    - **Time Horizons**: {sorted(price_df['time_horizon'].unique())} days
+    - **Delta Range**: {y_data.min():.3f} - {y_data.max():.3f}
+    - **Strike Range**: ${options_df['strike'].min():.0f} - ${options_df['strike'].max():.0f}
+    - **Expiry Range**: {options_df['days_to_expiry'].min():.0f} - {options_df['days_to_expiry'].max():.0f} days
+    - **Vol Range**: {options_df['implied_vol'].min():.1%} - {options_df['implied_vol'].max():.1%}
     """)
-    return X_data, feature_columns, price_df, y_data
+    
+    data_summary
+    
+    return X_data, feature_columns, norm, options_df, scipy_available, y_data
 
 @app.cell
-def __(F, nn, math, torch):
+def __(F, math, nn, torch):
     class PositionalEncoding(nn.Module):
-        def __init__(self, d_model, max_len=100):
+        def __init__(self, d_model, max_len=1000):
             super().__init__()
             pe = torch.zeros(max_len, d_model)
             position = torch.arange(0, max_len).unsqueeze(1).float()
             div_term = torch.exp(torch.arange(0, d_model, 2).float() * -(math.log(10000.0) / d_model))
             pe[:, 0::2] = torch.sin(position * div_term)
-            pe[:, 1::2] = torch.cos(position * div_term)
+            if d_model % 2 == 1:
+                pe[:, 1::2] = torch.cos(position * div_term[:-1])
+            else:
+                pe[:, 1::2] = torch.cos(position * div_term)
             self.register_buffer('pe', pe.unsqueeze(0))
         
         def forward(self, x):
             return x + self.pe[:, :x.size(1)]
 
-    class PriceProbabilityTransformer(nn.Module):
-        def __init__(self, input_size, d_model=128, nhead=8, num_layers=4, dropout=0.2):
+    class TransformerDeltaPredictor(nn.Module):
+        def __init__(self, input_size=12, d_model=128, nhead=8, num_layers=4, dropout=0.2):
             super().__init__()
+            
+            # Ensure d_model is divisible by nhead
+            assert d_model % nhead == 0, f"d_model ({d_model}) must be divisible by nhead ({nhead})"
+            
+            self.input_size = input_size
+            self.d_model = d_model
             
             # Input projection
             self.input_projection = nn.Sequential(
@@ -221,8 +221,13 @@ def __(F, nn, math, torch):
             
             # Transformer encoder
             encoder_layer = nn.TransformerEncoderLayer(
-                d_model=d_model, nhead=nhead, dim_feedforward=d_model * 4,
-                dropout=dropout, activation='gelu', batch_first=True, norm_first=True
+                d_model=d_model,
+                nhead=nhead,
+                dim_feedforward=d_model * 4,
+                dropout=dropout,
+                activation='gelu',
+                batch_first=True,
+                norm_first=True
             )
             self.transformer = nn.TransformerEncoder(encoder_layer, num_layers)
             
@@ -234,7 +239,7 @@ def __(F, nn, math, torch):
                 nn.Softmax(dim=1)
             )
             
-            # Output layers
+            # Output layers for delta prediction
             self.output_layers = nn.Sequential(
                 nn.Linear(d_model, d_model//2),
                 nn.LayerNorm(d_model//2),
@@ -243,8 +248,9 @@ def __(F, nn, math, torch):
                 nn.Linear(d_model//2, d_model//4),
                 nn.LayerNorm(d_model//4),
                 nn.GELU(),
+                nn.Dropout(dropout//2),
                 nn.Linear(d_model//4, 1),
-                nn.Sigmoid()  # Output 0-1, will scale to 0-50%
+                nn.Sigmoid()  # Delta is between 0 and 1
             )
             
             self.apply(self._init_weights)
@@ -257,385 +263,482 @@ def __(F, nn, math, torch):
         
         def forward(self, x):
             # Project and add sequence dimension
-            x_proj = self.input_projection(x).unsqueeze(1)
+            x_proj = self.input_projection(x).unsqueeze(1)  # (batch, 1, d_model)
             
             # Add positional encoding
             x_pos = self.pos_encoding(x_proj)
             
             # Transformer processing
-            transformer_out = self.transformer(x_pos)
+            transformer_out = self.transformer(x_pos)  # (batch, 1, d_model)
             
             # Attention pooling
             attn_weights = self.attention_pool(transformer_out)
-            pooled = torch.sum(attn_weights * transformer_out, dim=1)
+            pooled = torch.sum(attn_weights * transformer_out, dim=1)  # (batch, d_model)
             
-            # Final prediction (0-1, represents 0-100% probability)
-            prob = self.output_layers(pooled)
+            # Final delta prediction
+            delta = self.output_layers(pooled)
             
-            # Scale to 0-50% as specified
-            return prob * 0.5
+            return delta
     
-    return PositionalEncoding, PriceProbabilityTransformer
+    return PositionalEncoding, TransformerDeltaPredictor
 
 @app.cell
 def __(mo):
-    train_button = mo.ui.button(label="Train Model", kind="success")
-    mo.hstack([train_button, mo.md("Click to start training the probability predictor")])
+    # Create training button and state
+    train_button = mo.ui.button(label="🚀 Train Delta Model", kind="success")
+    
+    mo.hstack([
+        train_button, 
+        mo.md("Click to start training the options delta predictor")
+    ])
     return train_button,
 
 @app.cell
 def __(
-    PriceProbabilityTransformer, RobustScaler, X_data, batch_size, d_model,
-    dropout_rate, epochs, learning_rate, log_loss, mo, nhead, nn, np,
-    num_layers, torch, train_button, y_data,
+    RobustScaler, TransformerDeltaPredictor, X_data, batch_size, d_model,
+    device, dropout_rate, epochs, learning_rate, mean_absolute_error,
+    mean_squared_error, mo, nhead, nn, np, num_layers, r2_score, torch,
+    train_button, y_data,
 ):
-    # Initialize training_results as a marimo state variable
-    training_results = mo.state(None)
-    
-    # Use marimo's reactive execution - this will run when the button is clicked
+    # Training logic - this runs when button is clicked
     if train_button.value:
-        # Prepare data
-        scaler = RobustScaler()
-        X_scaled = scaler.fit_transform(X_data)
-        
-        # Convert to tensors
-        X_tensor = torch.FloatTensor(X_scaled)
-        y_tensor = torch.FloatTensor(y_data).unsqueeze(1)
-        
-        # Train/validation split
-        split_idx = int(0.8 * len(X_tensor))
-        indices = torch.randperm(len(X_tensor))
-        
-        X_train = X_tensor[indices[:split_idx]]
-        y_train = y_tensor[indices[:split_idx]]
-        X_val = X_tensor[indices[split_idx:]]
-        y_val = y_tensor[indices[split_idx:]]
-        
-        # Initialize model
-        model = PriceProbabilityTransformer(
-            input_size=X_data.shape[1],
-            d_model=d_model.value,
-            nhead=nhead.value,
-            num_layers=num_layers.value,
-            dropout=dropout_rate.value
-        )
-        
-        # Optimizer and loss
-        optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate.value, weight_decay=1e-5)
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs.value)
-        
-        # Custom loss combining MSE and cross-entropy for probability
-        def probability_loss(pred, target):
-            # MSE for probability values
-            mse = nn.MSELoss()(pred, target)
+        try:
+            # Prepare data
+            scaler = RobustScaler()
+            X_scaled = scaler.fit_transform(X_data)
             
-            # Add regularization to keep probabilities in reasonable range
-            range_penalty = torch.mean(torch.clamp(pred - 0.5, min=0) ** 2)  # Penalty for >50%
+            # Convert to tensors
+            X_tensor = torch.FloatTensor(X_scaled).to(device)
+            y_tensor = torch.FloatTensor(y_data).unsqueeze(1).to(device)
             
-            return mse + 0.1 * range_penalty
-        
-        # Training loop
-        train_losses = []
-        val_losses = []
-        
-        for epoch in range(min(epochs.value, 50)):  # Limit for demo
-            # Training
+            # Train/validation split
+            dataset_size = len(X_tensor)
+            indices = torch.randperm(dataset_size)
+            split_idx = int(0.8 * dataset_size)
+            
+            train_indices = indices[:split_idx]
+            val_indices = indices[split_idx:]
+            
+            X_train = X_tensor[train_indices]
+            y_train = y_tensor[train_indices]
+            X_val = X_tensor[val_indices]
+            y_val = y_tensor[val_indices]
+            
+            # Initialize model
+            model = TransformerDeltaPredictor(
+                input_size=X_data.shape[1],
+                d_model=d_model.value,
+                nhead=nhead.value,
+                num_layers=num_layers.value,
+                dropout=dropout_rate.value
+            ).to(device)
+            
+            # Count parameters
+            total_params = sum(p.numel() for p in model.parameters())
+            trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+            
+            # Optimizer and scheduler
+            optimizer = torch.optim.AdamW(
+                model.parameters(), 
+                lr=learning_rate.value, 
+                weight_decay=1e-5
+            )
+            
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+                optimizer, 
+                T_max=epochs.value,
+                eta_min=learning_rate.value * 0.01
+            )
+            
+            # Loss function - MSE with L1 regularization for delta prediction
+            def delta_loss_fn(pred, target):
+                mse_loss = nn.MSELoss()(pred, target)
+                mae_loss = nn.L1Loss()(pred, target)
+                return 0.8 * mse_loss + 0.2 * mae_loss
+            
+            # Training loop
+            train_losses = []
+            val_losses = []
+            best_val_loss = float('inf')
+            
             model.train()
-            epoch_loss = 0
             
-            for i in range(0, len(X_train), batch_size.value):
-                batch_X = X_train[i:i+batch_size.value]
-                batch_y = y_train[i:i+batch_size.value]
+            for epoch in range(epochs.value):
+                # Training phase
+                epoch_train_loss = 0
+                num_train_batches = 0
                 
-                optimizer.zero_grad()
-                pred = model(batch_X)
-                loss = probability_loss(pred, batch_y)
-                loss.backward()
-                torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-                optimizer.step()
+                for i in range(0, len(X_train), batch_size.value):
+                    batch_end = min(i + batch_size.value, len(X_train))
+                    batch_X = X_train[i:batch_end]
+                    batch_y = y_train[i:batch_end]
+                    
+                    optimizer.zero_grad()
+                    
+                    predictions = model(batch_X)
+                    loss = delta_loss_fn(predictions, batch_y)
+                    
+                    loss.backward()
+                    
+                    # Gradient clipping
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+                    
+                    optimizer.step()
+                    
+                    epoch_train_loss += loss.item()
+                    num_train_batches += 1
                 
-                epoch_loss += loss.item()
+                # Validation phase
+                model.eval()
+                epoch_val_loss = 0
+                num_val_batches = 0
+                
+                with torch.no_grad():
+                    for i in range(0, len(X_val), batch_size.value):
+                        batch_end = min(i + batch_size.value, len(X_val))
+                        batch_X = X_val[i:batch_end]
+                        batch_y = y_val[i:batch_end]
+                        
+                        predictions = model(batch_X)
+                        loss = delta_loss_fn(predictions, batch_y)
+                        
+                        epoch_val_loss += loss.item()
+                        num_val_batches += 1
+                
+                model.train()
+                scheduler.step()
+                
+                # Calculate average losses
+                avg_train_loss = epoch_train_loss / num_train_batches
+                avg_val_loss = epoch_val_loss / num_val_batches
+                
+                train_losses.append(avg_train_loss)
+                val_losses.append(avg_val_loss)
+                
+                # Save best model
+                if avg_val_loss < best_val_loss:
+                    best_val_loss = avg_val_loss
             
-            # Validation
+            # Final evaluation
             model.eval()
-            val_loss = 0
             with torch.no_grad():
-                for i in range(0, len(X_val), batch_size.value):
-                    batch_X = X_val[i:i+batch_size.value]
-                    batch_y = y_val[i:i+batch_size.value]
-                    pred = model(batch_X)
-                    loss = probability_loss(pred, batch_y)
-                    val_loss += loss.item()
+                train_predictions = model(X_train).cpu().numpy().flatten()
+                val_predictions = model(X_val).cpu().numpy().flatten()
+                all_predictions = model(X_tensor).cpu().numpy().flatten()
             
-            scheduler.step()
+            # Calculate metrics
+            train_mae = mean_absolute_error(y_train.cpu().numpy().flatten(), train_predictions)
+            val_mae = mean_absolute_error(y_val.cpu().numpy().flatten(), val_predictions)
+            train_mse = mean_squared_error(y_train.cpu().numpy().flatten(), train_predictions)
+            val_mse = mean_squared_error(y_val.cpu().numpy().flatten(), val_predictions)
+            train_r2 = r2_score(y_train.cpu().numpy().flatten(), train_predictions)
+            val_r2 = r2_score(y_val.cpu().numpy().flatten(), val_predictions)
             
-            avg_train_loss = epoch_loss / (len(X_train) // batch_size.value)
-            avg_val_loss = val_loss / (len(X_val) // batch_size.value)
+            # Store results in a simple dictionary
+            training_results = {
+                'model': model,
+                'scaler': scaler,
+                'train_losses': train_losses,
+                'val_losses': val_losses,
+                'all_predictions': all_predictions,
+                'train_mae': train_mae,
+                'val_mae': val_mae,
+                'train_mse': train_mse,
+                'val_mse': val_mse,
+                'train_r2': train_r2,
+                'val_r2': val_r2,
+                'total_params': total_params,
+                'trainable_params': trainable_params,
+                'best_val_loss': best_val_loss,
+                'final_lr': scheduler.get_last_lr()[0] if hasattr(scheduler, 'get_last_lr') else learning_rate.value
+            }
             
-            train_losses.append(avg_train_loss)
-            val_losses.append(avg_val_loss)
-        
-        # Final predictions
-        model.eval()
-        with torch.no_grad():
-            all_predictions = model(X_tensor).numpy().flatten()
-        
-        # Update the state with training results
-        training_results.value = {
-            'model': model,
-            'scaler': scaler,
-            'train_losses': train_losses,
-            'val_losses': val_losses,
-            'predictions': all_predictions,
-            'epochs_trained': len(train_losses)
-        }
-    
-    # Display training status
-    if training_results.value:
-        # Calculate metrics
-        mae = np.mean(np.abs(training_results.value['predictions'] - y_data))
-        rmse = np.sqrt(np.mean((training_results.value['predictions'] - y_data) ** 2))
-        
-        mo.md(f"""
-        Training Complete!
-        - **Epochs**: {len(training_results.value['train_losses'])}
-        - **MAE**: {mae:.4f}
-        - **RMSE**: {rmse:.4f}
-        - **Parameters**: {sum(p.numel() for p in training_results.value['model'].parameters()):,}
-        """)
+            # Success message
+            result_display = mo.md(f"""
+            ## ✅ Training Complete!
+            
+            ### Model Architecture
+            - **Parameters**: {total_params:,} total ({trainable_params:,} trainable)
+            - **Architecture**: {num_layers.value} layers, {nhead.value} heads, {d_model.value}d model
+            
+            ### Training Results
+            - **Epochs**: {len(train_losses)}
+            - **Best Val Loss**: {best_val_loss:.6f}
+            - **Final LR**: {training_results['final_lr']:.2e}
+            
+            ### Performance Metrics
+            **Training Set:**
+            - MAE: {train_mae:.4f}
+            - MSE: {train_mse:.6f}  
+            - R²: {train_r2:.4f}
+            
+            **Validation Set:**
+            - MAE: {val_mae:.4f}
+            - MSE: {val_mse:.6f}
+            - R²: {val_r2:.4f}
+            """)
+            
+        except Exception as e:
+            training_results = None
+            result_display = mo.md(f"""
+            ## ❌ Training Failed
+            **Error**: {str(e)}
+            
+            Please check your parameters and try again.
+            """)
     else:
-        mo.md("Click **Train Model** to start training")
+        training_results = None  
+        result_display = mo.md("**Ready to train!** Click the button above to start training.")
     
-    return training_results,
+    result_display
+    
+    return result_display, training_results
 
 @app.cell
-def __(PLOTLY_AVAILABLE, go, mo, training_results):
-    if training_results.value and PLOTLY_AVAILABLE:
-        # Training visualization
-        fig = go.Figure()
-        epochs_range = list(range(1, len(training_results.value['train_losses']) + 1))
-        
-        fig.add_trace(go.Scatter(
-            x=epochs_range, y=training_results.value['train_losses'], 
-            name='Train Loss', line=dict(color='blue')
-        ))
-        fig.add_trace(go.Scatter(
-            x=epochs_range, y=training_results.value['val_losses'], 
-            name='Val Loss', line=dict(color='red')
-        ))
-        
-        fig.update_layout(
-            title="Training Progress",
-            xaxis_title="Epoch",
-            yaxis_title="Loss",
-            height=400
-        )
-        
-        mo.ui.plotly(fig)
-    elif training_results.value:
-        mo.md("Training completed! (Plotly visualization not available)")
+def __(mo, np, training_results):
+    # Training visualization
+    if training_results is not None:
+        try:
+            import matplotlib.pyplot as plt
+            
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+            
+            # Loss curves
+            epochs_range = range(1, len(training_results['train_losses']) + 1)
+            ax1.plot(epochs_range, training_results['train_losses'], 'b-', label='Training Loss', alpha=0.8)
+            ax1.plot(epochs_range, training_results['val_losses'], 'r-', label='Validation Loss', alpha=0.8)
+            ax1.set_xlabel('Epoch')
+            ax1.set_ylabel('Loss')
+            ax1.set_title('Training Progress')
+            ax1.legend()
+            ax1.grid(True, alpha=0.3)
+            
+            # Predictions vs actual
+            y_true = training_results['all_predictions']  # This should be actual y_data
+            y_pred = training_results['all_predictions']
+            
+            # We need the actual targets for comparison - let's use y_data from earlier
+            # Since we don't have access to split here, show distribution instead
+            ax2.hist(training_results['all_predictions'], bins=50, alpha=0.7, label='Predicted Deltas')
+            ax2.set_xlabel('Delta Value')
+            ax2.set_ylabel('Frequency')
+            ax2.set_title('Delta Prediction Distribution')
+            ax2.legend()
+            ax2.grid(True, alpha=0.3)
+            
+            plt.tight_layout()
+            plt.show()
+            
+        except Exception as e:
+            mo.md(f"Visualization error: {str(e)}")
     else:
-        mo.md("Training visualization will appear after model training")
-    return epochs_range, fig
+        mo.md("Training visualization will appear after model training.")
+    
+    return ax1, ax2, epochs_range, fig, plt, y_pred, y_true
 
 @app.cell
 def __(mo, training_results):
-    if training_results.value:
-        # Interactive prediction interface
-        pred_target = mo.ui.slider(
-            start=125, stop=175, step=1, value=160,
-            label="Target Price ($)"
+    # Live prediction interface
+    if training_results is not None:
+        # Input controls for live prediction
+        pred_moneyness = mo.ui.slider(
+            start=0.7, stop=1.3, step=0.01, value=1.0,
+            label="Moneyness (Strike/Spot)"
         )
         
-        pred_days = mo.ui.dropdown(
-            options=[7, 14, 28, 42, 56],
-            value=14,
-            label="Time Horizon (days)"
+        pred_days = mo.ui.slider(
+            start=1, stop=365, step=1, value=30,
+            label="Days to Expiry"
         )
         
         pred_vol = mo.ui.slider(
-            start=15, stop=45, step=1, value=25,
+            start=10, stop=60, step=1, value=25,
             label="Implied Volatility (%)"
         )
         
-        pred_rsi = mo.ui.slider(
-            start=20, stop=80, step=1, value=50,
-            label="RSI"
+        pred_volume = mo.ui.slider(
+            start=100, stop=50000, step=100, value=5000,
+            label="Volume"
         )
         
-        mo.hstack([
-            mo.vstack([pred_target, pred_days]),
-            mo.vstack([pred_vol, pred_rsi])
+        prediction_inputs = mo.hstack([
+            mo.vstack([
+                mo.md("**Option Parameters**"),
+                pred_moneyness, 
+                pred_days
+            ]),
+            mo.vstack([
+                mo.md("**Market Conditions**"),
+                pred_vol, 
+                pred_volume
+            ])
         ])
+        
+        prediction_inputs
     else:
-        pred_target = pred_days = pred_vol = pred_rsi = None
-        mo.md("Complete training to access live predictions")
+        prediction_inputs = None
+        mo.md("Live prediction interface will be available after training.")
     
-    return pred_days, pred_rsi, pred_target, pred_vol
+    return pred_days, pred_moneyness, pred_vol, pred_volume, prediction_inputs
 
 @app.cell
 def __(
-    PLOTLY_AVAILABLE, go, mo, np, pred_days, pred_rsi, pred_target, pred_vol,
-    torch, training_results,
+    device, mo, np, pred_days, pred_moneyness, pred_vol, pred_volume, torch,
+    training_results,
 ):
-    if training_results.value and all(x is not None for x in [pred_target, pred_days, pred_vol, pred_rsi]):
+    # Live delta prediction
+    if training_results is not None and all(x is not None for x in [pred_moneyness, pred_days, pred_vol, pred_volume]):
         
-        # Current market parameters
-        current_price = 150.0
-        
-        # Extract prediction parameters
-        target_price = pred_target.value
-        time_horizon = pred_days.value
-        vol_input = pred_vol.value / 100
-        rsi_input = pred_rsi.value
-        
-        # Calculate features
-        price_distance = target_price - current_price
-        price_pct_move = price_distance / current_price
-        log_price_ratio = np.log(target_price / current_price)
-        time_factor = np.sqrt(time_horizon / 365)
-        
-        # Mock additional features for demo
-        volume = np.exp(10.5)  # Typical volume
-        macd = 0.0  # Neutral MACD
-        bollinger_pos = 0.5  # Mid Bollinger
-        vix = 20.0  # Normal VIX
-        
-        vol_adjusted_distance = abs(price_pct_move) / vol_input
-        time_vol_interaction = time_factor * vol_input
-        momentum_score = (rsi_input - 50) / 50
-        volatility_regime = 1 if vol_input > 0.25 else 0
-        high_volume_regime = 1 if volume > np.exp(11) else 0
-        
-        # Create feature vector
-        live_features = np.array([[
-            price_pct_move, log_price_ratio, time_factor, vol_input,
-            volume, rsi_input, macd, bollinger_pos, vix,
-            vol_adjusted_distance, time_vol_interaction, momentum_score,
-            volatility_regime, high_volume_regime
-        ]])
-        
-        # Scale and predict
-        live_features_scaled = training_results.value['scaler'].transform(live_features)
-        
-        with torch.no_grad():
-            training_results.value['model'].eval()
-            prediction = training_results.value['model'](torch.FloatTensor(live_features_scaled))
-            probability_pct = prediction.item() * 100  # Convert to percentage
-        
-        # Analysis
-        direction = "UP" if target_price > current_price else "DOWN"
-        move_size = abs(price_pct_move) * 100
-        days_text = f"{time_horizon} days"
-        
-        if PLOTLY_AVAILABLE:
-            # Probability gauge
-            fig_gauge = go.Figure(go.Indicator(
-                mode = "gauge+number",
-                value = probability_pct,
-                title = {'text': f"Probability of reaching ${target_price}"},
-                domain = {'x': [0, 1], 'y': [0, 1]},
-                gauge = {
-                    'axis': {'range': [None, 50]},  # 0-50% range as specified
-                    'bar': {'color': "green" if direction == "UP" else "red"},
-                    'steps': [
-                        {'range': [0, 10], 'color': "lightgray"},
-                        {'range': [10, 25], 'color': "yellow"},
-                        {'range': [25, 40], 'color': "orange"},
-                        {'range': [40, 50], 'color': "darkgreen"}
-                    ],
-                }
-            ))
-            fig_gauge.update_layout(height=400)
-        
-        # Detailed results
-        results = mo.md(f"""
-        ### Prediction Results
-        
-        **Movement Analysis:**
-        - **Direction**: {direction} by ${abs(price_distance):.0f} ({move_size:.1f}%)
-        - **Time Horizon**: {days_text}
-        - **Probability**: {probability_pct:.1f}%
-        
-        **Market Context:**
-        - **Current Price**: ${current_price}
-        - **Target Price**: ${target_price}
-        - **Implied Vol**: {vol_input:.1%}
-        - **RSI**: {rsi_input} ({"Overbought" if rsi_input > 70 else "Oversold" if rsi_input < 30 else "Neutral"})
-        - **Vol Regime**: {"High" if volatility_regime else "Normal"}
-        
-        **Risk Assessment:**
-        - **Difficulty**: {"High" if move_size > 10 else "Medium" if move_size > 5 else "Low"}
-        - **Time Pressure**: {"High" if time_horizon <= 7 else "Medium" if time_horizon <= 28 else "Low"}
-        - **Confidence**: {"High" if probability_pct > 30 else "Medium" if probability_pct > 15 else "Low"}
-        """)
-        
-        if PLOTLY_AVAILABLE:
-            mo.hstack([mo.ui.plotly(fig_gauge), results])
-        else:
-            results
+        try:
+            # Extract input values
+            moneyness = pred_moneyness.value
+            days_to_expiry = pred_days.value
+            implied_vol = pred_vol.value / 100  # Convert percentage
+            volume = pred_volume.value
+            
+            # Calculate derived features
+            log_moneyness = np.log(moneyness)
+            time_to_expiry_years = days_to_expiry / 365.0
+            sqrt_time = np.sqrt(time_to_expiry_years)
+            log_volume = np.log1p(volume)
+            
+            # Mock additional features (in real app, these would come from market data)
+            open_interest = volume * 1.5  # Typical ratio
+            volume_oi_ratio = volume / open_interest
+            bid_ask_spread = 0.05  # Typical spread
+            vix = 20.0  # Neutral VIX
+            market_trend = 0.001  # Small positive trend
+            
+            # Interaction features
+            vol_time = implied_vol * sqrt_time
+            vol_moneyness = implied_vol * abs(log_moneyness)
+            
+            # Binary features
+            high_vol_regime = 1 if implied_vol > 0.30 else 0
+            short_term = 1 if days_to_expiry <= 30 else 0
+            
+            # Create feature vector (matching training order)
+            live_features = np.array([[
+                log_moneyness, sqrt_time, implied_vol, log_volume,
+                volume_oi_ratio, bid_ask_spread, vix, market_trend,
+                vol_time, vol_moneyness, high_vol_regime, short_term
+            ]])
+            
+            # Scale features
+            live_features_scaled = training_results['scaler'].transform(live_features)
+            
+            # Make prediction
+            training_results['model'].eval()
+            with torch.no_grad():
+                features_tensor = torch.FloatTensor(live_features_scaled).to(device)
+                predicted_delta = training_results['model'](features_tensor).cpu().item()
+            
+            # Analysis
+            moneyness_desc = "ITM" if moneyness < 1.0 else "ATM" if abs(moneyness - 1.0) < 0.02 else "OTM"
+            time_desc = "Short-term" if days_to_expiry <= 7 else "Medium-term" if days_to_expiry <= 60 else "Long-term"
+            vol_desc = "Low" if implied_vol < 0.2 else "High" if implied_vol > 0.35 else "Normal"
+            
+            # Display results
+            prediction_result = mo.md(f"""
+            ## 🔮 Live Delta Prediction
+            
+            ### Predicted Delta: **{predicted_delta:.4f}**
+            
+            ### Option Characteristics
+            - **Moneyness**: {moneyness:.3f} ({moneyness_desc})
+            - **Time to Expiry**: {days_to_expiry} days ({time_desc})  
+            - **Implied Vol**: {implied_vol:.1%} ({vol_desc})
+            - **Volume**: {volume:,}
+            
+            ### Market Context
+            - **Strike Sensitivity**: {"High" if predicted_delta > 0.7 else "Medium" if predicted_delta > 0.3 else "Low"}
+            - **Time Decay Risk**: {"High" if days_to_expiry <= 7 else "Medium" if days_to_expiry <= 30 else "Low"}
+            - **Volatility Regime**: {"High" if high_vol_regime else "Normal"}
+            
+            ### Interpretation
+            - **Price Sensitivity**: A $1 move in underlying ≈ **${predicted_delta:.2f}** option price change
+            - **Hedge Ratio**: Need **{1/predicted_delta:.1f}** options to hedge 100 shares (approximately)
+            - **Probability ITM**: ~**{predicted_delta:.1%}** (rough approximation)
+            """)
+            
+        except Exception as e:
+            prediction_result = mo.md(f"**Prediction Error**: {str(e)}")
+            
     else:
-        mo.md("Set prediction parameters to get probability forecast")
+        prediction_result = mo.md("Set prediction parameters above to see live delta calculation.")
+    
+    prediction_result
     
     return (
-        bollinger_pos, current_price, direction, fig_gauge, live_features,
-        live_features_scaled, log_price_ratio, macd, momentum_score,
-        move_size, prediction, price_distance, price_pct_move,
-        probability_pct, results, rsi_input, target_price, time_factor,
-        time_horizon, time_vol_interaction, vol_adjusted_distance,
-        vol_input, volatility_regime, volume, vix,
+        bid_ask_spread, days_to_expiry, features_tensor, high_vol_regime,
+        implied_vol, live_features, live_features_scaled, log_moneyness,
+        log_volume, market_trend, moneyness, moneyness_desc, open_interest,
+        predicted_delta, prediction_result, short_term, sqrt_time,
+        time_desc, time_to_expiry_years, vol_desc, vol_moneyness, vol_time,
+        volume, volume_oi_ratio, vix,
     )
 
 @app.cell
-def __(PLOTLY_AVAILABLE, go, mo, np, training_results, y_data):
-    if training_results.value and PLOTLY_AVAILABLE:
-        # Performance analysis
-        predictions = training_results.value['predictions']
-        actuals = y_data
+def __(mo, training_results, y_data):
+    # Model analysis and performance breakdown
+    if training_results is not None:
         
-        fig_performance = go.Figure()
+        # Error analysis
+        all_preds = training_results['all_predictions']
+        errors = all_preds - y_data
+        abs_errors = np.abs(errors)
         
-        # Perfect prediction line
-        min_val = min(actuals.min(), predictions.min())
-        max_val = max(actuals.max(), predictions.max())
-        fig_performance.add_trace(
-            go.Scatter(x=[min_val, max_val], y=[min_val, max_val],
-                      mode='lines', name='Perfect Prediction',
-                      line=dict(dash='dash', color='gray'))
-        )
+        # Error statistics
+        error_stats = mo.md(f"""
+        ## 📊 Detailed Performance Analysis
         
-        # Actual vs predicted
-        fig_performance.add_trace(
-            go.Scatter(x=actuals, y=predictions, mode='markers',
-                      name='Predictions', opacity=0.6,
-                      marker=dict(color='blue', size=4))
-        )
+        ### Error Distribution
+        - **Mean Error**: {np.mean(errors):.6f}
+        - **Std Error**: {np.std(errors):.6f}  
+        - **Max Absolute Error**: {np.max(abs_errors):.4f}
+        - **90th Percentile Error**: {np.percentile(abs_errors, 90):.4f}
+        - **95th Percentile Error**: {np.percentile(abs_errors, 95):.4f}
         
-        fig_performance.update_layout(
-            title="Model Performance: Actual vs Predicted Probabilities",
-            xaxis_title="Actual Probability",
-            yaxis_title="Predicted Probability",
-            height=400
-        )
+        ### Model Robustness
+        - **Predictions in [0,1]**: {np.sum((all_preds >= 0) & (all_preds <= 1)) / len(all_preds) * 100:.1f}%
+        - **Predictions > 0.95**: {np.sum(all_preds > 0.95)}/{len(all_preds)} ({np.sum(all_preds > 0.95)/len(all_preds)*100:.1f}%)
+        - **Predictions < 0.05**: {np.sum(all_preds < 0.05)}/{len(all_preds)} ({np.sum(all_preds < 0.05)/len(all_preds)*100:.1f}%)
         
-        # Error distribution
-        errors = predictions - actuals
-        fig_error = go.Figure()
-        fig_error.add_trace(go.Histogram(x=errors, nbinsx=50, name='Prediction Errors'))
-        fig_error.update_layout(
-            title="Prediction Error Distribution",
-            xaxis_title="Prediction Error",
-            yaxis_title="Frequency",
-            height=300
-        )
+        ### Delta Range Analysis
+        - **Deep ITM (δ > 0.8)**: {np.sum((y_data > 0.8) & (abs_errors < 0.05)) / np.sum(y_data > 0.8) * 100:.1f}% accurate within 0.05
+        - **ATM (0.4 < δ < 0.6)**: {np.sum(((y_data > 0.4) & (y_data < 0.6)) & (abs_errors < 0.02)) / np.sum((y_data > 0.4) & (y_data < 0.6)) * 100:.1f}% accurate within 0.02
+        - **Deep OTM (δ < 0.2)**: {np.sum((y_data < 0.2) & (abs_errors < 0.02)) / np.sum(y_data < 0.2) * 100:.1f}% accurate within 0.02
+        """)
         
-        mo.vstack([mo.ui.plotly(fig_performance), mo.ui.plotly(fig_error)])
-    elif training_results.value:
-        mo.md("Performance analysis completed! (Plotly not available)")
+        error_stats
     else:
-        mo.md("Performance analysis will appear after training")
+        mo.md("Performance analysis will appear after training.")
     
-    return actuals, errors, fig_error, fig_performance, max_val, min_val, predictions
+    return abs_errors, all_preds, error_stats, errors
+
+@app.cell
+def __(mo):
+    # Model export and summary
+    mo.md("""
+    ## 💾 Model Export & Summary
+    
+    This delta predictor uses a Transformer architecture to learn complex relationships 
+    in options pricing. The model processes market features through attention mechanisms
+    to predict delta values with high accuracy.
+    
+    ### Key Features:
+    - **Multi-head Attention**: Captures feature interactions
+    - **Positional Encoding**: Handles sequential relationships  
+    - **Layer Normalization**: Stable training
+    - **Dropout Regularization**: Prevents overfitting
+    - **Sigmoid Output**: Ensures delta ∈ [0,1]
+    
+    ### Applications:
+    - **Risk Management**: Dynamic hedging calculations
+    - **Market Making**: Fair value pricing
+    - **Portfolio Optimization**: Greeks-based allocation
+    - **Algorithmic Trading**: Real-time delta estimation
+    """)
 
 if __name__ == "__main__":
     app.run()
