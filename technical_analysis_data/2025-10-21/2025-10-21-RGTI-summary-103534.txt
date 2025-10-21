@@ -1,0 +1,109 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - RGTI
+================================================================================
+
+DATE: 2025-10-20
+PRICE: $43.31
+CHANGE: -6.62%
+VOLUME: 86,967,300
+
+MOVING AVERAGES:
+  10 SMA:  $48.32 (-10.4%)
+  20 SMA:  $40.80 (6.1%)
+  50 SMA:  $26.82 (61.5%)
+  200 SMA: $15.36 (182.0%)
+
+KEY OSCILLATORS:
+  RSI:        64.3
+  Stochastic: 49.7
+  CCI:        29.1
+  Williams:   -50.3
+  MFI:        74.5
+
+MOMENTUM & TREND:
+  MACD:       6.8698
+  ADX:        72.2
+  Volatility: 146.8%
+
+BOLLINGER BANDS:
+  Upper:  $58.95
+  Middle: $40.80
+  Lower:  $22.65
+
+ACTIVE SIGNALS (22 total):
+
+1. RSI BEARISH DIVERGENCE
+   Price up but RSI down - BEARISH
+
+2. MACD BEAR CROSS
+   MACD crossed below signal - BEARISH
+
+3. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+4. MACD WEAK MOMENTUM
+   Histogram accelerating down - STRONG BEARISH
+
+5. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+6. OBV FALLING
+   Selling pressure increasing - BEARISH
+
+7. STRONG UPTREND
+   ADX: 72.2 - TRENDING
+
+8. VERY STRONG TREND
+   ADX: 72.2 - EXTREME
+
+9. STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+10. LARGE LOSS
+   -6.6% today - STRONG BEARISH
+
+11. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+12. WIDE RANGE DAY
+   Range: 13.3% - VOLATILE
+
+13. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+14. STRONG 20D MOMENTUM
+   +52.7% in 20 days - STRONG BULLISH
+
+15. HIGH VOLATILITY
+   147% annualized - CAUTION
+
+16. EXTREME VOLATILITY
+   147% annualized - HIGH RISK
+
+17. ATR ELEVATED
+   Above-average true range - VOLATILE
+
+18. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+19. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+20. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+21. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+22. EXTENDED FROM 200 SMA
+   182.0% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 8
+  Bearish: 7
+  Neutral: 7
+
+OVERALL BIAS: BULLISH
+
+================================================================================
