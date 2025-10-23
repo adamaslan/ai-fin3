@@ -1,0 +1,103 @@
+{
+  "symbol": "ORCL",
+  "timestamp": "2025-10-23 17:01:20",
+  "date": "2025-10-23",
+  "price": 280.07000732421875,
+  "change_pct": 2.717671665292043,
+  "volume": 14410653,
+  "indicators": {
+    "RSI": 47.59313572148214,
+    "MACD": 0.6857253267400552,
+    "ADX": 15.605884082715344,
+    "Stochastic": 20.304007485939522,
+    "CCI": -69.08451372454205,
+    "MFI": 53.67468639925355,
+    "BB_Position": 0.2913933239740879,
+    "Volatility": 46.98385375024186
+  },
+  "moving_averages": {
+    "SMA_10": 291.29599914550784,
+    "SMA_20": 289.06538543701174,
+    "SMA_50": 273.8228244018555,
+    "SMA_200": 201.8638493347168,
+    "EMA_10": 286.07650616680036,
+    "EMA_20": 287.7256115575405
+  },
+  "signals": [
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "MFI BULLISH",
+      "desc": "Money flow crossed 50",
+      "strength": "BULLISH",
+      "category": "MFI"
+    },
+    {
+      "signal": "MFI BULL DIVERGENCE",
+      "desc": "Price down, MFI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "WEAK TREND",
+      "desc": "ADX: 15.6 - ranging",
+      "strength": "NEUTRAL",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BULLISH",
+      "desc": "10 > 20 > 50 SMA",
+      "strength": "STRONG BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "38.7% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 12,
+  "bullish_count": 8,
+  "bearish_count": 1
+}
