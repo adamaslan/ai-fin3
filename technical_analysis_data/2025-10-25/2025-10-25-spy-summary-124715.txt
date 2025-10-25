@@ -1,0 +1,115 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - spy
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $677.25
+CHANGE: 0.82%
+VOLUME: 74,306,200
+
+MOVING AVERAGES:
+  10 SMA:  $667.49 (1.5%)
+  20 SMA:  $667.48 (1.5%)
+  50 SMA:  $656.88 (3.1%)
+  200 SMA: $604.15 (12.1%)
+
+KEY OSCILLATORS:
+  RSI:        54.1
+  Stochastic: 95.2
+  CCI:        140.6
+  Williams:   -4.8
+  MFI:        50.0
+
+MOMENTUM & TREND:
+  MACD:       4.0086
+  ADX:        27.8
+  Volatility: 13.5%
+
+BOLLINGER BANDS:
+  Upper:  $678.23
+  Middle: $667.48
+  Lower:  $656.73
+
+ACTIVE SIGNALS (24 total):
+
+1. RSI BEARISH DIVERGENCE
+   Price up but RSI down - BEARISH
+
+2. MACD BULL CROSS
+   MACD crossed above signal - BULLISH
+
+3. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+4. MACD STRONG MOMENTUM
+   Histogram accelerating up - STRONG BULLISH
+
+5. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+6. AT UPPER BB
+   Price at $678.23 - BEARISH
+
+7. BB TOP RANGE
+   In top 5% of BB range - BEARISH
+
+8. WALKING UPPER BAND
+   Strong uptrend or overbought - EXTREME
+
+9. OBV RISING
+   Buying pressure increasing - BULLISH
+
+10. STOCH OVERBOUGHT
+   K: 95.2 - BEARISH
+
+11. WILLIAMS OVERBOUGHT
+   W%R: -4.8 - BEARISH
+
+12. MFI BULLISH
+   Money flow crossed 50 - BULLISH
+
+13. STRONG UPTREND
+   ADX: 27.8 - TRENDING
+
+14. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+15. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+16. NARROW RANGE DAY
+   Range: 0.4% - CONSOLIDATION
+
+17. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+18. LOW VOLATILITY
+   14% annualized - CALM
+
+19. ATR ELEVATED
+   Above-average true range - VOLATILE
+
+20. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+21. TENKAN/KIJUN CROSS
+   Ichimoku bull signal - BULLISH
+
+22. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+23. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+24. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 13
+  Bearish: 6
+  Neutral: 5
+
+OVERALL BIAS: BULLISH
+
+================================================================================

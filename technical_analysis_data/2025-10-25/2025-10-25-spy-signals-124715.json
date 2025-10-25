@@ -1,0 +1,175 @@
+{
+  "symbol": "spy",
+  "timestamp": "2025-10-25 12:47:15",
+  "date": "2025-10-25",
+  "price": 677.25,
+  "change_pct": 0.8172546972973871,
+  "volume": 74306200,
+  "indicators": {
+    "RSI": 54.11800986475621,
+    "MACD": 4.008636799250553,
+    "ADX": 27.817481167200956,
+    "Stochastic": 95.24005705835145,
+    "CCI": 140.62097548515905,
+    "MFI": 50.043499713273526,
+    "BB_Position": 0.9542771193666544,
+    "Volatility": 13.530196294959959
+  },
+  "moving_averages": {
+    "SMA_10": 667.4869934082031,
+    "SMA_20": 667.481494140625,
+    "SMA_50": 656.8840417480469,
+    "SMA_200": 604.1536351013184,
+    "EMA_10": 669.3662407119356,
+    "EMA_20": 666.5381099844685
+  },
+  "signals": [
+    {
+      "signal": "RSI BEARISH DIVERGENCE",
+      "desc": "Price up but RSI down",
+      "strength": "BEARISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "MACD BULL CROSS",
+      "desc": "MACD crossed above signal",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD STRONG MOMENTUM",
+      "desc": "Histogram accelerating up",
+      "strength": "STRONG BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "AT UPPER BB",
+      "desc": "Price at $678.23",
+      "strength": "BEARISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB TOP RANGE",
+      "desc": "In top 5% of BB range",
+      "strength": "BEARISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "WALKING UPPER BAND",
+      "desc": "Strong uptrend or overbought",
+      "strength": "EXTREME",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH OVERBOUGHT",
+      "desc": "K: 95.2",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERBOUGHT",
+      "desc": "W%R: -4.8",
+      "strength": "BEARISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "MFI BULLISH",
+      "desc": "Money flow crossed 50",
+      "strength": "BULLISH",
+      "category": "MFI"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 27.8",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "NARROW RANGE DAY",
+      "desc": "Range: 0.4%",
+      "strength": "CONSOLIDATION",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "LOW VOLATILITY",
+      "desc": "14% annualized",
+      "strength": "CALM",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "ATR ELEVATED",
+      "desc": "Above-average true range",
+      "strength": "VOLATILE",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "ABOVE CLOUD",
+      "desc": "Ichimoku bullish",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "TENKAN/KIJUN CROSS",
+      "desc": "Ichimoku bull signal",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BULLISH",
+      "desc": "10 > 20 > 50 SMA",
+      "strength": "STRONG BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 24,
+  "bullish_count": 13,
+  "bearish_count": 6
+}
