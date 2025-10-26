@@ -1103,3 +1103,18 @@ If you'd like, I can:
 
 - add a compact `batch_scan` cell to this notebook that generates 100 alerts from a ticker list,
 - or create a separate `scanner_batch.py` script that scans a watchlist, scores alerts, and writes a top-100 JSON.
+
+### 5 things done with `yfinance`
+
+Here are five plain-English, concrete things the notebook uses `yfinance` for:
+
+1. Fetch historical OHLCV time series (Open, High, Low, Close, Volume) for a symbol over a specified period (e.g., 1 year). This is the raw price/volume data used to compute every indicator.
+
+2. Batch-download multiple tickers (via `yf.download` when scanning many symbols) to reduce HTTP overhead and get aligned DataFrames for vectorized processing across a universe of stocks.
+
+3. Retrieve ticker-specific metadata and live values (such as current price, previous close, market info) to include in summaries and signal payloads.
+
+4. Access options-related data (option expiration dates and option chains) when you need implied volatility or option-flow-based alerts — the notebook can call per-ticker option endpoints when adding option/IV signals.
+
+5. Pull corporate actions and distributions (dividends, splits) and small interval/intraday data (when needed) to support time-frame specific alerts and adjust historical series for accurate indicators.
+
