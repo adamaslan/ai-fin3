@@ -1,0 +1,123 @@
+{
+  "symbol": "AAPL",
+  "timestamp": "2025-10-25 21:21:11",
+  "date": "2025-10-25",
+  "analysis": "Okay, let's break down AAPL's technical picture.\n\n**1. STRONGEST SIGNAL:**\n\n*   **[MA_TREND] MA ALIGNMENT BULLISH - 10 > 20 > 50 SMA (STRONG BULLISH):** This is the strongest signal because it confirms that short-term, medium-term, and long-term trends are all aligned upwards. This provides a robust foundation for continued price appreciation.\n\n**2. OVERALL BIAS:**\n\n*   **Bullish with High Confidence (85%):** The majority of the signals point towards continued bullish momentum. While some overbought conditions exist, the underlying trend appears strong.\n\n**3. KEY LEVELS:**\n\n*   **Support:**\n    *   **20 SMA: Approximately $254.60** (Dynamic support; adjust as the 20 SMA moves). A break below this level would be the first sign of weakening momentum.\n    *   **50 SMA: Approximately $244.00** (Long-term support).\n*   **Resistance:**\n    *   **Immediate Resistance: $265 - $270** (Psychological Resistance and Previous highs).\n\n**4. RISK ASSESSMENT:**\n\n*   **Overbought Conditions:** Several indicators (Stochastic, Williams %R, Bollinger Walking Upper Band) suggest the stock is overbought. This could lead to a short-term pullback or consolidation.\n*   **RSI Bearish Divergence:** This suggests that the momentum might not be able to sustain these price gains and we may see a slowdown of this recent uptrend.\n*   **Volatility:** Volatility is relatively high at 23.4%, meaning price swings could be larger than normal.\n*   **Market Correction:** External factors (overall market sentiment, macroeconomic news) could trigger a broad market correction, impacting AAPL regardless of its technical strength.\n\n**5. TRADING RECOMMENDATION:**\n\n*   **Action:** Hold or Cautiously Buy\n*   **Strategy:**\n    *   **Existing Long Positions:** Hold. Consider tightening stop-loss orders to protect profits, placed just below the 20 SMA ($254.60).\n    *   **New Entry (Cautious Buy):** Wait for a pullback towards the 10 SMA or 20 SMA before initiating a new long position. Enter near $254.60-$258.00.\n    *   **Stop-Loss:** Place a stop-loss order below the 20 SMA (e.g., $253.00).\n    *   **Target:** Initial target $270, then potentially $280 if the uptrend continues.\n*   **Rationale:** The overall trend is bullish, but the overbought conditions suggest caution. Waiting for a pullback allows for a better entry point with a tighter stop-loss.\n\n**6. TIMEFRAME:**\n\n*   **Medium-Term:** This analysis is best suited for a medium-term timeframe (weeks to months). The moving averages and trend indicators are more reliable over this period.\n",
+  "signal_count": 19,
+  "signals_analyzed": [
+    {
+      "signal": "RSI BEARISH DIVERGENCE",
+      "desc": "Price up but RSI down",
+      "strength": "BEARISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD STRONG MOMENTUM",
+      "desc": "Histogram accelerating up",
+      "strength": "STRONG BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "WALKING UPPER BAND",
+      "desc": "Strong uptrend or overbought",
+      "strength": "EXTREME",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH OVERBOUGHT",
+      "desc": "K: 88.4",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERBOUGHT",
+      "desc": "W%R: -11.6",
+      "strength": "BEARISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "MFI BULLISH",
+      "desc": "Money flow crossed 50",
+      "strength": "BULLISH",
+      "category": "MFI"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 27.1",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG UPTREND CONFIRMED",
+      "desc": "+DI > -DI with high ADX",
+      "strength": "BULLISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "ABOVE CLOUD",
+      "desc": "Ichimoku bullish",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BULLISH",
+      "desc": "10 > 20 > 50 SMA",
+      "strength": "STRONG BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ]
+}

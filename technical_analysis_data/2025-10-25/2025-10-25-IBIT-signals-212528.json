@@ -1,0 +1,91 @@
+{
+  "symbol": "IBIT",
+  "timestamp": "2025-10-25 21:25:28",
+  "date": "2025-10-25",
+  "price": 62.83000183105469,
+  "change_pct": 0.43158639999478776,
+  "volume": 39758100,
+  "indicators": {
+    "RSI": 28.418376403068564,
+    "MACD": -0.9105878949082751,
+    "ADX": 17.256376743567248,
+    "Stochastic": 30.111213612303363,
+    "CCI": -52.75641529551613,
+    "MFI": 27.86862696759556,
+    "BB_Position": 0.3021541602640143,
+    "Volatility": 41.59536567660588
+  },
+  "moving_averages": {
+    "SMA_10": 62.7810001373291,
+    "SMA_20": 65.42599925994872,
+    "SMA_50": 64.7047998046875,
+    "SMA_200": 58.838775100708006,
+    "EMA_10": 63.238694620218894,
+    "EMA_20": 64.15729982302216
+  },
+  "signals": [
+    {
+      "signal": "PRICE ABOVE 10 MA",
+      "desc": "Price crossed above 10-day MA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "PRICE AT 10 MA",
+      "desc": "Price within 1% of 10 MA ($62.78)",
+      "strength": "WATCH",
+      "category": "MA_PROXIMITY"
+    },
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 28.4",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "RSI ENTERING OVERSOLD",
+      "desc": "RSI just dropped below 30",
+      "strength": "WATCH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "WEAK TREND",
+      "desc": "ADX: 17.3 - ranging",
+      "strength": "NEUTRAL",
+      "category": "TREND"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BEARISH",
+      "desc": "Senkou A below B",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 10,
+  "bullish_count": 5,
+  "bearish_count": 2
+}

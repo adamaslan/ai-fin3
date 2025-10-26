@@ -1,0 +1,115 @@
+{
+  "symbol": "BABA",
+  "timestamp": "2025-10-25 21:26:31",
+  "date": "2025-10-25",
+  "price": 174.6999969482422,
+  "change_pct": 1.6288558180193702,
+  "volume": 11803700,
+  "indicators": {
+    "RSI": 40.88260936332909,
+    "MACD": 2.828048633115344,
+    "ADX": 34.46981140414636,
+    "Stochastic": 55.555539362424625,
+    "CCI": 3.1076019630590728,
+    "MFI": 32.062040010221054,
+    "BB_Position": 0.5172745614428048,
+    "Volatility": 53.966038272147685
+  },
+  "moving_averages": {
+    "SMA_10": 168.03199920654296,
+    "SMA_20": 174.072998046875,
+    "SMA_50": 155.5411991882324,
+    "SMA_200": 126.09227432250977,
+    "EMA_10": 170.28841409074525,
+    "EMA_20": 169.3121433218087
+  },
+  "signals": [
+    {
+      "signal": "PRICE ABOVE 20 MA",
+      "desc": "Price crossed above 20-day MA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "AT BB MIDDLE",
+      "desc": "Price at midline",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "CCI POSITIVE",
+      "desc": "CCI crossed above zero",
+      "strength": "BULLISH",
+      "category": "CCI"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 34.5",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "54% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "ABOVE CLOUD",
+      "desc": "Ichimoku bullish",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "38.5% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 14,
+  "bullish_count": 9,
+  "bearish_count": 1
+}

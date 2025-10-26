@@ -1,0 +1,73 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - JPM
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $300.44
+CHANGE: 2.00%
+VOLUME: 7,223,000
+
+MOVING AVERAGES:
+  10 SMA:  $300.04 (0.1%)
+  20 SMA:  $303.98 (-1.2%)
+  50 SMA:  $302.21 (-0.6%)
+  200 SMA: $270.80 (10.9%)
+
+KEY OSCILLATORS:
+  RSI:        42.1
+  Stochastic: 45.9
+  CCI:        -57.5
+  Williams:   -54.1
+  MFI:        39.3
+
+MOMENTUM & TREND:
+  MACD:       -2.0385
+  ADX:        32.0
+  Volatility: 21.3%
+
+BOLLINGER BANDS:
+  Upper:  $315.67
+  Middle: $303.98
+  Lower:  $292.28
+
+ACTIVE SIGNALS (10 total):
+
+1. PRICE ABOVE 10 MA
+   Price crossed above 10-day MA - BULLISH
+
+2. PRICE AT 10 MA
+   Price within 1% of 10 MA ($300.04) - WATCH
+
+3. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+4. OBV RISING
+   Buying pressure increasing - BULLISH
+
+5. STRONG DOWNTREND
+   ADX: 32.0 - TRENDING
+
+6. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+7. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+8. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+9. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+10. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 7
+  Bearish: 1
+  Neutral: 2
+
+OVERALL BIAS: BULLISH
+
+================================================================================

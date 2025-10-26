@@ -1,0 +1,103 @@
+{
+  "symbol": "ETHA",
+  "timestamp": "2025-10-25 21:20:04",
+  "date": "2025-10-25",
+  "price": 29.709999084472656,
+  "change_pct": 1.7814269986337505,
+  "volume": 32545700,
+  "indicators": {
+    "RSI": 29.94721321878835,
+    "MACD": -0.8545957066834013,
+    "ADX": 19.62474956465377,
+    "Stochastic": 20.67668319303488,
+    "CCI": -61.383466648011826,
+    "MFI": 29.97271135680944,
+    "BB_Position": 0.2819750388061347,
+    "Volatility": 62.92668439364938
+  },
+  "moving_averages": {
+    "SMA_10": 29.967000007629395,
+    "SMA_20": 31.54399995803833,
+    "SMA_50": 32.42749996185303,
+    "SMA_200": 22.92894999027252,
+    "EMA_10": 30.091634060049493,
+    "EMA_20": 30.900626459393145
+  },
+  "signals": [
+    {
+      "signal": "PRICE AT 10 MA",
+      "desc": "Price within 1% of 10 MA ($29.97)",
+      "strength": "WATCH",
+      "category": "MA_PROXIMITY"
+    },
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 29.9",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "RSI ENTERING OVERSOLD",
+      "desc": "RSI just dropped below 30",
+      "strength": "WATCH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WEAK TREND",
+      "desc": "ADX: 19.6 - ranging",
+      "strength": "NEUTRAL",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "63% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BEARISH",
+      "desc": "10 < 20 < 50 SMA",
+      "strength": "STRONG BEARISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "29.6% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 12,
+  "bullish_count": 6,
+  "bearish_count": 1
+}

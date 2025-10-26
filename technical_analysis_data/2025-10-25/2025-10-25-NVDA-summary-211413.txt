@@ -1,0 +1,88 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - NVDA
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $186.26
+CHANGE: 2.25%
+VOLUME: 130,942,300
+
+MOVING AVERAGES:
+  10 SMA:  $182.57 (2.0%)
+  20 SMA:  $184.67 (0.9%)
+  50 SMA:  $179.59 (3.7%)
+  200 SMA: $146.56 (27.1%)
+
+KEY OSCILLATORS:
+  RSI:        50.8
+  Stochastic: 50.4
+  CCI:        17.4
+  Williams:   -49.6
+  MFI:        58.1
+
+MOMENTUM & TREND:
+  MACD:       0.8747
+  ADX:        25.0
+  Volatility: 32.7%
+
+BOLLINGER BANDS:
+  Upper:  $191.82
+  Middle: $184.67
+  Lower:  $177.51
+
+ACTIVE SIGNALS (15 total):
+
+1. PRICE ABOVE 10 MA
+   Price crossed above 10-day MA - BULLISH
+
+2. PRICE ABOVE 20 MA
+   Price crossed above 20-day MA - BULLISH
+
+3. RSI ABOVE 50
+   RSI crossed bullish threshold - BULLISH
+
+4. RSI BEARISH DIVERGENCE
+   Price up but RSI down - BEARISH
+
+5. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+6. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+7. OBV RISING
+   Buying pressure increasing - BULLISH
+
+8. CCI POSITIVE
+   CCI crossed above zero - BULLISH
+
+9. STRONG UPTREND
+   ADX: 25.0 - TRENDING
+
+10. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+11. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+12. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+13. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+14. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+15. EXTENDED FROM 200 SMA
+   27.1% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 11
+  Bearish: 2
+  Neutral: 2
+
+OVERALL BIAS: BULLISH
+
+================================================================================

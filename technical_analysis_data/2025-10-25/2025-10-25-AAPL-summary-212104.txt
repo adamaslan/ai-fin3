@@ -1,0 +1,100 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - AAPL
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $262.82
+CHANGE: 1.25%
+VOLUME: 38,221,700
+
+MOVING AVERAGES:
+  10 SMA:  $255.04 (3.1%)
+  20 SMA:  $255.03 (3.1%)
+  50 SMA:  $244.14 (7.7%)
+  200 SMA: $222.16 (18.3%)
+
+KEY OSCILLATORS:
+  RSI:        56.9
+  Stochastic: 88.4
+  CCI:        94.1
+  Williams:   -11.6
+  MFI:        53.7
+
+MOMENTUM & TREND:
+  MACD:       4.3542
+  ADX:        27.1
+  Volatility: 23.4%
+
+BOLLINGER BANDS:
+  Upper:  $265.63
+  Middle: $255.03
+  Lower:  $244.43
+
+ACTIVE SIGNALS (19 total):
+
+1. RSI BEARISH DIVERGENCE
+   Price up but RSI down - BEARISH
+
+2. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+3. MACD STRONG MOMENTUM
+   Histogram accelerating up - STRONG BULLISH
+
+4. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+5. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+6. WALKING UPPER BAND
+   Strong uptrend or overbought - EXTREME
+
+7. OBV RISING
+   Buying pressure increasing - BULLISH
+
+8. STOCH OVERBOUGHT
+   K: 88.4 - BEARISH
+
+9. STOCH BULL CROSS
+   K crossed above D - BULLISH
+
+10. WILLIAMS OVERBOUGHT
+   W%R: -11.6 - BEARISH
+
+11. MFI BULLISH
+   Money flow crossed 50 - BULLISH
+
+12. STRONG UPTREND
+   ADX: 27.1 - TRENDING
+
+13. STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+14. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+15. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+16. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+17. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+18. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+19. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 14
+  Bearish: 3
+  Neutral: 2
+
+OVERALL BIAS: BULLISH
+
+================================================================================

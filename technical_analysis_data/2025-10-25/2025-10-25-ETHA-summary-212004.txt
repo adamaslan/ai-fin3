@@ -1,0 +1,79 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - ETHA
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $29.71
+CHANGE: 1.78%
+VOLUME: 32,545,700
+
+MOVING AVERAGES:
+  10 SMA:  $29.97 (-0.9%)
+  20 SMA:  $31.54 (-5.8%)
+  50 SMA:  $32.43 (-8.4%)
+  200 SMA: $22.93 (29.6%)
+
+KEY OSCILLATORS:
+  RSI:        29.9
+  Stochastic: 20.7
+  CCI:        -61.4
+  Williams:   -79.3
+  MFI:        30.0
+
+MOMENTUM & TREND:
+  MACD:       -0.8546
+  ADX:        19.6
+  Volatility: 62.9%
+
+BOLLINGER BANDS:
+  Upper:  $35.75
+  Middle: $31.54
+  Lower:  $27.34
+
+ACTIVE SIGNALS (12 total):
+
+1. PRICE AT 10 MA
+   Price within 1% of 10 MA ($29.97) - WATCH
+
+2. RSI OVERSOLD
+   RSI at 29.9 - BULLISH
+
+3. RSI ENTERING OVERSOLD
+   RSI just dropped below 30 - WATCH
+
+4. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+5. OBV RISING
+   Buying pressure increasing - BULLISH
+
+6. STOCH BULL CROSS
+   K crossed above D - BULLISH
+
+7. WEAK TREND
+   ADX: 19.6 - ranging - NEUTRAL
+
+8. HIGH VOLATILITY
+   63% annualized - CAUTION
+
+9. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+10. MA ALIGNMENT BEARISH
+   10 < 20 < 50 SMA - STRONG BEARISH
+
+11. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+12. EXTENDED FROM 200 SMA
+   29.6% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 6
+  Bearish: 1
+  Neutral: 5
+
+OVERALL BIAS: BULLISH
+
+================================================================================

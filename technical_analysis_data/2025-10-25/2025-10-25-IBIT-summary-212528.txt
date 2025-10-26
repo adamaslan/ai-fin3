@@ -1,0 +1,73 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - IBIT
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $62.83
+CHANGE: 0.43%
+VOLUME: 39,758,100
+
+MOVING AVERAGES:
+  10 SMA:  $62.78 (0.1%)
+  20 SMA:  $65.43 (-4.0%)
+  50 SMA:  $64.70 (-2.9%)
+  200 SMA: $58.84 (6.8%)
+
+KEY OSCILLATORS:
+  RSI:        28.4
+  Stochastic: 30.1
+  CCI:        -52.8
+  Williams:   -69.9
+  MFI:        27.9
+
+MOMENTUM & TREND:
+  MACD:       -0.9106
+  ADX:        17.3
+  Volatility: 41.6%
+
+BOLLINGER BANDS:
+  Upper:  $71.99
+  Middle: $65.43
+  Lower:  $58.87
+
+ACTIVE SIGNALS (10 total):
+
+1. PRICE ABOVE 10 MA
+   Price crossed above 10-day MA - BULLISH
+
+2. PRICE AT 10 MA
+   Price within 1% of 10 MA ($62.78) - WATCH
+
+3. RSI OVERSOLD
+   RSI at 28.4 - BULLISH
+
+4. RSI ENTERING OVERSOLD
+   RSI just dropped below 30 - WATCH
+
+5. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+6. OBV RISING
+   Buying pressure increasing - BULLISH
+
+7. WEAK TREND
+   ADX: 17.3 - ranging - NEUTRAL
+
+8. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+9. CLOUD BEARISH
+   Senkou A below B - BEARISH
+
+10. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 5
+  Bearish: 2
+  Neutral: 3
+
+OVERALL BIAS: BULLISH
+
+================================================================================
