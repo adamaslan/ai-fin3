@@ -1,0 +1,145 @@
+{
+  "symbol": "AAPL",
+  "timestamp": "2025-10-25 21:21:04",
+  "date": "2025-10-25",
+  "price": 262.82000732421875,
+  "change_pct": 1.2481781799657865,
+  "volume": 38221700,
+  "indicators": {
+    "RSI": 56.879927004299184,
+    "MACD": 4.354160770410601,
+    "ADX": 27.076603427932174,
+    "Stochastic": 88.39830798803379,
+    "CCI": 94.09016190946187,
+    "MFI": 53.65137327779736,
+    "BB_Position": 0.8675404647740915,
+    "Volatility": 23.363841835115355
+  },
+  "moving_averages": {
+    "SMA_10": 255.03699798583983,
+    "SMA_20": 255.02849884033202,
+    "SMA_50": 244.14179901123046,
+    "SMA_200": 222.1552377319336,
+    "EMA_10": 257.31623318349017,
+    "EMA_20": 254.20564664195805
+  },
+  "signals": [
+    {
+      "signal": "RSI BEARISH DIVERGENCE",
+      "desc": "Price up but RSI down",
+      "strength": "BEARISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD STRONG MOMENTUM",
+      "desc": "Histogram accelerating up",
+      "strength": "STRONG BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "WALKING UPPER BAND",
+      "desc": "Strong uptrend or overbought",
+      "strength": "EXTREME",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH OVERBOUGHT",
+      "desc": "K: 88.4",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERBOUGHT",
+      "desc": "W%R: -11.6",
+      "strength": "BEARISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "MFI BULLISH",
+      "desc": "Money flow crossed 50",
+      "strength": "BULLISH",
+      "category": "MFI"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 27.1",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG UPTREND CONFIRMED",
+      "desc": "+DI > -DI with high ADX",
+      "strength": "BULLISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "ABOVE CLOUD",
+      "desc": "Ichimoku bullish",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BULLISH",
+      "desc": "10 > 20 > 50 SMA",
+      "strength": "STRONG BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 19,
+  "bullish_count": 14,
+  "bearish_count": 3
+}

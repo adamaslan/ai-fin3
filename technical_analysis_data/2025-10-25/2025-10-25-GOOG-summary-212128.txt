@@ -1,0 +1,106 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - GOOG
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $260.51
+CHANGE: 2.67%
+VOLUME: 18,375,100
+
+MOVING AVERAGES:
+  10 SMA:  $252.33 (3.2%)
+  20 SMA:  $248.67 (4.8%)
+  50 SMA:  $237.10 (9.9%)
+  200 SMA: $191.68 (35.9%)
+
+KEY OSCILLATORS:
+  RSI:        59.3
+  Stochastic: 92.3
+  CCI:        141.7
+  Williams:   -7.7
+  MFI:        53.6
+
+MOMENTUM & TREND:
+  MACD:       4.9161
+  ADX:        14.7
+  Volatility: 23.9%
+
+BOLLINGER BANDS:
+  Upper:  $259.70
+  Middle: $248.67
+  Lower:  $237.65
+
+ACTIVE SIGNALS (21 total):
+
+1. MACD BULL CROSS
+   MACD crossed above signal - BULLISH
+
+2. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+3. MACD STRONG MOMENTUM
+   Histogram accelerating up - STRONG BULLISH
+
+4. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+5. BB SQUEEZE
+   Bands narrowing - breakout pending - NEUTRAL
+
+6. AT UPPER BB
+   Price at $259.70 - BEARISH
+
+7. BROKE UPPER BB
+   Strong momentum or overextension - BEARISH
+
+8. BB EXPANDING
+   Volatility increasing - VOLATILE
+
+9. BB TOP RANGE
+   In top 5% of BB range - BEARISH
+
+10. WALKING UPPER BAND
+   Strong uptrend or overbought - EXTREME
+
+11. OBV RISING
+   Buying pressure increasing - BULLISH
+
+12. STOCH OVERBOUGHT
+   K: 92.3 - BEARISH
+
+13. WILLIAMS OVERBOUGHT
+   W%R: -7.7 - BEARISH
+
+14. WEAK TREND
+   ADX: 14.7 - ranging - NEUTRAL
+
+15. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+16. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+17. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+18. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+19. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+20. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+21. EXTENDED FROM 200 SMA
+   35.9% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 11
+  Bearish: 5
+  Neutral: 5
+
+OVERALL BIAS: BULLISH
+
+================================================================================

@@ -1,0 +1,91 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - GLD
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $377.52
+CHANGE: -0.34%
+VOLUME: 13,229,100
+
+MOVING AVERAGES:
+  10 SMA:  $384.57 (-1.8%)
+  20 SMA:  $372.98 (1.2%)
+  50 SMA:  $345.51 (9.3%)
+  200 SMA: $304.06 (24.2%)
+
+KEY OSCILLATORS:
+  RSI:        56.8
+  Stochastic: 36.3
+  CCI:        26.6
+  Williams:   -63.7
+  MFI:        52.0
+
+MOMENTUM & TREND:
+  MACD:       11.0621
+  ADX:        41.9
+  Volatility: 33.5%
+
+BOLLINGER BANDS:
+  Upper:  $401.54
+  Middle: $372.98
+  Lower:  $344.41
+
+ACTIVE SIGNALS (16 total):
+
+1. RSI BEARISH DIVERGENCE
+   Price up but RSI down - BEARISH
+
+2. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+3. MACD WEAK MOMENTUM
+   Histogram accelerating down - STRONG BEARISH
+
+4. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+5. OBV BULL DIVERGENCE
+   Price down, OBV up - BULLISH
+
+6. STRONG UPTREND
+   ADX: 41.9 - TRENDING
+
+7. VERY STRONG TREND
+   ADX: 41.9 - EXTREME
+
+8. STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+9. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+10. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+11. ATR ELEVATED
+   Above-average true range - VOLATILE
+
+12. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+13. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+14. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+15. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+16. EXTENDED FROM 200 SMA
+   24.2% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 8
+  Bearish: 4
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================

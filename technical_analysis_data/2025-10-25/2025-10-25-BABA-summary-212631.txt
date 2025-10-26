@@ -1,0 +1,85 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - BABA
+================================================================================
+
+DATE: 2025-10-24
+PRICE: $174.70
+CHANGE: 1.63%
+VOLUME: 11,803,700
+
+MOVING AVERAGES:
+  10 SMA:  $168.03 (4.0%)
+  20 SMA:  $174.07 (0.4%)
+  50 SMA:  $155.54 (12.3%)
+  200 SMA: $126.09 (38.5%)
+
+KEY OSCILLATORS:
+  RSI:        40.9
+  Stochastic: 55.6
+  CCI:        3.1
+  Williams:   -44.4
+  MFI:        32.1
+
+MOMENTUM & TREND:
+  MACD:       2.8280
+  ADX:        34.5
+  Volatility: 54.0%
+
+BOLLINGER BANDS:
+  Upper:  $192.22
+  Middle: $174.07
+  Lower:  $155.92
+
+ACTIVE SIGNALS (14 total):
+
+1. PRICE ABOVE 20 MA
+   Price crossed above 20-day MA - BULLISH
+
+2. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+3. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+4. AT BB MIDDLE
+   Price at midline - NEUTRAL
+
+5. OBV RISING
+   Buying pressure increasing - BULLISH
+
+6. CCI POSITIVE
+   CCI crossed above zero - BULLISH
+
+7. STRONG UPTREND
+   ADX: 34.5 - TRENDING
+
+8. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+9. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+10. HIGH VOLATILITY
+   54% annualized - CAUTION
+
+11. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+12. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+13. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+14. EXTENDED FROM 200 SMA
+   38.5% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 9
+  Bearish: 1
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================

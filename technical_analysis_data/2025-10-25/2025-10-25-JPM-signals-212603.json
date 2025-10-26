@@ -1,0 +1,91 @@
+{
+  "symbol": "JPM",
+  "timestamp": "2025-10-25 21:26:03",
+  "date": "2025-10-25",
+  "price": 300.44000244140625,
+  "change_pct": 2.0031213843006768,
+  "volume": 7223000,
+  "indicators": {
+    "RSI": 42.10907415693682,
+    "MACD": -2.0384684997733302,
+    "ADX": 32.02096606416228,
+    "Stochastic": 45.875811198176294,
+    "CCI": -57.51272766917184,
+    "MFI": 39.34210432463803,
+    "BB_Position": 0.348731671088212,
+    "Volatility": 21.265258873293426
+  },
+  "moving_averages": {
+    "SMA_10": 300.0379974365234,
+    "SMA_20": 303.97825775146487,
+    "SMA_50": 302.21336486816404,
+    "SMA_200": 270.80478897094724,
+    "EMA_10": 299.66729412913617,
+    "EMA_20": 301.95092314403286
+  },
+  "signals": [
+    {
+      "signal": "PRICE ABOVE 10 MA",
+      "desc": "Price crossed above 10-day MA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "PRICE AT 10 MA",
+      "desc": "Price within 1% of 10 MA ($300.04)",
+      "strength": "WATCH",
+      "category": "MA_PROXIMITY"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 32.0",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "ABOVE CLOUD",
+      "desc": "Ichimoku bullish",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 10,
+  "bullish_count": 7,
+  "bearish_count": 1
+}
