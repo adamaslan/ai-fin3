@@ -1117,4 +1117,27 @@ Here are five plain-English, concrete things the notebook uses `yfinance` for:
 4. Access options-related data (option expiration dates and option chains) when you need implied volatility or option-flow-based alerts — the notebook can call per-ticker option endpoints when adding option/IV signals.
 
 5. Pull corporate actions and distributions (dividends, splits) and small interval/intraday data (when needed) to support time-frame specific alerts and adjust historical series for accurate indicators.
+6. Analyze technical signals using Gemini AI for actionable insights.
+7. Upload analysis results to Google Cloud Storage for further processing.
+8. Generate comprehensive reports summarizing the analysis and signals detected.
+
+### What pandas does in the code
+
+Pandas is the central data-handling engine in the notebook. Plain-language examples of what pandas is used for here:
+
+- Holds the OHLCV time-series as a DataFrame with a datetime index (the single source of truth for all indicator calculations).
+- Adds and stores indicator columns (SMA, EMA, RSI, MACD, Bollinger bands, ATR, ADX, CCI, VWAP, OBV, ROC, MFI, etc.) using vectorized operations and rolling/window methods.
+- Performs lag/shift and diff operations (.shift(), .diff()) to compute price changes, momentum, and directional movement used in indicators and signal detection.
+- Uses .rolling(), .ewm(), .mean(), .std(), .min(), .max() to compute moving averages, standard deviations, highs/lows over windows and other rolling statistics.
+- Selects rows with .iloc to compare the latest bars (current, prev, prev2) when deciding whether a signal triggered.
+- Concatenates and aligns series (pd.concat) when combining multiple intermediate arrays (for true range, VWAP numerator/denominator, etc.).
+- Handles missing data and NaNs produced by rolling windows (checks length, uses pd.isna when serializing, and drops or guards against short histories).
+- Exports results to disk and to in-memory CSV strings (.to_csv()) for local saving and cloud upload.
+
+### Two ways to get more from pandas (practical tips)
+
+1. Speed & caching: cache intermediate DataFrames to disk using Parquet or Feather so repeated scans reuse precomputed indicators. Use vectorized expressions (avoid Python loops over rows), and leverage pd.eval()/numexpr for heavy column arithmetic when possible. Example flow: download raw OHLCV once -> save as parquet -> compute indicators from parquet -> save enriched parquet -> generate alerts from enriched data.
+
+2. Scale & parallelize: for scanning many tickers, use tools that scale pandas workloads: either Dask/Modin (drop-in replacements that scale to multiple cores or clusters) or parallelize per-symbol processing with multiprocessing/futures while keeping each worker working on a pandas DataFrame. For heavy custom functions, consider Numba to JIT-compile numeric loops or move bottlenecks into vectorized numpy operations.
+
 
