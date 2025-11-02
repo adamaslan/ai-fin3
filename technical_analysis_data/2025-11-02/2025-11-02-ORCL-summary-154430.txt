@@ -1,0 +1,75 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - ORCL
+================================================================================
+
+DATE: 2025-10-31
+PRICE: $262.61
+CHANGE: 2.23%
+VOLUME: 16,881,900
+
+MOVING AVERAGES:
+  10 SMA:  $274.54 (-4.3%)
+  20 SMA:  $285.66 (-8.1%)
+  50 SMA:  $277.78 (-5.5%)
+  200 SMA: $205.36 (27.9%)
+
+KEY OSCILLATORS:
+  RSI:        28.6
+  Stochastic: 9.6
+  CCI:        -118.6
+  Williams:   -90.4
+  MFI:        33.2
+
+MOMENTUM & TREND:
+  MACD:       -4.3292
+  ADX:        15.3
+  Volatility: 51.9%
+
+BOLLINGER BANDS:
+  Upper:  $314.30
+  Middle: $285.66
+  Lower:  $257.02
+
+ACTIVE SIGNALS (12 total):
+
+1. [82/100] STOCH BULL CROSS
+   K crossed above D - BULLISH
+
+2. [80/100] STOCH OVERSOLD
+   K: 9.6 - BULLISH
+
+3. [78/100] WILLIAMS OVERSOLD
+   W%R: -90.4 - BULLISH
+
+4. [75/100] RSI OVERSOLD
+   RSI at 28.6 - BULLISH
+
+5. [65/100] RSI ENTERING OVERSOLD
+   RSI just dropped below 30 - WATCH
+
+6. [55/100] ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+7. [50/100] HIGH VOLATILITY
+   52% annualized - CAUTION
+
+8. [45/100] CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+9. [40/100] WEAK TREND
+   ADX: 15.3 - ranging - NEUTRAL
+
+10. [30/100] MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+... and 2 more signals
+
+SIGNAL BREAKDOWN:
+  Bullish: 6
+  Bearish: 2
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================
