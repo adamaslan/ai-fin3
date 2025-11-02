@@ -1,0 +1,100 @@
+
+================================================================================
+RANKED SIGNALS REPORT - ORCL
+================================================================================
+
+AI-Scored Signals (1-100 Scale)
+Generated: 2025-11-02 15:44:30
+
+🏆 TOP SIGNAL IDENTIFIED BY AI:
+Signal #5
+Reason: Stoch Bull Cross combines the oversold condition with momentum shift. It represents the highest probability for a short-term bounce due to multiple confirmations from RSI, Stochastic, and Williams %R.
+
+================================================================================
+ALL SIGNALS (Ranked by AI Score):
+================================================================================
+
+#1 🔥 SCORE: 82/100
+Signal: STOCH BULL CROSS
+Description: K crossed above D
+Category: STOCHASTIC | Strength: BULLISH
+AI Analysis: K crossing above D is a bullish crossover signal within the oversold stochastic oscillator, enhancing the buy signal. Good timing and reasonable reliability.
+--------------------------------------------------------------------------------
+
+#2 🔥 SCORE: 80/100
+Signal: STOCH OVERSOLD
+Description: K: 9.6
+Category: STOCHASTIC | Strength: BULLISH
+AI Analysis: Stochastics at 9.6 confirms oversold conditions, increasing the probability of a bullish reversal. Good actionability, especially combined with other oversold indicators. Reliability is decent.
+--------------------------------------------------------------------------------
+
+#3 ⚡ SCORE: 78/100
+Signal: WILLIAMS OVERSOLD
+Description: W%R: -90.4
+Category: WILLIAMS | Strength: BULLISH
+AI Analysis: Williams %R at -90.4 further confirms oversold conditions. Provides another perspective of oversold status. Decent Reliability.
+--------------------------------------------------------------------------------
+
+#4 ⚡ SCORE: 75/100
+Signal: RSI OVERSOLD
+Description: RSI at 28.6
+Category: RSI | Strength: BULLISH
+AI Analysis: RSI at 28.6 signals oversold conditions, potentially leading to a bounce. Actionable, but requires confirmation. Historically, oversold RSI offers reasonable reliability.
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 65/100
+Signal: RSI ENTERING OVERSOLD
+Description: RSI just dropped below 30
+Category: RSI | Strength: WATCH
+AI Analysis: Entering oversold territory suggests further downside momentum might be exhausted, but it is a weaker signal than a confirmed oversold reading. Less reliable as a standalone signal.
+--------------------------------------------------------------------------------
+
+#6 📊 SCORE: 55/100
+Signal: ABOVE 200 SMA
+Description: Long-term uptrend
+Category: MA_TREND | Strength: BULLISH
+AI Analysis: Above the 200 SMA suggests a long-term uptrend, providing a supportive backdrop. However, less impactful in the short-term oversold scenario. Average reliability.
+--------------------------------------------------------------------------------
+
+#7 📊 SCORE: 50/100
+Signal: HIGH VOLATILITY
+Description: 52% annualized
+Category: VOLATILITY | Strength: CAUTION
+AI Analysis: High Volatility (52%) increases the risk associated with any trade. Not a directional signal, but a caution flag. The score reflects this neutral stance, calling for reduced position size.
+--------------------------------------------------------------------------------
+
+#8 📊 SCORE: 45/100
+Signal: CLOUD BULLISH
+Description: Senkou A above B
+Category: ICHIMOKU | Strength: BULLISH
+AI Analysis: Senkou A above B is a bullish signal on the Ichimoku Cloud. Contradicts the fact that the price is trading below the cloud, making it less reliable. Less Actionable.
+--------------------------------------------------------------------------------
+
+#9 📊 SCORE: 40/100
+Signal: WEAK TREND
+Description: ADX: 15.3 - ranging
+Category: TREND | Strength: NEUTRAL
+AI Analysis: ADX at 15.3 indicates a weak or non-existent trend. Neutral signal, offering little actionable information. Poor reliability for directional trading.
+--------------------------------------------------------------------------------
+
+#10 ⚠️ SCORE: 30/100
+Signal: MACD MOMENTUM DOWN
+Description: Histogram expanding bearish
+Category: MACD | Strength: BEARISH
+AI Analysis: Bearish MACD momentum contradicts the oversold RSI signals. Low score as it indicates continued downward pressure despite oversold conditions. Less reliable.
+--------------------------------------------------------------------------------
+
+#11 ⚠️ SCORE: 25/100
+Signal: BELOW CLOUD
+Description: Ichimoku bearish
+Category: ICHIMOKU | Strength: BEARISH
+AI Analysis: Below the Ichimoku cloud suggests bearish trend. Low score since contradicts the bullish signs from RSI, stochastics and williams. High Risk involved.
+--------------------------------------------------------------------------------
+
+#12 ⚠️ SCORE: 20/100
+Signal: EXTENDED FROM 200 SMA
+Description: 27.9% above
+Category: MA_TREND | Strength: OVERBOUGHT
+AI Analysis: 27.9% above 200 SMA suggest a too extended upward move. This signal reinforces the need for a price correction. Not reliable.
+--------------------------------------------------------------------------------
+
