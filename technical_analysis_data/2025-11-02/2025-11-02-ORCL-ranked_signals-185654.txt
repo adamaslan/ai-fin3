@@ -1,0 +1,27 @@
+
+================================================================================
+RANKED SIGNALS REPORT - ORCL
+================================================================================
+
+Price: $262.61 | Change: 2.23%
+Date: 2025-10-31
+
+🏆 TOP SIGNAL: #1
+The RSI oversold condition, coupled with increased volume, offers the best short-term risk/reward opportunity. It's a classic mean reversion setup in a volatile environment, and the volume adds confidence to the signal.
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#1 🔥 SCORE: 88/100
+Signal: RSI OVERSOLD
+Description: RSI at 28.6
+AI Analysis: RSI at 28.6 indicates a significantly oversold condition. Given the increased volume (79% of 20-day avg), this suggests potential for a strong bounce. Actionable, reliable, good timing for a potential reversal, and excellent risk/reward assuming tight stop-loss placement. High volatility adds risk, but also opportunity.
+--------------------------------------------------------------------------------
+
+#2 ⚠️ SCORE: 35/100
+Signal: ABOVE 200 SMA
+Description: Long-term uptrend
+AI Analysis: While ORCL may be generally above its 200-day SMA (I don't have the 200-day SMA data to confirm precisely), the current RSI and MACD readings contradict the strength of this long-term trend. The fact that the price is deeply oversold (RSI) and that the MACD is still below 0, signals a weak and perhaps failing uptrend. This suggests this signal is not strong. ADX is low suggesting weak trend strength of the current downtrend, but overall the timing is poor.
+--------------------------------------------------------------------------------
+

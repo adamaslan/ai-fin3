@@ -1,0 +1,31 @@
+{
+  "symbol": "ORCL",
+  "timestamp": "2025-11-02 18:56:54",
+  "date": "2025-11-02",
+  "price": 262.6099853515625,
+  "signals": [
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 28.6",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "ai_score": 88,
+      "ai_reasoning": "RSI at 28.6 indicates a significantly oversold condition. Given the increased volume (79% of 20-day avg), this suggests potential for a strong bounce. Actionable, reliable, good timing for a potential reversal, and excellent risk/reward assuming tight stop-loss placement. High volatility adds risk, but also opportunity.",
+      "rank": 1
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND",
+      "ai_score": 35,
+      "ai_reasoning": "While ORCL may be generally above its 200-day SMA (I don't have the 200-day SMA data to confirm precisely), the current RSI and MACD readings contradict the strength of this long-term trend. The fact that the price is deeply oversold (RSI) and that the MACD is still below 0, signals a weak and perhaps failing uptrend. This suggests this signal is not strong. ADX is low suggesting weak trend strength of the current downtrend, but overall the timing is poor.",
+      "rank": 2
+    }
+  ],
+  "signal_count": 2,
+  "top_signal_info": {
+    "signal_number": 1,
+    "why": "The RSI oversold condition, coupled with increased volume, offers the best short-term risk/reward opportunity. It's a classic mean reversion setup in a volatile environment, and the volume adds confidence to the signal."
+  }
+}
