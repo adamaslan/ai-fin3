@@ -1,0 +1,76 @@
+{
+  "symbol": "Roku",
+  "timestamp": "2025-11-02 20:39:58",
+  "date": "2025-11-02",
+  "price": 106.12999725341797,
+  "signals": [
+    {
+      "signal": "VOLUME BREAKOUT",
+      "desc": "High volume + price up",
+      "strength": "STRONG BULLISH",
+      "category": "VOLUME",
+      "ai_score": 90,
+      "ai_reasoning": "Volume breakout (high volume + price increase) is a powerful bullish signal. It indicates a strong breakout from a previous resistance level. Actionability is very high, suggesting a strong buy signal. Reliability is high. Timing is excellent, confirming the breakout. Excellent risk/reward ratio with potential for substantial gains.",
+      "rank": 1
+    },
+    {
+      "signal": "LARGE GAIN",
+      "desc": "+6.1% today",
+      "strength": "STRONG BULLISH",
+      "category": "PRICE_ACTION",
+      "ai_score": 88,
+      "ai_reasoning": "Large gain (+6.1%) in a single day indicates strong positive momentum. It reinforces the bullish outlook. Actionability is high, encouraging a buy position. Reliability is moderate to high. Timing is good, confirming the upward trend. Good risk/reward due to momentum. However, might be late to the party.",
+      "rank": 2
+    },
+    {
+      "signal": "10/20 EMA BULL CROSS",
+      "desc": "10 EMA crossed above 20 EMA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS",
+      "ai_score": 85,
+      "ai_reasoning": "10/20 EMA bull cross is a strong bullish signal, especially when coupled with significant volume. Actionable for a long position. Reliability is moderate to high. Timing seems good, confirming upward momentum. Good risk/reward due to potential for continued upward trend.",
+      "rank": 3
+    },
+    {
+      "signal": "EXTREME VOLUME 3X",
+      "desc": "Vol: 15,526,800",
+      "strength": "VERY SIGNIFICANT",
+      "category": "VOLUME",
+      "ai_score": 82,
+      "ai_reasoning": "Extreme volume (3x avg) is a VERY significant sign of strong buying pressure. It further strengthens the bullish case. Actionability is very high. Reliability is high, indicating strong conviction. Timing is excellent. Risk/reward is potentially high, due to significant momentum.",
+      "rank": 4
+    },
+    {
+      "signal": "VOLUME SPIKE 2X",
+      "desc": "Vol: 15,526,800",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "ai_score": 78,
+      "ai_reasoning": "Volume spike (2x avg) is a significant confirmation of the price movement. It strengthens the bullish case. Actionability is high, reinforcing the bullish signal. Reliability is moderate to high. Timing is good, indicating strong interest. Risk/reward is decent, especially if combined with other bullish signals.",
+      "rank": 5
+    },
+    {
+      "signal": "RSI OVERBOUGHT",
+      "desc": "RSI at 71.4",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "ai_score": 72,
+      "ai_reasoning": "RSI being overbought (71.4) suggests a potential pullback or consolidation. It's a bearish signal but shouldn't be acted upon in isolation. Actionability is moderate, possibly setting up a short. Reliability is moderate. Timing might be slightly early. Risk/reward is decent if anticipating a pullback.",
+      "rank": 6
+    },
+    {
+      "signal": "AT UPPER BB",
+      "desc": "Price at $105.00",
+      "strength": "BEARISH",
+      "category": "BOLLINGER",
+      "ai_score": 68,
+      "ai_reasoning": "Price at the upper Bollinger Band indicates a potential short-term overextension. It's a bearish signal, suggesting a possible reversion to the mean. Actionability is moderate. Reliability is moderate, as price can sometimes continue to ride the upper band. Timing is dependent on other confirming signals. Risk/reward is decent if anticipating a pullback, but risk is high if the trend continues upwards.",
+      "rank": 7
+    }
+  ],
+  "signal_count": 7,
+  "top_signal_info": {
+    "signal_number": 6,
+    "why": "The volume breakout with a significant price increase offers the best risk/reward setup. The combination of high volume and positive price action suggests strong buying pressure and a likely continuation of the upward trend. Though the RSI is high, the volume is so convincing."
+  }
+}

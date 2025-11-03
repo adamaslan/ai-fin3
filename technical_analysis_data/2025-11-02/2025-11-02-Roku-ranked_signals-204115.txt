@@ -1,0 +1,57 @@
+
+================================================================================
+RANKED SIGNALS REPORT - Roku
+================================================================================
+
+Price: $106.13 | Change: 6.10%
+Date: 2025-10-31
+
+🏆 TOP SIGNAL: #6
+Volume breakout is the strongest signal due to its high actionability, reliability, excellent timing, and favorable risk/reward. It confirms the bullish trend with significant supporting evidence.  The confluence of volume and price action is very compelling.
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#1 🔥 SCORE: 95/100
+Signal: VOLUME BREAKOUT
+Description: High volume + price up
+AI Analysis: High volume combined with a price increase signals a strong breakout, indicating continued upward momentum. Highly actionable, reliable, excellent timing, and great risk/reward. It's a very compelling signal. The best signal overall.
+--------------------------------------------------------------------------------
+
+#2 🔥 SCORE: 90/100
+Signal: EXTREME VOLUME 3X
+Description: Vol: 15,526,800
+AI Analysis: Extreme volume of 3x the average confirms significant buying pressure and validates the price movement. Highly actionable, reliable, excellent timing, and good risk/reward. This signal is very strong. This is a key signal alongside the bull cross.
+--------------------------------------------------------------------------------
+
+#3 🔥 SCORE: 88/100
+Signal: LARGE GAIN
+Description: +6.1% today
+AI Analysis: A large gain of +6.1% indicates strong buying pressure and momentum. Actionable, reliable, good timing, and decent risk/reward. It's a strong bullish signal, particularly when combined with other indicators like volume. However, it is backward looking and the move already happened.
+--------------------------------------------------------------------------------
+
+#4 🔥 SCORE: 85/100
+Signal: 10/20 EMA BULL CROSS
+Description: 10 EMA crossed above 20 EMA
+AI Analysis: 10/20 EMA bull cross is a classic bullish signal, especially when confirmed by high volume. Actionable, fairly reliable, good timing given the price action, and decent risk/reward. Confirmed by volume which increases the score.
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 78/100
+Signal: VOLUME SPIKE 2X
+Description: Vol: 15,526,800
+AI Analysis: Volume spike of 2x the average is a strong indicator of interest and conviction. Actionable, reliable, good timing, and positive risk/reward.  It validates the other bullish signals and increases confidence in the uptrend. It is less compelling than 3x volume, though.
+--------------------------------------------------------------------------------
+
+#6 ⚡ SCORE: 72/100
+Signal: RSI OVERBOUGHT
+Description: RSI at 71.4
+AI Analysis: RSI overbought suggests a potential pullback, but in a strong uptrend, RSI can remain overbought for extended periods. Actionable for short-term traders, moderate reliability, questionable timing given the momentum, and limited risk/reward. The strong bullish price action tempers the bearish RSI signal.
+--------------------------------------------------------------------------------
+
+#7 ⚡ SCORE: 65/100
+Signal: AT UPPER BB
+Description: Price at $105.00
+AI Analysis: Price at the upper Bollinger Band suggests a potential reversal or consolidation. Less reliable than RSI alone, timing is decent, but the risk/reward is less favorable since it contradicts the EMA cross and volume. It is a relatively minor signal, compared to the others.
+--------------------------------------------------------------------------------
+
