@@ -1,0 +1,76 @@
+{
+  "symbol": "Roku",
+  "timestamp": "2025-11-02 20:41:15",
+  "date": "2025-11-02",
+  "price": 106.12999725341797,
+  "signals": [
+    {
+      "signal": "VOLUME BREAKOUT",
+      "desc": "High volume + price up",
+      "strength": "STRONG BULLISH",
+      "category": "VOLUME",
+      "ai_score": 95,
+      "ai_reasoning": "High volume combined with a price increase signals a strong breakout, indicating continued upward momentum. Highly actionable, reliable, excellent timing, and great risk/reward. It's a very compelling signal. The best signal overall.",
+      "rank": 1
+    },
+    {
+      "signal": "EXTREME VOLUME 3X",
+      "desc": "Vol: 15,526,800",
+      "strength": "VERY SIGNIFICANT",
+      "category": "VOLUME",
+      "ai_score": 90,
+      "ai_reasoning": "Extreme volume of 3x the average confirms significant buying pressure and validates the price movement. Highly actionable, reliable, excellent timing, and good risk/reward. This signal is very strong. This is a key signal alongside the bull cross.",
+      "rank": 2
+    },
+    {
+      "signal": "LARGE GAIN",
+      "desc": "+6.1% today",
+      "strength": "STRONG BULLISH",
+      "category": "PRICE_ACTION",
+      "ai_score": 88,
+      "ai_reasoning": "A large gain of +6.1% indicates strong buying pressure and momentum. Actionable, reliable, good timing, and decent risk/reward. It's a strong bullish signal, particularly when combined with other indicators like volume. However, it is backward looking and the move already happened.",
+      "rank": 3
+    },
+    {
+      "signal": "10/20 EMA BULL CROSS",
+      "desc": "10 EMA crossed above 20 EMA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS",
+      "ai_score": 85,
+      "ai_reasoning": "10/20 EMA bull cross is a classic bullish signal, especially when confirmed by high volume. Actionable, fairly reliable, good timing given the price action, and decent risk/reward. Confirmed by volume which increases the score.",
+      "rank": 4
+    },
+    {
+      "signal": "VOLUME SPIKE 2X",
+      "desc": "Vol: 15,526,800",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "ai_score": 78,
+      "ai_reasoning": "Volume spike of 2x the average is a strong indicator of interest and conviction. Actionable, reliable, good timing, and positive risk/reward.  It validates the other bullish signals and increases confidence in the uptrend. It is less compelling than 3x volume, though.",
+      "rank": 5
+    },
+    {
+      "signal": "RSI OVERBOUGHT",
+      "desc": "RSI at 71.4",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "ai_score": 72,
+      "ai_reasoning": "RSI overbought suggests a potential pullback, but in a strong uptrend, RSI can remain overbought for extended periods. Actionable for short-term traders, moderate reliability, questionable timing given the momentum, and limited risk/reward. The strong bullish price action tempers the bearish RSI signal.",
+      "rank": 6
+    },
+    {
+      "signal": "AT UPPER BB",
+      "desc": "Price at $105.00",
+      "strength": "BEARISH",
+      "category": "BOLLINGER",
+      "ai_score": 65,
+      "ai_reasoning": "Price at the upper Bollinger Band suggests a potential reversal or consolidation. Less reliable than RSI alone, timing is decent, but the risk/reward is less favorable since it contradicts the EMA cross and volume. It is a relatively minor signal, compared to the others.",
+      "rank": 7
+    }
+  ],
+  "signal_count": 7,
+  "top_signal_info": {
+    "signal_number": 6,
+    "why": "Volume breakout is the strongest signal due to its high actionability, reliability, excellent timing, and favorable risk/reward. It confirms the bullish trend with significant supporting evidence.  The confluence of volume and price action is very compelling."
+  }
+}

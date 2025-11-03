@@ -1,0 +1,57 @@
+
+================================================================================
+RANKED SIGNALS REPORT - Roku
+================================================================================
+
+Price: $106.13 | Change: 6.10%
+Date: 2025-10-31
+
+🏆 TOP SIGNAL: #6
+The volume breakout with a significant price increase offers the best risk/reward setup. The combination of high volume and positive price action suggests strong buying pressure and a likely continuation of the upward trend. Though the RSI is high, the volume is so convincing.
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#1 🔥 SCORE: 90/100
+Signal: VOLUME BREAKOUT
+Description: High volume + price up
+AI Analysis: Volume breakout (high volume + price increase) is a powerful bullish signal. It indicates a strong breakout from a previous resistance level. Actionability is very high, suggesting a strong buy signal. Reliability is high. Timing is excellent, confirming the breakout. Excellent risk/reward ratio with potential for substantial gains.
+--------------------------------------------------------------------------------
+
+#2 🔥 SCORE: 88/100
+Signal: LARGE GAIN
+Description: +6.1% today
+AI Analysis: Large gain (+6.1%) in a single day indicates strong positive momentum. It reinforces the bullish outlook. Actionability is high, encouraging a buy position. Reliability is moderate to high. Timing is good, confirming the upward trend. Good risk/reward due to momentum. However, might be late to the party.
+--------------------------------------------------------------------------------
+
+#3 🔥 SCORE: 85/100
+Signal: 10/20 EMA BULL CROSS
+Description: 10 EMA crossed above 20 EMA
+AI Analysis: 10/20 EMA bull cross is a strong bullish signal, especially when coupled with significant volume. Actionable for a long position. Reliability is moderate to high. Timing seems good, confirming upward momentum. Good risk/reward due to potential for continued upward trend.
+--------------------------------------------------------------------------------
+
+#4 🔥 SCORE: 82/100
+Signal: EXTREME VOLUME 3X
+Description: Vol: 15,526,800
+AI Analysis: Extreme volume (3x avg) is a VERY significant sign of strong buying pressure. It further strengthens the bullish case. Actionability is very high. Reliability is high, indicating strong conviction. Timing is excellent. Risk/reward is potentially high, due to significant momentum.
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 78/100
+Signal: VOLUME SPIKE 2X
+Description: Vol: 15,526,800
+AI Analysis: Volume spike (2x avg) is a significant confirmation of the price movement. It strengthens the bullish case. Actionability is high, reinforcing the bullish signal. Reliability is moderate to high. Timing is good, indicating strong interest. Risk/reward is decent, especially if combined with other bullish signals.
+--------------------------------------------------------------------------------
+
+#6 ⚡ SCORE: 72/100
+Signal: RSI OVERBOUGHT
+Description: RSI at 71.4
+AI Analysis: RSI being overbought (71.4) suggests a potential pullback or consolidation. It's a bearish signal but shouldn't be acted upon in isolation. Actionability is moderate, possibly setting up a short. Reliability is moderate. Timing might be slightly early. Risk/reward is decent if anticipating a pullback.
+--------------------------------------------------------------------------------
+
+#7 ⚡ SCORE: 68/100
+Signal: AT UPPER BB
+Description: Price at $105.00
+AI Analysis: Price at the upper Bollinger Band indicates a potential short-term overextension. It's a bearish signal, suggesting a possible reversion to the mean. Actionability is moderate. Reliability is moderate, as price can sometimes continue to ride the upper band. Timing is dependent on other confirming signals. Risk/reward is decent if anticipating a pullback, but risk is high if the trend continues upwards.
+--------------------------------------------------------------------------------
+
