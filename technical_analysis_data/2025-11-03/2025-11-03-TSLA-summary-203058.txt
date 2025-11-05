@@ -1,0 +1,100 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - TSLA
+================================================================================
+
+DATE: 2025-11-03
+PRICE: $468.37
+CHANGE: 2.59%
+VOLUME: 84,122,035
+
+MOVING AVERAGES:
+  10 SMA:  $450.38 (4.0%)
+  20 SMA:  $442.02 (6.0%)
+  50 SMA:  $413.21 (13.3%)
+  200 SMA: $nan (nan%)
+
+KEY OSCILLATORS:
+  RSI:        63.8
+  Stochastic: 90.5
+  CCI:        138.9
+  Williams:   -9.5
+  MFI:        64.6
+
+MOMENTUM & TREND:
+  MACD:       11.8098
+  ADX:        14.4
+  Volatility: 48.1%
+
+BOLLINGER BANDS:
+  Upper:  $468.28
+  Middle: $442.02
+  Lower:  $415.76
+
+ACTIVE SIGNALS (19 total):
+
+1. MACD BULL CROSS
+   MACD crossed above signal - BULLISH
+
+2. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+3. MACD STRONG MOMENTUM
+   Histogram accelerating up - STRONG BULLISH
+
+4. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+5. BB SQUEEZE
+   Bands narrowing - breakout pending - NEUTRAL
+
+6. AT UPPER BB
+   Price at $468.28 - BEARISH
+
+7. BROKE UPPER BB
+   Strong momentum or overextension - BEARISH
+
+8. BB EXPANDING
+   Volatility increasing - VOLATILE
+
+9. BB TOP RANGE
+   In top 5% of BB range - BEARISH
+
+10. WALKING UPPER BAND
+   Strong uptrend or overbought - EXTREME
+
+11. VOLUME RISING
+   Participation increasing - WATCH
+
+12. OBV RISING
+   Buying pressure increasing - BULLISH
+
+13. STOCH OVERBOUGHT
+   K: 90.5 - BEARISH
+
+14. WILLIAMS OVERBOUGHT
+   W%R: -9.5 - BEARISH
+
+15. WEAK TREND
+   ADX: 14.4 - ranging - NEUTRAL
+
+16. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+17. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+18. TENKAN/KIJUN CROSS
+   Ichimoku bull signal - BULLISH
+
+19. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 9
+  Bearish: 5
+  Neutral: 5
+
+OVERALL BIAS: BULLISH
+
+================================================================================

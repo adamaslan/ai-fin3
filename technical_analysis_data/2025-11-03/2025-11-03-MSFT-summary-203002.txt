@@ -1,0 +1,58 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - MSFT
+================================================================================
+
+DATE: 2025-11-03
+PRICE: $517.03
+CHANGE: -0.15%
+VOLUME: 22,312,524
+
+MOVING AVERAGES:
+  10 SMA:  $525.81 (-1.7%)
+  20 SMA:  $521.17 (-0.8%)
+  50 SMA:  $nan (nan%)
+  200 SMA: $nan (nan%)
+
+KEY OSCILLATORS:
+  RSI:        53.0
+  Stochastic: 20.9
+  CCI:        -20.3
+  Williams:   -79.1
+  MFI:        41.3
+
+MOMENTUM & TREND:
+  MACD:       0.1834
+  ADX:        nan
+  Volatility: 18.0%
+
+BOLLINGER BANDS:
+  Upper:  $538.89
+  Middle: $521.17
+  Lower:  $503.45
+
+ACTIVE SIGNALS (5 total):
+
+1. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+2. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+3. OBV FALLING
+   Selling pressure increasing - BEARISH
+
+4. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+5. LOW VOLATILITY
+   18% annualized - CALM
+
+SIGNAL BREAKDOWN:
+  Bullish: 2
+  Bearish: 2
+  Neutral: 1
+
+OVERALL BIAS: NEUTRAL
+
+================================================================================

@@ -1,0 +1,94 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - IONQ
+================================================================================
+
+DATE: 2025-11-03
+PRICE: $58.40
+CHANGE: -6.38%
+VOLUME: 23,665,707
+
+MOVING AVERAGES:
+  10 SMA:  $59.66 (-2.1%)
+  20 SMA:  $65.94 (-11.4%)
+  50 SMA:  $60.35 (-3.2%)
+  200 SMA: $41.21 (41.7%)
+
+KEY OSCILLATORS:
+  RSI:        29.3
+  Stochastic: 21.9
+  CCI:        -59.9
+  Williams:   -78.1
+  MFI:        37.2
+
+MOMENTUM & TREND:
+  MACD:       -1.2587
+  ADX:        27.2
+  Volatility: 107.4%
+
+BOLLINGER BANDS:
+  Upper:  $82.64
+  Middle: $65.94
+  Lower:  $49.24
+
+ACTIVE SIGNALS (17 total):
+
+1. PRICE BELOW 10 MA
+   Price crossed below 10-day MA - BEARISH
+
+2. RSI OVERSOLD
+   RSI at 29.3 - BULLISH
+
+3. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+4. VOLUME RISING
+   Participation increasing - WATCH
+
+5. OBV BULL DIVERGENCE
+   Price down, OBV up - BULLISH
+
+6. STOCH BEAR CROSS
+   K crossed below D - BEARISH
+
+7. STRONG DOWNTREND
+   ADX: 27.2 - TRENDING
+
+8. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+9. LARGE LOSS
+   -6.4% today - STRONG BEARISH
+
+10. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+11. WIDE RANGE DAY
+   Range: 10.8% - VOLATILE
+
+12. WEAK 20D MOMENTUM
+   -26.1% in 20 days - STRONG BEARISH
+
+13. HIGH VOLATILITY
+   107% annualized - CAUTION
+
+14. EXTREME VOLATILITY
+   107% annualized - HIGH RISK
+
+15. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+16. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+17. EXTENDED FROM 200 SMA
+   41.7% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 5
+  Bearish: 6
+  Neutral: 6
+
+OVERALL BIAS: BEARISH
+
+================================================================================
