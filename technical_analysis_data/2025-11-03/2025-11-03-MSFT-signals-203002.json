@@ -1,0 +1,61 @@
+{
+  "symbol": "MSFT",
+  "timestamp": "2025-11-03 20:30:02",
+  "date": "2025-11-03",
+  "price": 517.030029296875,
+  "change_pct": -0.15062827396076228,
+  "volume": 22312524,
+  "indicators": {
+    "RSI": 53.01080808349045,
+    "MACD": 0.18338933099448695,
+    "ADX": NaN,
+    "Stochastic": 20.94384262626236,
+    "CCI": -20.29095786707313,
+    "MFI": 41.31520331210476,
+    "BB_Position": 0.3832852111660118,
+    "Volatility": 17.967536709291362
+  },
+  "moving_averages": {
+    "SMA_10": 525.8109985351563,
+    "SMA_20": 521.1664962768555,
+    "SMA_50": NaN,
+    "SMA_200": null,
+    "EMA_10": 524.3061257547491,
+    "EMA_20": 523.8740582884648
+  },
+  "signals": [
+    {
+      "signal": "MACD MOMENTUM DOWN",
+      "desc": "Histogram expanding bearish",
+      "strength": "BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "OBV FALLING",
+      "desc": "Selling pressure increasing",
+      "strength": "BEARISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "LOW VOLATILITY",
+      "desc": "18% annualized",
+      "strength": "CALM",
+      "category": "VOLATILITY"
+    }
+  ],
+  "signal_count": 5,
+  "bullish_count": 2,
+  "bearish_count": 2
+}

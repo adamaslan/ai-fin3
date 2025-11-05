@@ -1,0 +1,97 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - MP
+================================================================================
+
+DATE: 2025-11-03
+PRICE: $57.66
+CHANGE: -8.61%
+VOLUME: 13,402,768
+
+MOVING AVERAGES:
+  10 SMA:  $66.36 (-13.1%)
+  20 SMA:  $74.49 (-22.6%)
+  50 SMA:  $71.04 (-18.8%)
+  200 SMA: $42.91 (34.4%)
+
+KEY OSCILLATORS:
+  RSI:        10.0
+  Stochastic: 1.3
+  CCI:        -100.2
+  Williams:   -98.7
+  MFI:        22.0
+
+MOMENTUM & TREND:
+  MACD:       -3.0551
+  ADX:        35.6
+  Volatility: 114.6%
+
+BOLLINGER BANDS:
+  Upper:  $96.62
+  Middle: $74.49
+  Lower:  $52.35
+
+ACTIVE SIGNALS (18 total):
+
+1. RSI OVERSOLD
+   RSI at 10.0 - BULLISH
+
+2. RSI EXTREME OVERSOLD
+   RSI at 10.0 - STRONG BULLISH
+
+3. OBV FALLING
+   Selling pressure increasing - BEARISH
+
+4. STOCH OVERSOLD
+   K: 1.3 - BULLISH
+
+5. WILLIAMS OVERSOLD
+   W%R: -98.7 - BULLISH
+
+6. STRONG DOWNTREND
+   ADX: 35.6 - TRENDING
+
+7. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+8. LARGE LOSS
+   -8.6% today - STRONG BEARISH
+
+9. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+10. WIDE RANGE DAY
+   Range: 8.8% - VOLATILE
+
+11. STRONG BEARISH CANDLE
+   Large body, small wicks - BEARISH
+
+12. WEAK 20D MOMENTUM
+   -22.4% in 20 days - STRONG BEARISH
+
+13. HIGH VOLATILITY
+   115% annualized - CAUTION
+
+14. EXTREME VOLATILITY
+   115% annualized - HIGH RISK
+
+15. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+16. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+17. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+18. EXTENDED FROM 200 SMA
+   34.4% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 6
+  Bearish: 7
+  Neutral: 5
+
+OVERALL BIAS: BEARISH
+
+================================================================================

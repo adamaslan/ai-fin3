@@ -1,0 +1,75 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - MP
+================================================================================
+
+DATE: 2025-11-03
+PRICE: $57.66
+CHANGE: -8.61%
+VOLUME: 13,402,768
+
+MOVING AVERAGES:
+  10 SMA:  $66.36 (-13.1%)
+  20 SMA:  $74.49 (-22.6%)
+  50 SMA:  $nan (nan%)
+  200 SMA: $nan (nan%)
+
+KEY OSCILLATORS:
+  RSI:        10.0
+  Stochastic: 1.3
+  CCI:        -100.2
+  Williams:   -98.7
+  MFI:        22.0
+
+MOMENTUM & TREND:
+  MACD:       -4.0183
+  ADX:        nan
+  Volatility: 114.6%
+
+BOLLINGER BANDS:
+  Upper:  $96.62
+  Middle: $74.49
+  Lower:  $52.35
+
+ACTIVE SIGNALS (12 total):
+
+1. [85/100] RSI EXTREME OVERSOLD
+   RSI at 10.0 - STRONG BULLISH
+
+2. [80/100] RSI OVERSOLD
+   RSI at 10.0 - BULLISH
+
+3. [75/100] STOCH OVERSOLD
+   K: 1.3 - BULLISH
+
+4. [70/100] WILLIAMS OVERSOLD
+   W%R: -98.7 - BULLISH
+
+5. [50/100] WIDE RANGE DAY
+   Range: 8.8% - VOLATILE
+
+6. [45/100] HIGH VOLATILITY
+   115% annualized - CAUTION
+
+7. [40/100] LOWER LOW
+   Breaking below yesterday - BEARISH
+
+8. [35/100] STRONG BEARISH CANDLE
+   Large body, small wicks - BEARISH
+
+9. [30/100] OBV FALLING
+   Selling pressure increasing - BEARISH
+
+10. [30/100] EXTREME VOLATILITY
+   115% annualized - HIGH RISK
+
+... and 2 more signals
+
+SIGNAL BREAKDOWN:
+  Bullish: 4
+  Bearish: 5
+  Neutral: 3
+
+OVERALL BIAS: BEARISH
+
+================================================================================

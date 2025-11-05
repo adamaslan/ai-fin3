@@ -1,0 +1,139 @@
+{
+  "symbol": "MP",
+  "timestamp": "2025-11-03 20:26:17",
+  "date": "2025-11-03",
+  "price": 57.65999984741211,
+  "change_pct": -8.606752721576981,
+  "volume": 13402768,
+  "indicators": {
+    "RSI": 9.962880662122359,
+    "MACD": -3.055066303509662,
+    "ADX": 35.60012158539849,
+    "Stochastic": 1.2797950842191377,
+    "CCI": -100.15446817820145,
+    "MFI": 21.951988425580595,
+    "BB_Position": 0.1199605068027059,
+    "Volatility": 114.56784647623657
+  },
+  "moving_averages": {
+    "SMA_10": 66.36399993896484,
+    "SMA_20": 74.4859992980957,
+    "SMA_50": 71.0387995147705,
+    "SMA_200": 42.9091499042511,
+    "EMA_10": 66.59344749813734,
+    "EMA_20": 70.12053773029648
+  },
+  "signals": [
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 10.0",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "RSI EXTREME OVERSOLD",
+      "desc": "RSI at 10.0",
+      "strength": "STRONG BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "OBV FALLING",
+      "desc": "Selling pressure increasing",
+      "strength": "BEARISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH OVERSOLD",
+      "desc": "K: 1.3",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERSOLD",
+      "desc": "W%R: -98.7",
+      "strength": "BULLISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 35.6",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "LARGE LOSS",
+      "desc": "-8.6% today",
+      "strength": "STRONG BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "WIDE RANGE DAY",
+      "desc": "Range: 8.8%",
+      "strength": "VOLATILE",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "STRONG BEARISH CANDLE",
+      "desc": "Large body, small wicks",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "WEAK 20D MOMENTUM",
+      "desc": "-22.4% in 20 days",
+      "strength": "STRONG BEARISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "115% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "EXTREME VOLATILITY",
+      "desc": "115% annualized",
+      "strength": "HIGH RISK",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "34.4% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 18,
+  "bullish_count": 6,
+  "bearish_count": 7
+}

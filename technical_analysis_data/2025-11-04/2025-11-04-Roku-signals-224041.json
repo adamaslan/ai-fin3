@@ -1,0 +1,22 @@
+{
+  "symbol": "Roku",
+  "timestamp": "2025-11-04 22:40:41",
+  "date": "2025-11-04",
+  "price": 106.0999984741211,
+  "signals": [
+    {
+      "signal": "AT UPPER BB",
+      "desc": "Price at $106.95",
+      "strength": "BEARISH",
+      "category": "BOLLINGER",
+      "ai_score": 65,
+      "ai_reasoning": "The price at the upper Bollinger Band ($106.95, while current price is $106.10) suggests potential overbought conditions and a possible reversal. However, a small pullback from the upper band and ADX not confirming a strong trend weakens the signal. The volume being slightly above average could still support a short-term bearish view. Actionability is moderate as a short position can be initiated but needs tight stop-loss. Reliability is moderate, as BB touches are not always reversal signals. Timing might be a bit early if the uptrend has more steam.",
+      "rank": 1
+    }
+  ],
+  "signal_count": 1,
+  "top_signal_info": {
+    "signal_number": 1,
+    "why": "Represents a moderate counter-trend opportunity. Good for short-term traders familiar with Roku's volatility and trading Bollinger Band breakouts/reversals."
+  }
+}

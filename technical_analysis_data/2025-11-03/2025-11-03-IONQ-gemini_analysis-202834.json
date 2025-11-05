@@ -1,0 +1,111 @@
+{
+  "symbol": "IONQ",
+  "timestamp": "2025-11-03 20:28:34",
+  "date": "2025-11-03",
+  "analysis": "Okay, here's a technical analysis of IONQ based on the data provided, focusing on actionable insights:\n\n**1. STRONGEST SIGNAL:**\n\n*   **[PRICE_ACTION] LARGE LOSS - -6.4% today (STRONG BEARISH):** This is the most actionable signal because it reflects immediate and significant downward pressure on the stock. Large single-day losses often trigger further selling, especially with already weak momentum. This signal overrides some of the short-term bullish indicators.\n\n**2. OVERALL BIAS:**\n\n*   **Bearish:** Confidence Level: 75%. While there are some bullish signals, the overwhelming weight of recent price action, weak momentum, and bearish trend confirmations suggest a continued downward trend in the short-to-medium term. The extreme volatility amplifies the risks associated with a bullish position.\n\n**3. KEY LEVELS:**\n\n*   **Immediate Support:**  Look for support around the $55.00 level. This is based on typical psychological levels and previous price action.\n*   **Stronger Support:** Deeper support could exist around the $50.00 level.\n*   **Resistance:** The 20-day SMA ($65.88) will act as initial resistance. Overcoming that requires significant bullish momentum.\n\n**4. RISK ASSESSMENT:**\n\n*   **High Volatility:** The 107.4% volatility implies significant price swings in both directions. This increases the risk of rapid losses.\n*   **Downtrend Continuation:** The existing downtrend and negative momentum suggest the price could fall further.\n*   **Overbought Conditions:** While a long-term trend suggests it is overbought, there is no guarantee that the price cannot continue to drop further.\n\n**5. TRADING RECOMMENDATION:**\n\n*   **Wait:** Given the current data, the best course of action is to **WAIT** and observe price action. IONQ is showing signs of short-term oversold conditions that may result in a \"dead cat bounce\". Trying to catch the falling knife could be dangerous.\n    *   **Entry Strategy (If Bullish):** Only consider a long position if the price shows signs of stabilization and bullish reversal, such as breaking above the 10-day SMA with increasing volume and positive MACD crossover. A conservative entry point would be a confirmed break above the 20-day SMA, though that would mean missing out on some initial gains.\n    *   **Exit Strategy (For Long Positions):** If you already hold a long position, consider setting a tight stop-loss order just below the immediate support level (around $54.00) to limit potential losses.\n    *   **Short Strategy (If Bearish):**  Aggressive traders might consider a short position if the price bounces to the 20-day SMA and then fails to break through, confirming resistance.\n\n**6. TIMEFRAME:**\n\n*   **Short-Term to Medium-Term (Weeks to a few Months):** This analysis is most relevant for short-term to medium-term traders. The extreme volatility and strong momentum indicators suggest that these trends could persist for several weeks or months. Long-term investors may want to hold on if their initial hypothesis remains the same.\n\n**Important Considerations:**\n\n*   **Quantum Computing Sector:** Remember that IONQ operates in a nascent and highly speculative sector. News and developments within the quantum computing industry can significantly impact the stock price, regardless of technical indicators.\n*   **Company Fundamentals:** This analysis is purely technical. It's crucial to also consider IONQ's fundamental financial health, growth prospects, and competitive landscape before making any investment decisions.\n\n**Disclaimer:** This analysis is for informational purposes only and should not be considered financial advice. Consult with a qualified financial advisor before making any investment decisions.\n",
+  "signal_count": 17,
+  "signals_analyzed": [
+    {
+      "signal": "PRICE BELOW 10 MA",
+      "desc": "Price crossed below 10-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 29.3",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "VOLUME RISING",
+      "desc": "Participation increasing",
+      "strength": "WATCH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "OBV BULL DIVERGENCE",
+      "desc": "Price down, OBV up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 27.2",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "LARGE LOSS",
+      "desc": "-6.4% today",
+      "strength": "STRONG BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "WIDE RANGE DAY",
+      "desc": "Range: 10.8%",
+      "strength": "VOLATILE",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "WEAK 20D MOMENTUM",
+      "desc": "-26.1% in 20 days",
+      "strength": "STRONG BEARISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "107% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "EXTREME VOLATILITY",
+      "desc": "107% annualized",
+      "strength": "HIGH RISK",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "41.7% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    }
+  ]
+}

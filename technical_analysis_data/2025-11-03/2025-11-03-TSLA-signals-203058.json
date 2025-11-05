@@ -1,0 +1,145 @@
+{
+  "symbol": "TSLA",
+  "timestamp": "2025-11-03 20:30:58",
+  "date": "2025-11-03",
+  "price": 468.3699951171875,
+  "change_pct": 2.586735066967427,
+  "volume": 84122035,
+  "indicators": {
+    "RSI": 63.7597595509351,
+    "MACD": 11.809835282845143,
+    "ADX": 14.424476884827792,
+    "Stochastic": 90.526822444743,
+    "CCI": 138.93808214117234,
+    "MFI": 64.64099960688472,
+    "BB_Position": 1.0017649623690532,
+    "Volatility": 48.12750054101652
+  },
+  "moving_averages": {
+    "SMA_10": 450.3780029296875,
+    "SMA_20": 442.01849975585935,
+    "SMA_50": 413.20739990234375,
+    "SMA_200": null,
+    "EMA_10": 451.8325231441859,
+    "EMA_20": 443.7575556009846
+  },
+  "signals": [
+    {
+      "signal": "MACD BULL CROSS",
+      "desc": "MACD crossed above signal",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD STRONG MOMENTUM",
+      "desc": "Histogram accelerating up",
+      "strength": "STRONG BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "AT UPPER BB",
+      "desc": "Price at $468.28",
+      "strength": "BEARISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BROKE UPPER BB",
+      "desc": "Strong momentum or overextension",
+      "strength": "BEARISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB EXPANDING",
+      "desc": "Volatility increasing",
+      "strength": "VOLATILE",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB TOP RANGE",
+      "desc": "In top 5% of BB range",
+      "strength": "BEARISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "WALKING UPPER BAND",
+      "desc": "Strong uptrend or overbought",
+      "strength": "EXTREME",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "VOLUME RISING",
+      "desc": "Participation increasing",
+      "strength": "WATCH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "OBV RISING",
+      "desc": "Buying pressure increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "STOCH OVERBOUGHT",
+      "desc": "K: 90.5",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERBOUGHT",
+      "desc": "W%R: -9.5",
+      "strength": "BEARISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "WEAK TREND",
+      "desc": "ADX: 14.4 - ranging",
+      "strength": "NEUTRAL",
+      "category": "TREND"
+    },
+    {
+      "signal": "HIGHER HIGH",
+      "desc": "Breaking above yesterday",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "TENKAN/KIJUN CROSS",
+      "desc": "Ichimoku bull signal",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BULLISH",
+      "desc": "10 > 20 > 50 SMA",
+      "strength": "STRONG BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 19,
+  "bullish_count": 9,
+  "bearish_count": 5
+}
