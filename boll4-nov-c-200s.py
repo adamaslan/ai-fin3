@@ -1,5 +1,3 @@
-# nu nu pull
-
 import yfinance as yf
 import pandas as pd
 import numpy as np
@@ -667,48 +665,35 @@ class TechnicalAnalyzer:
         
         print("\n🤖 AI is scoring all signals (1-100)...")
         
+        # If too many signals, process in batches
+        max_signals_per_batch = 50
+        if len(self.signals) > max_signals_per_batch:
+            print(f"⚙️  Processing {len(self.signals)} signals in batches...")
+            self._rank_signals_in_batches(max_signals_per_batch)
+            return
+        
         try:
             current = self.data.iloc[-1]
             
-            prompt = f"""You are an expert technical analyst scoring trading signals for {self.symbol}.
+            prompt = f"""You are an expert technical analyst. Score these trading signals for {self.symbol}.
 
-CURRENT MARKET DATA:
-- Price: ${current['Close']:.2f}
-- Daily Change: {current['Price_Change']:.2f}%
-- RSI: {current['RSI']:.1f}
-- MACD: {current['MACD']:.4f}
-- ADX: {current['ADX']:.1f}
-- Volatility: {current['Volatility']:.1f}%
-- Volume vs 20-day avg: {(current['Volume'] / current['Volume_MA_20'] * 100):.0f}%
+MARKET DATA:
+- Price: ${current['Close']:.2f} | Change: {current['Price_Change']:.2f}%
+- RSI: {current['RSI']:.1f} | MACD: {current['MACD']:.4f} | ADX: {current['ADX']:.1f}
+- Volatility: {current['Volatility']:.1f}% | Volume: {(current['Volume'] / current['Volume_MA_20'] * 100):.0f}% of avg
 
-SIGNALS TO SCORE:
+SIGNALS:
 """
             for i, sig in enumerate(self.signals, 1):
-                prompt += f"\n{i}. {sig['signal']} - {sig['desc']} ({sig['strength']}) [{sig['category']}]"
+                prompt += f"{i}. {sig['signal']}: {sig['desc']}\n"
             
             prompt += """
+Score each signal 1-100 based on actionability, reliability, timing, and risk/reward.
 
-TASK: Score each signal from 1-100 based on:
-- Actionability (how tradeable is this signal?)
-- Reliability (historical success rate)
-- Timing (is this the right moment?)
-- Risk/Reward potential
-- Market context alignment
+Return ONLY valid JSON (no markdown, no explanations):
+{"scores":[{"signal_number":1,"score":85,"reasoning":"Brief reason"},{"signal_number":2,"score":72,"reasoning":"Brief reason"}],"top_signal":{"signal_number":1,"why":"Brief explanation"}}
 
-RESPONSE FORMAT (JSON):
-{
-  "scores": [
-    {"signal_number": 1, "score": 85, "reasoning": "Strong reversal signal with volume"},
-    {"signal_number": 2, "score": 72, "reasoning": "Moderate signal but overbought"},
-    ...
-  ],
-  "top_signal": {
-    "signal_number": 1,
-    "why": "Best risk/reward setup"
-  }
-}
-
-Score ALL signals. Use full 1-100 range. Be critical."""
+Make reasoning brief (under 50 chars). Score ALL signals."""
 
             response = self.genai_client.models.generate_content(
                 model='gemini-2.0-flash-exp',
@@ -717,34 +702,130 @@ Score ALL signals. Use full 1-100 range. Be critical."""
             
             response_text = response.text.strip()
             
+            # Clean up response
             if '```json' in response_text:
                 response_text = response_text.split('```json')[1].split('```')[0].strip()
             elif '```' in response_text:
                 response_text = response_text.split('```')[1].split('```')[0].strip()
             
+            # Remove any leading/trailing text
+            start_idx = response_text.find('{')
+            end_idx = response_text.rfind('}')
+            if start_idx != -1 and end_idx != -1:
+                response_text = response_text[start_idx:end_idx+1]
+            
+            # Parse JSON
             scores_data = json.loads(response_text)
             
-            for score_item in scores_data['scores']:
+            # Apply scores
+            scores_applied = 0
+            for score_item in scores_data.get('scores', []):
                 sig_num = score_item['signal_number'] - 1
                 if 0 <= sig_num < len(self.signals):
-                    self.signals[sig_num]['ai_score'] = score_item['score']
-                    self.signals[sig_num]['ai_reasoning'] = score_item['reasoning']
+                    self.signals[sig_num]['ai_score'] = score_item.get('score', 50)
+                    self.signals[sig_num]['ai_reasoning'] = score_item.get('reasoning', 'No reasoning provided')
+                    scores_applied += 1
             
+            # Sort by score
             self.signals.sort(key=lambda x: x.get('ai_score', 0), reverse=True)
             
+            # Add ranks
             for rank, signal in enumerate(self.signals, 1):
                 signal['rank'] = rank
             
             self.top_signal_info = scores_data.get('top_signal', {})
             
-            print(f"✅ AI scored {len(self.signals)} signals")
-            print(f"🏆 Top Signal: #{self.top_signal_info.get('signal_number', 'N/A')}")
+            print(f"✅ AI scored {scores_applied}/{len(self.signals)} signals")
+            if self.top_signal_info:
+                print(f"🏆 Top Signal: #{self.top_signal_info.get('signal_number', 'N/A')}")
+            
+            # Fill in any missing scores
+            for signal in self.signals:
+                if 'ai_score' not in signal:
+                    signal['ai_score'] = 50
+                    signal['ai_reasoning'] = 'Score not provided by AI'
+            
+        except json.JSONDecodeError as e:
+            print(f"❌ JSON Parsing Error: {str(e)}")
+            print(f"📝 AI Response preview: {response_text[:200] if 'response_text' in locals() else 'No response'}")
+            self._apply_default_scores()
             
         except Exception as e:
             print(f"❌ AI Scoring Error: {str(e)}")
-            for signal in self.signals:
-                signal['ai_score'] = 50
-                signal['ai_reasoning'] = 'AI scoring failed'
+            self._apply_default_scores()
+    
+    def _apply_default_scores(self):
+        """Apply default scores when AI scoring fails"""
+        print("⚙️  Applying rule-based scores...")
+        
+        for signal in self.signals:
+            # Rule-based scoring
+            score = 50  # Default
+            
+            # Adjust by strength
+            strength = signal.get('strength', '')
+            if 'EXTREME' in strength:
+                score = 85
+            elif 'STRONG' in strength:
+                score = 75
+            elif 'SIGNIFICANT' in strength or 'VERY' in strength:
+                score = 65
+            elif 'BULLISH' in strength or 'BEARISH' in strength:
+                score = 55
+            
+            # Adjust by category (some are more reliable)
+            category = signal.get('category', '')
+            if category in ['MA_CROSS', 'STRUCTURE_BREAK', 'VOLUME']:
+                score += 5
+            elif category in ['TIMEFRAME_ALIGNMENT', 'MULTI_INDICATOR']:
+                score += 10
+            
+            # Cap at 90 for rule-based
+            score = min(score, 90)
+            
+            signal['ai_score'] = score
+            signal['ai_reasoning'] = 'Rule-based score (AI unavailable)'
+        
+        # Sort by score
+        self.signals.sort(key=lambda x: x.get('ai_score', 0), reverse=True)
+        
+        # Add ranks
+        for rank, signal in enumerate(self.signals, 1):
+            signal['rank'] = rank
+        
+        print(f"✅ Applied rule-based scores to {len(self.signals)} signals")
+    
+    def _rank_signals_in_batches(self, batch_size):
+        """Process signals in batches for large signal counts"""
+        all_signals = self.signals.copy()
+        total_batches = (len(all_signals) + batch_size - 1) // batch_size
+        
+        for batch_num in range(total_batches):
+            start_idx = batch_num * batch_size
+            end_idx = min(start_idx + batch_size, len(all_signals))
+            
+            print(f"  Processing batch {batch_num + 1}/{total_batches} ({start_idx+1}-{end_idx})...")
+            
+            # Temporarily set signals to current batch
+            self.signals = all_signals[start_idx:end_idx]
+            
+            # Score this batch
+            self.rank_signals_with_ai()
+            
+            # Store results back
+            all_signals[start_idx:end_idx] = self.signals
+        
+        # Restore all signals
+        self.signals = all_signals
+        
+        # Final sort across all batches
+        self.signals.sort(key=lambda x: x.get('ai_score', 0), reverse=True)
+        
+        # Update ranks
+        for rank, signal in enumerate(self.signals, 1):
+            signal['rank'] = rank
+        
+        print(f"✅ Completed scoring {len(self.signals)} signals in {total_batches} batches")
     
     def save_locally(self):
         """Save all analysis data to local folder"""
