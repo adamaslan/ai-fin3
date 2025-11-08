@@ -1,0 +1,68 @@
+
+================================================================================
+RANKED SIGNALS REPORT - APLD
+================================================================================
+
+Price: $30.98 | Change: -0.32%
+Date: 2025-11-07
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#? ❓ SCORE: N/A/100
+Signal: BB SQUEEZE
+Description: Bands narrowing - breakout pending
+Category: BB_SQUEEZE | Strength: NEUTRAL
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MACD HISTOGRAM EXPANSION
+Description: Bearish momentum accelerating
+Category: MACD_MOMENTUM | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: VOLUME DIVERGENCE BULLISH
+Description: Price down but volume increasing
+Category: VOLUME_DIVERGENCE | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: GAP DOWN
+Description: Opened 4.6% lower
+Category: GAP | Strength: BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MOMENTUM DECELERATION
+Description: Bearish momentum increasing
+Category: MOMENTUM_ACCELERATION | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: HIGH VOLATILITY
+Description: 80.9% annualized
+Category: VOLATILITY | Strength: SIGNIFICANT
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: CCI OVERSOLD
+Description: CCI at -131.6
+Category: CCI | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MULTI-INDICATOR BEARISH
+Description: 5/5 indicators bearish
+Category: MULTI_INDICATOR | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
