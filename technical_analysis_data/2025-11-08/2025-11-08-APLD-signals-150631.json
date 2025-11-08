@@ -1,0 +1,58 @@
+{
+  "symbol": "APLD",
+  "timestamp": "2025-11-08 15:06:31",
+  "date": "2025-11-08",
+  "price": 30.979999542236328,
+  "signals": [
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BB_SQUEEZE"
+    },
+    {
+      "signal": "MACD HISTOGRAM EXPANSION",
+      "desc": "Bearish momentum accelerating",
+      "strength": "STRONG BEARISH",
+      "category": "MACD_MOMENTUM"
+    },
+    {
+      "signal": "VOLUME DIVERGENCE BULLISH",
+      "desc": "Price down but volume increasing",
+      "strength": "BULLISH",
+      "category": "VOLUME_DIVERGENCE"
+    },
+    {
+      "signal": "GAP DOWN",
+      "desc": "Opened 4.6% lower",
+      "strength": "BEARISH",
+      "category": "GAP"
+    },
+    {
+      "signal": "MOMENTUM DECELERATION",
+      "desc": "Bearish momentum increasing",
+      "strength": "STRONG BEARISH",
+      "category": "MOMENTUM_ACCELERATION"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "80.9% annualized",
+      "strength": "SIGNIFICANT",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "CCI OVERSOLD",
+      "desc": "CCI at -131.6",
+      "strength": "BULLISH",
+      "category": "CCI"
+    },
+    {
+      "signal": "MULTI-INDICATOR BEARISH",
+      "desc": "5/5 indicators bearish",
+      "strength": "STRONG BEARISH",
+      "category": "MULTI_INDICATOR"
+    }
+  ],
+  "signal_count": 8,
+  "top_signal_info": {}
+}
