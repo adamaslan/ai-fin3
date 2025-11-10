@@ -1,0 +1,100 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - AAPL
+================================================================================
+
+PRICE DATA:
+  Current: $269.73
+  Change: 0.47%
+  Volume: 17,970,832
+
+OVERALL BIAS: BULLISH (Score: 65/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      90/100
+  Momentum:            37.35668946069064/100
+  Volatility:          35/100
+  Volume:              20/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 66.39727054102427/100
+
+SIGNAL SUMMARY:
+  Total Signals: 12
+  Bullish: 6
+  Bearish: 4
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [88/100] PERFECT MA ALIGNMENT
+   10>20>50>200 MA alignment
+   Category: MA_ALIGNMENT | Strength: EXTREME BULLISH
+   AI: Strong, reliable bullish signal.
+--------------------------------------------------------------------------------
+
+#2 [80/100] 20MA STEEP UPTREND
+   20MA slope: +1.64%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Stronger uptrend, good timing.
+--------------------------------------------------------------------------------
+
+#3 [78/100] 50MA STEEP UPTREND
+   50MA slope: +1.55%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Solid uptrend on a longer timeframe.
+--------------------------------------------------------------------------------
+
+#4 [75/100] 10MA STEEP UPTREND
+   10MA slope: +1.32%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Good timing, confirms uptrend.
+--------------------------------------------------------------------------------
+
+#5 [75/100] ABOVE ICHIMOKU CLOUD
+   Bullish cloud position
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: Bullish confirmation from Ichimoku.
+--------------------------------------------------------------------------------
+
+#6 [70/100] STRONG UPTREND
+   ADX: 28.9
+   Category: ADX | Strength: TRENDING
+   AI: Confirms the strength of the trend.
+--------------------------------------------------------------------------------
+
+#7 [65/100] STOCHASTIC BULL CROSS
+   %K crossed above %D
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: Bullish confirmation, but lagging indicator.
+--------------------------------------------------------------------------------
+
+#8 [50/100] BB10 SQUEEZE
+   10-period bands narrowing
+   Category: BB_SQUEEZE | Strength: NEUTRAL
+   AI: Volatility contraction, potential breakout.
+--------------------------------------------------------------------------------
+
+#9 [35/100] RSI21 OVERBOUGHT
+   RSI(21): 77.2
+   Category: RSI | Strength: BEARISH
+   AI: Overbought, bearish divergence possible.
+--------------------------------------------------------------------------------
+
+#10 [30/100] OVEREXTENDED ABOVE 200MA
+   20.2% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: High risk, overextended. Watch for pullback.
+--------------------------------------------------------------------------------
+
+#11 [30/100] SHOOTING STAR
+   Potential bearish reversal
+   Category: CANDLESTICK | Strength: BEARISH
+   AI: Bearish reversal. Limited reliability.
+--------------------------------------------------------------------------------
+
+#12 [25/100] MACD HISTOGRAM EXPANSION BEARISH
+   Momentum accelerating
+   Category: MACD_MOMENTUM | Strength: STRONG BEARISH
+   AI: Counter-trend signal, bearish divergence.
+--------------------------------------------------------------------------------

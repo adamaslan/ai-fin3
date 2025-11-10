@@ -1,0 +1,88 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - NVDA
+================================================================================
+
+PRICE DATA:
+  Current: $196.93
+  Change: 4.67%
+  Volume: 110,081,115
+
+OVERALL BIAS: STRONG BULLISH (Score: 85/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      90/100
+  Momentum:            36.13809505256836/100
+  Volatility:          65/100
+  Volume:              20/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 59.450042929259574/100
+
+SIGNAL SUMMARY:
+  Total Signals: 10
+  Bullish: 7
+  Bearish: 2
+  Neutral: 1
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [82/100] 10MA STEEP UPTREND
+   10MA slope: +2.30%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Good momentum, recent price strength.
+--------------------------------------------------------------------------------
+
+#2 [80/100] PERFECT MA ALIGNMENT
+   10>20>50>200 MA alignment
+   Category: MA_ALIGNMENT | Strength: EXTREME BULLISH
+   AI: Strong bullish alignment.
+--------------------------------------------------------------------------------
+
+#3 [78/100] ABOVE ICHIMOKU CLOUD
+   Bullish cloud position
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: Strong trend and support.
+--------------------------------------------------------------------------------
+
+#4 [75/100] PRICE ABOVE 20MA
+   Price crossed above 20-day MA
+   Category: PRICE_MA_CROSS | Strength: BULLISH
+   AI: Common, confirms short-term trend.
+--------------------------------------------------------------------------------
+
+#5 [72/100] BROKE R1 RESISTANCE
+   Above $191.34
+   Category: PIVOT | Strength: BULLISH
+   AI: Breaking resistance, bullish.
+--------------------------------------------------------------------------------
+
+#6 [70/100] STRONG UPTREND
+   ADX: 25.5
+   Category: ADX | Strength: TRENDING
+   AI: Trend strength confirmed.
+--------------------------------------------------------------------------------
+
+#7 [65/100] STOCHASTIC BULL CROSS
+   %K crossed above %D
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: Potential short-term bounce signal.
+--------------------------------------------------------------------------------
+
+#8 [50/100] LARGE GAP UP
+   Opened 3.7% higher
+   Category: GAP | Strength: STRONG BULLISH
+   AI: Gap filled chance.
+--------------------------------------------------------------------------------
+
+#9 [30/100] OVEREXTENDED ABOVE 200MA
+   31.4% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: Overbought, pullback risk.
+--------------------------------------------------------------------------------
+
+#10 [25/100] RSI MOMENTUM COLLAPSE
+   RSI -19.5 in 5 days
+   Category: RSI_MOMENTUM | Strength: STRONG BEARISH
+   AI: Strong downward RSI, bearish sign.
+--------------------------------------------------------------------------------
