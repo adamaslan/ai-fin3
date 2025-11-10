@@ -1,0 +1,94 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - GLD
+================================================================================
+
+PRICE DATA:
+  Current: $377.93
+  Change: 2.61%
+  Volume: 8,738,121
+
+OVERALL BIAS: STRONG BULLISH (Score: 85/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      60/100
+  Momentum:            35/100
+  Volatility:          50/100
+  Volume:              20/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 58.50272420897289/100
+
+SIGNAL SUMMARY:
+  Total Signals: 11
+  Bullish: 8
+  Bearish: 3
+  Neutral: 0
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [90/100] 50MA STEEP UPTREND
+   50MA slope: +1.53%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Strong trend, high conviction signal.
+--------------------------------------------------------------------------------
+
+#2 [82/100] ABOVE ICHIMOKU CLOUD
+   Bullish cloud position
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: Bullish cloud position
+--------------------------------------------------------------------------------
+
+#3 [80/100] 8/21 EMA BULL CROSS
+   8 EMA crossed above 21 EMA
+   Category: EMA_CROSS | Strength: BULLISH
+   AI: Stronger EMA signal, increased reliability.
+--------------------------------------------------------------------------------
+
+#4 [78/100] PRICE ABOVE 20MA
+   Price crossed above 20-day MA
+   Category: PRICE_MA_CROSS | Strength: BULLISH
+   AI: Price action confirms MA support.
+--------------------------------------------------------------------------------
+
+#5 [76/100] SAR BULL SIGNAL
+   Price crossed above SAR
+   Category: SAR | Strength: BULLISH
+   AI: Trend reversal confirmation.
+--------------------------------------------------------------------------------
+
+#6 [75/100] 5/10 MA BULL CROSS
+   5 MA crossed above 10 MA
+   Category: MA_CROSS | Strength: BULLISH
+   AI: Early bullish signal, good confirmation.
+--------------------------------------------------------------------------------
+
+#7 [72/100] FAST MACD BULL CROSS
+   Fast MACD bullish signal
+   Category: MACD | Strength: BULLISH
+   AI: MACD supports the bullish momentum.
+--------------------------------------------------------------------------------
+
+#8 [70/100] 10/20 EMA BULL CROSS
+   10 EMA crossed above 20 EMA
+   Category: EMA_CROSS | Strength: BULLISH
+   AI: Slightly slower, still bullish.
+--------------------------------------------------------------------------------
+
+#9 [30/100] OVEREXTENDED ABOVE 200MA
+   21.7% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: High risk, price extended.
+--------------------------------------------------------------------------------
+
+#10 [25/100] STOCHASTIC OVERBOUGHT
+   %K: 80.5
+   Category: STOCHASTIC | Strength: BEARISH
+   AI: Potential pullback, high risk.
+--------------------------------------------------------------------------------
+
+#11 [20/100] WILLIAMS R OVERBOUGHT
+   W%R: -19.5
+   Category: WILLIAMS_R | Strength: BEARISH
+   AI: Confirms overbought, pullback likely.
+--------------------------------------------------------------------------------

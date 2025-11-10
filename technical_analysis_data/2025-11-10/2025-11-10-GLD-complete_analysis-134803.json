@@ -1,0 +1,312 @@
+{
+  "symbol": "GLD",
+  "timestamp": "2025-11-10T13:48:03.888552",
+  "price_data": {
+    "current_price": 377.92999267578125,
+    "open": 375.92999267578125,
+    "high": 378.6600036621094,
+    "low": 374.7814025878906,
+    "volume": 8738121,
+    "change": 2.611928859101109,
+    "change_5d": 2.4811524287574924,
+    "change_10d": 2.975391030105643
+  },
+  "indicator_ratings": {
+    "trend_strength": 60,
+    "momentum": 35,
+    "volatility": 50,
+    "volume": 20,
+    "support_resistance": 50,
+    "oversold_overbought": 58.50272420897289
+  },
+  "overall_bias": "STRONG BULLISH",
+  "bias_score": 85,
+  "signal_summary": {
+    "total_signals": 11,
+    "bullish_signals": 8,
+    "bearish_signals": 3,
+    "neutral_signals": 0
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 370.346669514974,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 372.3833414713542,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 403.29998779296875,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 398.25310041307563,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 366.346669514974,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 364.3833414713542,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 360.1199951171875,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 352.7629030048931,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 375.50800170898435,
+      "SMA_50": 358.09020080566404,
+      "SMA_200": 310.50454940795896,
+      "EMA_20": 369.6080368126002
+    }
+  },
+  "signals": [
+    {
+      "signal": "50MA STEEP UPTREND",
+      "desc": "50MA slope: +1.53%",
+      "strength": "BULLISH",
+      "category": "MA_SLOPE",
+      "value": 1.527101514256157,
+      "ai_score": 90,
+      "ai_reasoning": "Strong trend, high conviction signal.",
+      "rank": 1
+    },
+    {
+      "signal": "ABOVE ICHIMOKU CLOUD",
+      "desc": "Bullish cloud position",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU",
+      "value": 34.79248046875,
+      "ai_score": 82,
+      "ai_reasoning": "Bullish cloud position",
+      "rank": 2
+    },
+    {
+      "signal": "8/21 EMA BULL CROSS",
+      "desc": "8 EMA crossed above 21 EMA",
+      "strength": "BULLISH",
+      "category": "EMA_CROSS",
+      "value": 370.07345325445976,
+      "ai_score": 80,
+      "ai_reasoning": "Stronger EMA signal, increased reliability.",
+      "rank": 3
+    },
+    {
+      "signal": "PRICE ABOVE 20MA",
+      "desc": "Price crossed above 20-day MA",
+      "strength": "BULLISH",
+      "category": "PRICE_MA_CROSS",
+      "value": 375.50800170898435,
+      "ai_score": 78,
+      "ai_reasoning": "Price action confirms MA support.",
+      "rank": 4
+    },
+    {
+      "signal": "SAR BULL SIGNAL",
+      "desc": "Price crossed above SAR",
+      "strength": "BULLISH",
+      "category": "SAR",
+      "value": 17.80999755859375,
+      "ai_score": 76,
+      "ai_reasoning": "Trend reversal confirmation.",
+      "rank": 5
+    },
+    {
+      "signal": "5/10 MA BULL CROSS",
+      "desc": "5 MA crossed above 10 MA",
+      "strength": "BULLISH",
+      "category": "MA_CROSS",
+      "value": 368.2280029296875,
+      "ai_score": 75,
+      "ai_reasoning": "Early bullish signal, good confirmation.",
+      "rank": 6
+    },
+    {
+      "signal": "FAST MACD BULL CROSS",
+      "desc": "Fast MACD bullish signal",
+      "strength": "BULLISH",
+      "category": "MACD",
+      "value": 6.3831000385828816,
+      "ai_score": 72,
+      "ai_reasoning": "MACD supports the bullish momentum.",
+      "rank": 7
+    },
+    {
+      "signal": "10/20 EMA BULL CROSS",
+      "desc": "10 EMA crossed above 20 EMA",
+      "strength": "BULLISH",
+      "category": "EMA_CROSS",
+      "value": 370.15902548364875,
+      "ai_score": 70,
+      "ai_reasoning": "Slightly slower, still bullish.",
+      "rank": 8
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "desc": "21.7% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 21.714800442178003,
+      "ai_score": 30,
+      "ai_reasoning": "High risk, price extended.",
+      "rank": 9
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "desc": "%K: 80.5",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "value": 80.47895901019918,
+      "ai_score": 25,
+      "ai_reasoning": "Potential pullback, high risk.",
+      "rank": 10
+    },
+    {
+      "signal": "WILLIAMS R OVERBOUGHT",
+      "desc": "W%R: -19.5",
+      "strength": "BEARISH",
+      "category": "WILLIAMS_R",
+      "value": -19.521040989800813,
+      "ai_score": 20,
+      "ai_reasoning": "Confirms overbought, pullback likely.",
+      "rank": 11
+    }
+  ],
+  "ai_analysis": {
+    "market_analysis": "Analysis error: 'bullish_signals'",
+    "trade_recommendations": {
+      "error": "Invalid format specifier"
+    },
+    "ranked_signals": [
+      {
+        "signal": "50MA STEEP UPTREND",
+        "desc": "50MA slope: +1.53%",
+        "strength": "BULLISH",
+        "category": "MA_SLOPE",
+        "value": 1.527101514256157,
+        "ai_score": 90,
+        "ai_reasoning": "Strong trend, high conviction signal.",
+        "rank": 1
+      },
+      {
+        "signal": "ABOVE ICHIMOKU CLOUD",
+        "desc": "Bullish cloud position",
+        "strength": "BULLISH",
+        "category": "ICHIMOKU",
+        "value": 34.79248046875,
+        "ai_score": 82,
+        "ai_reasoning": "Bullish cloud position",
+        "rank": 2
+      },
+      {
+        "signal": "8/21 EMA BULL CROSS",
+        "desc": "8 EMA crossed above 21 EMA",
+        "strength": "BULLISH",
+        "category": "EMA_CROSS",
+        "value": 370.07345325445976,
+        "ai_score": 80,
+        "ai_reasoning": "Stronger EMA signal, increased reliability.",
+        "rank": 3
+      },
+      {
+        "signal": "PRICE ABOVE 20MA",
+        "desc": "Price crossed above 20-day MA",
+        "strength": "BULLISH",
+        "category": "PRICE_MA_CROSS",
+        "value": 375.50800170898435,
+        "ai_score": 78,
+        "ai_reasoning": "Price action confirms MA support.",
+        "rank": 4
+      },
+      {
+        "signal": "SAR BULL SIGNAL",
+        "desc": "Price crossed above SAR",
+        "strength": "BULLISH",
+        "category": "SAR",
+        "value": 17.80999755859375,
+        "ai_score": 76,
+        "ai_reasoning": "Trend reversal confirmation.",
+        "rank": 5
+      },
+      {
+        "signal": "5/10 MA BULL CROSS",
+        "desc": "5 MA crossed above 10 MA",
+        "strength": "BULLISH",
+        "category": "MA_CROSS",
+        "value": 368.2280029296875,
+        "ai_score": 75,
+        "ai_reasoning": "Early bullish signal, good confirmation.",
+        "rank": 6
+      },
+      {
+        "signal": "FAST MACD BULL CROSS",
+        "desc": "Fast MACD bullish signal",
+        "strength": "BULLISH",
+        "category": "MACD",
+        "value": 6.3831000385828816,
+        "ai_score": 72,
+        "ai_reasoning": "MACD supports the bullish momentum.",
+        "rank": 7
+      },
+      {
+        "signal": "10/20 EMA BULL CROSS",
+        "desc": "10 EMA crossed above 20 EMA",
+        "strength": "BULLISH",
+        "category": "EMA_CROSS",
+        "value": 370.15902548364875,
+        "ai_score": 70,
+        "ai_reasoning": "Slightly slower, still bullish.",
+        "rank": 8
+      },
+      {
+        "signal": "OVEREXTENDED ABOVE 200MA",
+        "desc": "21.7% above 200MA",
+        "strength": "BEARISH",
+        "category": "MA_DISTANCE",
+        "value": 21.714800442178003,
+        "ai_score": 30,
+        "ai_reasoning": "High risk, price extended.",
+        "rank": 9
+      },
+      {
+        "signal": "STOCHASTIC OVERBOUGHT",
+        "desc": "%K: 80.5",
+        "strength": "BEARISH",
+        "category": "STOCHASTIC",
+        "value": 80.47895901019918,
+        "ai_score": 25,
+        "ai_reasoning": "Potential pullback, high risk.",
+        "rank": 10
+      },
+      {
+        "signal": "WILLIAMS R OVERBOUGHT",
+        "desc": "W%R: -19.5",
+        "strength": "BEARISH",
+        "category": "WILLIAMS_R",
+        "value": -19.521040989800813,
+        "ai_score": 20,
+        "ai_reasoning": "Confirms overbought, pullback likely.",
+        "rank": 11
+      }
+    ]
+  }
+}
