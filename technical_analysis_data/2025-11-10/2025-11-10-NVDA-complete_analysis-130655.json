@@ -1,0 +1,292 @@
+{
+  "symbol": "NVDA",
+  "timestamp": "2025-11-10T13:06:55.855645",
+  "price_data": {
+    "current_price": 196.92999267578125,
+    "open": 195.11000061035156,
+    "high": 197.6699981689453,
+    "low": 193.7899932861328,
+    "volume": 110081115,
+    "change": 4.666489005642704,
+    "change_5d": -4.809557217802393,
+    "change_10d": 2.8408726442965127
+  },
+  "indicator_ratings": {
+    "trend_strength": 90,
+    "momentum": 36.13809505256836,
+    "volatility": 65,
+    "volume": 20,
+    "support_resistance": 50,
+    "oversold_overbought": 59.450042929259574
+  },
+  "overall_bias": "STRONG BULLISH",
+  "bias_score": 85,
+  "signal_summary": {
+    "total_signals": 10,
+    "bullish_signals": 7,
+    "bearish_signals": 2,
+    "neutral_signals": 1
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 191.3433329264323,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 194.53667195638022,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 212.19000244140625,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 210.19340670195183,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 181.93332926432294,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 175.71666463216147,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 176.75999450683594,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 171.4335937252943,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 190.81350021362306,
+      "SMA_50": 183.88625152587892,
+      "SMA_200": 149.8273706817627,
+      "EMA_20": 192.3227653773213
+    }
+  },
+  "signals": [
+    {
+      "signal": "10MA STEEP UPTREND",
+      "desc": "10MA slope: +2.30%",
+      "strength": "BULLISH",
+      "category": "MA_SLOPE",
+      "value": 2.3000010802668935,
+      "ai_score": 82,
+      "ai_reasoning": "Good momentum, recent price strength.",
+      "rank": 1
+    },
+    {
+      "signal": "PERFECT MA ALIGNMENT",
+      "desc": "10>20>50>200 MA alignment",
+      "strength": "EXTREME BULLISH",
+      "category": "MA_ALIGNMENT",
+      "value": 100,
+      "ai_score": 80,
+      "ai_reasoning": "Strong bullish alignment.",
+      "rank": 2
+    },
+    {
+      "signal": "ABOVE ICHIMOKU CLOUD",
+      "desc": "Bullish cloud position",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU",
+      "value": 17.107300194606324,
+      "ai_score": 78,
+      "ai_reasoning": "Strong trend and support.",
+      "rank": 3
+    },
+    {
+      "signal": "PRICE ABOVE 20MA",
+      "desc": "Price crossed above 20-day MA",
+      "strength": "BULLISH",
+      "category": "PRICE_MA_CROSS",
+      "value": 190.81350021362306,
+      "ai_score": 75,
+      "ai_reasoning": "Common, confirms short-term trend.",
+      "rank": 4
+    },
+    {
+      "signal": "BROKE R1 RESISTANCE",
+      "desc": "Above $191.34",
+      "strength": "BULLISH",
+      "category": "PIVOT",
+      "value": 5.586659749348939,
+      "ai_score": 72,
+      "ai_reasoning": "Breaking resistance, bullish.",
+      "rank": 5
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 25.5",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 25.48434407366855,
+      "ai_score": 70,
+      "ai_reasoning": "Trend strength confirmed.",
+      "rank": 6
+    },
+    {
+      "signal": "STOCHASTIC BULL CROSS",
+      "desc": "%K crossed above %D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "value": 56.92913816500936,
+      "ai_score": 65,
+      "ai_reasoning": "Potential short-term bounce signal.",
+      "rank": 7
+    },
+    {
+      "signal": "LARGE GAP UP",
+      "desc": "Opened 3.7% higher",
+      "strength": "STRONG BULLISH",
+      "category": "GAP",
+      "value": 3.6991798775696036,
+      "ai_score": 50,
+      "ai_reasoning": "Gap filled chance.",
+      "rank": 8
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "desc": "31.4% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 31.437928717354175,
+      "ai_score": 30,
+      "ai_reasoning": "Overbought, pullback risk.",
+      "rank": 9
+    },
+    {
+      "signal": "RSI MOMENTUM COLLAPSE",
+      "desc": "RSI -19.5 in 5 days",
+      "strength": "STRONG BEARISH",
+      "category": "RSI_MOMENTUM",
+      "value": -19.514028367003604,
+      "ai_score": 25,
+      "ai_reasoning": "Strong downward RSI, bearish sign.",
+      "rank": 10
+    }
+  ],
+  "ai_analysis": {
+    "market_analysis": "Analysis error: 'bullish_signals'",
+    "trade_recommendations": {
+      "error": "Invalid format specifier"
+    },
+    "ranked_signals": [
+      {
+        "signal": "10MA STEEP UPTREND",
+        "desc": "10MA slope: +2.30%",
+        "strength": "BULLISH",
+        "category": "MA_SLOPE",
+        "value": 2.3000010802668935,
+        "ai_score": 82,
+        "ai_reasoning": "Good momentum, recent price strength.",
+        "rank": 1
+      },
+      {
+        "signal": "PERFECT MA ALIGNMENT",
+        "desc": "10>20>50>200 MA alignment",
+        "strength": "EXTREME BULLISH",
+        "category": "MA_ALIGNMENT",
+        "value": 100,
+        "ai_score": 80,
+        "ai_reasoning": "Strong bullish alignment.",
+        "rank": 2
+      },
+      {
+        "signal": "ABOVE ICHIMOKU CLOUD",
+        "desc": "Bullish cloud position",
+        "strength": "BULLISH",
+        "category": "ICHIMOKU",
+        "value": 17.107300194606324,
+        "ai_score": 78,
+        "ai_reasoning": "Strong trend and support.",
+        "rank": 3
+      },
+      {
+        "signal": "PRICE ABOVE 20MA",
+        "desc": "Price crossed above 20-day MA",
+        "strength": "BULLISH",
+        "category": "PRICE_MA_CROSS",
+        "value": 190.81350021362306,
+        "ai_score": 75,
+        "ai_reasoning": "Common, confirms short-term trend.",
+        "rank": 4
+      },
+      {
+        "signal": "BROKE R1 RESISTANCE",
+        "desc": "Above $191.34",
+        "strength": "BULLISH",
+        "category": "PIVOT",
+        "value": 5.586659749348939,
+        "ai_score": 72,
+        "ai_reasoning": "Breaking resistance, bullish.",
+        "rank": 5
+      },
+      {
+        "signal": "STRONG UPTREND",
+        "desc": "ADX: 25.5",
+        "strength": "TRENDING",
+        "category": "ADX",
+        "value": 25.48434407366855,
+        "ai_score": 70,
+        "ai_reasoning": "Trend strength confirmed.",
+        "rank": 6
+      },
+      {
+        "signal": "STOCHASTIC BULL CROSS",
+        "desc": "%K crossed above %D",
+        "strength": "BULLISH",
+        "category": "STOCHASTIC",
+        "value": 56.92913816500936,
+        "ai_score": 65,
+        "ai_reasoning": "Potential short-term bounce signal.",
+        "rank": 7
+      },
+      {
+        "signal": "LARGE GAP UP",
+        "desc": "Opened 3.7% higher",
+        "strength": "STRONG BULLISH",
+        "category": "GAP",
+        "value": 3.6991798775696036,
+        "ai_score": 50,
+        "ai_reasoning": "Gap filled chance.",
+        "rank": 8
+      },
+      {
+        "signal": "OVEREXTENDED ABOVE 200MA",
+        "desc": "31.4% above 200MA",
+        "strength": "BEARISH",
+        "category": "MA_DISTANCE",
+        "value": 31.437928717354175,
+        "ai_score": 30,
+        "ai_reasoning": "Overbought, pullback risk.",
+        "rank": 9
+      },
+      {
+        "signal": "RSI MOMENTUM COLLAPSE",
+        "desc": "RSI -19.5 in 5 days",
+        "strength": "STRONG BEARISH",
+        "category": "RSI_MOMENTUM",
+        "value": -19.514028367003604,
+        "ai_score": 25,
+        "ai_reasoning": "Strong downward RSI, bearish sign.",
+        "rank": 10
+      }
+    ]
+  }
+}

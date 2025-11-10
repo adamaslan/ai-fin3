@@ -1,0 +1,16 @@
+{
+  "symbol": "SLV",
+  "timestamp": "2025-11-08 18:02:11",
+  "date": "2025-11-08",
+  "price": 43.91999816894531,
+  "signals": [
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 31.7",
+      "strength": "TRENDING",
+      "category": "TREND"
+    }
+  ],
+  "signal_count": 1,
+  "top_signal_info": {}
+}
