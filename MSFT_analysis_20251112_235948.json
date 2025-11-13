@@ -1,0 +1,23 @@
+{
+  "symbol": "MSFT",
+  "timestamp": "2025-11-12T23:59:48.091662",
+  "current_price": 511.1400146484375,
+  "change_pct": 0.4836089502392227,
+  "total_signals": 1,
+  "top_signals": [
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "desc": "10.4% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 10.37730904732721,
+      "ai_score": 70,
+      "ai_reasoning": "Actionable; consider profit-taking.",
+      "rank": 1
+    }
+  ],
+  "market_analysis": "Analysis error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota. Please migrate to Gemini 2.0 Flash Preview (Image Generation) (models/gemini-2.0-flash-preview-image-generation) for higher quota limits. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '12s'}]}}",
+  "trade_recommendations": {
+    "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota. Please migrate to Gemini 2.0 Flash Preview (Image Generation) (models/gemini-2.0-flash-preview-image-generation) for higher quota limits. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}"
+  }
+}

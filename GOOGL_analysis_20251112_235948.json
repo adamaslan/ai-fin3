@@ -1,0 +1,83 @@
+{
+  "symbol": "GOOGL",
+  "timestamp": "2025-11-12T23:59:48.708118",
+  "current_price": 286.7099914550781,
+  "change_pct": -1.5790759472957605,
+  "total_signals": 7,
+  "top_signals": [
+    {
+      "signal": "OVEREXTENDED ABOVE 50MA",
+      "desc": "12.2% above 50MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 12.224551291778003,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 1
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "desc": "46.3% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 46.263387595687014,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 2
+    },
+    {
+      "signal": "RSI14 OVERBOUGHT",
+      "desc": "RSI(14): 73.6",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "value": 73.61324705329261,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 3
+    },
+    {
+      "signal": "RSI21 OVERBOUGHT",
+      "desc": "RSI(21): 72.7",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "value": 72.66535179297529,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 4
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "desc": "%K: 85.6",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "value": 85.55459809791243,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 5
+    },
+    {
+      "signal": "VERY STRONG UPTREND",
+      "desc": "ADX: 42.9",
+      "strength": "EXTREME",
+      "category": "ADX",
+      "value": 42.92495525834844,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 6
+    },
+    {
+      "signal": "WILLIAMS R OVERBOUGHT",
+      "desc": "W%R: -14.4",
+      "strength": "BEARISH",
+      "category": "WILLIAMS_R",
+      "value": -14.445401902087571,
+      "ai_score": 50,
+      "ai_reasoning": "Scoring error",
+      "rank": 7
+    }
+  ],
+  "market_analysis": "Analysis error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota. Please migrate to Gemini 2.0 Flash Preview (Image Generation) (models/gemini-2.0-flash-preview-image-generation) for higher quota limits. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}",
+  "trade_recommendations": {
+    "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota. Please migrate to Gemini 2.0 Flash Preview (Image Generation) (models/gemini-2.0-flash-preview-image-generation) for higher quota limits. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}"
+  }
+}
