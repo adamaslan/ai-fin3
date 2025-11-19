@@ -1,0 +1,103 @@
+
+================================================================================
+RANKED SIGNALS REPORT - MP
+================================================================================
+
+Price: $58.60 | Change: 12.80%
+Date: 2025-11-07
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#? ❓ SCORE: N/A/100
+Signal: RSI OVERSOLD
+Description: RSI at 22.2
+Category: RSI | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: LARGE GAIN
+Description: +12.8% today
+Category: PRICE_ACTION | Strength: STRONG BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: OVEREXTENDED BELOW 20MA
+Description: 17.2% below 20 MA
+Category: MA_DISTANCE | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: RSI MOMENTUM SURGE
+Description: RSI +12.2 in 5 days
+Category: RSI_MOMENTUM | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: GAP DOWN
+Description: Opened 2.8% lower
+Category: GAP | Strength: BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: ABOVE R1 PIVOT
+Description: Broke resistance level
+Category: PIVOT | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: HIGH VOLATILITY
+Description: 121.0% annualized
+Category: VOLATILITY | Strength: SIGNIFICANT
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: STOCHASTIC BULL CROSS
+Description: K crossed above D
+Category: STOCHASTIC | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: OBV CONFIRMATION
+Description: Volume confirming price downtrend
+Category: OBV | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: EXTREME ROC NEGATIVE
+Description: 20-day ROC: -25.2%
+Category: ROC | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: OUTSIDE BAR
+Description: Volatility expansion
+Category: PRICE_PATTERN | Strength: SIGNIFICANT
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: BULLISH ENGULFING
+Description: Strong reversal pattern
+Category: CANDLESTICK | Strength: STRONG BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MULTI-INDICATOR BEARISH
+Description: 4/5 indicators bearish
+Category: MULTI_INDICATOR | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+

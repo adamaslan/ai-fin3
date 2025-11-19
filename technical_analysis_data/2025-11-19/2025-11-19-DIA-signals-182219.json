@@ -1,0 +1,133 @@
+{
+  "symbol": "DIA",
+  "timestamp": "2025-11-19 18:22:19",
+  "date": "2025-11-19",
+  "price": 461.760009765625,
+  "change_pct": 0.0997229535723898,
+  "volume": 5795469,
+  "indicators": {
+    "RSI": 35.86517588443573,
+    "MACD": 0.26609316798897,
+    "ADX": 24.69353918470319,
+    "Stochastic": 9.367486659238844,
+    "CCI": -134.3696019314175,
+    "MFI": 23.65992345804152,
+    "BB_Position": 0.005887059943995186,
+    "Volatility": 12.374427457310091
+  },
+  "moving_averages": {
+    "SMA_10": 471.10499877929686,
+    "SMA_20": 472.3789993286133,
+    "SMA_50": 466.44425903320314,
+    "SMA_200": 436.77524841308593,
+    "EMA_10": 469.1522894488938,
+    "EMA_20": 469.8952592798167
+  },
+  "signals": [
+    {
+      "signal": "10/20 EMA BEAR CROSS",
+      "desc": "10 EMA crossed below 20 EMA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "MACD MOMENTUM DOWN",
+      "desc": "Histogram expanding bearish",
+      "strength": "BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD WEAK MOMENTUM",
+      "desc": "Histogram accelerating down",
+      "strength": "STRONG BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD FULLY BULLISH",
+      "desc": "Both lines above zero",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "AT LOWER BB",
+      "desc": "Price at $461.63",
+      "strength": "BULLISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB BOTTOM RANGE",
+      "desc": "In bottom 5% of BB range",
+      "strength": "BULLISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "STOCH OVERSOLD",
+      "desc": "K: 9.4",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERSOLD",
+      "desc": "W%R: -90.6",
+      "strength": "BULLISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "NARROW RANGE DAY",
+      "desc": "Range: 0.9%",
+      "strength": "CONSOLIDATION",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOW VOLATILITY",
+      "desc": "12% annualized",
+      "strength": "CALM",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "DOJI CANDLE",
+      "desc": "Indecision in the market",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK"
+    },
+    {
+      "signal": "SPINNING TOP",
+      "desc": "Potential for trend change",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK"
+    },
+    {
+      "signal": "BEARISH COMBO (RSI<50, MACD Cross, <SMA20)",
+      "desc": "Multiple bearish signals confirming trend",
+      "strength": "STRONG BEARISH",
+      "category": "COMBO"
+    },
+    {
+      "signal": "SHORT-TERM EMA STACK BEARISH",
+      "desc": "5/10/20 EMAs aligned for downtrend",
+      "strength": "BEARISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 17,
+  "bullish_count": 8,
+  "bearish_count": 5
+}

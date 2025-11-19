@@ -1,0 +1,106 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - SPY
+================================================================================
+
+PRICE DATA:
+  Current: $660.08
+  Change: -0.84%
+  Volume: 107,083,822
+
+OVERALL BIAS: BULLISH (Score: 65/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      60/100
+  Momentum:            29.52035236397328/100
+  Volatility:          20/100
+  Volume:              50/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 26.007463517867663/100
+
+SIGNAL SUMMARY:
+  Total Signals: 13
+  Bullish: 6
+  Bearish: 5
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [N/A/100] 5/10 MA BEAR CROSS
+   5 MA crossed below 10 MA
+   Category: MA_CROSS | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#2 [N/A/100] MA COMPRESSION
+   MAs converging - breakout imminent
+   Category: MA_COMPRESSION | Strength: NEUTRAL
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#3 [N/A/100] RSI9 OVERSOLD
+   RSI(9): 29.9
+   Category: RSI | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#4 [N/A/100] RSI14 OVERSOLD
+   RSI(14): 29.0
+   Category: RSI | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#5 [N/A/100] RSI MOMENTUM COLLAPSE
+   RSI -33.4 in 5 days
+   Category: RSI_MOMENTUM | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#6 [N/A/100] MACD HISTOGRAM EXPANSION BEARISH
+   Momentum accelerating
+   Category: MACD_MOMENTUM | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#7 [N/A/100] AT LOWER BB
+   Price in bottom 5% of BB range
+   Category: BOLLINGER | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#8 [N/A/100] BELOW LOWER BB
+   Price broke below lower band
+   Category: BB_BREAKOUT | Strength: EXTREME BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#9 [N/A/100] OBV STRONG ACCUMULATION
+   OBV +31% in 20 days
+   Category: OBV | Strength: STRONG BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#10 [N/A/100] STOCHASTIC OVERSOLD
+   %K: 14.0
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#11 [N/A/100] WILLIAMS R OVERSOLD
+   W%R: -86.0
+   Category: WILLIAMS_R | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#12 [N/A/100] LOW VOLATILITY
+   Compression - breakout likely
+   Category: VOLATILITY | Strength: NEUTRAL
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#13 [N/A/100] BROKE S1 SUPPORT
+   Below $660.66
+   Category: PIVOT | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------

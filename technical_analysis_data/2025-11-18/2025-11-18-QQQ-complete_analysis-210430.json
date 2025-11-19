@@ -1,0 +1,161 @@
+{
+  "symbol": "QQQ",
+  "timestamp": "2025-11-18T21:04:30.465015",
+  "price_data": {
+    "current_price": 596.3099975585938,
+    "open": 599.6199951171875,
+    "high": 602.3099975585938,
+    "low": 591.3400268554688,
+    "volume": 81786957,
+    "change": -1.2175688157110454,
+    "change_5d": -4.0639042212423,
+    "change_10d": -3.7044816215431973
+  },
+  "indicator_ratings": {
+    "trend_strength": 60,
+    "momentum": 28.723135787808737,
+    "volatility": 35,
+    "volume": 50,
+    "support_resistance": 35,
+    "oversold_overbought": 22.998454810073827
+  },
+  "overall_bias": "NEUTRAL",
+  "bias_score": 50,
+  "signal_summary": {
+    "total_signals": 11,
+    "bullish_signals": 5,
+    "bearish_signals": 5,
+    "neutral_signals": 1
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 610.8033040364583,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 617.9466349283854,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 637.010009765625,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 640.1015087838609,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 598.1933186848958,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 592.7266642252604,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 591.3400268554688,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 596.3184924368422,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 618.2100006103516,
+      "SMA_50": 606.5579125976562,
+      "SMA_200": 541.6564907836914,
+      "EMA_20": 612.920169711658
+    }
+  },
+  "signals": [
+    {
+      "signal": "MA COMPRESSION",
+      "desc": "MAs converging - breakout imminent",
+      "strength": "NEUTRAL",
+      "category": "MA_COMPRESSION",
+      "value": 1.025802491800628
+    },
+    {
+      "signal": "10MA STEEP DOWNTREND",
+      "desc": "10MA slope: -1.70%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -1.6957151732544067
+    },
+    {
+      "signal": "RSI9 OVERSOLD",
+      "desc": "RSI(9): 25.4",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "value": 25.423670367490587
+    },
+    {
+      "signal": "RSI14 OVERSOLD",
+      "desc": "RSI(14): 27.4",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "value": 27.446271575617473
+    },
+    {
+      "signal": "RSI MOMENTUM COLLAPSE",
+      "desc": "RSI -31.3 in 5 days",
+      "strength": "STRONG BEARISH",
+      "category": "RSI_MOMENTUM",
+      "value": -31.332933848892118
+    },
+    {
+      "signal": "MACD HISTOGRAM EXPANSION BEARISH",
+      "desc": "Momentum accelerating",
+      "strength": "STRONG BEARISH",
+      "category": "MACD_MOMENTUM",
+      "value": -3.665092329241727
+    },
+    {
+      "signal": "AT LOWER BB",
+      "desc": "Price in bottom 5% of BB range",
+      "strength": "BULLISH",
+      "category": "BOLLINGER",
+      "value": -0.01940222249914223
+    },
+    {
+      "signal": "BELOW LOWER BB",
+      "desc": "Price broke below lower band",
+      "strength": "EXTREME BEARISH",
+      "category": "BB_BREAKOUT",
+      "value": 0.008494878248484383
+    },
+    {
+      "signal": "STOCHASTIC OVERSOLD",
+      "desc": "%K: 11.2",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "value": 11.173500192107142
+    },
+    {
+      "signal": "WILLIAMS R OVERSOLD",
+      "desc": "W%R: -88.8",
+      "strength": "BULLISH",
+      "category": "WILLIAMS_R",
+      "value": -88.82649980789286
+    },
+    {
+      "signal": "BROKE S1 SUPPORT",
+      "desc": "Below $598.19",
+      "strength": "BEARISH",
+      "category": "PIVOT",
+      "value": 1.8833211263020075
+    }
+  ]
+}

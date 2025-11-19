@@ -1,0 +1,106 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - APLD
+================================================================================
+
+DATE: 2025-11-19
+PRICE: $23.09
+CHANGE: 1.09%
+VOLUME: 24,376,201
+
+MOVING AVERAGES:
+  10 SMA:  $26.41 (-12.6%)
+  20 SMA:  $29.98 (-23.0%)
+  50 SMA:  $27.95 (-17.4%)
+  200 SMA: $13.97 (65.2%)
+
+KEY OSCILLATORS:
+  RSI:        21.3
+  Stochastic: 15.7
+  CCI:        -101.8
+  Williams:   -84.3
+  MFI:        34.3
+
+MOMENTUM & TREND:
+  MACD:       -1.7323
+  ADX:        35.7
+  Volatility: 83.1%
+
+BOLLINGER BANDS:
+  Upper:  $39.08
+  Middle: $29.98
+  Lower:  $20.88
+
+ACTIVE SIGNALS (21 total):
+
+1. RSI OVERSOLD
+   RSI at 21.3 - BULLISH
+
+2. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+3. STOCH OVERSOLD
+   K: 15.7 - BULLISH
+
+4. STOCH BULL CROSS
+   K crossed above D - BULLISH
+
+5. WILLIAMS OVERSOLD
+   W%R: -84.3 - BULLISH
+
+6. STRONG DOWNTREND
+   ADX: 35.7 - TRENDING
+
+7. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+8. WIDE RANGE DAY
+   Range: 8.3% - VOLATILE
+
+9. WEAK 20D MOMENTUM
+   -24.6% in 20 days - STRONG BEARISH
+
+10. HIGH VOLATILITY
+   83% annualized - CAUTION
+
+11. EXTREME VOLATILITY
+   83% annualized - HIGH RISK
+
+12. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+13. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+14. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+15. EXTENDED FROM 200 SMA
+   65.2% above - OVERBOUGHT
+
+16. DOJI CANDLE
+   Indecision in the market - NEUTRAL
+
+17. SPINNING TOP
+   Potential for trend change - NEUTRAL
+
+18. BEARISH COMBO (RSI<50, MACD Cross, <SMA20)
+   Multiple bearish signals confirming trend - STRONG BEARISH
+
+19. DUAL OVERSOLD (Stoch & RSI)
+   Both oscillators are in oversold territory - STRONG BULLISH
+
+20. SHORT-TERM EMA STACK BEARISH
+   5/10/20 EMAs aligned for downtrend - BEARISH
+
+21. OVERSOLD FROM 50 SMA
+   Price is >15% below 50-day SMA - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 9
+  Bearish: 5
+  Neutral: 7
+
+OVERALL BIAS: BULLISH
+
+================================================================================

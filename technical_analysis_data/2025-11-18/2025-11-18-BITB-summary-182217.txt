@@ -1,0 +1,73 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - BITB
+================================================================================
+
+DATE: 2025-11-18
+PRICE: $50.44
+CHANGE: 1.04%
+VOLUME: 3,207,120
+
+MOVING AVERAGES:
+  10 SMA:  $54.13 (-6.8%)
+  20 SMA:  $56.73 (-11.1%)
+  50 SMA:  $60.30 (-16.3%)
+  200 SMA: $56.45 (-10.6%)
+
+KEY OSCILLATORS:
+  RSI:        29.3
+  Stochastic: 9.3
+  CCI:        -126.0
+  Williams:   -90.7
+  MFI:        21.6
+
+MOMENTUM & TREND:
+  MACD:       -2.6301
+  ADX:        32.6
+  Volatility: 47.0%
+
+BOLLINGER BANDS:
+  Upper:  $63.95
+  Middle: $56.73
+  Lower:  $49.52
+
+ACTIVE SIGNALS (10 total):
+
+1. RSI OVERSOLD
+   RSI at 29.3 - BULLISH
+
+2. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+3. STOCH OVERSOLD
+   K: 9.3 - BULLISH
+
+4. WILLIAMS OVERSOLD
+   W%R: -90.7 - BULLISH
+
+5. STRONG DOWNTREND
+   ADX: 32.6 - TRENDING
+
+6. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+7. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+8. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+9. MA ALIGNMENT BEARISH
+   10 < 20 < 50 SMA - STRONG BEARISH
+
+10. BELOW 200 SMA
+   Long-term downtrend - BEARISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 4
+  Bearish: 5
+  Neutral: 1
+
+OVERALL BIAS: BEARISH
+
+================================================================================

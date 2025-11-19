@@ -1,0 +1,157 @@
+{
+  "symbol": "APLD",
+  "timestamp": "2025-11-19 18:09:11",
+  "date": "2025-11-19",
+  "price": 23.09000015258789,
+  "change_pct": 1.0945709208836085,
+  "volume": 24376201,
+  "indicators": {
+    "RSI": 21.330519507722855,
+    "MACD": -1.7322913688224553,
+    "ADX": 35.675902445482976,
+    "Stochastic": 15.650036889510336,
+    "CCI": -101.75171923304751,
+    "MFI": 34.31870016054418,
+    "BB_Position": 0.12135352768769149,
+    "Volatility": 83.07582541702858
+  },
+  "moving_averages": {
+    "SMA_10": 26.405499839782713,
+    "SMA_20": 29.979749870300292,
+    "SMA_50": 27.953100090026854,
+    "SMA_200": 13.97337504386902,
+    "EMA_10": 25.861334893529435,
+    "EMA_20": 27.948354570182364
+  },
+  "signals": [
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 21.3",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "STOCH OVERSOLD",
+      "desc": "K: 15.7",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STOCH BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERSOLD",
+      "desc": "W%R: -84.3",
+      "strength": "BULLISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 35.7",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "WIDE RANGE DAY",
+      "desc": "Range: 8.3%",
+      "strength": "VOLATILE",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "WEAK 20D MOMENTUM",
+      "desc": "-24.6% in 20 days",
+      "strength": "STRONG BEARISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "83% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "EXTREME VOLATILITY",
+      "desc": "83% annualized",
+      "strength": "HIGH RISK",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "EXTENDED FROM 200 SMA",
+      "desc": "65.2% above",
+      "strength": "OVERBOUGHT",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "DOJI CANDLE",
+      "desc": "Indecision in the market",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK"
+    },
+    {
+      "signal": "SPINNING TOP",
+      "desc": "Potential for trend change",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK"
+    },
+    {
+      "signal": "BEARISH COMBO (RSI<50, MACD Cross, <SMA20)",
+      "desc": "Multiple bearish signals confirming trend",
+      "strength": "STRONG BEARISH",
+      "category": "COMBO"
+    },
+    {
+      "signal": "DUAL OVERSOLD (Stoch & RSI)",
+      "desc": "Both oscillators are in oversold territory",
+      "strength": "STRONG BULLISH",
+      "category": "COMBO"
+    },
+    {
+      "signal": "SHORT-TERM EMA STACK BEARISH",
+      "desc": "5/10/20 EMAs aligned for downtrend",
+      "strength": "BEARISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "OVERSOLD FROM 50 SMA",
+      "desc": "Price is >15% below 50-day SMA",
+      "strength": "BULLISH",
+      "category": "MA_PROXIMITY"
+    }
+  ],
+  "signal_count": 21,
+  "bullish_count": 9,
+  "bearish_count": 5
+}
