@@ -1,0 +1,97 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - AMD
+================================================================================
+
+DATE: 2025-11-19
+PRICE: $223.55
+CHANGE: -2.93%
+VOLUME: 48,902,190
+
+MOVING AVERAGES:
+  10 SMA:  $240.08 (-6.9%)
+  20 SMA:  $247.38 (-9.6%)
+  50 SMA:  $212.60 (5.2%)
+  200 SMA: $147.51 (51.5%)
+
+KEY OSCILLATORS:
+  RSI:        36.6
+  Stochastic: 8.8
+  CCI:        -130.6
+  Williams:   -91.2
+  MFI:        39.1
+
+MOMENTUM & TREND:
+  MACD:       4.5056
+  ADX:        22.4
+  Volatility: 65.8%
+
+BOLLINGER BANDS:
+  Upper:  $270.51
+  Middle: $247.38
+  Lower:  $224.26
+
+ACTIVE SIGNALS (18 total):
+
+1. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+2. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+3. AT LOWER BB
+   Price at $224.26 - BULLISH
+
+4. BROKE LOWER BB
+   Oversold or strong selling - BULLISH
+
+5. BB BOTTOM RANGE
+   In bottom 5% of BB range - BULLISH
+
+6. VOLUME RISING
+   Participation increasing - WATCH
+
+7. OBV FALLING
+   Selling pressure increasing - BEARISH
+
+8. STOCH OVERSOLD
+   K: 8.8 - BULLISH
+
+9. WILLIAMS OVERSOLD
+   W%R: -91.2 - BULLISH
+
+10. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+11. WIDE RANGE DAY
+   Range: 7.1% - VOLATILE
+
+12. HIGH VOLATILITY
+   66% annualized - CAUTION
+
+13. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+14. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+15. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+16. EXTENDED FROM 200 SMA
+   51.5% above - OVERBOUGHT
+
+17. THREE BLACK CROWS
+   Strong bearish continuation - STRONG BEARISH
+
+18. BEARISH COMBO (RSI<50, MACD Cross, <SMA20)
+   Multiple bearish signals confirming trend - STRONG BEARISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 9
+  Bearish: 5
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================

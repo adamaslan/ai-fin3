@@ -1,0 +1,118 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - AMGN
+================================================================================
+
+PRICE DATA:
+  Current: $343.99
+  Change: 0.67%
+  Volume: 2,962,269
+
+OVERALL BIAS: STRONG BEARISH (Score: 15/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      100/100
+  Momentum:            93.67133552351035/100
+  Volatility:          50/100
+  Volume:              70/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 90.26879502119174/100
+
+SIGNAL SUMMARY:
+  Total Signals: 15
+  Bullish: 5
+  Bearish: 8
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [N/A/100] PERFECT MA ALIGNMENT
+   10>20>50>200 MA alignment
+   Category: MA_ALIGNMENT | Strength: EXTREME BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#2 [N/A/100] 10MA STEEP UPTREND
+   10MA slope: +6.63%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#3 [N/A/100] 20MA STEEP UPTREND
+   20MA slope: +3.17%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#4 [N/A/100] 50MA STEEP UPTREND
+   50MA slope: +1.93%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#5 [N/A/100] OVEREXTENDED ABOVE 50MA
+   15.7% above 50MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#6 [N/A/100] OVEREXTENDED ABOVE 200MA
+   18.0% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#7 [N/A/100] RSI9 EXTREME OVERBOUGHT
+   RSI(9): 82.1
+   Category: RSI | Strength: EXTREME BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#8 [N/A/100] RSI14 EXTREME OVERBOUGHT
+   RSI(14): 87.3
+   Category: RSI | Strength: EXTREME BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#9 [N/A/100] RSI21 OVERBOUGHT
+   RSI(21): 74.4
+   Category: RSI | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#10 [N/A/100] STOCHASTIC OVERBOUGHT
+   %K: 96.8
+   Category: STOCHASTIC | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#11 [N/A/100] WILLIAMS R OVERBOUGHT
+   W%R: -3.2
+   Category: WILLIAMS_R | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#12 [N/A/100] MFI OVERBOUGHT
+   Money Flow: 87.8
+   Category: MFI | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#13 [N/A/100] VERY STRONG UPTREND
+   ADX: 53.4
+   Category: ADX | Strength: EXTREME
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#14 [N/A/100] DOJI CANDLE
+   Indecision pattern
+   Category: CANDLESTICK | Strength: NEUTRAL
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#15 [N/A/100] ABOVE ICHIMOKU CLOUD
+   Bullish cloud position
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------

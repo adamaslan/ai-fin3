@@ -1,0 +1,114 @@
+{
+  "symbol": "MP",
+  "timestamp": "2025-11-07 18:13:43",
+  "date": "2025-11-07",
+  "price": 58.599998474121094,
+  "signals": [
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 22.2",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "LARGE GAIN",
+      "desc": "+12.8% today",
+      "strength": "STRONG BULLISH",
+      "category": "PRICE_ACTION",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "OVEREXTENDED BELOW 20MA",
+      "desc": "17.2% below 20 MA",
+      "strength": "BULLISH",
+      "category": "MA_DISTANCE",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "RSI MOMENTUM SURGE",
+      "desc": "RSI +12.2 in 5 days",
+      "strength": "BULLISH",
+      "category": "RSI_MOMENTUM",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "GAP DOWN",
+      "desc": "Opened 2.8% lower",
+      "strength": "BEARISH",
+      "category": "GAP",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "ABOVE R1 PIVOT",
+      "desc": "Broke resistance level",
+      "strength": "BULLISH",
+      "category": "PIVOT",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "121.0% annualized",
+      "strength": "SIGNIFICANT",
+      "category": "VOLATILITY",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "STOCHASTIC BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "OBV CONFIRMATION",
+      "desc": "Volume confirming price downtrend",
+      "strength": "STRONG BEARISH",
+      "category": "OBV",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "EXTREME ROC NEGATIVE",
+      "desc": "20-day ROC: -25.2%",
+      "strength": "STRONG BEARISH",
+      "category": "ROC",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "OUTSIDE BAR",
+      "desc": "Volatility expansion",
+      "strength": "SIGNIFICANT",
+      "category": "PRICE_PATTERN",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "BULLISH ENGULFING",
+      "desc": "Strong reversal pattern",
+      "strength": "STRONG BULLISH",
+      "category": "CANDLESTICK",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    },
+    {
+      "signal": "MULTI-INDICATOR BEARISH",
+      "desc": "4/5 indicators bearish",
+      "strength": "STRONG BEARISH",
+      "category": "MULTI_INDICATOR",
+      "ai_score": 50,
+      "ai_reasoning": "AI scoring failed"
+    }
+  ],
+  "signal_count": 13,
+  "top_signal_info": {}
+}

@@ -1,0 +1,94 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - DIA
+================================================================================
+
+DATE: 2025-11-19
+PRICE: $461.76
+CHANGE: 0.10%
+VOLUME: 5,795,469
+
+MOVING AVERAGES:
+  10 SMA:  $471.10 (-2.0%)
+  20 SMA:  $472.38 (-2.2%)
+  50 SMA:  $466.44 (-1.0%)
+  200 SMA: $436.78 (5.7%)
+
+KEY OSCILLATORS:
+  RSI:        35.9
+  Stochastic: 9.4
+  CCI:        -134.4
+  Williams:   -90.6
+  MFI:        23.7
+
+MOMENTUM & TREND:
+  MACD:       0.2661
+  ADX:        24.7
+  Volatility: 12.4%
+
+BOLLINGER BANDS:
+  Upper:  $483.12
+  Middle: $472.38
+  Lower:  $461.63
+
+ACTIVE SIGNALS (17 total):
+
+1. 10/20 EMA BEAR CROSS
+   10 EMA crossed below 20 EMA - BEARISH
+
+2. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+3. MACD WEAK MOMENTUM
+   Histogram accelerating down - STRONG BEARISH
+
+4. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+5. AT LOWER BB
+   Price at $461.63 - BULLISH
+
+6. BB BOTTOM RANGE
+   In bottom 5% of BB range - BULLISH
+
+7. STOCH OVERSOLD
+   K: 9.4 - BULLISH
+
+8. STOCH BULL CROSS
+   K crossed above D - BULLISH
+
+9. WILLIAMS OVERSOLD
+   W%R: -90.6 - BULLISH
+
+10. NARROW RANGE DAY
+   Range: 0.9% - CONSOLIDATION
+
+11. LOW VOLATILITY
+   12% annualized - CALM
+
+12. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+13. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+14. DOJI CANDLE
+   Indecision in the market - NEUTRAL
+
+15. SPINNING TOP
+   Potential for trend change - NEUTRAL
+
+16. BEARISH COMBO (RSI<50, MACD Cross, <SMA20)
+   Multiple bearish signals confirming trend - STRONG BEARISH
+
+17. SHORT-TERM EMA STACK BEARISH
+   5/10/20 EMAs aligned for downtrend - BEARISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 8
+  Bearish: 5
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================

@@ -1,0 +1,94 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - ROKU
+================================================================================
+
+PRICE DATA:
+  Current: $95.27
+  Change: -1.67%
+  Volume: 2,913,582
+
+OVERALL BIAS: BULLISH (Score: 65/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      90/100
+  Momentum:            35/100
+  Volatility:          65/100
+  Volume:              30/100
+  Support/Resistance:  35/100
+  Oversold/Overbought: 38.05303686696062/100
+
+SIGNAL SUMMARY:
+  Total Signals: 11
+  Bullish: 5
+  Bearish: 4
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [N/A/100] PERFECT MA ALIGNMENT
+   10>20>50>200 MA alignment
+   Category: MA_ALIGNMENT | Strength: EXTREME BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#2 [N/A/100] 10MA STEEP DOWNTREND
+   10MA slope: -2.12%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#3 [N/A/100] RSI9 OVERSOLD
+   RSI(9): 23.2
+   Category: RSI | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#4 [N/A/100] RSI BULLISH DIVERGENCE
+   Price declining but RSI rising
+   Category: RSI_DIVERGENCE | Strength: STRONG BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#5 [N/A/100] RSI MOMENTUM COLLAPSE
+   RSI -24.2 in 5 days
+   Category: RSI_MOMENTUM | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#6 [N/A/100] MACD HISTOGRAM EXPANSION BEARISH
+   Momentum accelerating
+   Category: MACD_MOMENTUM | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#7 [N/A/100] STOCHASTIC OVERSOLD
+   %K: 10.3
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#8 [N/A/100] WILLIAMS R OVERSOLD
+   W%R: -89.7
+   Category: WILLIAMS_R | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#9 [N/A/100] STRONG UPTREND
+   ADX: 31.3
+   Category: ADX | Strength: TRENDING
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#10 [N/A/100] DOJI CANDLE
+   Indecision pattern
+   Category: CANDLESTICK | Strength: NEUTRAL
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#11 [N/A/100] BROKE S1 SUPPORT
+   Below $95.40
+   Category: PIVOT | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------

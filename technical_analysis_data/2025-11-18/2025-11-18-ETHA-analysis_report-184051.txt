@@ -1,0 +1,106 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - ETHA
+================================================================================
+
+PRICE DATA:
+  Current: $23.59
+  Change: 3.87%
+  Volume: 45,370,159
+
+OVERALL BIAS: BEARISH (Score: 35/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      60/100
+  Momentum:            16.903331703423667/100
+  Volatility:          95/100
+  Volume:              30/100
+  Support/Resistance:  65/100
+  Oversold/Overbought: 28.26497803314803/100
+
+SIGNAL SUMMARY:
+  Total Signals: 13
+  Bullish: 5
+  Bearish: 6
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [N/A/100] PRICE ABOVE 200MA
+   Price crossed above 200-day MA
+   Category: PRICE_MA_CROSS | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#2 [N/A/100] 10MA STEEP DOWNTREND
+   10MA slope: -7.35%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#3 [N/A/100] 20MA STEEP DOWNTREND
+   20MA slope: -5.40%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#4 [N/A/100] 50MA STEEP DOWNTREND
+   50MA slope: -2.93%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#5 [N/A/100] OVEREXTENDED BELOW 50MA
+   21.8% below 50MA
+   Category: MA_DISTANCE | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#6 [N/A/100] RSI BULLISH DIVERGENCE
+   Price declining but RSI rising
+   Category: RSI_DIVERGENCE | Strength: STRONG BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#7 [N/A/100] OBV STRONG DISTRIBUTION
+   OBV -160% in 20 days
+   Category: OBV | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#8 [N/A/100] CMF STRONG SELLING
+   CMF: -0.28 - strong distribution
+   Category: CMF | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#9 [N/A/100] STOCHASTIC OVERSOLD
+   %K: 17.6
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#10 [N/A/100] WILLIAMS R OVERSOLD
+   W%R: -82.4
+   Category: WILLIAMS_R | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#11 [N/A/100] STRONG DOWNTREND
+   ADX: 37.5
+   Category: ADX | Strength: TRENDING
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#12 [N/A/100] ROC20 EXTREME NEGATIVE
+   20-day ROC: -22.1%
+   Category: ROC | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#13 [N/A/100] EXTREME VOLATILITY
+   82% annualized
+   Category: VOLATILITY | Strength: HIGH RISK
+   AI: N/A
+--------------------------------------------------------------------------------
