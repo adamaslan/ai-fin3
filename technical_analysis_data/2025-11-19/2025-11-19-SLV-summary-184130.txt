@@ -1,0 +1,82 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - SLV
+================================================================================
+
+DATE: 2025-11-19
+PRICE: $46.45
+CHANGE: 0.76%
+VOLUME: 30,597,449
+
+MOVING AVERAGES:
+  10 SMA:  $45.94 (1.1%)
+  20 SMA:  $44.72 (3.9%)
+  50 SMA:  $43.51 (6.8%)
+  200 SMA: $34.73 (33.7%)
+
+KEY OSCILLATORS:
+  RSI:        59.4
+  Stochastic: 63.7
+  CCI:        75.0
+  Williams:   -36.3
+  MFI:        56.3
+
+MOMENTUM & TREND:
+  MACD:       0.8296
+  ADX:        33.1
+  Volatility: 33.6%
+
+BOLLINGER BANDS:
+  Upper:  $48.05
+  Middle: $44.72
+  Lower:  $41.40
+
+ACTIVE SIGNALS (13 total):
+
+1. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+2. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+3. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+4. OBV RISING
+   Buying pressure increasing - BULLISH
+
+5. STRONG UPTREND
+   ADX: 33.1 - TRENDING
+
+6. STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+7. HIGHER HIGH
+   Breaking above yesterday - BULLISH
+
+8. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+9. ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+10. CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+11. MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+12. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+13. EXTENDED FROM 200 SMA
+   33.7% above - OVERBOUGHT
+
+SIGNAL BREAKDOWN:
+  Bullish: 10
+  Bearish: 1
+  Neutral: 2
+
+OVERALL BIAS: BULLISH
+
+================================================================================

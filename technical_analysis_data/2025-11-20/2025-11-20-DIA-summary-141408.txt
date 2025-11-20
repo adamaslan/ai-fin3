@@ -1,0 +1,55 @@
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - DIA
+================================================================================
+
+DATE: 2025-11-20
+PRICE: $458.86 (-0.63%)
+VOLUME: 10,324,021
+
+MOVING AVERAGES:
+  10 SMA:  $470.06 (-2.4%)
+  20 SMA:  $471.96 (-2.8%)
+  50 SMA:  $466.41 (-1.6%)
+  200 SMA: $436.85 (5.0%)
+
+KEY INDICATORS:
+  RSI: 32.9 | Stoch: 4.0 | CCI: -118.8
+  MACD: -0.6119 | ADX: 23.4 | MFI: 32.6
+  Volatility: 12.5%
+
+BOLLINGER BANDS:
+  Upper: $484.11 | Middle: $471.96 | Lower: $459.80
+
+ACTIVE SIGNALS (13 total):
+1. MACD BELOW ZERO
+   MACD crossed into negative territory - BEARISH
+2. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+3. AT LOWER BB
+   Price at $459.80 - BULLISH
+4. BROKE LOWER BB
+   Oversold or strong selling - BULLISH
+5. BB EXPANDING
+   Volatility increasing - VOLATILE
+6. BB BOTTOM RANGE
+   In bottom 5% of BB range - BULLISH
+7. STOCH OVERSOLD
+   K: 4.0 - BULLISH
+8. STOCH BEAR CROSS
+   K crossed below D - BEARISH
+9. WILLIAMS OVERSOLD
+   W%R: -96.0 - BULLISH
+10. LOWER LOW
+   Breaking below yesterday - BEARISH
+11. LOW VOLATILITY
+   12% annualized - CALM
+12. CLOUD BULLISH
+   Senkou A above B - BULLISH
+13. ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 7 | Bearish: 4 | Neutral: 2
+
+OVERALL BIAS: BULLISH
+================================================================================
