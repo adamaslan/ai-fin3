@@ -1,0 +1,115 @@
+{
+  "symbol": "SQQQ",
+  "timestamp": "2025-11-19 18:26:32",
+  "date": "2025-11-19",
+  "price": 15.119999885559082,
+  "change_pct": -1.6905086277451353,
+  "volume": 183172533,
+  "indicators": {
+    "RSI": 66.00360740568414,
+    "MACD": 0.043680989347619104,
+    "ADX": 25.387234163114673,
+    "Stochastic": 78.99999618530273,
+    "CCI": 106.17797236238731,
+    "MFI": 65.73604920100576,
+    "BB_Position": 0.9090996763206967,
+    "Volatility": 58.45022079366326
+  },
+  "moving_averages": {
+    "SMA_10": 14.367999935150147,
+    "SMA_20": 13.886999988555909,
+    "SMA_50": 14.710660648345947,
+    "SMA_200": 22.793849396705628,
+    "EMA_10": 14.490563452364968,
+    "EMA_20": 14.317179180120908
+  },
+  "signals": [
+    {
+      "signal": "RSI EXITING OVERBOUGHT",
+      "desc": "RSI dropped from overbought",
+      "strength": "BEARISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD ABOVE ZERO",
+      "desc": "MACD crossed into positive territory",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD MOMENTUM UP",
+      "desc": "Histogram expanding bullish",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "WALKING UPPER BAND",
+      "desc": "Strong uptrend or overbought",
+      "strength": "EXTREME",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 25.4",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG UPTREND CONFIRMED",
+      "desc": "+DI > -DI with high ADX",
+      "strength": "BULLISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "WIDE RANGE DAY",
+      "desc": "Range: 6.1%",
+      "strength": "VOLATILE",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "58% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BEARISH",
+      "desc": "Senkou A below B",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "BELOW 200 SMA",
+      "desc": "Long-term downtrend",
+      "strength": "BEARISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 14,
+  "bullish_count": 5,
+  "bearish_count": 5
+}

@@ -1,0 +1,175 @@
+{
+  "symbol": "ETHA",
+  "timestamp": "2025-11-18T18:40:51.033033",
+  "price_data": {
+    "current_price": 23.59000015258789,
+    "open": 23.09000015258789,
+    "high": 23.979999542236328,
+    "low": 22.90999984741211,
+    "volume": 45370159,
+    "change": 3.874949817663853,
+    "change_5d": -9.234319506217597,
+    "change_10d": -2.8418472592430013
+  },
+  "indicator_ratings": {
+    "trend_strength": 60,
+    "momentum": 16.903331703423667,
+    "volatility": 95,
+    "volume": 30,
+    "support_resistance": 65,
+    "oversold_overbought": 28.26497803314803
+  },
+  "overall_bias": "BEARISH",
+  "bias_score": 35,
+  "signal_summary": {
+    "total_signals": 13,
+    "bullish_signals": 5,
+    "bearish_signals": 6,
+    "neutral_signals": 2
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 23.873332977294922,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 25.036666870117188,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 32.04999923706055,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 32.110307649568114,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 21.933332443237305,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 21.156665802001953,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 22.31999969482422,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 21.693692632719483,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 26.902000141143798,
+      "SMA_50": 30.150000038146974,
+      "SMA_200": 23.10019998073578,
+      "EMA_20": 26.47056044531946
+    }
+  },
+  "signals": [
+    {
+      "signal": "PRICE ABOVE 200MA",
+      "desc": "Price crossed above 200-day MA",
+      "strength": "BULLISH",
+      "category": "PRICE_MA_CROSS",
+      "value": 23.10019998073578
+    },
+    {
+      "signal": "10MA STEEP DOWNTREND",
+      "desc": "10MA slope: -7.35%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -7.345175443071102
+    },
+    {
+      "signal": "20MA STEEP DOWNTREND",
+      "desc": "20MA slope: -5.40%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -5.395509372349331
+    },
+    {
+      "signal": "50MA STEEP DOWNTREND",
+      "desc": "50MA slope: -2.93%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -2.9290212211431466
+    },
+    {
+      "signal": "OVEREXTENDED BELOW 50MA",
+      "desc": "21.8% below 50MA",
+      "strength": "BULLISH",
+      "category": "MA_DISTANCE",
+      "value": -21.757876873164548
+    },
+    {
+      "signal": "RSI BULLISH DIVERGENCE",
+      "desc": "Price declining but RSI rising",
+      "strength": "STRONG BULLISH",
+      "category": "RSI_DIVERGENCE",
+      "value": 0.38973755394233933
+    },
+    {
+      "signal": "OBV STRONG DISTRIBUTION",
+      "desc": "OBV -160% in 20 days",
+      "strength": "STRONG BEARISH",
+      "category": "OBV",
+      "value": -160.23090498055694
+    },
+    {
+      "signal": "CMF STRONG SELLING",
+      "desc": "CMF: -0.28 - strong distribution",
+      "strength": "BEARISH",
+      "category": "CMF",
+      "value": -0.2810925271771114
+    },
+    {
+      "signal": "STOCHASTIC OVERSOLD",
+      "desc": "%K: 17.6",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "value": 17.614428336477417
+    },
+    {
+      "signal": "WILLIAMS R OVERSOLD",
+      "desc": "W%R: -82.4",
+      "strength": "BULLISH",
+      "category": "WILLIAMS_R",
+      "value": -82.38557166352258
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 37.5",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 37.47827944936684
+    },
+    {
+      "signal": "ROC20 EXTREME NEGATIVE",
+      "desc": "20-day ROC: -22.1%",
+      "strength": "STRONG BEARISH",
+      "category": "ROC",
+      "value": -22.093792544093734
+    },
+    {
+      "signal": "EXTREME VOLATILITY",
+      "desc": "82% annualized",
+      "strength": "HIGH RISK",
+      "category": "VOLATILITY",
+      "value": 82.37373711922804
+    }
+  ]
+}

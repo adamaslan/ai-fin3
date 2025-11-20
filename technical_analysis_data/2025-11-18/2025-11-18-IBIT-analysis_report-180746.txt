@@ -1,0 +1,94 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - IBIT
+================================================================================
+
+PRICE DATA:
+  Current: $52.66
+  Change: 1.07%
+  Volume: 74,900,822
+
+OVERALL BIAS: NEUTRAL (Score: 50/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      40/100
+  Momentum:            14.64065465545913/100
+  Volatility:          65/100
+  Volume:              50/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 22.3911105551742/100
+
+SIGNAL SUMMARY:
+  Total Signals: 11
+  Bullish: 5
+  Bearish: 5
+  Neutral: 1
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [N/A/100] 10MA STEEP DOWNTREND
+   10MA slope: -5.62%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#2 [N/A/100] 20MA STEEP DOWNTREND
+   20MA slope: -3.38%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#3 [N/A/100] 50MA STEEP DOWNTREND
+   50MA slope: -1.43%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#4 [N/A/100] OVEREXTENDED BELOW 50MA
+   16.3% below 50MA
+   Category: MA_DISTANCE | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#5 [N/A/100] RSI9 OVERSOLD
+   RSI(9): 26.4
+   Category: RSI | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#6 [N/A/100] RSI14 OVERSOLD
+   RSI(14): 29.3
+   Category: RSI | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#7 [N/A/100] OBV STRONG DISTRIBUTION
+   OBV -264% in 20 days
+   Category: OBV | Strength: STRONG BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#8 [N/A/100] CMF STRONG SELLING
+   CMF: -0.32 - strong distribution
+   Category: CMF | Strength: BEARISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#9 [N/A/100] STOCHASTIC OVERSOLD
+   %K: 9.3
+   Category: STOCHASTIC | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#10 [N/A/100] WILLIAMS R OVERSOLD
+   W%R: -90.7
+   Category: WILLIAMS_R | Strength: BULLISH
+   AI: N/A
+--------------------------------------------------------------------------------
+
+#11 [N/A/100] STRONG DOWNTREND
+   ADX: 32.2
+   Category: ADX | Strength: TRENDING
+   AI: N/A
+--------------------------------------------------------------------------------

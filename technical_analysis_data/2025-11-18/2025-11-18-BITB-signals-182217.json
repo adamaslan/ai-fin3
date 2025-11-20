@@ -1,0 +1,91 @@
+{
+  "symbol": "BITB",
+  "timestamp": "2025-11-18 18:22:17",
+  "date": "2025-11-18",
+  "price": 50.439998626708984,
+  "change_pct": 1.0416676218693466,
+  "volume": 3207120,
+  "indicators": {
+    "RSI": 29.298542681050478,
+    "MACD": -2.6300695954785738,
+    "ADX": 32.551672578296056,
+    "Stochastic": 9.306571057941268,
+    "CCI": -126.02748655245301,
+    "MFI": 21.602019301447257,
+    "BB_Position": 0.06396230056057935,
+    "Volatility": 46.98441607272814
+  },
+  "moving_averages": {
+    "SMA_10": 54.12799987792969,
+    "SMA_20": 56.73399982452393,
+    "SMA_50": 60.29720001220703,
+    "SMA_200": 56.446550102233886,
+    "EMA_10": 53.62675308151845,
+    "EMA_20": 55.907852117051505
+  },
+  "signals": [
+    {
+      "signal": "RSI OVERSOLD",
+      "desc": "RSI at 29.3",
+      "strength": "BULLISH",
+      "category": "RSI"
+    },
+    {
+      "signal": "MACD MOMENTUM DOWN",
+      "desc": "Histogram expanding bearish",
+      "strength": "BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "STOCH OVERSOLD",
+      "desc": "K: 9.3",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERSOLD",
+      "desc": "W%R: -90.7",
+      "strength": "BULLISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 32.6",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BEARISH",
+      "desc": "10 < 20 < 50 SMA",
+      "strength": "STRONG BEARISH",
+      "category": "MA_TREND"
+    },
+    {
+      "signal": "BELOW 200 SMA",
+      "desc": "Long-term downtrend",
+      "strength": "BEARISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 10,
+  "bullish_count": 4,
+  "bearish_count": 5
+}
