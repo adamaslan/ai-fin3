@@ -1,0 +1,135 @@
+{
+  "symbol": "ORCL",
+  "timestamp": "2025-12-11 12:52:00",
+  "date": "2025-12-11",
+  "analysis": "Okay, here's a technical analysis of ORCL based on the provided data:\n\n**1. STRONGEST SIGNAL:**\n\n*   **[VOLUME] VOLUME SELLOFF - High volume + price down (STRONG BEARISH):** This is the strongest actionable signal. A -12.95% price drop combined with a volume spike of 61,282,304 indicates significant selling pressure and conviction behind the downward move. This implies that a large number of investors are exiting their positions, further contributing to the downward momentum.\n\n**2. OVERALL BIAS:**\n\n*   **Strongly Bearish (Confidence: 90%)** The preponderance of bearish signals, especially those related to price action, volume, and trend, overwhelmingly suggests a continuation of the downtrend. While some bullish divergence signals exist, they are currently overshadowed by the strength of the bearish indicators.\n\n**3. KEY LEVELS:**\n\n*   **Resistance:** $210 (psychological level and prior support), $215 (20 SMA), $220 (50 SMA).\n*   **Support:** We need to find more historic support, as we are seeing a large drop. Potential areas for support would include $180 (previous lows) and $170 (psychological level).\n\n**4. RISK ASSESSMENT:**\n\n*   **Downside Risk:** Further price decline due to strong selling pressure. The high volatility could lead to rapid and significant losses.\n*   **Upside Risk:** The bullish divergences *could* signal a potential short-term bounce. However, relying solely on these divergences against a backdrop of strong bearish signals is very risky. A short squeeze is possible but unlikely given the overwhelming negative sentiment.\n*   **Volatility Risk:** The 64.2% volatility increases the potential for both gains and losses, emphasizing the need for tight risk management.\n\n**5. TRADING RECOMMENDATION:**\n\n*   **Sell/Short:** Given the strong bearish signals, a short position is the most appropriate action.\n\n    *   **Entry:** Enter a short position at the current price of $194.13, or on a slight bounce to potentially improve the entry price.\n    *   **Stop Loss:** Place a stop-loss order above a recent high, such as $200. This would limit potential losses if the price unexpectedly reverses.\n    *   **Target:** Aim for a price target near the next support level of $180 and $170. Adjust the target lower if the bearish momentum continues.\n*   **Alternative Recommendation:** If unable to short, trim existing long positions and wait for further clarification.\n\n**6. TIMEFRAME:**\n\n*   **Short-Term to Medium-Term:** The analysis is best suited for a short-term to medium-term outlook (days to weeks). The extreme bearish signals suggest immediate downside pressure, but longer-term investors should monitor for potential bottoming patterns as the price approaches support levels.\n",
+  "signal_count": 21,
+  "signals_analyzed": [
+    {
+      "signal": "PRICE BELOW 10 MA",
+      "desc": "Price crossed below 10-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "PRICE BELOW 20 MA",
+      "desc": "Price crossed below 20-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "RSI BULLISH DIVERGENCE",
+      "desc": "Price down but RSI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "VOLUME SPIKE 2X",
+      "desc": "Vol: 61,282,304",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "VOLUME RISING",
+      "desc": "Participation increasing",
+      "strength": "WATCH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "VOLUME SELLOFF",
+      "desc": "High volume + price down",
+      "strength": "STRONG BEARISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "OBV BULL DIVERGENCE",
+      "desc": "Price down, OBV up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "CCI NEGATIVE",
+      "desc": "CCI crossed below zero",
+      "strength": "BEARISH",
+      "category": "CCI"
+    },
+    {
+      "signal": "MFI BULL DIVERGENCE",
+      "desc": "Price down, MFI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 28.5",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "LARGE LOSS",
+      "desc": "-13.0% today",
+      "strength": "STRONG BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "EXPLOSIVE MOVE DOWN",
+      "desc": "-13.0%",
+      "strength": "EXTREME BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "64% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BEARISH",
+      "desc": "Senkou A below B",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BEARISH",
+      "desc": "10 < 20 < 50 SMA",
+      "strength": "STRONG BEARISH",
+      "category": "MA_TREND"
+    }
+  ]
+}

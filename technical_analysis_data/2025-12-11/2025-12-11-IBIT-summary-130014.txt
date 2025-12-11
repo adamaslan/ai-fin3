@@ -1,0 +1,75 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - IBIT
+================================================================================
+
+DATE: 2025-12-11
+PRICE: $51.04
+CHANGE: -2.76%
+VOLUME: 31,769,938
+
+MOVING AVERAGES:
+  10 SMA:  $51.56 (-1.0%)
+  20 SMA:  $51.41 (-0.7%)
+  50 SMA:  $58.48 (-12.7%)
+  200 SMA: $58.69 (-13.0%)
+
+KEY OSCILLATORS:
+  RSI:        55.2
+  Stochastic: 61.9
+  CCI:        -14.9
+  Williams:   -38.1
+  MFI:        52.8
+
+MOMENTUM & TREND:
+  MACD:       -1.7414
+  ADX:        30.4
+  Volatility: 53.1%
+
+BOLLINGER BANDS:
+  Upper:  $55.02
+  Middle: $51.41
+  Lower:  $47.80
+
+ACTIVE SIGNALS (20 total):
+
+1. [88/100] DEATH CROSS
+   50 MA crossed below 200 MA - STRONG BEARISH
+
+2. [82/100] STRONG DOWNTREND
+   ADX: 30.4 - TRENDING
+
+3. [80/100] OBV FALLING
+   Selling pressure increasing - BEARISH
+
+4. [80/100] BELOW 200 SMA
+   Long-term downtrend - BEARISH
+
+5. [78/100] PRICE BELOW 20 MA
+   Price crossed below 20-day MA - BEARISH
+
+6. [78/100] BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+7. [75/100] PRICE BELOW 10 MA
+   Price crossed below 10-day MA - BEARISH
+
+8. [75/100] CLOUD BEARISH
+   Senkou A below B - BEARISH
+
+9. [72/100] CCI NEGATIVE
+   CCI crossed below zero - BEARISH
+
+10. [70/100] STOCH BEAR CROSS
+   K crossed below D - BEARISH
+
+... and 10 more signals
+
+SIGNAL BREAKDOWN:
+  Bullish: 6
+  Bearish: 10
+  Neutral: 4
+
+OVERALL BIAS: BEARISH
+
+================================================================================

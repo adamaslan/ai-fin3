@@ -1,0 +1,58 @@
+{
+  "symbol": "MP",
+  "timestamp": "2025-12-11 12:54:07",
+  "date": "2025-12-11",
+  "price": 59.36000061035156,
+  "signals": [
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BB_SQUEEZE"
+    },
+    {
+      "signal": "RSI ABOVE 50",
+      "desc": "RSI crossed into bullish zone",
+      "strength": "BULLISH",
+      "category": "RSI_CROSS"
+    },
+    {
+      "signal": "MOMENTUM DECELERATION",
+      "desc": "Bearish momentum increasing",
+      "strength": "STRONG BEARISH",
+      "category": "MOMENTUM_ACCELERATION"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "74.7% annualized",
+      "strength": "SIGNIFICANT",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "STOCHASTIC BULL CROSS",
+      "desc": "K crossed above D",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "ATR STOP LEVEL",
+      "desc": "Bull stop at $52.83",
+      "strength": "NEUTRAL",
+      "category": "ATR"
+    },
+    {
+      "signal": "OUTSIDE BAR",
+      "desc": "Volatility expansion",
+      "strength": "SIGNIFICANT",
+      "category": "PRICE_PATTERN"
+    },
+    {
+      "signal": "MULTI-INDICATOR BULLISH",
+      "desc": "4/5 indicators bullish",
+      "strength": "STRONG BULLISH",
+      "category": "MULTI_INDICATOR"
+    }
+  ],
+  "signal_count": 8,
+  "top_signal_info": {}
+}

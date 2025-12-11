@@ -1,0 +1,14 @@
+Rank,Score,Signal,Description,Category,Strength,AI_Reasoning
+1,92,MOMENTUM DIVERGENCE,Strong price move on weak volume,MOMENTUM_DIVERGENCE,BEARISH,Weakness behind the price move
+2,90,VOLUME DIVERGENCE BEARISH,Price up but volume declining,VOLUME_DIVERGENCE,BEARISH,Classic bearish divergence
+3,85,RSI OVERBOUGHT,RSI at 80.1,RSI,BEARISH,High RSI suggests possible pullback
+4,80,OVEREXTENDED ABOVE 20MA,14.0% above 20 MA,MA_DISTANCE,BEARISH,Likely to revert to mean
+5,75,ATR STOP LEVEL,Bull stop at $25.44,ATR,NEUTRAL,Good risk management level
+6,72,RSI EXTREME OVERBOUGHT,RSI at 80.1,RSI,STRONG BEARISH,Further confirms overbought condition
+7,70,MA COMPRESSION,MAs converging - breakout imminent,MA_COMPRESSION,NEUTRAL,Potential for large move
+8,68,STRONG BULL TREND ADX,"+DI leading, ADX 33.5",ADX,STRONG BULLISH,Confirms uptrend strength
+9,65,STRONG UPTREND,ADX: 33.5,TREND,TRENDING,ADX confirms trend strength
+10,60,GAP DOWN,Opened 2.1% lower,GAP,BEARISH,Short term bearish signal
+11,55,HIGH VOLATILITY,89.8% annualized,VOLATILITY,SIGNIFICANT,"Increased risk, both ways"
+12,50,DOJI CANDLE,Indecision/reversal signal,CANDLESTICK,NEUTRAL,Needs confirmation
+13,40,MULTI-INDICATOR BULLISH,4/5 indicators bullish,MULTI_INDICATOR,STRONG BULLISH,Conflicting signals reduce value

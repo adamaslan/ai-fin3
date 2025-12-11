@@ -1,0 +1,106 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - ORCL
+================================================================================
+
+DATE: 2025-12-11
+PRICE: $194.13
+CHANGE: -12.95%
+VOLUME: 61,282,304
+
+MOVING AVERAGES:
+  10 SMA:  $210.28 (-7.7%)
+  20 SMA:  $211.04 (-8.0%)
+  50 SMA:  $249.03 (-22.0%)
+  200 SMA: $nan (nan%)
+
+KEY OSCILLATORS:
+  RSI:        39.6
+  Stochastic: 21.4
+  CCI:        -119.0
+  Williams:   -78.6
+  MFI:        53.1
+
+MOMENTUM & TREND:
+  MACD:       -9.6048
+  ADX:        28.5
+  Volatility: 64.2%
+
+BOLLINGER BANDS:
+  Upper:  $231.75
+  Middle: $211.04
+  Lower:  $190.34
+
+ACTIVE SIGNALS (21 total):
+
+1. PRICE BELOW 10 MA
+   Price crossed below 10-day MA - BEARISH
+
+2. PRICE BELOW 20 MA
+   Price crossed below 20-day MA - BEARISH
+
+3. RSI BULLISH DIVERGENCE
+   Price down but RSI up - BULLISH
+
+4. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+5. BB SQUEEZE
+   Bands narrowing - breakout pending - NEUTRAL
+
+6. VOLUME SPIKE 2X
+   Vol: 61,282,304 - SIGNIFICANT
+
+7. VOLUME RISING
+   Participation increasing - WATCH
+
+8. VOLUME SELLOFF
+   High volume + price down - STRONG BEARISH
+
+9. OBV BULL DIVERGENCE
+   Price down, OBV up - BULLISH
+
+10. STOCH BEAR CROSS
+   K crossed below D - BEARISH
+
+11. CCI NEGATIVE
+   CCI crossed below zero - BEARISH
+
+12. MFI BULL DIVERGENCE
+   Price down, MFI up - BULLISH
+
+13. STRONG DOWNTREND
+   ADX: 28.5 - TRENDING
+
+14. STRONG DOWNTREND CONFIRMED
+   -DI > +DI with high ADX - BEARISH
+
+15. LARGE LOSS
+   -13.0% today - STRONG BEARISH
+
+16. EXPLOSIVE MOVE DOWN
+   -13.0% - EXTREME BEARISH
+
+17. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+18. HIGH VOLATILITY
+   64% annualized - CAUTION
+
+19. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+20. CLOUD BEARISH
+   Senkou A below B - BEARISH
+
+21. MA ALIGNMENT BEARISH
+   10 < 20 < 50 SMA - STRONG BEARISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 4
+  Bearish: 12
+  Neutral: 5
+
+OVERALL BIAS: BEARISH
+
+================================================================================

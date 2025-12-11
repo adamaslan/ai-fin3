@@ -1,0 +1,68 @@
+
+================================================================================
+RANKED SIGNALS REPORT - MP
+================================================================================
+
+Price: $59.36 | Change: 2.29%
+Date: 2025-12-11
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#? ❓ SCORE: N/A/100
+Signal: BB SQUEEZE
+Description: Bands narrowing - breakout pending
+Category: BB_SQUEEZE | Strength: NEUTRAL
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: RSI ABOVE 50
+Description: RSI crossed into bullish zone
+Category: RSI_CROSS | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MOMENTUM DECELERATION
+Description: Bearish momentum increasing
+Category: MOMENTUM_ACCELERATION | Strength: STRONG BEARISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: HIGH VOLATILITY
+Description: 74.7% annualized
+Category: VOLATILITY | Strength: SIGNIFICANT
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: STOCHASTIC BULL CROSS
+Description: K crossed above D
+Category: STOCHASTIC | Strength: BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: ATR STOP LEVEL
+Description: Bull stop at $52.83
+Category: ATR | Strength: NEUTRAL
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: OUTSIDE BAR
+Description: Volatility expansion
+Category: PRICE_PATTERN | Strength: SIGNIFICANT
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
+#? ❓ SCORE: N/A/100
+Signal: MULTI-INDICATOR BULLISH
+Description: 4/5 indicators bullish
+Category: MULTI_INDICATOR | Strength: STRONG BULLISH
+AI Analysis: N/A
+--------------------------------------------------------------------------------
+
