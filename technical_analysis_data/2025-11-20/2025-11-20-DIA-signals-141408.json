@@ -1,0 +1,109 @@
+{
+  "symbol": "DIA",
+  "timestamp": "2025-11-20 14:14:08",
+  "date": "2025-11-20",
+  "price": 458.8599853515625,
+  "change_pct": -0.6280371519254091,
+  "volume": 10324021,
+  "indicators": {
+    "RSI": 32.88535761313267,
+    "MACD": -0.611928680633639,
+    "ADX": 23.425294917398457,
+    "Stoch_K": 3.9849523134269282,
+    "CCI": -118.83690241851262,
+    "MFI": 32.64729364408255,
+    "BB_Position": -0.038773727798016695,
+    "Volatility": 12.463593036504193
+  },
+  "moving_averages": {
+    "SMA_10": 470.06299743652346,
+    "SMA_20": 471.95749816894534,
+    "SMA_50": 466.4124853515625,
+    "SMA_200": 436.8522593688965,
+    "EMA_10": 467.28096143119717,
+    "EMA_20": 468.8442808104497
+  },
+  "signals": [
+    {
+      "signal": "MACD BELOW ZERO",
+      "desc": "MACD crossed into negative territory",
+      "strength": "BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "MACD MOMENTUM DOWN",
+      "desc": "Histogram expanding bearish",
+      "strength": "BEARISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "AT LOWER BB",
+      "desc": "Price at $459.80",
+      "strength": "BULLISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BROKE LOWER BB",
+      "desc": "Oversold or strong selling",
+      "strength": "BULLISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB EXPANDING",
+      "desc": "Volatility increasing",
+      "strength": "VOLATILE",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "BB BOTTOM RANGE",
+      "desc": "In bottom 5% of BB range",
+      "strength": "BULLISH",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "STOCH OVERSOLD",
+      "desc": "K: 4.0",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "WILLIAMS OVERSOLD",
+      "desc": "W%R: -96.0",
+      "strength": "BULLISH",
+      "category": "WILLIAMS"
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOW VOLATILITY",
+      "desc": "12% annualized",
+      "strength": "CALM",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "CLOUD BULLISH",
+      "desc": "Senkou A above B",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "ABOVE 200 SMA",
+      "desc": "Long-term uptrend",
+      "strength": "BULLISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 13,
+  "bullish_count": 7,
+  "bearish_count": 4
+}

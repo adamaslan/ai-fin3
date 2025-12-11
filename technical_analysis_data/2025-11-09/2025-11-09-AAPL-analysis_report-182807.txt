@@ -1,0 +1,100 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - AAPL
+================================================================================
+
+PRICE DATA:
+  Current: $268.47
+  Change: -0.48%
+  Volume: 48,203,600
+
+OVERALL BIAS: BULLISH (Score: 65/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      90/100
+  Momentum:            36.79835223753355/100
+  Volatility:          35/100
+  Volume:              40/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 64.33928298273804/100
+
+SIGNAL SUMMARY:
+  Total Signals: 12
+  Bullish: 6
+  Bearish: 4
+  Neutral: 2
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [85/100] RSI MOMENTUM COLLAPSE
+   RSI -16.9 in 5 days
+   Category: RSI_MOMENTUM | Strength: STRONG BEARISH
+   AI: Suggests potential for short term correction.
+--------------------------------------------------------------------------------
+
+#2 [80/100] PERFECT MA ALIGNMENT
+   10>20>50>200 MA alignment
+   Category: MA_ALIGNMENT | Strength: EXTREME BULLISH
+   AI: Strong bullish confirmation.
+--------------------------------------------------------------------------------
+
+#3 [80/100] OBV STRONG ACCUMULATION
+   OBV +34% in 20 days
+   Category: OBV | Strength: STRONG BULLISH
+   AI: Strong buying pressure confirmation.
+--------------------------------------------------------------------------------
+
+#4 [75/100] 10MA STEEP UPTREND
+   10MA slope: +1.54%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Indicates strong short-term upward momentum.
+--------------------------------------------------------------------------------
+
+#5 [70/100] 20MA STEEP UPTREND
+   20MA slope: +1.47%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Good momentum, longer-term than 10MA.
+--------------------------------------------------------------------------------
+
+#6 [70/100] ABOVE ICHIMOKU CLOUD
+   Bullish cloud position
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: Confirms bullish trend based on Ichimoku Cloud.
+--------------------------------------------------------------------------------
+
+#7 [65/100] 50MA STEEP UPTREND
+   50MA slope: +1.59%
+   Category: MA_SLOPE | Strength: BULLISH
+   AI: Strong long-term trend strength.
+--------------------------------------------------------------------------------
+
+#8 [60/100] STRONG UPTREND
+   ADX: 28.0
+   Category: ADX | Strength: TRENDING
+   AI: Indicates a strong uptrend is in progress.
+--------------------------------------------------------------------------------
+
+#9 [50/100] BB10 SQUEEZE
+   10-period bands narrowing
+   Category: BB_SQUEEZE | Strength: NEUTRAL
+   AI: Neutral, indicates consolidation. Could break either way.
+--------------------------------------------------------------------------------
+
+#10 [30/100] OVEREXTENDED ABOVE 200MA
+   19.8% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: Suggests potential pullback due to overextension.
+--------------------------------------------------------------------------------
+
+#11 [25/100] MACD BEAR CROSS
+   MACD crossed below signal
+   Category: MACD | Strength: STRONG BEARISH
+   AI: Bearish signal, contradicts uptrend.
+--------------------------------------------------------------------------------
+
+#12 [20/100] 5/10 MA BEAR CROSS
+   5 MA crossed below 10 MA
+   Category: MA_CROSS | Strength: BEARISH
+   AI: Bearish signal, but conflicting with overall trend.
+--------------------------------------------------------------------------------

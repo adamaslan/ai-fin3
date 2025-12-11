@@ -1,0 +1,14 @@
+Rank,Score,Signal,Description,Category,Strength,AI_Reasoning
+?,50,RSI OVERSOLD,RSI at 22.2,RSI,BULLISH,AI scoring failed
+?,50,LARGE GAIN,+12.8% today,PRICE_ACTION,STRONG BULLISH,AI scoring failed
+?,50,OVEREXTENDED BELOW 20MA,17.2% below 20 MA,MA_DISTANCE,BULLISH,AI scoring failed
+?,50,RSI MOMENTUM SURGE,RSI +12.2 in 5 days,RSI_MOMENTUM,BULLISH,AI scoring failed
+?,50,GAP DOWN,Opened 2.8% lower,GAP,BEARISH,AI scoring failed
+?,50,ABOVE R1 PIVOT,Broke resistance level,PIVOT,BULLISH,AI scoring failed
+?,50,HIGH VOLATILITY,121.0% annualized,VOLATILITY,SIGNIFICANT,AI scoring failed
+?,50,STOCHASTIC BULL CROSS,K crossed above D,STOCHASTIC,BULLISH,AI scoring failed
+?,50,OBV CONFIRMATION,Volume confirming price downtrend,OBV,STRONG BEARISH,AI scoring failed
+?,50,EXTREME ROC NEGATIVE,20-day ROC: -25.2%,ROC,STRONG BEARISH,AI scoring failed
+?,50,OUTSIDE BAR,Volatility expansion,PRICE_PATTERN,SIGNIFICANT,AI scoring failed
+?,50,BULLISH ENGULFING,Strong reversal pattern,CANDLESTICK,STRONG BULLISH,AI scoring failed
+?,50,MULTI-INDICATOR BEARISH,4/5 indicators bearish,MULTI_INDICATOR,STRONG BEARISH,AI scoring failed

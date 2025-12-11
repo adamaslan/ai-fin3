@@ -1,0 +1,73 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - LRCX
+================================================================================
+
+DATE: 2025-11-07
+PRICE: $159.35
+CHANGE: -1.75%
+VOLUME: 11,607,862
+
+MOVING AVERAGES:
+  10 SMA:  $159.53 (-0.1%)
+  20 SMA:  $151.48 (5.2%)
+  50 SMA:  $nan (nan%)
+  200 SMA: $nan (nan%)
+
+KEY OSCILLATORS:
+  RSI:        63.9
+  Stochastic: 74.8
+  CCI:        45.7
+  Williams:   -25.2
+  MFI:        51.7
+
+MOMENTUM & TREND:
+  MACD:       5.0879
+  ADX:        nan
+  Volatility: 45.2%
+
+BOLLINGER BANDS:
+  Upper:  $169.47
+  Middle: $151.48
+  Lower:  $133.49
+
+ACTIVE SIGNALS (10 total):
+
+1. PRICE BELOW 10 MA
+   Price crossed below 10-day MA - BEARISH
+
+2. PRICE AT 10 MA
+   Price within 1% of 10 MA ($159.53) - WATCH
+
+3. MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+4. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+5. MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+6. OBV FALLING
+   Selling pressure increasing - BEARISH
+
+7. STOCH BEAR CROSS
+   K crossed below D - BEARISH
+
+8. LOWER LOW
+   Breaking below yesterday - BEARISH
+
+9. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+10. STRONG 20D MOMENTUM
+   +21.3% in 20 days - STRONG BULLISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 4
+  Bearish: 5
+  Neutral: 1
+
+OVERALL BIAS: BEARISH
+
+================================================================================

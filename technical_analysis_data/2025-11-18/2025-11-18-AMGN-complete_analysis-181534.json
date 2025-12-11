@@ -1,0 +1,189 @@
+{
+  "symbol": "AMGN",
+  "timestamp": "2025-11-18T18:15:34.445520",
+  "price_data": {
+    "current_price": 343.989990234375,
+    "open": 343.7300109863281,
+    "high": 345.4800109863281,
+    "low": 339.29998779296875,
+    "volume": 2962269,
+    "change": 0.6672321080188892,
+    "change_5d": 1.6368674331602395,
+    "change_10d": 15.938650516247963
+  },
+  "indicator_ratings": {
+    "trend_strength": 100,
+    "momentum": 93.67133552351035,
+    "volatility": 50,
+    "volume": 70,
+    "support_resistance": 50,
+    "oversold_overbought": 90.26879502119174
+  },
+  "overall_bias": "STRONG BEARISH",
+  "bias_score": 15,
+  "signal_summary": {
+    "total_signals": 15,
+    "bullish_signals": 5,
+    "bearish_signals": 8,
+    "neutral_signals": 2
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 344.903330485026,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 348.09666951497394,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 345.8399963378906,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 353.59300165620806,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 337.6733194986979,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 333.6366475423177,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 288.0,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 271.56299809965134,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 312.5779998779297,
+      "SMA_50": 297.425400390625,
+      "SMA_200": 291.4639860534668,
+      "EMA_20": 319.10948257895967
+    }
+  },
+  "signals": [
+    {
+      "signal": "PERFECT MA ALIGNMENT",
+      "desc": "10>20>50>200 MA alignment",
+      "strength": "EXTREME BULLISH",
+      "category": "MA_ALIGNMENT",
+      "value": 100
+    },
+    {
+      "signal": "10MA STEEP UPTREND",
+      "desc": "10MA slope: +6.63%",
+      "strength": "BULLISH",
+      "category": "MA_SLOPE",
+      "value": 6.627058587765636
+    },
+    {
+      "signal": "20MA STEEP UPTREND",
+      "desc": "20MA slope: +3.17%",
+      "strength": "BULLISH",
+      "category": "MA_SLOPE",
+      "value": 3.172167700837256
+    },
+    {
+      "signal": "50MA STEEP UPTREND",
+      "desc": "50MA slope: +1.93%",
+      "strength": "BULLISH",
+      "category": "MA_SLOPE",
+      "value": 1.929693562208556
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 50MA",
+      "desc": "15.7% above 50MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 15.655888764911873
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "desc": "18.0% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 18.02143890644271
+    },
+    {
+      "signal": "RSI9 EXTREME OVERBOUGHT",
+      "desc": "RSI(9): 82.1",
+      "strength": "EXTREME BEARISH",
+      "category": "RSI",
+      "value": 82.11338857958856
+    },
+    {
+      "signal": "RSI14 EXTREME OVERBOUGHT",
+      "desc": "RSI(14): 87.3",
+      "strength": "EXTREME BEARISH",
+      "category": "RSI",
+      "value": 87.34267104702072
+    },
+    {
+      "signal": "RSI21 OVERBOUGHT",
+      "desc": "RSI(21): 74.4",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "value": 74.39405174513024
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "desc": "%K: 96.8",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "value": 96.80151068352731
+    },
+    {
+      "signal": "WILLIAMS R OVERBOUGHT",
+      "desc": "W%R: -3.2",
+      "strength": "BEARISH",
+      "category": "WILLIAMS_R",
+      "value": -3.198489316472687
+    },
+    {
+      "signal": "MFI OVERBOUGHT",
+      "desc": "Money Flow: 87.8",
+      "strength": "BEARISH",
+      "category": "MFI",
+      "value": 87.78503146311593
+    },
+    {
+      "signal": "VERY STRONG UPTREND",
+      "desc": "ADX: 53.4",
+      "strength": "EXTREME",
+      "category": "ADX",
+      "value": 53.411730725318435
+    },
+    {
+      "signal": "DOJI CANDLE",
+      "desc": "Indecision pattern",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK",
+      "value": 4.206768161100604
+    },
+    {
+      "signal": "ABOVE ICHIMOKU CLOUD",
+      "desc": "Bullish cloud position",
+      "strength": "BULLISH",
+      "category": "ICHIMOKU",
+      "value": 54.967491149902344
+    }
+  ]
+}

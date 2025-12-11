@@ -1,0 +1,161 @@
+{
+  "symbol": "ROKU",
+  "timestamp": "2025-11-18T20:44:38.769660",
+  "price_data": {
+    "current_price": 95.2699966430664,
+    "open": 95.08999633789062,
+    "high": 96.45500183105469,
+    "low": 92.822998046875,
+    "volume": 2913582,
+    "change": -1.6720020195965746,
+    "change_5d": -10.787530830319453,
+    "change_10d": -10.207353427715873
+  },
+  "indicator_ratings": {
+    "trend_strength": 90,
+    "momentum": 35,
+    "volatility": 65,
+    "volume": 30,
+    "support_resistance": 35,
+    "oversold_overbought": 38.05303686696062
+  },
+  "overall_bias": "BULLISH",
+  "bias_score": 65,
+  "signal_summary": {
+    "total_signals": 11,
+    "bullish_signals": 5,
+    "bearish_signals": 4,
+    "neutral_signals": 2
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 98.95166524251303,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 101.01333109537761,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 116.66000366210938,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 109.96485716874909,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 95.39666493733725,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 93.90333048502605,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 92.822998046875,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 93.07114136640715,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 101.51799926757812,
+      "SMA_50": 99.57079956054687,
+      "SMA_200": 84.37522504806519,
+      "EMA_20": 100.91863652294327
+    }
+  },
+  "signals": [
+    {
+      "signal": "PERFECT MA ALIGNMENT",
+      "desc": "10>20>50>200 MA alignment",
+      "strength": "EXTREME BULLISH",
+      "category": "MA_ALIGNMENT",
+      "value": 100
+    },
+    {
+      "signal": "10MA STEEP DOWNTREND",
+      "desc": "10MA slope: -2.12%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -2.1165055650651925
+    },
+    {
+      "signal": "RSI9 OVERSOLD",
+      "desc": "RSI(9): 23.2",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "value": 23.1682069148779
+    },
+    {
+      "signal": "RSI BULLISH DIVERGENCE",
+      "desc": "Price declining but RSI rising",
+      "strength": "STRONG BULLISH",
+      "category": "RSI_DIVERGENCE",
+      "value": 8.081070805653638
+    },
+    {
+      "signal": "RSI MOMENTUM COLLAPSE",
+      "desc": "RSI -24.2 in 5 days",
+      "strength": "STRONG BEARISH",
+      "category": "RSI_MOMENTUM",
+      "value": -24.238724660024737
+    },
+    {
+      "signal": "MACD HISTOGRAM EXPANSION BEARISH",
+      "desc": "Momentum accelerating",
+      "strength": "STRONG BEARISH",
+      "category": "MACD_MOMENTUM",
+      "value": -1.0499838472405139
+    },
+    {
+      "signal": "STOCHASTIC OVERSOLD",
+      "desc": "%K: 10.3",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "value": 10.265545243768011
+    },
+    {
+      "signal": "WILLIAMS R OVERSOLD",
+      "desc": "W%R: -89.7",
+      "strength": "BULLISH",
+      "category": "WILLIAMS_R",
+      "value": -89.73445475623198
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "desc": "ADX: 31.3",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 31.341103622495773
+    },
+    {
+      "signal": "DOJI CANDLE",
+      "desc": "Indecision pattern",
+      "strength": "NEUTRAL",
+      "category": "CANDLESTICK",
+      "value": 4.955950375377583
+    },
+    {
+      "signal": "BROKE S1 SUPPORT",
+      "desc": "Below $95.40",
+      "strength": "BEARISH",
+      "category": "PIVOT",
+      "value": 0.1266682942708428
+    }
+  ]
+}

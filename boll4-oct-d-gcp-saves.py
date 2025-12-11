@@ -1,7 +1,7 @@
 # covert to 200 - loads
 """
 Advanced Technical Analysis Scanner with GCP Storage & Gemini AI Analysis
-100 Alerts + Cloud Storage + Local Storage + AI-Powered Recommendations
+150+ Alerts + Cloud Storage + Local Storage + AI-Powered Recommendations
 """ 
 
 import yfinance as yf
@@ -257,12 +257,36 @@ class TechnicalAnalyzer:
         for period in [10, 20, 50, 200]:
             df[f'Dist_SMA_{period}'] = ((df['Close'] - df[f'SMA_{period}']) / df[f'SMA_{period}']) * 100
         
+        # Keltner Channels
+        kc_ema = df['Close'].ewm(span=20, adjust=False).mean()
+        kc_atr = df['ATR'].ewm(span=10, adjust=False).mean()
+        df['KC_Middle'] = kc_ema
+        df['KC_Upper'] = kc_ema + (kc_atr * 2)
+        df['KC_Lower'] = kc_ema - (kc_atr * 2)
+
+        # Donchian Channels
+        df['DC_Upper'] = df['High'].rolling(window=20).max()
+        df['DC_Lower'] = df['Low'].rolling(window=20).min()
+        df['DC_Middle'] = (df['DC_Upper'] + df['DC_Lower']) / 2
+        
+        # Fibonacci Retracement Levels (using 100-day lookback)
+        lookback_period = 100
+        high_100 = df['High'].rolling(window=lookback_period).max()
+        low_100 = df['Low'].rolling(window=lookback_period).min()
+        
+        price_range = high_100 - low_100
+        df['Fib_0.236'] = high_100 - (price_range * 0.236)
+        df['Fib_0.382'] = high_100 - (price_range * 0.382)
+        df['Fib_0.500'] = high_100 - (price_range * 0.500)
+        df['Fib_0.618'] = high_100 - (price_range * 0.618)
+        df['Fib_0.786'] = high_100 - (price_range * 0.786)
+
         self.data = df
         print("✅ All indicators calculated")
         return df
     
     def detect_signals(self):
-        """Detect 100 comprehensive technical signals"""
+        """Detect 150+ comprehensive technical signals"""
         df = self.data.copy()
         current = df.iloc[-1]
         prev = df.iloc[-2]
@@ -270,7 +294,7 @@ class TechnicalAnalyzer:
         
         signals = []
         
-        print("\n🎯 Scanning for 100 Technical Alerts...")
+        print("\n🎯 Scanning for 150+ Technical Alerts...")
         
         # === MOVING AVERAGE CROSSOVERS (10 alerts) ===
         
@@ -627,11 +651,140 @@ class TechnicalAnalyzer:
         
         if current['Dist_SMA_200'] > 20 and len(df) > 200:
             signals.append({'signal': 'EXTENDED FROM 200 SMA', 'desc': f"{current['Dist_SMA_200']:.1f}% above", 'strength': 'OVERBOUGHT', 'category': 'MA_TREND'})
+
+        # === CANDLESTICK PATTERNS (10 alerts) ===
+        body = abs(current['Close'] - current['Open'])
+        full_range = current['High'] - current['Low']
+        lower_wick = min(current['Open'], current['Close']) - current['Low']
+        upper_wick = current['High'] - max(current['Open'], current['Close'])
+
+        if full_range > 0 and lower_wick > body * 2 and upper_wick < body * 0.5:
+            signals.append({'signal': 'HAMMER CANDLE', 'desc': 'Potential bottom reversal', 'strength': 'BULLISH', 'category': 'CANDLESTICK'})
+
+        if full_range > 0 and upper_wick > body * 2 and lower_wick < body * 0.5:
+            signals.append({'signal': 'INVERTED HAMMER', 'desc': 'Potential reversal, needs confirmation', 'strength': 'BULLISH', 'category': 'CANDLESTICK'})
+
+        if current['Close'] > prev['High'] and current['Open'] < prev['Low'] and current['Close'] > current['Open']:
+             signals.append({'signal': 'BULLISH ENGULFING', 'desc': 'Current candle engulfs previous', 'strength': 'STRONG BULLISH', 'category': 'CANDLESTICK'})
+
+        if current['Close'] < prev['Low'] and current['Open'] > prev['High'] and current['Close'] < current['Open']:
+            signals.append({'signal': 'BEARISH ENGULFING', 'desc': 'Current candle engulfs previous', 'strength': 'STRONG BEARISH', 'category': 'CANDLESTICK'})
+
+        if len(df) > 3:
+            c1, c2, c3 = df.iloc[-3], df.iloc[-2], df.iloc[-1]
+            if c1['Close'] < c1['Open'] and c2['Open'] < c1['Close'] and c3['Close'] > c2['Close'] and c3['Open'] > c2['Open'] and c3['Close'] > c1['Open']:
+                signals.append({'signal': 'MORNING STAR', 'desc': 'Three-candle bullish reversal pattern', 'strength': 'STRONG BULLISH', 'category': 'CANDLESTICK'})
+            if c1['Close'] > c1['Open'] and c2['Open'] > c1['Close'] and c3['Close'] < c2['Close'] and c3['Open'] < c2['Open'] and c3['Close'] < c1['Open']:
+                signals.append({'signal': 'EVENING STAR', 'desc': 'Three-candle bearish reversal pattern', 'strength': 'STRONG BEARISH', 'category': 'CANDLESTICK'})
+
+        if full_range > 0 and body / full_range < 0.1:
+            signals.append({'signal': 'DOJI CANDLE', 'desc': 'Indecision in the market', 'strength': 'NEUTRAL', 'category': 'CANDLESTICK'})
+
+        if full_range > 0 and body / full_range < 0.3 and upper_wick > body and lower_wick > body:
+            signals.append({'signal': 'SPINNING TOP', 'desc': 'Potential for trend change', 'strength': 'NEUTRAL', 'category': 'CANDLESTICK'})
+
+        if len(df) > 3:
+            c1, c2, c3 = df.iloc[-3], df.iloc[-2], df.iloc[-1]
+            if (c1['Close'] > c1['Open'] and c2['Close'] > c2['Open'] and c3['Close'] > c3['Open'] and
+                    c2['Open'] > c1['Open'] and c2['Close'] > c1['Close'] and
+                    c3['Open'] > c2['Open'] and c3['Close'] > c2['Close']):
+                signals.append({'signal': 'THREE WHITE SOLDIERS', 'desc': 'Strong bullish continuation', 'strength': 'STRONG BULLISH', 'category': 'CANDLESTICK'})
+            if (c1['Close'] < c1['Open'] and c2['Close'] < c2['Open'] and c3['Close'] < c3['Open'] and
+                    c2['Open'] < c1['Open'] and c2['Close'] < c1['Close'] and
+                    c3['Open'] < c2['Open'] and c3['Close'] < c2['Close']):
+                signals.append({'signal': 'THREE BLACK CROWS', 'desc': 'Strong bearish continuation', 'strength': 'STRONG BEARISH', 'category': 'CANDLESTICK'})
+
+        # === GAP ANALYSIS (5 alerts) ===
+        if current['Low'] > prev['High']:
+            signals.append({'signal': 'GAP UP', 'desc': f"Gapped up from {prev['High']:.2f} to {current['Low']:.2f}", 'strength': 'BULLISH', 'category': 'GAP'})
+
+        if current['High'] < prev['Low']:
+            signals.append({'signal': 'GAP DOWN', 'desc': f"Gapped down from {prev['Low']:.2f} to {current['High']:.2f}", 'strength': 'BEARISH', 'category': 'GAP'})
+
+        if 'GAP UP' in [s['signal'] for s in signals] and current['Close'] < current['Open']:
+             signals.append({'signal': 'GAP UP FADING', 'desc': 'Gap up is being sold into', 'strength': 'BEARISH', 'category': 'GAP'})
+
+        if 'GAP DOWN' in [s['signal'] for s in signals] and current['Close'] > current['Open']:
+             signals.append({'signal': 'GAP DOWN REVERSING', 'desc': 'Gap down is being bought', 'strength': 'BULLISH', 'category': 'GAP'})
+
+        # === VOLATILITY CHANNELS (10 alerts) ===
+        if current['Close'] > current['KC_Upper']:
+            signals.append({'signal': 'KC BREAKOUT UP', 'desc': 'Price broke above Keltner Channel', 'strength': 'BULLISH', 'category': 'VOL_CHANNEL'})
+        if current['Close'] < current['KC_Lower']:
+            signals.append({'signal': 'KC BREAKDOWN DOWN', 'desc': 'Price broke below Keltner Channel', 'strength': 'BEARISH', 'category': 'VOL_CHANNEL'})
+
+        if current['Close'] > current['DC_Upper']:
+            signals.append({'signal': 'DONCHIAN BREAKOUT UP', 'desc': 'Price broke above Donchian Channel', 'strength': 'STRONG BULLISH', 'category': 'VOL_CHANNEL'})
+        if current['Close'] < current['DC_Lower']:
+            signals.append({'signal': 'DONCHIAN BREAKDOWN DOWN', 'desc': 'Price broke below Donchian Channel', 'strength': 'STRONG BEARISH', 'category': 'VOL_CHANNEL'})
+
+        if current['BB_Width'] < current['ATR'] / current['Close']:
+             signals.append({'signal': 'TIGHT SQUEEZE (BBW < ATR%)', 'desc': 'Extreme low volatility, big move expected', 'strength': 'NEUTRAL', 'category': 'VOLATILITY'})
+
+        # === INSIDE/OUTSIDE DAY (5 alerts) ===
+        if current['High'] < prev['High'] and current['Low'] > prev['Low']:
+            signals.append({'signal': 'INSIDE DAY (HARAMI)', 'desc': 'Volatility contraction, potential reversal/continuation', 'strength': 'NEUTRAL', 'category': 'PRICE_ACTION'})
+        if current['High'] > prev['High'] and current['Low'] < prev['Low']:
+            signals.append({'signal': 'OUTSIDE DAY (ENGULFING)', 'desc': 'Volatility expansion, potential reversal/continuation', 'strength': 'VOLATILE', 'category': 'PRICE_ACTION'})
+
+        # === INDICATOR COMBINATIONS (10 alerts) ===
+        if current['RSI'] > 50 and current['MACD'] > current['MACD_Signal'] and current['Close'] > current['SMA_20']:
+            signals.append({'signal': 'BULLISH COMBO (RSI>50, MACD Cross, >SMA20)', 'desc': 'Multiple bullish signals confirming trend', 'strength': 'STRONG BULLISH', 'category': 'COMBO'})
+        if current['RSI'] < 50 and current['MACD'] < current['MACD_Signal'] and current['Close'] < current['SMA_20']:
+            signals.append({'signal': 'BEARISH COMBO (RSI<50, MACD Cross, <SMA20)', 'desc': 'Multiple bearish signals confirming trend', 'strength': 'STRONG BEARISH', 'category': 'COMBO'})
+
+        if current['Stoch_K'] < 20 and current['RSI'] < 30:
+            signals.append({'signal': 'DUAL OVERSOLD (Stoch & RSI)', 'desc': 'Both oscillators are in oversold territory', 'strength': 'STRONG BULLISH', 'category': 'COMBO'})
+        if current['Stoch_K'] > 80 and current['RSI'] > 70:
+            signals.append({'signal': 'DUAL OVERBOUGHT (Stoch & RSI)', 'desc': 'Both oscillators are in overbought territory', 'strength': 'STRONG BEARISH', 'category': 'COMBO'})
+
+        if current['ADX'] > 25 and current['Close'] > current['SMA_50'] and current['Volume'] > current['Volume_MA_20']:
+            signals.append({'signal': 'TRENDING UP WITH VOLUME', 'desc': 'ADX confirms trend, volume confirms strength', 'strength': 'STRONG BULLISH', 'category': 'COMBO'})
+        if current['ADX'] > 25 and current['Close'] < current['SMA_50'] and current['Volume'] > current['Volume_MA_20']:
+            signals.append({'signal': 'TRENDING DOWN WITH VOLUME', 'desc': 'ADX confirms trend, volume confirms strength', 'strength': 'STRONG BEARISH', 'category': 'COMBO'})
+
+        # === ADDITIONAL MA SIGNALS (10) ===
+        if current['EMA_5'] > current['EMA_10'] and current['EMA_10'] > current['EMA_20']:
+            signals.append({'signal': 'SHORT-TERM EMA STACK BULLISH', 'desc': '5/10/20 EMAs aligned for uptrend', 'strength': 'BULLISH', 'category': 'MA_TREND'})
+        if current['EMA_5'] < current['EMA_10'] and current['EMA_10'] < current['EMA_20']:
+            signals.append({'signal': 'SHORT-TERM EMA STACK BEARISH', 'desc': '5/10/20 EMAs aligned for downtrend', 'strength': 'BEARISH', 'category': 'MA_TREND'})
+
+        if prev['Close'] <= prev['VWAP'] and current['Close'] > current['VWAP']:
+            signals.append({'signal': 'PRICE CROSSES VWAP UP', 'desc': 'Price crossed above Volume-Weighted Average Price', 'strength': 'BULLISH', 'category': 'VWAP'})
+        if prev['Close'] >= prev['VWAP'] and current['Close'] < current['VWAP']:
+            signals.append({'signal': 'PRICE CROSSES VWAP DOWN', 'desc': 'Price crossed below Volume-Weighted Average Price', 'strength': 'BEARISH', 'category': 'VWAP'})
+
+        if current['Dist_SMA_50'] < -15:
+            signals.append({'signal': 'OVERSOLD FROM 50 SMA', 'desc': "Price is >15% below 50-day SMA", 'strength': 'BULLISH', 'category': 'MA_PROXIMITY'})
+        if current['Dist_SMA_50'] > 15:
+            signals.append({'signal': 'OVERBOUGHT FROM 50 SMA', 'desc': "Price is >15% above 50-day SMA", 'strength': 'BEARISH', 'category': 'MA_PROXIMITY'})
         
+        # === FIBONACCI RETRACEMENT (20 alerts) ===
+        fib_levels = [0.236, 0.382, 0.500, 0.618, 0.786]
+        for level in fib_levels:
+            fib_col = f'Fib_{level:.3f}'
+            
+            # Price crossing above Fibonacci level
+            if prev['Close'] <= prev[fib_col] and current['Close'] > current[fib_col]:
+                signals.append({'signal': f'CROSSING ABOVE FIB {level*100:.1f}%', 'desc': f'Price crossed above {level*100:.1f}% retracement level at ${current[fib_col]:.2f}', 'strength': 'BULLISH', 'category': 'FIBONACCI'})
+
+            # Price crossing below Fibonacci level
+            if prev['Close'] >= prev[fib_col] and current['Close'] < current[fib_col]:
+                signals.append({'signal': f'CROSSING BELOW FIB {level*100:.1f}%', 'desc': f'Price crossed below {level*100:.1f}% retracement level at ${current[fib_col]:.2f}', 'strength': 'BEARISH', 'category': 'FIBONACCI'})
+
+            # Price bouncing off Fibonacci level (as support)
+            if prev['Low'] < prev[fib_col] and current['Low'] >= current[fib_col] and current['Close'] > current['Open']:
+                 signals.append({'signal': f'BOUNCE FROM FIB {level*100:.1f}% (SUPPORT)', 'desc': f'Price bounced off {level*100:.1f}% support at ${current[fib_col]:.2f}', 'strength': 'STRONG BULLISH', 'category': 'FIBONACCI'})
+
+            # Price bouncing off Fibonacci level (as resistance)
+            if prev['High'] > prev[fib_col] and current['High'] <= current[fib_col] and current['Close'] < current['Open']:
+                 signals.append({'signal': f'REJECTED AT FIB {level*100:.1f}% (RESISTANCE)', 'desc': f'Price rejected at {level*100:.1f}% resistance at ${current[fib_col]:.2f}', 'strength': 'STRONG BEARISH', 'category': 'FIBONACCI'})
+
         self.signals = signals
         
         print(f"✅ Detected {len(signals)} Active Signals")
         return signals
+
     
     def upload_to_gcp(self):
         """Upload data and alerts to GCP bucket using CLI authentication"""
@@ -755,7 +908,7 @@ Be specific, concise, and actionable. Focus on the most important signals."""
 
             # Call Gemini API using new syntax
             response = self.genai_client.models.generate_content(
-                model='gemini-2.0-flash-exp',
+                model='gemini-2.5-flash-lite',
                 contents=prompt
             )
             
@@ -948,7 +1101,7 @@ def main():
     """Main execution with GCP and Gemini integration"""
     
     # Configuration
-    SYMBOL = 'ORCL'
+    SYMBOL = 'DIA'
     PERIOD = '1y'
     GCP_BUCKET = 'ttb-bucket1'
     
@@ -1103,7 +1256,7 @@ technical_analysis_data/
 
 FEATURES:
 =========
-✅ 100+ Technical signals including:
+✅ 150+ Technical signals including:
    - Moving Average Crossovers (Golden/Death Cross)
    - RSI Oversold/Overbought + Divergences
    - MACD Bull/Bear Crosses
@@ -1115,6 +1268,9 @@ FEATURES:
    - 52-week Highs/Lows
    - Volatility & ATR alerts
    - Ichimoku Cloud signals
+   - Candlestick Patterns (Hammer, Engulfing, Doji, etc.)
+   - Gap Analysis
+   - Keltner & Donchian Channel Breakouts
    - Price Action patterns
    - And much more!
 
@@ -1151,7 +1307,7 @@ Local Folder Permissions:
 CUSTOMIZATION:
 ==============
 Change the stock symbol in main():
-  SYMBOL = 'AAPL'  # Change to any ticker
+  SYMBOL = 'ROKU'  # Change to any ticker
   PERIOD = '1y'    # '1d', '5d', '1mo', '3mo', '6mo', '1y', '2y', '5y', 'max'
 
 Change the local save directory:

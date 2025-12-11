@@ -1,0 +1,85 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - SQQQ
+================================================================================
+
+DATE: 2025-11-19
+PRICE: $15.12
+CHANGE: -1.69%
+VOLUME: 183,172,533
+
+MOVING AVERAGES:
+  10 SMA:  $14.37 (5.2%)
+  20 SMA:  $13.89 (8.9%)
+  50 SMA:  $14.71 (2.8%)
+  200 SMA: $22.79 (-33.7%)
+
+KEY OSCILLATORS:
+  RSI:        66.0
+  Stochastic: 79.0
+  CCI:        106.2
+  Williams:   -21.0
+  MFI:        65.7
+
+MOMENTUM & TREND:
+  MACD:       0.0437
+  ADX:        25.4
+  Volatility: 58.5%
+
+BOLLINGER BANDS:
+  Upper:  $15.39
+  Middle: $13.89
+  Lower:  $12.38
+
+ACTIVE SIGNALS (14 total):
+
+1. RSI EXITING OVERBOUGHT
+   RSI dropped from overbought - BEARISH
+
+2. MACD ABOVE ZERO
+   MACD crossed into positive territory - BULLISH
+
+3. MACD MOMENTUM UP
+   Histogram expanding bullish - BULLISH
+
+4. MACD SIGNAL RISING
+   Signal line trending upward - BULLISH
+
+5. WALKING UPPER BAND
+   Strong uptrend or overbought - EXTREME
+
+6. STOCH BEAR CROSS
+   K crossed below D - BEARISH
+
+7. STRONG UPTREND
+   ADX: 25.4 - TRENDING
+
+8. STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+9. WIDE RANGE DAY
+   Range: 6.1% - VOLATILE
+
+10. MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+11. HIGH VOLATILITY
+   58% annualized - CAUTION
+
+12. BELOW CLOUD
+   Ichimoku bearish - BEARISH
+
+13. CLOUD BEARISH
+   Senkou A below B - BEARISH
+
+14. BELOW 200 SMA
+   Long-term downtrend - BEARISH
+
+SIGNAL BREAKDOWN:
+  Bullish: 5
+  Bearish: 5
+  Neutral: 4
+
+OVERALL BIAS: NEUTRAL
+
+================================================================================

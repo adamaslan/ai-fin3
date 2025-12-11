@@ -1,0 +1,161 @@
+{
+  "symbol": "IBIT",
+  "timestamp": "2025-11-18T18:07:46.503187",
+  "price_data": {
+    "current_price": 52.65999984741211,
+    "open": 52.029998779296875,
+    "high": 53.242000579833984,
+    "low": 51.599998474121094,
+    "volume": 74900822,
+    "change": 1.0748587134204568,
+    "change_5d": -9.751497473016329,
+    "change_10d": -7.9048625981810865
+  },
+  "indicator_ratings": {
+    "trend_strength": 40,
+    "momentum": 14.64065465545913,
+    "volatility": 65,
+    "volume": 50,
+    "support_resistance": 50,
+    "oversold_overbought": 22.3911105551742
+  },
+  "overall_bias": "NEUTRAL",
+  "bias_score": 50,
+  "signal_summary": {
+    "total_signals": 11,
+    "bullish_signals": 5,
+    "bearish_signals": 5,
+    "neutral_signals": 1
+  },
+  "key_levels": {
+    "resistance": [
+      {
+        "level": 53.79666519165039,
+        "type": "Pivot R1"
+      },
+      {
+        "level": 55.49333190917969,
+        "type": "Pivot R2"
+      },
+      {
+        "level": 65.97000122070312,
+        "type": "20-day High"
+      },
+      {
+        "level": NaN,
+        "type": "52-week High"
+      },
+      {
+        "level": 66.76902785118763,
+        "type": "BB Upper"
+      }
+    ],
+    "support": [
+      {
+        "level": 51.051666259765625,
+        "type": "Pivot S1"
+      },
+      {
+        "level": 50.003334045410156,
+        "type": "Pivot S2"
+      },
+      {
+        "level": 51.599998474121094,
+        "type": "20-day Low"
+      },
+      {
+        "level": NaN,
+        "type": "52-week Low"
+      },
+      {
+        "level": 51.685471202767445,
+        "type": "BB Lower"
+      }
+    ],
+    "moving_averages": {
+      "SMA_20": 59.22724952697754,
+      "SMA_50": 62.95169937133789,
+      "SMA_200": 58.94615001678467,
+      "EMA_20": 58.363348526004735
+    }
+  },
+  "signals": [
+    {
+      "signal": "10MA STEEP DOWNTREND",
+      "desc": "10MA slope: -5.62%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -5.618435476850495
+    },
+    {
+      "signal": "20MA STEEP DOWNTREND",
+      "desc": "20MA slope: -3.38%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -3.3831559710858135
+    },
+    {
+      "signal": "50MA STEEP DOWNTREND",
+      "desc": "50MA slope: -1.43%",
+      "strength": "BEARISH",
+      "category": "MA_SLOPE",
+      "value": -1.4310972518130909
+    },
+    {
+      "signal": "OVEREXTENDED BELOW 50MA",
+      "desc": "16.3% below 50MA",
+      "strength": "BULLISH",
+      "category": "MA_DISTANCE",
+      "value": -16.348565053371097
+    },
+    {
+      "signal": "RSI9 OVERSOLD",
+      "desc": "RSI(9): 26.4",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "value": 26.359525951895066
+    },
+    {
+      "signal": "RSI14 OVERSOLD",
+      "desc": "RSI(14): 29.3",
+      "strength": "BULLISH",
+      "category": "RSI",
+      "value": 29.28130931091826
+    },
+    {
+      "signal": "OBV STRONG DISTRIBUTION",
+      "desc": "OBV -264% in 20 days",
+      "strength": "STRONG BEARISH",
+      "category": "OBV",
+      "value": -263.90680700411764
+    },
+    {
+      "signal": "CMF STRONG SELLING",
+      "desc": "CMF: -0.32 - strong distribution",
+      "strength": "BEARISH",
+      "category": "CMF",
+      "value": -0.32330056648745825
+    },
+    {
+      "signal": "STOCHASTIC OVERSOLD",
+      "desc": "%K: 9.3",
+      "strength": "BULLISH",
+      "category": "STOCHASTIC",
+      "value": 9.27385253709067
+    },
+    {
+      "signal": "WILLIAMS R OVERSOLD",
+      "desc": "W%R: -90.7",
+      "strength": "BULLISH",
+      "category": "WILLIAMS_R",
+      "value": -90.72614746290934
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 32.2",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 32.22338028366414
+    }
+  ]
+}
