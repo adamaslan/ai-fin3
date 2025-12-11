@@ -1,0 +1,157 @@
+{
+  "symbol": "ORCL",
+  "timestamp": "2025-12-11 12:51:50",
+  "date": "2025-12-11",
+  "price": 194.1300048828125,
+  "change_pct": -12.950087590418812,
+  "volume": 61282304,
+  "indicators": {
+    "RSI": 39.597992280893585,
+    "MACD": -9.604849907587806,
+    "ADX": 28.50245652388705,
+    "Stochastic": 21.41597247958959,
+    "CCI": -118.97148014797655,
+    "MFI": 53.08682519312135,
+    "BB_Position": 0.09160411834998063,
+    "Volatility": 64.24138644660925
+  },
+  "moving_averages": {
+    "SMA_10": 210.28399963378905,
+    "SMA_20": 211.04300079345703,
+    "SMA_50": 249.02772918701172,
+    "SMA_200": null,
+    "EMA_10": 211.65834322155615,
+    "EMA_20": 217.2071187515469
+  },
+  "signals": [
+    {
+      "signal": "PRICE BELOW 10 MA",
+      "desc": "Price crossed below 10-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "PRICE BELOW 20 MA",
+      "desc": "Price crossed below 20-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS"
+    },
+    {
+      "signal": "RSI BULLISH DIVERGENCE",
+      "desc": "Price down but RSI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD"
+    },
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER"
+    },
+    {
+      "signal": "VOLUME SPIKE 2X",
+      "desc": "Vol: 61,282,304",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "VOLUME RISING",
+      "desc": "Participation increasing",
+      "strength": "WATCH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "VOLUME SELLOFF",
+      "desc": "High volume + price down",
+      "strength": "STRONG BEARISH",
+      "category": "VOLUME"
+    },
+    {
+      "signal": "OBV BULL DIVERGENCE",
+      "desc": "Price down, OBV up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC"
+    },
+    {
+      "signal": "CCI NEGATIVE",
+      "desc": "CCI crossed below zero",
+      "strength": "BEARISH",
+      "category": "CCI"
+    },
+    {
+      "signal": "MFI BULL DIVERGENCE",
+      "desc": "Price down, MFI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 28.5",
+      "strength": "TRENDING",
+      "category": "TREND"
+    },
+    {
+      "signal": "STRONG DOWNTREND CONFIRMED",
+      "desc": "-DI > +DI with high ADX",
+      "strength": "BEARISH",
+      "category": "TREND"
+    },
+    {
+      "signal": "LARGE LOSS",
+      "desc": "-13.0% today",
+      "strength": "STRONG BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "EXPLOSIVE MOVE DOWN",
+      "desc": "-13.0%",
+      "strength": "EXTREME BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION"
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "64% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY"
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "CLOUD BEARISH",
+      "desc": "Senkou A below B",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU"
+    },
+    {
+      "signal": "MA ALIGNMENT BEARISH",
+      "desc": "10 < 20 < 50 SMA",
+      "strength": "STRONG BEARISH",
+      "category": "MA_TREND"
+    }
+  ],
+  "signal_count": 21,
+  "bullish_count": 4,
+  "bearish_count": 12
+}

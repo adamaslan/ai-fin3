@@ -1,0 +1,156 @@
+
+================================================================================
+RANKED SIGNALS REPORT - IBIT
+================================================================================
+
+AI-Scored Signals (1-100 Scale)
+Generated: 2025-12-11 13:00:14
+
+🏆 TOP SIGNAL IDENTIFIED BY AI:
+Signal #1
+Reason: Death Cross, as this is a strong indicator that confirms longer-term bearish momentum, and increases the likelihood of a downtrend. Confirmed by other factors, this represents the best opportunity for short position, in combination with OBV (Signal 8), the ADX (Signal 13) and Cloud (Signal 18).
+
+================================================================================
+ALL SIGNALS (Ranked by AI Score):
+================================================================================
+
+#1 🔥 SCORE: 88/100
+Signal: DEATH CROSS
+Description: 50 MA crossed below 200 MA
+Category: MA_CROSS | Strength: STRONG BEARISH
+AI Analysis: Death Cross is a significant bearish indicator, often signaling a longer-term downtrend. Actionable for short positions, relatively reliable historically, and the current market decline supports the timing. Risk/reward favors shorts given the potential for further downside. ADX confirms.
+--------------------------------------------------------------------------------
+
+#2 🔥 SCORE: 82/100
+Signal: STRONG DOWNTREND
+Description: ADX: 30.4
+Category: TREND | Strength: TRENDING
+AI Analysis: Strong Downtrend confirmed by ADX strengthens the bearish outlook. Provides good context for short positions. Reliable as it quantifies the downtrend's strength. Risk/reward highly favors the downside.
+--------------------------------------------------------------------------------
+
+#3 🔥 SCORE: 80/100
+Signal: OBV FALLING
+Description: Selling pressure increasing
+Category: VOLUME | Strength: BEARISH
+AI Analysis: OBV Falling confirms selling pressure and aligns with the bearish signals, adding weight to short positions. Reliable as it indicates money leaving the asset. Timing is appropriate. Risk/reward favors the downside.
+--------------------------------------------------------------------------------
+
+#4 🔥 SCORE: 80/100
+Signal: BELOW 200 SMA
+Description: Long-term downtrend
+Category: MA_TREND | Strength: BEARISH
+AI Analysis: Below 200 SMA confirms the long-term downtrend. Good for confirming that the stock is in a bearish zone. Reliable for confirming long-term trend. Risk/reward highly favors the downside.
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 78/100
+Signal: PRICE BELOW 20 MA
+Description: Price crossed below 20-day MA
+Category: MA_CROSS | Strength: BEARISH
+AI Analysis: Price below 20 MA confirms the short-term downward trend. This is generally reliable, indicating selling pressure. Actionable for swing trades. The risk/reward is skewed to the downside currently. Aligns with other short-term bearish signals.
+--------------------------------------------------------------------------------
+
+#6 ⚡ SCORE: 78/100
+Signal: BELOW CLOUD
+Description: Ichimoku bearish
+Category: ICHIMOKU | Strength: BEARISH
+AI Analysis: Below Cloud indicates bearish sentiment. Confirms selling pressure. Reliable and timely. Favors short positions.
+--------------------------------------------------------------------------------
+
+#7 ⚡ SCORE: 75/100
+Signal: PRICE BELOW 10 MA
+Description: Price crossed below 10-day MA
+Category: MA_CROSS | Strength: BEARISH
+AI Analysis: Price below the 10 MA is a short-term bearish signal. Actionable for quick trades. It's fairly reliable for short-term predictions. The timing is good given the recent price drop. Risk/reward is moderate, favoring short positions. Aligns with overall bearish short-term momentum.
+--------------------------------------------------------------------------------
+
+#8 ⚡ SCORE: 75/100
+Signal: CLOUD BEARISH
+Description: Senkou A below B
+Category: ICHIMOKU | Strength: BEARISH
+AI Analysis: Cloud Bearish (Senkou A below B) confirms a bearish outlook. Aligns with other bearish signals. Provides an excellent confirmation. Short opportunities should be sought.
+--------------------------------------------------------------------------------
+
+#9 ⚡ SCORE: 72/100
+Signal: CCI NEGATIVE
+Description: CCI crossed below zero
+Category: CCI | Strength: BEARISH
+AI Analysis: CCI Negative confirms bearish momentum as the price has dropped below its average. A CCI dip below zero is bearish. Actionable as an entry point for short positions. Reliable as it indicates weakening momentum. Risk/reward favors downside.
+--------------------------------------------------------------------------------
+
+#10 ⚡ SCORE: 70/100
+Signal: STOCH BEAR CROSS
+Description: K crossed below D
+Category: STOCHASTIC | Strength: BEARISH
+AI Analysis: Stoch Bear Cross is a bearish signal confirming downward momentum. Actionable for short-term trades. Reliability is decent. Risk/reward favors shorts, as it signals further downward potential.
+--------------------------------------------------------------------------------
+
+#11 ⚡ SCORE: 70/100
+Signal: LOWER LOW
+Description: Breaking below yesterday
+Category: PRICE_ACTION | Strength: BEARISH
+AI Analysis: Lower Low confirms downward price action, useful for day trading and short-term plays. Reliability is moderate. Risk/reward favors shorts.
+--------------------------------------------------------------------------------
+
+#12 ⚡ SCORE: 60/100
+Signal: MFI BULLISH
+Description: Money flow crossed 50
+Category: MFI | Strength: BULLISH
+AI Analysis: MFI Bullish can indicate underlying buying pressure, but needs additional confirming signals for an immediate trade. Moderate, as it signals a weakening bear momentum. Risk/reward is mixed.
+--------------------------------------------------------------------------------
+
+#13 ⚡ SCORE: 60/100
+Signal: HIGH VOLATILITY
+Description: 53% annualized
+Category: VOLATILITY | Strength: CAUTION
+AI Analysis: High Volatility indicates potential for large price swings in either direction. Requires cautious position sizing and wider stop-loss orders. Increases the risk of both long and short positions. Not a clear signal.
+--------------------------------------------------------------------------------
+
+#14 📊 SCORE: 55/100
+Signal: MACD SIGNAL RISING
+Description: Signal line trending upward
+Category: MACD | Strength: BULLISH
+AI Analysis: MACD Signal Rising is bullish, but MACD is still deep negative, so this bullish move might be weak and a poor trade signal. Rising can still trigger a rally. Risk/reward is moderate. Contradicts immediate trend but indicates potential weakening.
+--------------------------------------------------------------------------------
+
+#15 📊 SCORE: 50/100
+Signal: BB SQUEEZE
+Description: Bands narrowing - breakout pending
+Category: BOLLINGER | Strength: NEUTRAL
+AI Analysis: BB Squeeze is a neutral signal indicating potential volatility expansion. Actionable in the sense that it suggests preparing for a move, but it doesn't indicate direction. Reliability depends on confirmation. Risk/reward is uncertain until the breakout direction is clear. Could go either way.
+--------------------------------------------------------------------------------
+
+#16 📊 SCORE: 50/100
+Signal: MFI BULL DIVERGENCE
+Description: Price down, MFI up
+Category: DIVERGENCE | Strength: BULLISH
+AI Analysis: MFI Bull Divergence can indicate a potential reversal, but ADX favors downtrend. A bearish trend means this could be a false signal. Risk/reward is uncertain. Contradicts the immediate trend.
+--------------------------------------------------------------------------------
+
+#17 📊 SCORE: 45/100
+Signal: RSI BULLISH DIVERGENCE
+Description: Price down but RSI up
+Category: DIVERGENCE | Strength: BULLISH
+AI Analysis: RSI Bullish Divergence can indicate a potential reversal, but RSI is above 50 and the ADX favors the downtrend, making this a low probability signal and early. Reliability is not high until confirmed by price. Risk/reward is uncertain. Contradicts the overall market trend.
+--------------------------------------------------------------------------------
+
+#18 ⚠️ SCORE: 35/100
+Signal: MOMENTUM BUILDING
+Description: Consecutive positive momentum
+Category: MOMENTUM | Strength: BULLISH
+AI Analysis: Again, everything points to the opposite - a downtrend. This should be ignored, the data doesn't support this.
+--------------------------------------------------------------------------------
+
+#19 ⚠️ SCORE: 20/100
+Signal: LOW VOLUME
+Description: Below average activity
+Category: VOLUME | Strength: WEAK
+AI Analysis: Low Volume weakens the conviction for either a bull or bear stance, so low score. Decreases the reliability of other signals. Risk/reward is generally unfavorable in low volume environments. Just a note to be cautious.
+--------------------------------------------------------------------------------
+
+#20 ⚠️ SCORE: 10/100
+Signal: STRONG UPTREND CONFIRMED
+Description: +DI > -DI with high ADX
+Category: TREND | Strength: BULLISH
+AI Analysis: This signal states uptrend confirmed, but all evidence in the prompt points to the opposite. Should be ignored. This also contradicts ADX, MACD and RSI signals.
+--------------------------------------------------------------------------------
+

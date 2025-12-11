@@ -1,0 +1,75 @@
+
+================================================================================
+TECHNICAL ANALYSIS SUMMARY - AMAT
+================================================================================
+
+DATE: 2025-12-11
+PRICE: $267.04
+CHANGE: -2.95%
+VOLUME: 3,242,015
+
+MOVING AVERAGES:
+  10 SMA:  $265.59 (0.5%)
+  20 SMA:  $247.97 (7.7%)
+  50 SMA:  $234.95 (13.7%)
+  200 SMA: $183.86 (45.2%)
+
+KEY OSCILLATORS:
+  RSI:        84.4
+  Stochastic: 85.0
+  CCI:        68.2
+  Williams:   -15.0
+  MFI:        77.3
+
+MOMENTUM & TREND:
+  MACD:       11.9984
+  ADX:        34.4
+  Volatility: 44.2%
+
+BOLLINGER BANDS:
+  Upper:  $287.56
+  Middle: $247.97
+  Lower:  $208.38
+
+ACTIVE SIGNALS (18 total):
+
+1. [80/100] MA ALIGNMENT BULLISH
+   10 > 20 > 50 SMA - STRONG BULLISH
+
+2. [75/100] STRONG UPTREND CONFIRMED
+   +DI > -DI with high ADX - BULLISH
+
+3. [70/100] STRONG UPTREND
+   ADX: 34.4 - TRENDING
+
+4. [70/100] ABOVE 200 SMA
+   Long-term uptrend - BULLISH
+
+5. [65/100] PRICE AT 10 MA
+   Price within 1% of 10 MA ($265.59) - WATCH
+
+6. [65/100] CLOUD BULLISH
+   Senkou A above B - BULLISH
+
+7. [60/100] MACD FULLY BULLISH
+   Both lines above zero - BULLISH
+
+8. [60/100] MOMENTUM BUILDING
+   Consecutive positive momentum - BULLISH
+
+9. [60/100] ABOVE CLOUD
+   Ichimoku bullish - BULLISH
+
+10. [55/100] MACD MOMENTUM DOWN
+   Histogram expanding bearish - BEARISH
+
+... and 8 more signals
+
+SIGNAL BREAKDOWN:
+  Bullish: 8
+  Bearish: 6
+  Neutral: 4
+
+OVERALL BIAS: BULLISH
+
+================================================================================

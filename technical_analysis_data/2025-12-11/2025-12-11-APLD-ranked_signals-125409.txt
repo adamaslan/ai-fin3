@@ -1,0 +1,106 @@
+
+================================================================================
+RANKED SIGNALS REPORT - APLD
+================================================================================
+
+Price: $30.32 | Change: -2.18%
+Date: 2025-12-11
+
+🏆 TOP SIGNAL: #8
+Suggests underlying weakness
+
+================================================================================
+ALL SIGNALS (Ranked by AI):
+================================================================================
+
+#1 🔥 SCORE: 92/100
+Signal: MOMENTUM DIVERGENCE
+Description: Strong price move on weak volume
+Category: MOMENTUM_DIVERGENCE | Strength: BEARISH
+AI Analysis: Weakness behind the price move
+--------------------------------------------------------------------------------
+
+#2 🔥 SCORE: 90/100
+Signal: VOLUME DIVERGENCE BEARISH
+Description: Price up but volume declining
+Category: VOLUME_DIVERGENCE | Strength: BEARISH
+AI Analysis: Classic bearish divergence
+--------------------------------------------------------------------------------
+
+#3 🔥 SCORE: 85/100
+Signal: RSI OVERBOUGHT
+Description: RSI at 80.1
+Category: RSI | Strength: BEARISH
+AI Analysis: High RSI suggests possible pullback
+--------------------------------------------------------------------------------
+
+#4 🔥 SCORE: 80/100
+Signal: OVEREXTENDED ABOVE 20MA
+Description: 14.0% above 20 MA
+Category: MA_DISTANCE | Strength: BEARISH
+AI Analysis: Likely to revert to mean
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 75/100
+Signal: ATR STOP LEVEL
+Description: Bull stop at $25.44
+Category: ATR | Strength: NEUTRAL
+AI Analysis: Good risk management level
+--------------------------------------------------------------------------------
+
+#6 ⚡ SCORE: 72/100
+Signal: RSI EXTREME OVERBOUGHT
+Description: RSI at 80.1
+Category: RSI | Strength: STRONG BEARISH
+AI Analysis: Further confirms overbought condition
+--------------------------------------------------------------------------------
+
+#7 ⚡ SCORE: 70/100
+Signal: MA COMPRESSION
+Description: MAs converging - breakout imminent
+Category: MA_COMPRESSION | Strength: NEUTRAL
+AI Analysis: Potential for large move
+--------------------------------------------------------------------------------
+
+#8 ⚡ SCORE: 68/100
+Signal: STRONG BULL TREND ADX
+Description: +DI leading, ADX 33.5
+Category: ADX | Strength: STRONG BULLISH
+AI Analysis: Confirms uptrend strength
+--------------------------------------------------------------------------------
+
+#9 ⚡ SCORE: 65/100
+Signal: STRONG UPTREND
+Description: ADX: 33.5
+Category: TREND | Strength: TRENDING
+AI Analysis: ADX confirms trend strength
+--------------------------------------------------------------------------------
+
+#10 ⚡ SCORE: 60/100
+Signal: GAP DOWN
+Description: Opened 2.1% lower
+Category: GAP | Strength: BEARISH
+AI Analysis: Short term bearish signal
+--------------------------------------------------------------------------------
+
+#11 📊 SCORE: 55/100
+Signal: HIGH VOLATILITY
+Description: 89.8% annualized
+Category: VOLATILITY | Strength: SIGNIFICANT
+AI Analysis: Increased risk, both ways
+--------------------------------------------------------------------------------
+
+#12 📊 SCORE: 50/100
+Signal: DOJI CANDLE
+Description: Indecision/reversal signal
+Category: CANDLESTICK | Strength: NEUTRAL
+AI Analysis: Needs confirmation
+--------------------------------------------------------------------------------
+
+#13 📊 SCORE: 40/100
+Signal: MULTI-INDICATOR BULLISH
+Description: 4/5 indicators bullish
+Category: MULTI_INDICATOR | Strength: STRONG BULLISH
+AI Analysis: Conflicting signals reduce value
+--------------------------------------------------------------------------------
+

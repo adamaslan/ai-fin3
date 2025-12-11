@@ -1,0 +1,1 @@
+Sample GCP-only file content.

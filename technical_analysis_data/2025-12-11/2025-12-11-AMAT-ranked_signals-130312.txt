@@ -1,0 +1,142 @@
+
+================================================================================
+RANKED SIGNALS REPORT - AMAT
+================================================================================
+
+AI-Scored Signals (1-100 Scale)
+Generated: 2025-12-11 13:03:12
+
+🏆 TOP SIGNAL IDENTIFIED BY AI:
+Signal #16
+Reason: Strongest indicator of bullish strength based on moving average alignment. Although many overbought indicators are appearing, the underlying strength of the stock is high.
+
+================================================================================
+ALL SIGNALS (Ranked by AI Score):
+================================================================================
+
+#1 🔥 SCORE: 80/100
+Signal: MA ALIGNMENT BULLISH
+Description: 10 > 20 > 50 SMA
+Category: MA_TREND | Strength: STRONG BULLISH
+AI Analysis: MA alignment (10 > 20 > 50 SMA) is a strong bullish signal. It indicates a well-established uptrend. Reliable, but not actionable on its own due to overbought readings elsewhere.
+--------------------------------------------------------------------------------
+
+#2 ⚡ SCORE: 75/100
+Signal: STRONG UPTREND CONFIRMED
+Description: +DI > -DI with high ADX
+Category: TREND | Strength: BULLISH
+AI Analysis: Strong uptrend confirmed by +DI > -DI with high ADX. This is a robust bullish signal, suggesting the uptrend is likely to continue, although a pullback may occur. Limited actionability on its own.
+--------------------------------------------------------------------------------
+
+#3 ⚡ SCORE: 70/100
+Signal: STRONG UPTREND
+Description: ADX: 34.4
+Category: TREND | Strength: TRENDING
+AI Analysis: ADX indicates a strong uptrend. Reliable, but it doesn't tell us about potential pullbacks. High timing but no action without a entry point.
+--------------------------------------------------------------------------------
+
+#4 ⚡ SCORE: 70/100
+Signal: ABOVE 200 SMA
+Description: Long-term uptrend
+Category: MA_TREND | Strength: BULLISH
+AI Analysis: Price above the 200 SMA confirms the long-term uptrend. Reliable, but offers limited short-term actionability due to the time frame. Shows that any pullbacks are likely to be bought.
+--------------------------------------------------------------------------------
+
+#5 ⚡ SCORE: 65/100
+Signal: PRICE AT 10 MA
+Description: Price within 1% of 10 MA ($265.59)
+Category: MA_PROXIMITY | Strength: WATCH
+AI Analysis: Price near 10 MA indicates potential support or resistance. Actionable but not a strong signal on its own. Context is needed from other indicators. Could provide an entry point if other signals align.
+--------------------------------------------------------------------------------
+
+#6 ⚡ SCORE: 65/100
+Signal: CLOUD BULLISH
+Description: Senkou A above B
+Category: ICHIMOKU | Strength: BULLISH
+AI Analysis: Senkou A above Senkou B (Ichimoku bullish cloud) further supports the bullish sentiment. Again, it can be late. Confirmation.
+--------------------------------------------------------------------------------
+
+#7 ⚡ SCORE: 60/100
+Signal: MACD FULLY BULLISH
+Description: Both lines above zero
+Category: MACD | Strength: BULLISH
+AI Analysis: MACD fully bullish suggests continued upward momentum, but the RSI suggests caution. Reliability is fair, but the signal is already somewhat priced in. Use in conjunction with other bullish signs.
+--------------------------------------------------------------------------------
+
+#8 ⚡ SCORE: 60/100
+Signal: MOMENTUM BUILDING
+Description: Consecutive positive momentum
+Category: MOMENTUM | Strength: BULLISH
+AI Analysis: Consecutive positive momentum suggests continued bullishness. Needs to be confirmed by ADX to determine the uptrend strength. Low action without knowing how the momentum is measured.
+--------------------------------------------------------------------------------
+
+#9 ⚡ SCORE: 60/100
+Signal: ABOVE CLOUD
+Description: Ichimoku bullish
+Category: ICHIMOKU | Strength: BULLISH
+AI Analysis: Price above the Ichimoku cloud is a bullish sign, but can be late. Reliability fair. Use in conjunction with other bullish indicators.
+--------------------------------------------------------------------------------
+
+#10 📊 SCORE: 55/100
+Signal: MACD MOMENTUM DOWN
+Description: Histogram expanding bearish
+Category: MACD | Strength: BEARISH
+AI Analysis: Histogram expanding bearish is a decent bearish signal, but its reliability varies. Good confirmation to overbought signals. The 'momentum down' signal provides early warning, but needs volume confirmation.
+--------------------------------------------------------------------------------
+
+#11 📊 SCORE: 50/100
+Signal: STOCH BEAR CROSS
+Description: K crossed below D
+Category: STOCHASTIC | Strength: BEARISH
+AI Analysis: Stochastic bear cross provides bearish confirmation. Actionable, but the reliability can be low without other confirming signals. Could be a decent early sign of reversal.
+--------------------------------------------------------------------------------
+
+#12 📊 SCORE: 45/100
+Signal: STOCH OVERBOUGHT
+Description: K: 85.0
+Category: STOCHASTIC | Strength: BEARISH
+AI Analysis: Stochastic oscillator in overbought territory is a bearish indicator. Moderately reliable, but can be a false signal in a strong uptrend. This is one more signal for bearish reversal.
+--------------------------------------------------------------------------------
+
+#13 📊 SCORE: 40/100
+Signal: MACD SIGNAL RISING
+Description: Signal line trending upward
+Category: MACD | Strength: BULLISH
+AI Analysis: Rising signal line provides limited bullish signal. Signal line lagging behind price. Low actionability. Weak.
+--------------------------------------------------------------------------------
+
+#14 📊 SCORE: 40/100
+Signal: WILLIAMS OVERBOUGHT
+Description: W%R: -15.0
+Category: WILLIAMS | Strength: BEARISH
+AI Analysis: Williams %R in overbought territory supports the bearish view. Good confirmation of reversal. Limited actionability on its own.
+--------------------------------------------------------------------------------
+
+#15 ⚠️ SCORE: 30/100
+Signal: RSI EXTREME OVERBOUGHT
+Description: RSI at 84.4
+Category: RSI | Strength: STRONG BEARISH
+AI Analysis: Extreme overbought RSI reinforces the likelihood of a pullback or consolidation. Risk/reward skews negative. Needs confirmation from other bearish signals to be highly actionable. Limited reliability without confirmation.
+--------------------------------------------------------------------------------
+
+#16 ⚠️ SCORE: 25/100
+Signal: RSI OVERBOUGHT
+Description: RSI at 84.4
+Category: RSI | Strength: BEARISH
+AI Analysis: RSI at 84.4 is significantly overbought, suggesting a pullback is likely. However, overbought conditions can persist in strong uptrends. Actionability is moderate, but timing might be premature.
+--------------------------------------------------------------------------------
+
+#17 ⚠️ SCORE: 20/100
+Signal: LOW VOLUME
+Description: Below average activity
+Category: VOLUME | Strength: WEAK
+AI Analysis: Below average volume can indicate a weakening trend or a lack of conviction. Low actionability and reliability. This alone is weak.
+--------------------------------------------------------------------------------
+
+#18 ⚠️ SCORE: 20/100
+Signal: EXTENDED FROM 200 SMA
+Description: 45.2% above
+Category: MA_TREND | Strength: OVERBOUGHT
+AI Analysis: Price extended 45.2% above the 200 SMA suggests overextension. This points to a high probability of a pullback or consolidation. Risk/reward is heavily skewed to the downside in the short term. Poor timing to initiate new long position
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,215 @@
+{
+  "symbol": "IBIT",
+  "timestamp": "2025-12-11 13:00:14",
+  "date": "2025-12-11",
+  "price": 51.040000915527344,
+  "change_pct": -2.7624323043873966,
+  "volume": 31769938,
+  "indicators": {
+    "RSI": 55.22613685681117,
+    "MACD": -1.741410952054494,
+    "ADX": 30.416590998871794,
+    "Stochastic": 61.93181879756856,
+    "CCI": -14.856011879388364,
+    "MFI": 52.81896236759964,
+    "BB_Position": 0.4486714420943717,
+    "Volatility": 53.13017174465797
+  },
+  "moving_averages": {
+    "SMA_10": 51.555999755859375,
+    "SMA_20": 51.41024971008301,
+    "SMA_50": 58.482699432373046,
+    "SMA_200": 58.691599979400635,
+    "EMA_10": 51.73160705359026,
+    "EMA_20": 52.71307435364001
+  },
+  "signals": [
+    {
+      "signal": "DEATH CROSS",
+      "desc": "50 MA crossed below 200 MA",
+      "strength": "STRONG BEARISH",
+      "category": "MA_CROSS",
+      "ai_score": 88,
+      "ai_reasoning": "Death Cross is a significant bearish indicator, often signaling a longer-term downtrend. Actionable for short positions, relatively reliable historically, and the current market decline supports the timing. Risk/reward favors shorts given the potential for further downside. ADX confirms.",
+      "rank": 1
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "desc": "ADX: 30.4",
+      "strength": "TRENDING",
+      "category": "TREND",
+      "ai_score": 82,
+      "ai_reasoning": "Strong Downtrend confirmed by ADX strengthens the bearish outlook. Provides good context for short positions. Reliable as it quantifies the downtrend's strength. Risk/reward highly favors the downside.",
+      "rank": 2
+    },
+    {
+      "signal": "OBV FALLING",
+      "desc": "Selling pressure increasing",
+      "strength": "BEARISH",
+      "category": "VOLUME",
+      "ai_score": 80,
+      "ai_reasoning": "OBV Falling confirms selling pressure and aligns with the bearish signals, adding weight to short positions. Reliable as it indicates money leaving the asset. Timing is appropriate. Risk/reward favors the downside.",
+      "rank": 3
+    },
+    {
+      "signal": "BELOW 200 SMA",
+      "desc": "Long-term downtrend",
+      "strength": "BEARISH",
+      "category": "MA_TREND",
+      "ai_score": 80,
+      "ai_reasoning": "Below 200 SMA confirms the long-term downtrend. Good for confirming that the stock is in a bearish zone. Reliable for confirming long-term trend. Risk/reward highly favors the downside.",
+      "rank": 4
+    },
+    {
+      "signal": "PRICE BELOW 20 MA",
+      "desc": "Price crossed below 20-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS",
+      "ai_score": 78,
+      "ai_reasoning": "Price below 20 MA confirms the short-term downward trend. This is generally reliable, indicating selling pressure. Actionable for swing trades. The risk/reward is skewed to the downside currently. Aligns with other short-term bearish signals.",
+      "rank": 5
+    },
+    {
+      "signal": "BELOW CLOUD",
+      "desc": "Ichimoku bearish",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU",
+      "ai_score": 78,
+      "ai_reasoning": "Below Cloud indicates bearish sentiment. Confirms selling pressure. Reliable and timely. Favors short positions.",
+      "rank": 6
+    },
+    {
+      "signal": "PRICE BELOW 10 MA",
+      "desc": "Price crossed below 10-day MA",
+      "strength": "BEARISH",
+      "category": "MA_CROSS",
+      "ai_score": 75,
+      "ai_reasoning": "Price below the 10 MA is a short-term bearish signal. Actionable for quick trades. It's fairly reliable for short-term predictions. The timing is good given the recent price drop. Risk/reward is moderate, favoring short positions. Aligns with overall bearish short-term momentum.",
+      "rank": 7
+    },
+    {
+      "signal": "CLOUD BEARISH",
+      "desc": "Senkou A below B",
+      "strength": "BEARISH",
+      "category": "ICHIMOKU",
+      "ai_score": 75,
+      "ai_reasoning": "Cloud Bearish (Senkou A below B) confirms a bearish outlook. Aligns with other bearish signals. Provides an excellent confirmation. Short opportunities should be sought.",
+      "rank": 8
+    },
+    {
+      "signal": "CCI NEGATIVE",
+      "desc": "CCI crossed below zero",
+      "strength": "BEARISH",
+      "category": "CCI",
+      "ai_score": 72,
+      "ai_reasoning": "CCI Negative confirms bearish momentum as the price has dropped below its average. A CCI dip below zero is bearish. Actionable as an entry point for short positions. Reliable as it indicates weakening momentum. Risk/reward favors downside.",
+      "rank": 9
+    },
+    {
+      "signal": "STOCH BEAR CROSS",
+      "desc": "K crossed below D",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "ai_score": 70,
+      "ai_reasoning": "Stoch Bear Cross is a bearish signal confirming downward momentum. Actionable for short-term trades. Reliability is decent. Risk/reward favors shorts, as it signals further downward potential.",
+      "rank": 10
+    },
+    {
+      "signal": "LOWER LOW",
+      "desc": "Breaking below yesterday",
+      "strength": "BEARISH",
+      "category": "PRICE_ACTION",
+      "ai_score": 70,
+      "ai_reasoning": "Lower Low confirms downward price action, useful for day trading and short-term plays. Reliability is moderate. Risk/reward favors shorts.",
+      "rank": 11
+    },
+    {
+      "signal": "MFI BULLISH",
+      "desc": "Money flow crossed 50",
+      "strength": "BULLISH",
+      "category": "MFI",
+      "ai_score": 60,
+      "ai_reasoning": "MFI Bullish can indicate underlying buying pressure, but needs additional confirming signals for an immediate trade. Moderate, as it signals a weakening bear momentum. Risk/reward is mixed.",
+      "rank": 12
+    },
+    {
+      "signal": "HIGH VOLATILITY",
+      "desc": "53% annualized",
+      "strength": "CAUTION",
+      "category": "VOLATILITY",
+      "ai_score": 60,
+      "ai_reasoning": "High Volatility indicates potential for large price swings in either direction. Requires cautious position sizing and wider stop-loss orders. Increases the risk of both long and short positions. Not a clear signal.",
+      "rank": 13
+    },
+    {
+      "signal": "MACD SIGNAL RISING",
+      "desc": "Signal line trending upward",
+      "strength": "BULLISH",
+      "category": "MACD",
+      "ai_score": 55,
+      "ai_reasoning": "MACD Signal Rising is bullish, but MACD is still deep negative, so this bullish move might be weak and a poor trade signal. Rising can still trigger a rally. Risk/reward is moderate. Contradicts immediate trend but indicates potential weakening.",
+      "rank": 14
+    },
+    {
+      "signal": "BB SQUEEZE",
+      "desc": "Bands narrowing - breakout pending",
+      "strength": "NEUTRAL",
+      "category": "BOLLINGER",
+      "ai_score": 50,
+      "ai_reasoning": "BB Squeeze is a neutral signal indicating potential volatility expansion. Actionable in the sense that it suggests preparing for a move, but it doesn't indicate direction. Reliability depends on confirmation. Risk/reward is uncertain until the breakout direction is clear. Could go either way.",
+      "rank": 15
+    },
+    {
+      "signal": "MFI BULL DIVERGENCE",
+      "desc": "Price down, MFI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE",
+      "ai_score": 50,
+      "ai_reasoning": "MFI Bull Divergence can indicate a potential reversal, but ADX favors downtrend. A bearish trend means this could be a false signal. Risk/reward is uncertain. Contradicts the immediate trend.",
+      "rank": 16
+    },
+    {
+      "signal": "RSI BULLISH DIVERGENCE",
+      "desc": "Price down but RSI up",
+      "strength": "BULLISH",
+      "category": "DIVERGENCE",
+      "ai_score": 45,
+      "ai_reasoning": "RSI Bullish Divergence can indicate a potential reversal, but RSI is above 50 and the ADX favors the downtrend, making this a low probability signal and early. Reliability is not high until confirmed by price. Risk/reward is uncertain. Contradicts the overall market trend.",
+      "rank": 17
+    },
+    {
+      "signal": "MOMENTUM BUILDING",
+      "desc": "Consecutive positive momentum",
+      "strength": "BULLISH",
+      "category": "MOMENTUM",
+      "ai_score": 35,
+      "ai_reasoning": "Again, everything points to the opposite - a downtrend. This should be ignored, the data doesn't support this.",
+      "rank": 18
+    },
+    {
+      "signal": "LOW VOLUME",
+      "desc": "Below average activity",
+      "strength": "WEAK",
+      "category": "VOLUME",
+      "ai_score": 20,
+      "ai_reasoning": "Low Volume weakens the conviction for either a bull or bear stance, so low score. Decreases the reliability of other signals. Risk/reward is generally unfavorable in low volume environments. Just a note to be cautious.",
+      "rank": 19
+    },
+    {
+      "signal": "STRONG UPTREND CONFIRMED",
+      "desc": "+DI > -DI with high ADX",
+      "strength": "BULLISH",
+      "category": "TREND",
+      "ai_score": 10,
+      "ai_reasoning": "This signal states uptrend confirmed, but all evidence in the prompt points to the opposite. Should be ignored. This also contradicts ADX, MACD and RSI signals.",
+      "rank": 20
+    }
+  ],
+  "signal_count": 20,
+  "bullish_count": 6,
+  "bearish_count": 10,
+  "top_signal_info": {
+    "signal_number": 1,
+    "why": "Death Cross, as this is a strong indicator that confirms longer-term bearish momentum, and increases the likelihood of a downtrend. Confirmed by other factors, this represents the best opportunity for short position, in combination with OBV (Signal 8), the ADX (Signal 13) and Cloud (Signal 18)."
+  }
+}
