@@ -5,11 +5,13 @@ from datetime import date, timedelta, datetime
 import os
 import time
 import json
+import tempfile
+import shutil
 from dotenv import load_dotenv
 from mistralai import Mistral 
 
 # --- CONFIGURATION ---
-TICKER = "SLV" 
+TICKER = "GLD" 
 DAYS_OF_HISTORY = 90
 
 # 1. Load environment variables from a .env file if one exists
@@ -38,6 +40,54 @@ class NumpyEncoder(json.JSONEncoder):
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
         return super(NumpyEncoder, self).default(obj)
+
+# --- Atomic File Write Helper ---
+def write_file_atomically(filepath, content, is_json=False, cls=None):
+    """
+    Write content to a file atomically by using a temporary file and then renaming.
+    This ensures that if the write is interrupted, the original file is not corrupted.
+    
+    Args:
+        filepath: Destination file path
+        content: Content to write (string or object to JSON serialize)
+        is_json: If True, content will be JSON serialized
+        cls: JSON encoder class (e.g., NumpyEncoder)
+    """
+    # Create temp file in the same directory as the target to ensure same filesystem
+    target_dir = os.path.dirname(filepath)
+    if not target_dir:
+        target_dir = '.'
+    
+    try:
+        # Write to temporary file
+        with tempfile.NamedTemporaryFile(
+            mode='w' if not is_json else 'w',
+            dir=target_dir,
+            delete=False,
+            suffix='.tmp'
+        ) as tmp_file:
+            tmp_path = tmp_file.name
+            
+            if is_json:
+                json.dump(content, tmp_file, indent=4, cls=cls)
+            else:
+                tmp_file.write(content)
+        
+        # Atomically rename temp file to final destination
+        # On Unix, rename is atomic. On Windows, we need to remove the target first.
+        if os.path.exists(filepath):
+            os.remove(filepath)
+        
+        shutil.move(tmp_path, filepath)
+        
+    except Exception as e:
+        # Clean up temp file if something goes wrong
+        if 'tmp_path' in locals() and os.path.exists(tmp_path):
+            try:
+                os.remove(tmp_path)
+            except:
+                pass
+        raise Exception(f"Failed to write file {filepath}: {e}")
 
 def quick_api_test():
     """
@@ -268,29 +318,18 @@ def generate_ai_rationale(spread_data, indicators):
     initial_delay = 2  
     
     prompt = f"""
-    You are a quantitative financial analyst. Generate a detailed, hypothetical analysis paragraph for a {spread_data['type']} on {TICKER}.
+    You are a quantitative financial analyst. Generate a concise analysis for a {spread_data['type']} on {TICKER}.
     
-    **Market Context (Technical Indicators):**
-    - Current Price: ${indicators['Current_Price']:.2f}
-    - Trend (SMA 50/200): SMA50={indicators['SMA_50']:.2f}, SMA200={indicators['SMA_200']:.2f}
-    - Momentum (RSI): {indicators['RSI']:.2f}
-    - MACD: Value={indicators['MACD_Value']:.2f}, Signal={indicators['MACD_Signal']:.2f} ({'Bullish' if indicators['MACD_Bullish'] else 'Bearish'})
-    - Stochastic %K: {indicators['Stoch_K']:.2f}
-    - Volatility (HV 30d): {indicators['HV_30d']:.2f}
-    - Bollinger Band %B: {indicators['BB_PercentB']:.2f}
-    - Money Flow Index: {indicators['MFI']:.2f}
-    - Rate of Change (10d): {indicators['ROC_10d']:.2f}%
+    **Market Context:**
+    - Price: ${indicators['Current_Price']:.2f} | SMA50: {indicators['SMA_50']:.2f} | SMA200: {indicators['SMA_200']:.2f}
+    - RSI: {indicators['RSI']:.2f} | MACD: {indicators['MACD_Value']:.2f} ({'Bullish' if indicators['MACD_Bullish'] else 'Bearish'})
+    - HV30d: {indicators['HV_30d']:.2f} | MFI: {indicators['MFI']:.2f}
     
-    **Trade Structure:**
-    - Expiration: {spread_data['expiration']}
-    - Sell Strike: ${spread_data['sell_strike']:.2f}
-    - Buy Strike: ${spread_data['buy_strike']:.2f}
-    - Est. Max Profit: ${spread_data['max_profit']}
-    - Est. Max Risk: ${spread_data['max_loss']}
+    **Trade:**
+    - Sell ${spread_data['sell_strike']:.2f} / Buy ${spread_data['buy_strike']:.2f} ({spread_data['expiration']})
+    - Max Profit: ${spread_data['max_profit']} | Max Risk: ${spread_data['max_loss']}
     
-    **Instructions:**
-    - Write a sophisticated, text-heavy paragraph analyzing why this specific setup might be interesting given the indicators. 
-    - DISCLAIMER: This is hypothetical analysis, not financial advice.
+    Provide a 2-3 sentence analysis of why this setup is interesting. Include DISCLAIMER: This is hypothetical analysis, not financial advice.
     """
     
     for attempt in range(max_retries):
@@ -303,7 +342,7 @@ def generate_ai_rationale(spread_data, indicators):
                         {"role": "user", "content": prompt}
                     ],
                     temperature=0.5,
-                    max_tokens=800,
+                    max_tokens=200,
                     top_p=1.0,
                     frequency_penalty=0.1,
                     presence_penalty=0.1,
@@ -406,7 +445,7 @@ def main_analysis():
         except Exception as e:
             print(f"  Skipping {expiration}: {e}")
 
-    # 5. Write Report (Markdown and JSON)
+    # 5. Write Report (Markdown and JSON) with atomic writes
     output_folder = "spreads-yo"
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -415,36 +454,42 @@ def main_analysis():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     md_filename = os.path.join(output_folder, f"{TICKER}_spread_analysis_{timestamp}.md")
 
-    # Save Markdown
-    with open(md_filename, 'w') as f:
-        f.write(f"# AI-Enhanced Credit Spread Analysis: {TICKER}\n\n")
-        f.write(f"**Date:** {date.today()}\n")
-        f.write(f"**Reference Price:** ${indicators['Current_Price']:.2f}\n\n")
-        
-        f.write("## Technical Landscape (12 Indicators)\n")
-        for k, v in indicators.items():
-            if isinstance(v, float):
-                f.write(f"- **{k}:** {v:.2f}\n")
-            else:
-                f.write(f"- **{k}:** {v}\n")
-        f.write("\n---\n\n")
-        
-        for spread in all_spread_analysis:
-            f.write(f"### {spread['type']} ({spread['expiration']})\n")
-            f.write(f"**Strategy:** Sell ${spread['sell_strike']} / Buy ${spread['buy_strike']}\n")
-            f.write(f"**Est. Credit:** ${spread['max_profit']} | **Max Risk:** ${spread['max_loss']}\n")
-            f.write(f"**Analysis:**\n{spread['rationale']}\n\n")
-            f.write("---\n")
-    print(f"Markdown report saved to '{md_filename}'.")
+    # Build Markdown content
+    markdown_content = f"# AI-Enhanced Credit Spread Analysis: {TICKER}\n\n"
+    markdown_content += f"**Date:** {date.today()}\n"
+    markdown_content += f"**Reference Price:** ${indicators['Current_Price']:.2f}\n\n"
+    
+    markdown_content += "## Technical Landscape (12 Indicators)\n"
+    for k, v in indicators.items():
+        if isinstance(v, float):
+            markdown_content += f"- **{k}:** {v:.2f}\n"
+        else:
+            markdown_content += f"- **{k}:** {v}\n"
+    markdown_content += "\n---\n\n"
+    
+    for spread in all_spread_analysis:
+        markdown_content += f"### {spread['type']} ({spread['expiration']})\n"
+        markdown_content += f"**Strategy:** Sell ${spread['sell_strike']} / Buy ${spread['buy_strike']}\n"
+        markdown_content += f"**Est. Credit:** ${spread['max_profit']} | **Max Risk:** ${spread['max_loss']}\n"
+        markdown_content += f"**Analysis:**\n{spread['rationale']}\n\n"
+        markdown_content += "---\n"
+    
+    # Write Markdown atomically
+    try:
+        write_file_atomically(md_filename, markdown_content)
+        print(f"Markdown report saved to '{md_filename}'.")
+    except Exception as e:
+        print(f"ERROR writing Markdown: {e}")
 
-    # Save Raw List JSON (original request)
+    # Save Raw List JSON (original request) atomically
     json_list_filename = os.path.join(output_folder, f"{TICKER}_spread_analysis_{timestamp}.json")
-    with open(json_list_filename, 'w') as jf:
-        json.dump(all_spread_analysis, jf, indent=4, cls=NumpyEncoder)
-    print(f"Raw List JSON saved to '{json_list_filename}'.")
+    try:
+        write_file_atomically(json_list_filename, all_spread_analysis, is_json=True, cls=NumpyEncoder)
+        print(f"Raw List JSON saved to '{json_list_filename}'.")
+    except Exception as e:
+        print(f"ERROR writing JSON list: {e}")
 
-
-    # --- FINAL STEP: Generate Structured JSON for Next.js ---
+    # --- FINAL STEP: Generate Structured JSON for Next.js with atomic write ---
     output_folder_json = "spreads-yo-json"
     if not os.path.exists(output_folder_json):
         os.makedirs(output_folder_json)
@@ -476,12 +521,14 @@ def main_analysis():
             "analysis": spread['rationale']
         })
 
-    # Save as a "pretty-printed" JSON file using the NumpyEncoder
-    with open(final_json_filename, 'w') as f:
-        json.dump(report_data, f, indent=4, cls=NumpyEncoder)
+    # Write structured JSON atomically
+    try:
+        write_file_atomically(final_json_filename, report_data, is_json=True, cls=NumpyEncoder)
+        print(f"Done. Next.js ready JSON saved to '{final_json_filename}'.")
+    except Exception as e:
+        print(f"ERROR writing structured JSON: {e}")
 
-    print(f"Done. Next.js ready JSON saved to '{final_json_filename}'.")
-    print(f"\n✅ All files saved successfully.")
+    print(f"\n✅ All files saved successfully using atomic writes.")
 
 if __name__ == "__main__":
     main_analysis()
