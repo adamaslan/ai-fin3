@@ -1,0 +1,12 @@
+{
+    "ticker": "SLV",
+    "date": "2025-12-18",
+    "reference_price": 59.31999969482422,
+    "technical_landscape": {
+        "Current_Price": 59.31999969482422,
+        "SMA_50": 48.38039985656738,
+        "SMA_200": 37.109299907684324,
+        "RSI": 73.83890639128501,
+        "MACD_Value": 3.3983241283295484,
+        "MACD_Signal": 2.887983762385099,
+        "MACD_Bullish": 
