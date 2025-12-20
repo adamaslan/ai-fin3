@@ -1,3 +1,7 @@
+# add to this list add to the time aspect of things 
+# organize the md files with a vision for an end product
+# rank importance of changes
+
 # ============================================================================
 # COMPREHENSIVE SIGNAL CALCULATIONS REFERENCE (150+ Signals)
 # ============================================================================
