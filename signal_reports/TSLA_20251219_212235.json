@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "symbol": "TSLA",
+    "timestamp": "2025-12-19T21:22:35.051521",
+    "data_period": "6mo",
+    "total_bars": 128,
+    "signals_detected": 3
+  },
+  "current_price": {
+    "close": 481.20001220703125,
+    "open": 488.1199951171875,
+    "high": 490.489990234375,
+    "low": 474.7200012207031,
+    "volume": 103066200,
+    "change_pct": -0.448927929345333
+  },
+  "indicators": {
+    "RSI": 67.92836685551558,
+    "MACD": 13.671076084727474,
+    "MACD_Signal": 9.280234581330241,
+    "ADX": 40.483465362703704,
+    "Stochastic_K": 80.7545299788471,
+    "ATR": 17.779285975864955,
+    "BB_Position": 0.8413911694840499,
+    "Volume_Ratio": 1.3006693071803392
+  },
+  "moving_averages": {
+    "SMA_10": 463.90700378417966,
+    "SMA_20": 446.9870010375977,
+    "SMA_50": 439.7146008300781,
+    "SMA_200": null,
+    "EMA_20": 454.43833812490686
+  },
+  "signals": [
+    {
+      "signal": "RSI9 OVERBOUGHT",
+      "description": "RSI(9): 70.7",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "value": 70.74363798697101
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "description": "%K: 80.8",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "value": 80.7545299788471
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "description": "ADX: 40.5",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 40.483465362703704
+    }
+  ],
+  "signal_summary": {
+    "total": 3,
+    "bullish": 0,
+    "bearish": 2,
+    "neutral": 0,
+    "by_category": {
+      "RSI": 1,
+      "STOCHASTIC": 1,
+      "ADX": 1
+    }
+  }
+}

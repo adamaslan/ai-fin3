@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "symbol": "GOOGL",
+    "timestamp": "2025-12-19T21:22:34.843584",
+    "data_period": "6mo",
+    "total_bars": 128,
+    "signals_detected": 1
+  },
+  "current_price": {
+    "close": 307.1600036621094,
+    "open": 301.7300109863281,
+    "high": 307.25,
+    "low": 300.9700012207031,
+    "volume": 59913000,
+    "change_pct": 1.5539285656990032
+  },
+  "indicators": {
+    "RSI": 43.530727417948086,
+    "MACD": 4.531029951492599,
+    "MACD_Signal": 7.878196152396659,
+    "ADX": 45.388018553079014,
+    "Stochastic_K": 41.14991612945601,
+    "ATR": 7.838103124591279,
+    "BB_Position": 0.3037825082582652,
+    "Volume_Ratio": 1.365974327990698
+  },
+  "moving_averages": {
+    "SMA_10": 309.38599853515626,
+    "SMA_20": 313.14085693359374,
+    "SMA_50": 287.3792974853516,
+    "SMA_200": null,
+    "EMA_20": 306.23403992218834
+  },
+  "signals": [
+    {
+      "signal": "STRONG DOWNTREND",
+      "description": "ADX: 45.4",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 45.388018553079014
+    }
+  ],
+  "signal_summary": {
+    "total": 1,
+    "bullish": 0,
+    "bearish": 0,
+    "neutral": 0,
+    "by_category": {
+      "ADX": 1
+    }
+  }
+}
