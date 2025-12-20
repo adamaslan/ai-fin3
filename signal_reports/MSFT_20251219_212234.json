@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "symbol": "MSFT",
+    "timestamp": "2025-12-19T21:22:34.547079",
+    "data_period": "6mo",
+    "total_bars": 128,
+    "signals_detected": 1
+  },
+  "current_price": {
+    "close": 485.9200134277344,
+    "open": 487.3599853515625,
+    "high": 487.8500061035156,
+    "low": 482.489990234375,
+    "volume": 70824900,
+    "change_pct": 0.40084350538622804
+  },
+  "indicators": {
+    "RSI": 49.40130207718255,
+    "MACD": -4.919296210549817,
+    "MACD_Signal": -6.04354377561866,
+    "ADX": 18.522539502614144,
+    "Stochastic_K": 66.48988413571286,
+    "ATR": 8.384288242885045,
+    "BB_Position": 0.6560121951599052,
+    "Volume_Ratio": 2.603526869482891
+  },
+  "moving_averages": {
+    "SMA_10": 482.0830017089844,
+    "SMA_20": 481.9960006713867,
+    "SMA_50": 499.7144787597656,
+    "SMA_200": null,
+    "EMA_20": 484.88663896968956
+  },
+  "signals": [
+    {
+      "signal": "VOLUME SPIKE",
+      "description": "Volume: 2.6x average",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "value": 2.603526869482891
+    }
+  ],
+  "signal_summary": {
+    "total": 1,
+    "bullish": 0,
+    "bearish": 0,
+    "neutral": 0,
+    "by_category": {
+      "VOLUME": 1
+    }
+  }
+}

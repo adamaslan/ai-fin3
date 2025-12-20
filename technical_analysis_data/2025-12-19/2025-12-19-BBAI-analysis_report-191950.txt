@@ -1,0 +1,100 @@
+
+================================================================================
+COMPREHENSIVE TECHNICAL ANALYSIS - BBAI
+================================================================================
+
+PRICE DATA:
+  Current: $6.26
+  Change: 11.19%
+  Volume: 217,101,781
+
+OVERALL BIAS: STRONG BULLISH (Score: 85/100)
+
+INDICATOR RATINGS:
+  Trend Strength:      60/100
+  Momentum:            50/100
+  Volatility:          95/100
+  Volume:              80/100
+  Support/Resistance:  50/100
+  Oversold/Overbought: 50.439474338473495/100
+
+SIGNAL SUMMARY:
+  Total Signals: 12
+  Bullish: 8
+  Bearish: 3
+  Neutral: 1
+
+TOP 20 RANKED SIGNALS:
+================================================================================
+
+#1 [95/100] EXPLOSIVE MOVE UP
+   +11.2% today
+   Category: PRICE_ACTION | Strength: EXTREME BULLISH
+   AI: Significant upward momentum
+--------------------------------------------------------------------------------
+
+#2 [90/100] VOLUME BREAKOUT
+   High volume + strong price gain
+   Category: VOLUME_BREAKOUT | Strength: EXTREME BULLISH
+   AI: Strong bullish confirmation
+--------------------------------------------------------------------------------
+
+#3 [85/100] BROKE R1 RESISTANCE
+   Above $5.77
+   Category: PIVOT | Strength: BULLISH
+   AI: Bullish breakout above resistance
+--------------------------------------------------------------------------------
+
+#4 [80/100] DI BULL CROSS
+   +DI crossed above -DI
+   Category: ADX | Strength: BULLISH
+   AI: Bullish trend strength indicator
+--------------------------------------------------------------------------------
+
+#5 [80/100] ABOVE VWAP
+   Institutional buying support
+   Category: VWAP | Strength: BULLISH
+   AI: Good sign of buying pressure
+--------------------------------------------------------------------------------
+
+#6 [75/100] PRICE ABOVE 20MA
+   Price crossed above 20-day MA
+   Category: PRICE_MA_CROSS | Strength: BULLISH
+   AI: More reliable than 10MA, still downtrend
+--------------------------------------------------------------------------------
+
+#7 [75/100] TENKAN/KIJUN BULL CROSS
+   Ichimoku bullish signal
+   Category: ICHIMOKU | Strength: BULLISH
+   AI: Confirms potential trend change
+--------------------------------------------------------------------------------
+
+#8 [70/100] PRICE ABOVE 10MA
+   Price crossed above 10-day MA
+   Category: PRICE_MA_CROSS | Strength: BULLISH
+   AI: Short-term bullish, but 10MA downtrend
+--------------------------------------------------------------------------------
+
+#9 [50/100] OVEREXTENDED ABOVE 200MA
+   17.5% above 200MA
+   Category: MA_DISTANCE | Strength: BEARISH
+   AI: Possible pullback risk
+--------------------------------------------------------------------------------
+
+#10 [40/100] 50MA STEEP DOWNTREND
+   50MA slope: -2.44%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: Bearish, but slower moving
+--------------------------------------------------------------------------------
+
+#11 [40/100] EXTREME VOLATILITY
+   108% annualized
+   Category: VOLATILITY | Strength: HIGH RISK
+   AI: High risk of large price swings
+--------------------------------------------------------------------------------
+
+#12 [30/100] 10MA STEEP DOWNTREND
+   10MA slope: -4.21%
+   Category: MA_SLOPE | Strength: BEARISH
+   AI: Bearish, contradicts price action
+--------------------------------------------------------------------------------

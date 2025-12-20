@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from mistralai import Mistral 
 
 # --- CONFIGURATION ---
-TICKER = "GLD" 
+TICKER = "GOOG" 
 DAYS_OF_HISTORY = 90
 
 # 1. Load environment variables from a .env file if one exists

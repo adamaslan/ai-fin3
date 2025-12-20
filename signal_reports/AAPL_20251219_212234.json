@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "symbol": "AAPL",
+    "timestamp": "2025-12-19T21:22:34.242101",
+    "data_period": "1y",
+    "total_bars": 250,
+    "signals_detected": 3
+  },
+  "current_price": {
+    "close": 273.6700134277344,
+    "open": 272.1499938964844,
+    "high": 274.6000061035156,
+    "low": 269.8999938964844,
+    "volume": 144599200,
+    "change_pct": 0.5437418615868328
+  },
+  "indicators": {
+    "RSI": 30.329619963078486,
+    "MACD": 1.024800245931317,
+    "MACD_Signal": 2.438562245748899,
+    "ADX": 31.329743108433718,
+    "Stochastic_K": 31.010643841133838,
+    "ATR": 4.597143990652902,
+    "BB_Position": 0.2586458570856272,
+    "Volume_Ratio": 2.978972376573858
+  },
+  "moving_averages": {
+    "SMA_10": 275.6579986572266,
+    "SMA_20": 277.51399993896484,
+    "SMA_50": 269.41141510009766,
+    "SMA_200": 229.54105224609376,
+    "EMA_20": 275.1785363777791
+  },
+  "signals": [
+    {
+      "signal": "VOLUME SPIKE",
+      "description": "Volume: 3.0x average",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "value": 2.978972376573858
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "description": "ADX: 31.3",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "value": 31.329743108433718
+    },
+    {
+      "signal": "OVEREXTENDED ABOVE 200MA",
+      "description": "19.2% above 200MA",
+      "strength": "BEARISH",
+      "category": "MA_DISTANCE",
+      "value": 19.224866641427358
+    }
+  ],
+  "signal_summary": {
+    "total": 3,
+    "bullish": 0,
+    "bearish": 1,
+    "neutral": 0,
+    "by_category": {
+      "VOLUME": 1,
+      "ADX": 1,
+      "MA_DISTANCE": 1
+    }
+  }
+}
