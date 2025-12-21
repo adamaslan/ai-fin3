@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "symbol": "SPY",
+    "interval": "5m",
+    "interval_name": "5 Minute",
+    "period": "60d",
+    "timestamp": "2025-12-21T17:34:27.156897",
+    "bars": 4642,
+    "date_range": {
+      "start": "2025-09-26T09:30:00-04:00",
+      "end": "2025-12-19T15:55:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "5 Minute",
+    "ma_periods": [
+      9,
+      20,
+      50,
+      100
+    ],
+    "rsi_periods": [
+      9,
+      14
+    ],
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_periods": [
+      10,
+      20
+    ],
+    "volume_threshold": 1.8,
+    "price_change_threshold": 0.8,
+    "atr_period": 14,
+    "stoch_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 680.5900268554688,
+    "open": 680.47998046875,
+    "high": 680.6900024414062,
+    "low": 679.97998046875,
+    "volume": 8587700,
+    "change_pct": 0.01324745656905435
+  },
+  "signals": [
+    {
+      "signal": "HIGH VOLUME (6.0X)",
+      "description": "Volume 6.0x above 20-period average - Increased market participation",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "timeframe": "5m",
+      "value": 5.988059442561083,
+      "trading_implication": "High volume confirms price move validity; breakouts more reliable"
+    }
+  ],
+  "signal_summary": {
+    "total": 1,
+    "bullish": 0,
+    "bearish": 0,
+    "neutral": 1,
+    "by_category": {
+      "VOLUME": 1
+    }
+  }
+}

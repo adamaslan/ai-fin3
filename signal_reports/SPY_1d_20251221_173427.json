@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "symbol": "SPY",
+    "interval": "1d",
+    "interval_name": "Daily",
+    "period": "max",
+    "timestamp": "2025-12-21T17:34:27.959038",
+    "bars": 8281,
+    "date_range": {
+      "start": "1993-01-29T00:00:00-05:00",
+      "end": "2025-12-19T00:00:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "Daily",
+    "ma_periods": [
+      10,
+      20,
+      50,
+      100,
+      200
+    ],
+    "rsi_periods": [
+      9,
+      14,
+      21
+    ],
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_periods": [
+      10,
+      20,
+      30
+    ],
+    "volume_threshold": 2.0,
+    "price_change_threshold": 3.0,
+    "atr_period": 14,
+    "stoch_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 680.5900268554688,
+    "open": 676.5900268554688,
+    "high": 681.0900268554688,
+    "low": 676.469970703125,
+    "volume": 103506100,
+    "change_pct": 0.906346515990486
+  },
+  "signals": [
+    {
+      "signal": "STRONG DOWNTREND",
+      "description": "ADX: 29.0 indicates strong downtrend",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "timeframe": "1d",
+      "value": 29.005025011775764,
+      "trading_implication": "Strong trend in place; trade with the downtrend"
+    }
+  ],
+  "signal_summary": {
+    "total": 1,
+    "bullish": 0,
+    "bearish": 0,
+    "neutral": 1,
+    "by_category": {
+      "ADX": 1
+    }
+  }
+}

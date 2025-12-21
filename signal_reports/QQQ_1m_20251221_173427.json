@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "symbol": "QQQ",
+    "interval": "1m",
+    "interval_name": "1 Minute",
+    "period": "7d",
+    "timestamp": "2025-12-21T17:34:27.632490",
+    "bars": 2730,
+    "date_range": {
+      "start": "2025-12-11T09:30:00-05:00",
+      "end": "2025-12-19T15:59:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "1 Minute",
+    "ma_periods": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "rsi_periods": [
+      7,
+      14
+    ],
+    "rsi_oversold": 25,
+    "rsi_overbought": 75,
+    "bb_periods": [
+      10,
+      20
+    ],
+    "volume_threshold": 1.5,
+    "price_change_threshold": 0.5,
+    "atr_period": 10,
+    "stoch_period": 10,
+    "macd_fast": 8,
+    "macd_slow": 17,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 617.239990234375,
+    "open": 616.780029296875,
+    "high": 617.280029296875,
+    "low": 616.3499755859375,
+    "volume": 1243621,
+    "change_pct": 0.07133632459699335
+  },
+  "signals": [
+    {
+      "signal": "MACD BULL CROSS",
+      "description": "MACD(8,17) crossed above signal - Momentum turning bullish",
+      "strength": "STRONG BULLISH",
+      "category": "MACD",
+      "timeframe": "1m",
+      "value": 0.0005457430901287808,
+      "trading_implication": "Strong buy signal; enter long positions with appropriate stop loss"
+    }
+  ],
+  "signal_summary": {
+    "total": 1,
+    "bullish": 1,
+    "bearish": 0,
+    "neutral": 0,
+    "by_category": {
+      "MACD": 1
+    }
+  }
+}

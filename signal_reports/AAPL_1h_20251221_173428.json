@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "symbol": "AAPL",
+    "interval": "1h",
+    "interval_name": "1 Hour",
+    "period": "730d",
+    "timestamp": "2025-12-21T17:34:28.895735",
+    "bars": 5082,
+    "date_range": {
+      "start": "2023-01-25T09:30:00-05:00",
+      "end": "2025-12-19T15:30:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "1 Hour",
+    "ma_periods": [
+      10,
+      20,
+      50,
+      100,
+      200
+    ],
+    "rsi_periods": [
+      9,
+      14,
+      21
+    ],
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_periods": [
+      10,
+      20,
+      30
+    ],
+    "volume_threshold": 2.0,
+    "price_change_threshold": 1.5,
+    "atr_period": 14,
+    "stoch_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 273.6700134277344,
+    "open": 270.80999755859375,
+    "high": 274.5762939453125,
+    "low": 269.8999938964844,
+    "volume": 8193309,
+    "change_pct": 1.0598322614991496
+  },
+  "signals": [
+    {
+      "signal": "ABOVE BB10 UPPER",
+      "description": "Price broke above upper BB(10) - Strong bullish momentum",
+      "strength": "BULLISH",
+      "category": "BB_BREAKOUT",
+      "timeframe": "1h",
+      "value": 0.32809486514395303,
+      "trading_implication": "Breakout detected; momentum strong but watch for reversal at extremes"
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "description": "%K(14): 88.1 - Overbought condition",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "timeframe": "1h",
+      "value": 88.1007809400932,
+      "trading_implication": "Overbought; potential reversal or pullback coming"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "description": "ADX: 52.6 indicates strong downtrend",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "timeframe": "1h",
+      "value": 52.64875671864171,
+      "trading_implication": "Strong trend in place; trade with the downtrend"
+    }
+  ],
+  "signal_summary": {
+    "total": 3,
+    "bullish": 1,
+    "bearish": 1,
+    "neutral": 1,
+    "by_category": {
+      "BB_BREAKOUT": 1,
+      "STOCHASTIC": 1,
+      "ADX": 1
+    }
+  }
+}
