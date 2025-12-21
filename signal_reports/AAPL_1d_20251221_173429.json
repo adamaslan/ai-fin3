@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "symbol": "AAPL",
+    "interval": "1d",
+    "interval_name": "Daily",
+    "period": "max",
+    "timestamp": "2025-12-21T17:34:29.467983",
+    "bars": 11348,
+    "date_range": {
+      "start": "1980-12-12T00:00:00-05:00",
+      "end": "2025-12-19T00:00:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "Daily",
+    "ma_periods": [
+      10,
+      20,
+      50,
+      100,
+      200
+    ],
+    "rsi_periods": [
+      9,
+      14,
+      21
+    ],
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_periods": [
+      10,
+      20,
+      30
+    ],
+    "volume_threshold": 2.0,
+    "price_change_threshold": 3.0,
+    "atr_period": 14,
+    "stoch_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 273.6700134277344,
+    "open": 272.1499938964844,
+    "high": 274.6000061035156,
+    "low": 269.8999938964844,
+    "volume": 144599200,
+    "change_pct": 0.5437418615868328
+  },
+  "signals": [
+    {
+      "signal": "HIGH VOLUME (3.0X)",
+      "description": "Volume 3.0x above 20-period average - Increased market participation",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "timeframe": "1d",
+      "value": 2.978972376573858,
+      "trading_implication": "High volume confirms price move validity; breakouts more reliable"
+    },
+    {
+      "signal": "STRONG DOWNTREND",
+      "description": "ADX: 31.3 indicates strong downtrend",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "timeframe": "1d",
+      "value": 31.329743108433718,
+      "trading_implication": "Strong trend in place; trade with the downtrend"
+    }
+  ],
+  "signal_summary": {
+    "total": 2,
+    "bullish": 0,
+    "bearish": 0,
+    "neutral": 2,
+    "by_category": {
+      "VOLUME": 1,
+      "ADX": 1
+    }
+  }
+}

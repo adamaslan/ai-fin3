@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "symbol": "AAPL",
+    "interval": "5m",
+    "interval_name": "5 Minute",
+    "period": "60d",
+    "timestamp": "2025-12-21T17:34:28.375962",
+    "bars": 4644,
+    "date_range": {
+      "start": "2025-09-26T09:30:00-04:00",
+      "end": "2025-12-19T15:55:00-05:00"
+    }
+  },
+  "configuration": {
+    "name": "5 Minute",
+    "ma_periods": [
+      9,
+      20,
+      50,
+      100
+    ],
+    "rsi_periods": [
+      9,
+      14
+    ],
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "bb_periods": [
+      10,
+      20
+    ],
+    "volume_threshold": 1.8,
+    "price_change_threshold": 0.8,
+    "atr_period": 14,
+    "stoch_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "current_data": {
+    "close": 273.6700134277344,
+    "open": 271.79998779296875,
+    "high": 274.5762939453125,
+    "low": 271.260009765625,
+    "volume": 5469602,
+    "change_pct": 0.9033302101630669
+  },
+  "signals": [
+    {
+      "signal": "RSI9 OVERBOUGHT",
+      "description": "RSI(9): 72.0 > 70 - Potential reversal zone",
+      "strength": "BEARISH",
+      "category": "RSI",
+      "timeframe": "5m",
+      "value": 72.01516692869694,
+      "trading_implication": "Overbought condition; consider taking profits or shorting if confirmed"
+    },
+    {
+      "signal": "MACD BULL CROSS",
+      "description": "MACD(12,26) crossed above signal - Momentum turning bullish",
+      "strength": "STRONG BULLISH",
+      "category": "MACD",
+      "timeframe": "5m",
+      "value": 0.10758792885786761,
+      "trading_implication": "Strong buy signal; enter long positions with appropriate stop loss"
+    },
+    {
+      "signal": "ABOVE BB10 UPPER",
+      "description": "Price broke above upper BB(10) - Strong bullish momentum",
+      "strength": "BULLISH",
+      "category": "BB_BREAKOUT",
+      "timeframe": "5m",
+      "value": 0.6573484015605686,
+      "trading_implication": "Breakout detected; momentum strong but watch for reversal at extremes"
+    },
+    {
+      "signal": "ABOVE BB20 UPPER",
+      "description": "Price broke above upper BB(20) - Strong bullish momentum",
+      "strength": "BULLISH",
+      "category": "BB_BREAKOUT",
+      "timeframe": "5m",
+      "value": 0.9668187728367457,
+      "trading_implication": "Breakout detected; momentum strong but watch for reversal at extremes"
+    },
+    {
+      "signal": "HIGH VOLUME (9.4X)",
+      "description": "Volume 9.4x above 20-period average - Increased market participation",
+      "strength": "SIGNIFICANT",
+      "category": "VOLUME",
+      "timeframe": "5m",
+      "value": 9.398199143086481,
+      "trading_implication": "High volume confirms price move validity; breakouts more reliable"
+    },
+    {
+      "signal": "STOCHASTIC OVERBOUGHT",
+      "description": "%K(14): 80.6 - Overbought condition",
+      "strength": "BEARISH",
+      "category": "STOCHASTIC",
+      "timeframe": "5m",
+      "value": 80.61970985362161,
+      "trading_implication": "Overbought; potential reversal or pullback coming"
+    },
+    {
+      "signal": "STRONG UPTREND",
+      "description": "ADX: 39.6 indicates strong uptrend",
+      "strength": "TRENDING",
+      "category": "ADX",
+      "timeframe": "5m",
+      "value": 39.55053261365481,
+      "trading_implication": "Strong trend in place; trade with the uptrend"
+    },
+    {
+      "signal": "LARGE GAIN",
+      "description": "+0.90% move (threshold: 0.8%) - Strong bullish momentum",
+      "strength": "BULLISH",
+      "category": "PRICE_ACTION",
+      "timeframe": "5m",
+      "value": 0.9033302101630669,
+      "trading_implication": "Strong upward move; momentum traders may enter, watch for continuation"
+    }
+  ],
+  "signal_summary": {
+    "total": 8,
+    "bullish": 4,
+    "bearish": 2,
+    "neutral": 2,
+    "by_category": {
+      "RSI": 1,
+      "MACD": 1,
+      "BB_BREAKOUT": 2,
+      "VOLUME": 1,
+      "STOCHASTIC": 1,
+      "ADX": 1,
+      "PRICE_ACTION": 1
+    }
+  }
+}
