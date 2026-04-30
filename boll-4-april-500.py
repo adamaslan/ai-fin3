@@ -248,6 +248,7 @@ class SignalDetectorExporter:
         df = self._calculate_ichimoku(df)
 
         self.data = df
+        self._precompute_pivots()
         print("Indicators calculated")
         return df
 
@@ -272,39 +273,80 @@ class SignalDetectorExporter:
     #  Support / resistance zones                                         #
     # ------------------------------------------------------------------ #
 
-    def _find_support_resistance(self, df: pd.DataFrame, window: int = 10, n_levels: int = 5) -> dict:
-        """Identify support and resistance levels using local pivot highs/lows."""
+    def _precompute_pivots(self) -> None:
+        """Pre-calculate pivot highs/lows for every window in SR_PIVOT_WINDOWS.
+
+        Runs once after calculate_indicators(). Stores results in
+        self._pivot_cache[window] = {'highs': [...(bar_idx, price)], 'lows': [...]}
+        so that _find_support_resistance can do an O(1) prefix-lookup instead of
+        an O(N) scan per bar, reducing overall detect_signals complexity from
+        O(N^2) to O(N).
+        """
+        df = self.data
         highs = df['High'].values
         lows = df['Low'].values
-        close = df['Close'].values[-1]
+        n = len(df)
 
-        pivot_highs: list[float] = []
-        pivot_lows: list[float] = []
+        self._pivot_cache: dict[int, dict] = {}
+        for window in SR_PIVOT_WINDOWS:
+            ph: list[tuple[int, float]] = []
+            pl: list[tuple[int, float]] = []
+            for i in range(window, n - window):
+                lo = i - window
+                hi = i + window + 1
+                if highs[i] == highs[lo:hi].max():
+                    ph.append((i, float(highs[i])))
+                if lows[i] == lows[lo:hi].min():
+                    pl.append((i, float(lows[i])))
+            self._pivot_cache[window] = {'highs': ph, 'lows': pl}
 
-        for i in range(window, len(df) - window):
-            if highs[i] == max(highs[i - window:i + window + 1]):
-                pivot_highs.append(highs[i])
-            if lows[i] == min(lows[i - window:i + window + 1]):
-                pivot_lows.append(lows[i])
+    @staticmethod
+    def _cluster_levels(levels: list[float], tol: float = 0.005) -> list[float]:
+        if not levels:
+            return []
+        levels = sorted(set(levels))
+        clusters: list[list[float]] = [[levels[0]]]
+        for lvl in levels[1:]:
+            ref = clusters[-1][-1]
+            if ref != 0 and abs(lvl - ref) / ref <= tol:
+                clusters[-1].append(lvl)
+            else:
+                clusters.append([lvl])
+        return [float(np.mean(c)) for c in clusters]
 
-        def cluster(levels: list[float], tol: float = 0.005) -> list[float]:
-            if not levels:
-                return []
-            levels = sorted(set(levels))
-            clusters: list[list[float]] = [[levels[0]]]
-            for lvl in levels[1:]:
-                ref = clusters[-1][-1]
-                if ref != 0 and abs(lvl - ref) / ref <= tol:
-                    clusters[-1].append(lvl)
-                else:
-                    clusters.append([lvl])
-            return [float(np.mean(c)) for c in clusters]
+    def _find_support_resistance(
+        self, df: pd.DataFrame, window: int = 10, n_levels: int = 5
+    ) -> dict:
+        """Return clustered support/resistance levels up to bar len(df)-1.
+
+        Uses the pre-computed pivot cache when available (O(k) prefix scan where
+        k is the number of pivots), falling back to a full scan if the cache is
+        absent (e.g., called standalone after detect_signals).
+        """
+        close = float(df['Close'].values[-1])
+        bar_limit = len(df) - 1  # only use pivots up to this bar index
+
+        if hasattr(self, '_pivot_cache') and window in self._pivot_cache:
+            cache = self._pivot_cache[window]
+            pivot_highs = [p for idx, p in cache['highs'] if idx < bar_limit]
+            pivot_lows = [p for idx, p in cache['lows'] if idx < bar_limit]
+        else:
+            highs = df['High'].values
+            lows = df['Low'].values
+            pivot_highs = []
+            pivot_lows = []
+            for i in range(window, len(df) - window):
+                lo, hi = i - window, i + window + 1
+                if highs[i] == highs[lo:hi].max():
+                    pivot_highs.append(float(highs[i]))
+                if lows[i] == lows[lo:hi].min():
+                    pivot_lows.append(float(lows[i]))
 
         support_levels = sorted(
-            [lvl for lvl in cluster(pivot_lows) if lvl < close], reverse=True
+            [lvl for lvl in self._cluster_levels(pivot_lows) if lvl < close], reverse=True
         )[:n_levels]
         resistance_levels = sorted(
-            [lvl for lvl in cluster(pivot_highs) if lvl > close]
+            [lvl for lvl in self._cluster_levels(pivot_highs) if lvl > close]
         )[:n_levels]
 
         return {
@@ -1028,9 +1070,10 @@ class SignalDetectorExporter:
     #  Export                                                              #
     # ------------------------------------------------------------------ #
 
-    def export_json(self) -> Path:
+    def export_json(self, now: datetime | None = None) -> Path:
         """Export signals and data to JSON."""
         print("Exporting to JSON...")
+        now = now or datetime.now()
         current = self.current
         sr = getattr(self, '_sr_zones', {'support': [], 'resistance': []})
 
@@ -1047,7 +1090,7 @@ class SignalDetectorExporter:
         data = {
             'metadata': {
                 'symbol': self.symbol,
-                'timestamp': datetime.now().isoformat(),
+                'timestamp': now.isoformat(),
                 'data_period': self.period,
                 'interval': self.interval,
                 'total_bars': len(self.data),
@@ -1105,16 +1148,17 @@ class SignalDetectorExporter:
             'historical_signal_count': len(self.historical_signals),
         }
 
-        filename = self.output_dir / f"{self.symbol}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        filename = self.output_dir / f"{self.symbol}_{now.strftime('%Y%m%d_%H%M%S')}.json"
         with open(filename, 'w') as f:
             json.dump(data, f, indent=2, cls=SafeJSONEncoder)
 
         print(f"JSON saved: {filename}")
         return filename
 
-    def export_markdown(self) -> Path:
+    def export_markdown(self, now: datetime | None = None) -> Path:
         """Export signals to formatted Markdown report."""
         print("Exporting to Markdown...")
+        now = now or datetime.now()
         current = self.current
         sr = getattr(self, '_sr_zones', {'support': [], 'resistance': []})
 
@@ -1144,7 +1188,7 @@ class SignalDetectorExporter:
 
         md = f"""# Technical Analysis Report: {self.symbol}
 
-**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+**Generated:** {now.strftime('%Y-%m-%d %H:%M:%S')}
 **Period:** {self.period}  |  **Interval:** {self.interval}
 **Latest-bar Signals:** {len(self.signals)}  |  **Total Historical Signals:** {len(self.historical_signals)}
 
@@ -1158,7 +1202,7 @@ class SignalDetectorExporter:
 | **Open** | ${safe_val(current['Open'])} |
 | **High** | ${safe_val(current['High'])} |
 | **Low** | ${safe_val(current['Low'])} |
-| **Volume** | {int(current['Volume']):,} |
+| **Volume** | {int(current['Volume']) if not pd.isna(current['Volume']) else 0:,} |
 | **Change 1b %** | {safe_val(current.get('Price_Change_1', 0))}% |
 | **Change 5b %** | {safe_val(current.get('Price_Change_5', 0))}% |
 | **Change 10b %** | {safe_val(current.get('Price_Change_10', 0))}% |
@@ -1240,18 +1284,19 @@ class SignalDetectorExporter:
         md += f"\n---\n\n*Total historical signals (all bars): {len(self.historical_signals)}*\n"
         md += "*Report generated by YFinance Signal Detector — April 500 Edition*\n"
 
-        filename = self.output_dir / f"{self.symbol}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+        filename = self.output_dir / f"{self.symbol}_{now.strftime('%Y%m%d_%H%M%S')}.md"
         with open(filename, 'w') as f:
             f.write(md)
 
         print(f"Markdown saved: {filename}")
         return filename
 
-    def export_historical_json(self) -> Path:
+    def export_historical_json(self, now: datetime | None = None) -> Path:
         """Export the full historical signal list as a separate JSON file."""
         print("Exporting historical signals to JSON...")
+        now = now or datetime.now()
         filename = (self.output_dir
-                    / f"{self.symbol}_{datetime.now().strftime('%Y%m%d_%H%M%S')}_historical.json")
+                    / f"{self.symbol}_{now.strftime('%Y%m%d_%H%M%S')}_historical.json")
         with open(filename, 'w') as f:
             json.dump(
                 {'symbol': self.symbol, 'signals': self.historical_signals},
@@ -1270,9 +1315,10 @@ class SignalDetectorExporter:
         self.calculate_indicators()
         self.detect_signals()
 
-        json_file = self.export_json()
-        md_file = self.export_markdown()
-        hist_file = self.export_historical_json()
+        now = datetime.now()
+        json_file = self.export_json(now=now)
+        md_file = self.export_markdown(now=now)
+        hist_file = self.export_historical_json(now=now)
 
         print(f"\n{'='*60}")
         print("ANALYSIS COMPLETE")
