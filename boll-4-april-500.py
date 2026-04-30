@@ -160,14 +160,14 @@ class ConfluenceRanker:
 
         abs_net = abs(net)
         winning_side = bullish_count if net >= 0 else bearish_count
-        if abs_net >= 5.0 and (total == 0 or winning_side > total / 2):
+        if abs_net >= 5.0 and winning_side > total / 2:
             confidence = 'HIGH'
         elif abs_net >= 2.0:
             confidence = 'MEDIUM'
         else:
             confidence = 'LOW'
 
-        agreement = bullish_count / total if total > 0 else 0.5
+        agreement = bullish_count / total if total > 0 else 0.0
 
         return {
             'bullish_score': round(bullish_score, 2),
