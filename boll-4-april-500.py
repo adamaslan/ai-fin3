@@ -7,7 +7,12 @@ Fixes from code review:
   - Neutral count in markdown uses explicit 'NEUTRAL' match; adds 'other' row
   - EMA_100 included in JSON moving_averages export
   - Price_Change_5 exported in JSON current_price block
+  - S/R pivot pre-computation reduces detect_signals from O(N^2) to O(N)
+  - NaN volume guard in markdown export
+  - Single shared timestamp across all export filenames/headers
 Historical bar scanning: evaluates every bar, not just the last one.
+Confluence ranking: aggregates signals into net bias + confidence per bar.
+Multi-timeframe analysis: combines scores across intervals for day/swing/invest views.
 """
 
 import yfinance as yf
@@ -96,6 +101,110 @@ def _safe_value(value):
     return result if result is not None else 0.0
 
 
+class ConfluenceRanker:
+    """Aggregates a list of signals into a net bias and confidence score."""
+
+    STRENGTH_SCORES: dict[str, float] = {
+        'EXTREME BULLISH': 3.0,
+        'STRONG BULLISH':  2.0,
+        'BULLISH':         1.0,
+        'TRENDING':        0.5,   # direction resolved from signal name
+        'NEUTRAL':         0.0,
+        'SIGNIFICANT':     0.0,
+        'BEARISH':        -1.0,
+        'STRONG BEARISH': -2.0,
+        'EXTREME BEARISH':-3.0,
+    }
+
+    @classmethod
+    def score_signal(cls, signal: dict) -> float:
+        """Return numeric score, adjusting TRENDING by embedded direction."""
+        strength = signal['strength']
+        score = cls.STRENGTH_SCORES.get(strength, 0.0)
+        if strength == 'TRENDING':
+            name = signal['signal']
+            score = 0.5 if 'UPTREND' in name else (-0.5 if 'DOWNTREND' in name else 0.0)
+        return score
+
+    @classmethod
+    def rank_signals(cls, signals: list[dict]) -> dict:
+        """Compute per-bar confluence statistics from a list of signal dicts.
+
+        Returns a dict with:
+          bullish_score, bearish_score, net_score, bias, confidence,
+          signal_count, agreement_ratio, bullish_signal_count, bearish_signal_count
+        """
+        bullish_score = 0.0
+        bearish_score = 0.0
+        bullish_count = 0
+        bearish_count = 0
+
+        for sig in signals:
+            s = cls.score_signal(sig)
+            if s > 0:
+                bullish_score += s
+                bullish_count += 1
+            elif s < 0:
+                bearish_score += abs(s)
+                bearish_count += 1
+
+        net = bullish_score - bearish_score
+        total = bullish_count + bearish_count
+
+        if net > 0.5:
+            bias = 'BULLISH'
+        elif net < -0.5:
+            bias = 'BEARISH'
+        else:
+            bias = 'NEUTRAL'
+
+        abs_net = abs(net)
+        winning_side = bullish_count if net >= 0 else bearish_count
+        if abs_net >= 5.0 and winning_side > total / 2:
+            confidence = 'HIGH'
+        elif abs_net >= 2.0:
+            confidence = 'MEDIUM'
+        else:
+            confidence = 'LOW'
+
+        agreement = bullish_count / total if total > 0 else 0.0
+
+        return {
+            'bullish_score': round(bullish_score, 2),
+            'bearish_score': round(bearish_score, 2),
+            'net_score': round(net, 2),
+            'bias': bias,
+            'confidence': confidence,
+            'signal_count': total,
+            'agreement_ratio': round(agreement, 3),
+            'bullish_signal_count': bullish_count,
+            'bearish_signal_count': bearish_count,
+        }
+
+    @staticmethod
+    def interpret(rank: dict) -> str:
+        """One-sentence human interpretation of a confluence rank."""
+        bias = rank['bias']
+        conf = rank['confidence']
+        net = rank['net_score']
+        ar = rank['agreement_ratio']
+        pct = int(ar * 100)
+        sign = '+' if net >= 0 else ''
+        return (
+            f"{conf} confidence {bias} bias (net score {sign}{net:.1f}; "
+            f"{pct}% of directional signals agree)."
+        )
+
+
+TIMEFRAME_CONFIGS: list[dict] = [
+    {'label': '5m',     'period': '5d',  'interval': '5m',   'weight': 0.10, 'use_case': 'Scalp / day entry'},
+    {'label': '15m',    'period': '1mo', 'interval': '15m',  'weight': 0.15, 'use_case': 'Day trend'},
+    {'label': '1h',     'period': '3mo', 'interval': '1h',   'weight': 0.25, 'use_case': 'Swing trade'},
+    {'label': 'Daily',  'period': '1y',  'interval': '1d',   'weight': 0.30, 'use_case': 'Position / invest'},
+    {'label': 'Weekly', 'period': '5y',  'interval': '1wk',  'weight': 0.20, 'use_case': 'Long-term trend'},
+]
+
+
 class SignalDetectorExporter:
     """Complete signal detection and export pipeline — April 500 edition."""
 
@@ -107,8 +216,9 @@ class SignalDetectorExporter:
         self.output_dir.mkdir(exist_ok=True)
 
         self.data: pd.DataFrame | None = None
-        self.signals: list[dict] = []          # latest-bar signals (backward compat)
-        self.historical_signals: list[dict] = []  # all bars
+        self.signals: list[dict] = []            # latest-bar signals (backward compat)
+        self.historical_signals: list[dict] = [] # all bars
+        self.bar_confluence: list[dict] = []     # one confluence dict per scanned bar
         self.current: pd.Series | None = None
 
     # ------------------------------------------------------------------ #
@@ -1032,7 +1142,7 @@ class SignalDetectorExporter:
     # ------------------------------------------------------------------ #
 
     def detect_signals(self) -> list[dict]:
-        """Detect signals across every bar in self.data."""
+        """Detect signals and compute confluence across every bar in self.data."""
         print("Detecting signals across all bars...")
         df = self.data.copy()
         min_warmup = max(
@@ -1043,24 +1153,31 @@ class SignalDetectorExporter:
         start_bar = min(min_warmup, len(df) - 1)
 
         all_signals: list[dict] = []
+        bar_confluence: list[dict] = []
         sr_cache: dict[int, dict] = {}
 
         for i in range(start_bar, len(df)):
-            # Invalidate S/R cache periodically (every 20 bars) to pick up new pivots
             if i % 20 == 0:
                 sr_cache.clear()
             bar_signals = self._detect_signals_at_bar(df, i, sr_cache)
             all_signals.extend(bar_signals)
 
-        self.historical_signals = all_signals
+            ts_raw = df.index[i]
+            ts_str = ts_raw.isoformat() if isinstance(ts_raw, pd.Timestamp) else str(ts_raw)
+            rank = ConfluenceRanker.rank_signals(bar_signals)
+            rank['timestamp'] = ts_str
+            bar_confluence.append(rank)
 
-        # Latest-bar signals for backward compat
+        self.historical_signals = all_signals
+        self.bar_confluence = bar_confluence
+
         if len(df) > 0:
             self.current = df.iloc[-1]
             last_ts = df.index[-1]
             last_ts_str = last_ts.isoformat() if hasattr(last_ts, 'isoformat') else str(last_ts)
             self.signals = [s for s in all_signals if s.get('timestamp') == last_ts_str]
             self._sr_zones = self._find_support_resistance(df)
+            self._latest_confluence = bar_confluence[-1] if bar_confluence else {}
 
         print(f"Detected {len(all_signals)} signals across {len(df) - start_bar} bars "
               f"({len(self.signals)} on latest bar)")
@@ -1145,6 +1262,7 @@ class SignalDetectorExporter:
                 'other': other,
                 'by_category': by_category,
             },
+            'confluence': getattr(self, '_latest_confluence', {}),
             'historical_signal_count': len(self.historical_signals),
         }
 
@@ -1281,6 +1399,28 @@ class SignalDetectorExporter:
                 md += f"- Strength: {strength}\n"
                 md += f"- Value: {safe_val(sig['value'])}\n\n"
 
+        # Confluence section
+        conf = getattr(self, '_latest_confluence', {})
+        if conf:
+            sign = '+' if conf['net_score'] >= 0 else ''
+            md += f"""
+---
+
+## Confluence Ranking — Latest Bar
+
+| Metric | Value |
+|--------|-------|
+| **Net Score** | {sign}{conf['net_score']} |
+| **Bias** | {conf['bias']} |
+| **Confidence** | {conf['confidence']} |
+| **Bullish Signals** | {conf['bullish_signal_count']} (score {conf['bullish_score']}) |
+| **Bearish Signals** | {conf['bearish_signal_count']} (score {conf['bearish_score']}) |
+| **Agreement Ratio** | {conf['agreement_ratio']:.1%} |
+
+> *{ConfluenceRanker.interpret(conf)}*
+
+"""
+
         md += f"\n---\n\n*Total historical signals (all bars): {len(self.historical_signals)}*\n"
         md += "*Report generated by YFinance Signal Detector — April 500 Edition*\n"
 
@@ -1292,14 +1432,18 @@ class SignalDetectorExporter:
         return filename
 
     def export_historical_json(self, now: datetime | None = None) -> Path:
-        """Export the full historical signal list as a separate JSON file."""
+        """Export full historical signals and per-bar confluence to JSON."""
         print("Exporting historical signals to JSON...")
         now = now or datetime.now()
         filename = (self.output_dir
                     / f"{self.symbol}_{now.strftime('%Y%m%d_%H%M%S')}_historical.json")
         with open(filename, 'w') as f:
             json.dump(
-                {'symbol': self.symbol, 'signals': self.historical_signals},
+                {
+                    'symbol': self.symbol,
+                    'signals': self.historical_signals,
+                    'bar_confluence': self.bar_confluence,
+                },
                 f, indent=2, cls=SafeJSONEncoder
             )
         print(f"Historical JSON saved: {filename}")
@@ -1320,6 +1464,7 @@ class SignalDetectorExporter:
         md_file = self.export_markdown(now=now)
         hist_file = self.export_historical_json(now=now)
 
+        conf = getattr(self, '_latest_confluence', {})
         print(f"\n{'='*60}")
         print("ANALYSIS COMPLETE")
         print(f"{'='*60}")
@@ -1328,6 +1473,9 @@ class SignalDetectorExporter:
         print(f"Historical:  {hist_file}")
         print(f"Latest-bar signals:   {len(self.signals)}")
         print(f"Total historical:     {len(self.historical_signals)}")
+        if conf:
+            sign = '+' if conf['net_score'] >= 0 else ''
+            print(f"Confluence:   {conf['bias']} {sign}{conf['net_score']} ({conf['confidence']})")
         print(f"{'='*60}\n")
 
         return {
@@ -1336,7 +1484,164 @@ class SignalDetectorExporter:
             'hist_file': hist_file,
             'signals': self.signals,
             'historical_signals': self.historical_signals,
+            'confluence': conf,
+            'bar_confluence': self.bar_confluence,
         }
+
+
+def run_multi_timeframe(
+    symbol: str,
+    output_dir: str = 'signal_reports',
+    configs: list[dict] | None = None,
+) -> dict:
+    """Run SignalDetectorExporter across multiple timeframes and return a weighted
+    composite confluence score plus a per-timeframe breakdown.
+
+    Args:
+        symbol: Ticker symbol (e.g. 'AAPL').
+        output_dir: Directory for report files.
+        configs: List of timeframe config dicts with keys label, period, interval,
+                 weight, use_case. Defaults to TIMEFRAME_CONFIGS.
+
+    Returns dict with keys:
+        timeframes: list of per-timeframe result dicts
+        composite_score: weighted net score across all timeframes
+        composite_bias: BULLISH / BEARISH / NEUTRAL
+        composite_confidence: HIGH / MEDIUM / LOW
+        symbol: the ticker
+    """
+    configs = configs or TIMEFRAME_CONFIGS
+    print(f"\n{'='*60}")
+    print(f"MULTI-TIMEFRAME ANALYSIS: {symbol}")
+    print(f"{'='*60}")
+
+    results = []
+    total_weight = 0.0
+    weighted_score = 0.0
+
+    for cfg in configs:
+        label = cfg['label']
+        period = cfg['period']
+        interval = cfg['interval']
+        weight = cfg['weight']
+        use_case = cfg['use_case']
+        print(f"\n  [{label}] period={period} interval={interval} weight={weight}")
+        try:
+            det = SignalDetectorExporter(symbol=symbol, period=period, output_dir=output_dir)
+            # Override interval from config (not just from PERIOD_INTERVAL_MAP)
+            det.interval = interval
+            det.fetch_data()
+            det.calculate_indicators()
+            det.detect_signals()
+
+            conf = getattr(det, '_latest_confluence', {})
+            net = conf.get('net_score', 0.0)
+            weighted_score += net * weight
+            total_weight += weight
+
+            results.append({
+                'label': label,
+                'period': period,
+                'interval': interval,
+                'weight': weight,
+                'use_case': use_case,
+                'bias': conf.get('bias', 'N/A'),
+                'net_score': net,
+                'confidence': conf.get('confidence', 'N/A'),
+                'bullish_score': conf.get('bullish_score', 0),
+                'bearish_score': conf.get('bearish_score', 0),
+                'signal_count': conf.get('signal_count', 0),
+                'agreement_ratio': conf.get('agreement_ratio', 0.5),
+                'latest_bar_signal_count': len(det.signals),
+            })
+            print(f"     bias={conf.get('bias')}  net={net:+.2f}  confidence={conf.get('confidence')}")
+        except Exception as e:
+            print(f"     ERROR: {e}")
+            results.append({
+                'label': label, 'period': period, 'interval': interval,
+                'weight': weight, 'use_case': use_case,
+                'bias': 'ERROR', 'net_score': 0.0, 'confidence': 'N/A',
+                'error': str(e),
+            })
+
+    composite = weighted_score / total_weight if total_weight > 0 else 0.0
+    composite_bias = 'BULLISH' if composite > 0.5 else ('BEARISH' if composite < -0.5 else 'NEUTRAL')
+    composite_confidence = 'HIGH' if abs(composite) >= 3.0 else ('MEDIUM' if abs(composite) >= 1.0 else 'LOW')
+
+    print(f"\n{'='*60}")
+    print(f"COMPOSITE: {composite_bias}  score={composite:+.2f}  confidence={composite_confidence}")
+    print(f"{'='*60}\n")
+
+    return {
+        'symbol': symbol,
+        'timeframes': results,
+        'composite_score': round(composite, 2),
+        'composite_bias': composite_bias,
+        'composite_confidence': composite_confidence,
+    }
+
+
+def export_multi_timeframe_markdown(mtf: dict, output_dir: str = 'signal_reports') -> Path:
+    """Write a multi-timeframe outlook markdown report."""
+    symbol = mtf['symbol']
+    composite = mtf['composite_score']
+    sign = '+' if composite >= 0 else ''
+    bias_emoji = '🟢' if mtf['composite_bias'] == 'BULLISH' else ('🔴' if mtf['composite_bias'] == 'BEARISH' else '⚪')
+
+    lines = [
+        f"# Multi-Timeframe Outlook: {symbol}",
+        f"",
+        f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        f"**Composite Score:** {sign}{composite}  |  "
+        f"**Bias:** {bias_emoji} {mtf['composite_bias']}  |  "
+        f"**Confidence:** {mtf['composite_confidence']}",
+        f"",
+        f"---",
+        f"",
+        f"## Timeframe Breakdown",
+        f"",
+        f"| Timeframe | Bias | Net Score | Confidence | Agree% | Signals | Use Case |",
+        f"|-----------|------|-----------|------------|--------|---------|----------|",
+    ]
+    for r in mtf['timeframes']:
+        if 'error' in r:
+            lines.append(
+                f"| {r['label']} | ERROR | N/A | N/A | N/A | N/A | {r['use_case']} |"
+            )
+            continue
+        b_emoji = '🟢' if r['bias'] == 'BULLISH' else ('🔴' if r['bias'] == 'BEARISH' else '⚪')
+        s = r['net_score']
+        lines.append(
+            f"| **{r['label']}** | {b_emoji} {r['bias']} | {'+' if s >= 0 else ''}{s:.2f} "
+            f"| {r['confidence']} | {r['agreement_ratio']:.0%} "
+            f"| {r['signal_count']} | {r['use_case']} |"
+        )
+
+    lines += [
+        f"",
+        f"---",
+        f"",
+        f"## Composite Weighted Outlook",
+        f"",
+        f"**Score:** {sign}{composite}  "
+        f"**Bias:** {bias_emoji} {mtf['composite_bias']}  "
+        f"**Confidence:** {mtf['composite_confidence']}",
+        f"",
+        f"> Weights: " + ', '.join(
+            f"{r['label']}×{r['weight']}" for r in mtf['timeframes']
+        ),
+        f"",
+        f"---",
+        f"",
+        f"*Report generated by YFinance Signal Detector — April 500 Edition*",
+    ]
+
+    path = Path(output_dir)
+    path.mkdir(exist_ok=True)
+    filename = path / f"{symbol}_mtf_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+    filename.write_text('\n'.join(lines))
+    print(f"Multi-timeframe MD saved: {filename}")
+    return filename
 
 
 # ============ MAIN EXECUTION ============
@@ -1361,6 +1666,16 @@ if __name__ == "__main__":
     for sym in ['MSFT', 'GOOGL', 'TSLA']:
         try:
             SignalDetectorExporter(symbol=sym, period="6mo").run_complete_analysis()
+        except Exception as e:
+            print(f"  Error with {sym}: {e}")
+
+    print("\n\n=== MULTI-TIMEFRAME ANALYSIS ===\n")
+    for sym in ['AAPL', 'MSFT', 'TSLA']:
+        try:
+            mtf = run_multi_timeframe(symbol=sym, output_dir='signal_reports')
+            mtf_md = export_multi_timeframe_markdown(mtf, output_dir='signal_reports')
+            print(f"  {sym}: {mtf['composite_bias']} score={mtf['composite_score']:+.2f} "
+                  f"confidence={mtf['composite_confidence']}  -> {mtf_md.name}")
         except Exception as e:
             print(f"  Error with {sym}: {e}")
 
